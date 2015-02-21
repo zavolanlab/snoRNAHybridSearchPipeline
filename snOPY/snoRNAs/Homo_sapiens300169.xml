@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300169'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-01</lastupdate>
+<blindnote>
+(20100701末安)snoRNABaseを参考にsequenceを5'側から1nt減らし3'側から1nt減らした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD25</gene_name>
+<family_name>SNORD25</family_name>
+<alias>U25</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>62623037..62623103</genome_position>
+<strand>-</strand>
+<box type='c'>8..13</box>
+<box type='d'>35..38, 60..63</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100119</host_id>
+<host_gene>SNHG1</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1069</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:G1490</mod_site>
+<duplex_region>18S|22..33|1498..1487|</duplex_region>
+<accession>NR_002565,NT_167190</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088. Tycowski, K. T., Shu, M. D., and Steitz, J. A. (1996). A mammalian gene with introns instead of exons generating stable RNA products. Nature, 379, 464-466. Tycowski, K. T., Smith, C. M., Shu, M. D., and Steitz, J. A. (1996). A small nucleolar RNA requirement for site-specific ribose methylation of rRNA in Xenopus. Proc Natl Acad Sci U S A, 93, 14480-14485.</evidence>
+<note></note>
+<sequence>
+TTCCTATGATGAGGACCTTTTCACAGACCTGTACTGAGCTCCGTGAGGATAAATAACTCT
+GAGGAGA
+</sequence>
+</snoopy>

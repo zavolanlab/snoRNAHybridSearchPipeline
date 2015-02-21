@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300763'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-10-09</lastupdate>
+<blindnote>
+SNORD12B is obtained from snoRNABase. 
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD12B</gene_name>
+<family_name>SNORD12</family_name>
+<alias>HBII-99B</alias>
+<family_base></family_base>
+<chrom_or_contig>20</chrom_or_contig>
+<genome_position></genome_position>
+<strand></strand>
+<box type='c'>12..17</box>
+<box type='d'>79..82</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100350</host_id>
+<host_gene>C20orf199</host_gene>
+<host_intron></host_intron>
+<host_position>3142..3232</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D Me</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G3878</mod_site>
+<duplex_region>28S|23..35|3886..3874|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCTGGCATATATGATGACTTAGCTTTTTTCCCCGACAGATCGACTATGTTGATCTAACTT
+TTCTAAGCCAGTTTCTGTCTGATATGCCAGC
+</sequence>
+</snoopy>

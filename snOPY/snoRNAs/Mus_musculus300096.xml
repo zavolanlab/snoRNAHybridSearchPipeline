@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300096'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-03-19</lastupdate>
+<blindnote>
+古西：snoRNABaseにてBLAST。aliasのACA18は、Abstract,Alignmentが表示されず入力不可。 target RNA、modification type入力。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA18</gene_name>
+<family_name>SNORA18</family_name>
+<alias>ACA18</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>15118246..15118376</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..65</box>
+<box type='aca'>126..128</box>
+<host_id>Mus_musculus100070</host_id>
+<host_gene>Poly:9:SNORA40</host_gene>
+<host_intron></host_intron>
+<host_position>2251..2381</host_position>
+<organization>Poly</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTTGAGGTCTATCCCGACGGGGCTTCCCTAGTAGCCAGACGTCGTTGGAAACGCCTCATA
+CAGTAACTTGTGGTTTTACTTGACTCACAGGACTGACTGTTAGGTCTGTGGGAAGGAACT
+ACAAGACAGCT
+</sequence>
+</snoopy>

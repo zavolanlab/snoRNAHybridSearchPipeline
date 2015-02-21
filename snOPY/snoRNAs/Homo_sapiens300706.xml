@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300706'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+gene name;AC010761.10->SNORD42A. sno/scaRNAs with same target 18S rRNA U116 : SNORD42A SNORD42B
+
+(20090708：吉浜)ref.setを作るために、A→B
+
+(20120412吉浜）locusの配列が変わったのでsnoRNA positionを変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD42B</gene_name>
+<family_name>SNORD42</family_name>
+<alias>U42B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>24071695..24071761</genome_position>
+<strand>+</strand>
+<box type='c'>8..13</box>
+<box type='d'>59..62</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100497</host_id>
+<host_gene>RPL23A</host_gene>
+<host_intron></host_intron>
+<host_position>1557..1623</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U116</mod_site>
+<duplex_region>18S|48..58|122..112|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GTGCATATGATGGAAAAGTTTTAATCTCCTGACACTTGTGATGTCTTCAAAGGAACCACT
+GATGCAC
+</sequence>
+</snoopy>

@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300723'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AL121839.3->SNORD3@-pseud.
+2009年6月19日（山元）snoRNABaseのU3に82%の相同性。本登録はintronicなので、発現の有無が未確認である。SNORD3@-pseud->SNORD3@L2 snoRNABaseのU3より。Homo sapiens C/D box U3 snoRNA. The U3 snoRNA is found in many organisms. Human U3 from HeLa cells was sequenced by Nohga et al. (1981) and cloned from HeLa cells extracts precipitated with anti-(U3)RNP and anti-TMG antibodies by Tyc and Steitz (1989). In yeast, mouse and Xenopus, U3 is required for the maturation of 18S rRNA (Savino et al., 1990; Kass et al., 1990, Borovjagin and Gerbi, 1999, 2000, 2001, 2004). It is transcribed from independent RNA polII transcription units, possess a trimethylguanosine cap and is localized in the nucleolus. U3 is associated in a 12S RNP with the four core proteins of C/D box snRNPs, plus a U3-specific protein, RNU3IP2 (hU3-55K ), the human orthologue of yeast Rrp9p (L�bben et al., 1993; Pluk et al., 1998). The snRNA U3 is also present in the ~80S pre-rRNA processing complex (Granneman et al., 2004 and ref. therein), where it associates with additional proteins, including MPHOSPH10 (hMpp10, Westendorf et al. 1998), IMP3 and IMP4 (Granneman et al., 2003). In the yeast S. cerevisiae, the disruption of U3 RNA leads to the loss of the 5' terminal knobs (SSU processome) of pre-rRNA transcripts (Dragon et al., 2002). In interphase human cells, genes encoding U3 snoRNAs are frequently associated with Cajal bodies, as previously shown for U1, U2 and histone genes (Gao et al., 1997). The 3' end processing of U3, cap hypermethylation by PIMT (hTgs1) and assembly of U3 snoRNA take place in Cajal bodies (Verheggen et al., 2002). U3 is composed of a 5' domain, with conserved sequences CAG box, A' and A boxes, 5' and 3' hinges, and a 5' domain with conserved C', B, C and D boxes. In the 5' domain, boxes A' and A form conserved base-pair interactions with 18S rRNA (Hughes, 1996). The 5' and 3' hinges of the 5' domain form base-pair interactions with nts 1408-1416 and 438-444, respectively, of the pre-rRNA 5' ETS (Borovjagin and Gerbi, 2000). The later sequence in the 5'ETS is located near the evolutionary conserved motive (ECM, nts 420 -432) that contains the UCGA binding sequence of nucleolin, a protein required to load U3 snoRNA on the 5'ETS (Ginisty et al., 1998, 2000). The human genome contains 5 U3-related genes clustered on chr17p11.2: one copy of each U3, U3-3 and U3-4, and two copies of U3-2. None is identical to the U3a and U3b sequences published by Gao et al. (1997). From their restriction maps, U3b would correspond to U3-2, and U3a to U3-4. Compared to the 4 other copies of U3, the 5' domain of U3-4 contains two mutations, one of which in the conserved GAC box.
+
+(20090708：吉浜）SNORD3@L2→SNORD3@.　名前にLを付けないことにしました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD3@</gene_name>
+<family_name>SNORD3@</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>91251013..91251227</genome_position>
+<strand>-</strand>
+<box type='c'>157..162</box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100510</host_id>
+<host_gene>CATSPERB</host_gene>
+<host_intron></host_intron>
+<host_position>17940..18154</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAAATTATACTTTCAGCAATCATCTCTATAGTTTGTTACTAGAGAAGCTTCTGTGAATGT
+GTAGAGCACCGGAAACCACAAGGCAAAGGCTCAGCATTCTCTCCTAAGCGCGAAGCTGGC
+TCCTGGTGTTGGTTGGCCGCAACTGCCATTTGCCATTGATGATCATTCTTCTCTTCCTGT
+GGTAGAGGAAGAGGGAGAGAATGCAGTTTGAGTGG
+</sequence>
+</snoopy>

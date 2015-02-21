@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300849'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-15</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLASTし、aliasがACA38でヒット。box Hは、"aaagta"に対し、"aaagaa"でOKとした。target RMAはUnknown。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA38</gene_name>
+<family_name>SNORA38</family_name>
+<alias>ACA38</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>10</chrom_or_contig>
+<genome_position>107800721..107800854</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>59..64</box>
+<box type='aca'>129..131</box>
+<host_id>Mus_musculus100628</host_id>
+<host_gene>Pawr</host_gene>
+<host_intron></host_intron>
+<host_position>32477..32610</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TCCTCCTACAAAGGCGTGTTTTTGGTTCCCTGTCCTTGGACACGTAAGAATCGGAGGCAA
+AGAAACGTGGTGGATTTGGAAAGGTCTGGGACCAGCTTGCCCCCTGCAGGCTCAGAATCA
+ACCATCCCACAGAA
+</sequence>
+</snoopy>

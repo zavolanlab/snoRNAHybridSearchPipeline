@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300082'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-30</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA U34 : SNORA50,SNORA76. 
+sno/scaRNAs with same target 18S rRNA U105 : SNORA8 SNORA50 SNORA36A SNORA36B SNORA76
+(20100630末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA76</gene_name>
+<family_name>SNORA76</family_name>
+<alias>ACA62</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>62223699..62223831</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>61..66</box>
+<box type='aca'>128..130</box>
+<host_id>Homo_sapiens100053</host_id>
+<host_gene>Poly:10:AC025362.12</host_gene>
+<host_intron></host_intron>
+<host_position>1257..1389</host_position>
+<organization>Poly</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U34,18S:U105</mod_site>
+<duplex_region>18S|7..13|42..36|,18S|47..49|33..31|,18S|77..83|113..107|,18S|114..118|104..100|</duplex_region>
+<accession>NR_002995, NT_010783</accession>
+<evidence>Schattner, P., Barberan-Soler, S., and Lowe, T. M. (2006). A computational screen for mammalian pseudouridylation guide H/ACA RNAs. Rna 12, 15-25</evidence>
+<note></note>
+<sequence>
+GCGCTGTCTTTGAGCCCCCGCCGAGCTTCCTCGTGGCGCCGGGGGTCAATCTGCAGCGCT
+AGAGCATGTGCTTGCGCATAACTGGGGCCGCCTGGCCTCCCGCGGGCGGCCTTTTTAACC
+GCGAGCGACAAGA
+</sequence>
+</snoopy>

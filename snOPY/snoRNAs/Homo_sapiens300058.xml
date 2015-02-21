@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300058'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-22</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA U4522 : SNORA27 and SNORA26
+2009年6月17日（山元）snoRNABaseより。Homo sapiens H/ACA box snoRNA HBI-6. This snoRNA is the human orthologue of the mouse MBI-6 snoRNA cloned by H�ttenhofer et al. (2001). It is predicted to guide the pseudouridylation of 28S rRNA U4522.
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA26</gene_name>
+<family_name>SNORA26</family_name>
+<alias>HBI-6</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>4</chrom_or_contig>
+<genome_position>53579416..53579537</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>41..46</box>
+<box type='aca'>117..119</box>
+<host_id>Homo_sapiens100030</host_id>
+<host_gene>KIAA0114</host_gene>
+<host_intron></host_intron>
+<host_position>2001..2122</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4522</mod_site>
+<duplex_region>28S|65..70|4529..4524|,28S|102..110|4521..4514|</duplex_region>
+<accession>NR_003016 NT_022853</accession>
+<evidence>Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953.</evidence>
+<note></note>
+<sequence>
+GTGCCCTTTTAAGGTTGACCCAGTGCTTTAAGAGGCTAACACAGAAGGGTAAAGTAAGTC
+TCCATAAAACCCAGAGAAGAGACTGGAAAGCTCCTCTTTGGATCCTGTCTGGAGTCACAA
+CT
+</sequence>
+</snoopy>

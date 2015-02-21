@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300775'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-11</lastupdate>
+<blindnote>
+(20100610末安)genomic positionを変更した,accession Noを加えた,evidence,snoRNAbaseがアクセスできないためNCBIのアノテーションから抜粋。
+(20100617末安)genomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SCARNA14</gene_name>
+<family_name>SCARNA14</family_name>
+<alias>U100</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig></chrom_or_contig>
+<genome_position>66639544..66639680</genome_position>
+<strand>-</strand>
+<box type='c'>68..73</box>
+<box type='d'>132..134</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100541</host_id>
+<host_gene>TIPIN</host_gene>
+<host_intron></host_intron>
+<host_position>10375..10511</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>U2 snRNA</mod_rna>
+<mod_site>U2:U7</mod_site>
+<duplex_region>U2|84..88|13..9|,U2|119..123|5..1|</duplex_region>
+<accession>AY349601,NT_010194</accession>
+<evidence>Vitali,P., Royo,H., Seitz,H., Bachellerie,J.P., Huttenhofer,A. and Cavaille,J. 2003. Identification of 13 novel human modification guide RNAs. Nucleic Acids Res. 31 (22), 6543-6551</evidence>
+<note></note>
+<sequence>
+GTGACTGTTCCTGGTATTGATTGCATTTGTTAGTTGTACAGTGCAACCATAGACAGTCAC
+ACACATTAAAACAGATGGTTCCTGCCGACAGGGTCTGTATAGTTATCAGATTTTCTGTGC
+GATGGCTCCATACATGT
+</sequence>
+</snoopy>

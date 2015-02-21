@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300733'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+Pseudouridylation of 28S rRNA U3899 is guided also SNORA45. 
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA3</gene_name>
+<family_name>SNORA3</family_name>
+<alias>ACA3</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>8705774..8705903</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..65</box>
+<box type='aca'>125..127</box>
+<host_id>Homo_sapiens100520</host_id>
+<host_gene>RPL27A</host_gene>
+<host_intron></host_intron>
+<host_position>2436..2565</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3899,28S:U3938</mod_site>
+<duplex_region>28S|5..15|3911..3901|,28S|46..48|3898..3896|,28S|75..81|3946..3940|,28S|112..115|3937..3934|</duplex_region>
+<accession>AJ609428 NT_009237</accession>
+<evidence> Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268.</evidence>
+<note></note>
+<sequence>
+ATCGAGGCTAGAGTCACGCTTGGGTATCGGCTATTGCCTGAGTGTGCTAGAGTCCTCGAA
+GAGTAACTGCTGACCTTATTCACTGGCTGTGGGCCTTATGGCACAGTCAGTCACCAGGTT
+AGAGACATGC
+</sequence>
+</snoopy>

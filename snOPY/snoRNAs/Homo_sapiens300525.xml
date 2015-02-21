@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300525'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-01</lastupdate>
+<blindnote>
+(20100701末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD117</gene_name>
+<family_name>SNORD117</family_name>
+<alias>U83</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>6</chrom_or_contig>
+<genome_position>31504151..31504226</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>68..71</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100369</host_id>
+<host_gene>BAT1</host_gene>
+<host_intron></host_intron>
+<host_position>5088..5163</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_003140,NT_167248</accession>
+<evidence>Jady, B. E., and Kiss, T. (2000). Characterisation of the U83 and U84 small nucleolar RNAs: two novel 2'-O-ribose methylation guide RNAs that lack complementarities to ribosomal RNAs. Nucleic Acids Res, 28, 1348-1354, Duga,S., Asselta,R., Malcovati,M., Tenchini,M.L., Ronchi,S. and Simonic,T. The intron-containing L3 ribosomal protein gene (RPL3): sequence analysis and identification of U43 and of two novel intronic small ncleolar RNAs. Biochim. Biophys. Acta 1490 (3), 225-236 (2000), Yang,J.H., Zhang,X.C., Huang,Z.P., Zhou,H., Huang,M.B., Zhang,S.,Chen,Y.Q. and Qu,L.H. (2006) snoSeeker: an advanced computational package for screening of guide and orphan snoRNA genes in the human genome. Nuc. Acids Res. 34:5112-5123.</evidence>
+<note></note>
+<sequence>
+GCCAAATGATGTTTATTTGAAACAGGAGCACCTCAGTGCAAGGACGACTCTTATCTATCA
+CCCATGACTGATGGCT
+</sequence>
+</snoopy>

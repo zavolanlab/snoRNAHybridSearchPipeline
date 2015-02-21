@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300548'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2014-12-11</lastupdate>
+<blindnote>
+相同性のあるsnoRNAはhitしない。
+20141211　Ensemblの情報が更新していた。AC108110.3 -> snoZ39、多くのほ乳類に保存されているということと、RNA遺伝子（snoRNAとは書いていない）という表現（紫色）があるので、機能性RNAあるいはsnoRNAの可能性あり。snOPYではsnoZ39にヒットするので、名前を変えた。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>snoZ39</gene_name>
+<family_name>snoZ39</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>85952079..85952141</genome_position>
+<strand>+</strand>
+<box type='c'>8..13</box>
+<box type='d'>56..59</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100386</host_id>
+<host_gene>COX7</host_gene>
+<host_intron></host_intron>
+<host_position>3540..3602</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GTGCATGTGATGAAGCAAATCAGTATGAATGAATTCATGATACTGTAAACGCTTTCTGAT
+GTA
+</sequence>
+</snoopy>

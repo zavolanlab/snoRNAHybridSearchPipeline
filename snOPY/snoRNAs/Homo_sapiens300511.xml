@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300511'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+gene name:AC012076.5->SNORD115-2-pseud.
+2009年6月19日（山元）SNORD115-2が他にもある。IDはHomo_sapiens300302。snoRNABaseにはHomo_sapiens300302が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORD115-2-pseud->SNORD115-2L1 snoRNABaseより。Homo sapiens C/D box snoRNA HBII-52-2: this snoRNA was first cloned in the mouse (MBII-52) by Cavaill� et al. (2000), and found to be expressed in all regions of the brain, except for the choroids plexus. HBII-52 is also brain-specific (Cavaill� et al, 2002). Due to cross-hybridisation in Northern blot analysis, it could not be assessed if all predicted snoRNAs in this cluster are indeed expressed. As HBII-85 and HBII-13, HBI-52 was not expressed in the brain of a patient with a paternal 15q11-q13 deletion (Prader-Willi syndrome), but was normally expressed when the deletion was maternally inherited (Angelman syndrome). Genomic sequencing revealed that 48 closely related copies HBII-52 are encoded in introns of the large (460kb), paternally expressed, transcription unit (SNURF-SNRNP-UBE3A AS), that is antisense to the maternally expressed UBE3A gene (Cavaill� et al., 2000, Runte et al., 2001). Among these copies, 6 (# 24, 27, 28, 45, 46 and 47) have mutated C and/or D boxes, and are probably not functional. In the new nomenclature, HBII-52 snoRNAs were numbered 1-48 following their chromosomal order, but entries like HBII-52-24 (SNORD115-24) were left unassigned. Note however that HBII-52-7 and -25 have a non-consensus C box, but were maintained in the list. The HBII-52 snoRNAs are not predicted to guide to 2'O-methylation of an rRNA or snRNA. However, most of them (HBII-52-1, -4 , -5, -6, -8 to -16, -21, -22, -26, -29, -30, -31, -33 to -36, and -38 to -44) present, upstream of the D box, a perfect 17-18 nt complementarity with a portion of the serotonin receptor 5HT-2C mRNA (Cavaill� et al., 2000). The nucleotide predicted to be methylated is known to be subjected to A/I editing. The MBII-52 inhibits the ADAR2-mediated editing of a 5HT-2C minigene transcribed in the nucleolus from a RNA polI promoter (Vitali et al., 2005). Moreover, HBII-52 regulates the alternative splicing of the natural 5HT-2C pre-mRNA (Kishore and Stamm, 2006). The same transcription unit hosts HBII-13, HBII-436, HBII-437 and HBII-438A/B, and 29 copies of HBII-85. Recent studies suggest that the lack of HBII-85, but not HBII-52, is critical in Prader-Willi syndrome (Runte et al., 2005; Ding et al., 2005). 
+
+(20090709：吉浜）SNORD115-2L1→SNORD115-2.　名前にLを付けないことにしました。マルチコピーのマルチコピーなんだけど、クラスターではなくて、イントロンに入っているのが珍しいかな。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD115-2</gene_name>
+<family_name>SNORD115</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>238443286..238443364</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100363</host_id>
+<host_gene>RAMP1</host_gene>
+<host_intron></host_intron>
+<host_position>12131..12209</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCCGTGTGAGGCCACCTCTGCCATGCTGCAGGCTCCCCAGCACGCAGTGGGGAACCCAAC
+CTTGGAGAGCCGAGCCGGG
+</sequence>
+</snoopy>

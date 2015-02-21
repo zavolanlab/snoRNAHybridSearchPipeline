@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300507'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-23</lastupdate>
+<blindnote>
+The duplex region include mis-match. 
+2009年6月17日（山元）snoRNABaseより。Homo sapiens ACA41 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U1643 of 18S rRNA. The pseudouridylation of this residue was previously reported by Maden and Wakeman (1988). The mouse ortholog, MBI-83, was cloned by Huttenhofer et al. 2001). A primate-specific type 2 ACA41 snoRT (also present in marmoset) resides in the C15orf21 gene (sense orientation; chr15:43,616,740-43,616,867; hg18) (Luo and Li, 2007; Weber, unpublished).
+(20100622末安)UCSCを参考にgenomic positionを変更した,NCBIがアクセスできないためaccession Noは保留,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100623末安)accession Noを加えた。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA41</gene_name>
+<family_name>SNORA41</family_name>
+<alias>ACA41</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>207026952..207027083</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>61..66</box>
+<box type='aca'>129..131</box>
+<host_id>Homo_sapiens100361</host_id>
+<host_gene>EEF1B2</host_gene>
+<host_intron></host_intron>
+<host_position>3635..3766</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1643</mod_site>
+<duplex_region>18S|10..15|1646..1652|,18S|48..53|1643..1637|</duplex_region>
+<accession>AJ609464 NT_005403</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953, Maden, E. H., and Wakeman, J. A. (1988). Pseudouridine distribution in mammalian 18 S ribosomal RNA. A major cluster in the central region of the molecule. Biochem J 249, 459-464, Luo Y. and Li S. (2007) Genome-wide analyses of retrogenes derived from the human box H/ACA snoRNAs. Nuc. Acids Res. 35(2):559-71.</evidence>
+<note></note>
+<sequence>
+TTCCACAGCTACTGGTCTGCAGCTGTTCTTATGGTAGCAGTTGTGGCATTCCTCTGTGGG
+AAAGAAACTGTTAACACAAACACCTCTTTCTTAGCAAAACAGAAAGTGGGTATATATGTG
+TGACAGACACAA
+</sequence>
+</snoopy>

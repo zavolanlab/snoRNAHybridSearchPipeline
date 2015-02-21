@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300767'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-10-14</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA U1244 : SNORA36A   SNORA36B   SNORA36C.   	sno/scaRNAs with same target 18S rRNA U105 : SNORA8   SNORA50   SNORA36A   SNORA36B   SNORA76
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA36B</gene_name>
+<family_name>SNORA36</family_name>
+<alias>ACA36B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>1..131</genome_position>
+<strand></strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..62</box>
+<box type='aca'>126..131</box>
+<host_id>Homo_sapiens100536</host_id>
+<host_gene>RAB3-GAP150</host_gene>
+<host_intron></host_intron>
+<host_position>72735..72865</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA Pu</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U105,18S:U1244</mod_site>
+<duplex_region>18S|82..87|112..107|,18S|115..112|104..101|,18S|8..16|1254..1216|,18S|46..51|1243..1238|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTCCAAAGTGTTAAGTTCAGTTCAGGGTAGCTTCCCTGCTCTGTTAATTAAACTTTGGAA
+CATTGAAACTGGCTAGGGAAAATGATTGGATAGAAACTATTATTCTATTCATTTATCCCC
+AGCCTACAAAA
+</sequence>
+</snoopy>

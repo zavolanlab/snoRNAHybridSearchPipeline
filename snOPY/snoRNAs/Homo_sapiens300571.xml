@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300571'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA C3680 : SNORD88A   SNORD88B   SNORD88C
+
+(20090709：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD88C</gene_name>
+<family_name>SNORD88</family_name>
+<alias>HBII-180C</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>19</chrom_or_contig>
+<genome_position>55997397..55997487</genome_position>
+<strand>-</strand>
+<box type='c'>10..15</box>
+<box type='d'>29..32, 81..84</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100403</host_id>
+<host_gene>C19orf48</host_gene>
+<host_intron></host_intron>
+<host_position>3300..3390</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C3680</mod_site>
+<duplex_region>28S|18..27|3686..3677|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGGCTCCCATGATGTCCAGCACTGGGCTCTGATCACCCCTGAGGACACAGTGCACCCCAG
+GACCTTTGACACCTGGGGGTCTGAGGGGCCC
+</sequence>
+</snoopy>

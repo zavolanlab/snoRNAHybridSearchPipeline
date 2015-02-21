@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300580'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+(20100701末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。accesion NoはZ48764よりもNR_002447の情報の方が日付が新しかったので新しく加えた。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD24</gene_name>
+<family_name>SNORD24</family_name>
+<alias>U24</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>136216251..136216325</genome_position>
+<strand>+</strand>
+<box type='c'>41..46</box>
+<box type='d'>68..71</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100411</host_id>
+<host_gene>RPL7A</host_gene>
+<host_intron></host_intron>
+<host_position>2175..2249</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C2338,28S:C2352</mod_site>
+<duplex_region>28S|55..66|2346..2335|,28S|17..29|2360..2348|</duplex_region>
+<accession>Z48764,NR_002447,NT_035014</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088. Qu, L. H., Henry, Y., Nicoloso, M., Michot, B., Azum, M. C., Renalier, M. H., Caizergues-Ferrer, M., and Bachellerie, J. P. (1995). U24, a novel intron-encoded small nucleolar RNA with two 12 nt long, phylogenetically conserved complementarities to 28S rRNA. Nucleic Acids Res, 23, 2669-2676.</evidence>
+<note></note>
+<sequence>
+TGCAGATGATGTAAAAGAATATTTGCTATCTGAGAGATGGTGATGACATTTTAAACCACC
+AAGATCGCTGATGCA
+</sequence>
+</snoopy>

@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300674'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-30</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA U814 : SNORA25 SNORA77.
+2009年6月18日（山元）snoRNABaseより。Homo sapiens ACA63 snoRNA. This H/ACA box RNA was characterized by bioinformatics, and its expression verified by Northern blot and primer extension in mouse (Schattner et al., 2006). ACA63 is a primate-specific Type 3 snoRT. The parental copy, ACA63B, resides in the RANBP1 gene from human to chicken and fishes (Weber, 2006; Luo and Li, 2007).
+(20100630末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA77</gene_name>
+<family_name>SNORA77</family_name>
+<alias>ACA63</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>203698709..203698833</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>56..61</box>
+<box type='aca'>120..122</box>
+<host_id>Homo_sapiens100473</host_id>
+<host_gene>ATP2B4</host_gene>
+<host_intron></host_intron>
+<host_position>104021..104145</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U814</mod_site>
+<duplex_region>18S|8..13|821..816|,18S|42..46|813..809|</duplex_region>
+<accession>NR_003019, NT_004487</accession>
+<evidence>Schattner, P., Barberan-Soler, S., and Lowe, T. M. (2006). A computational screen for mammalian pseudouridylation guide H/ACA RNAs. Rna 12, 15-25, Weber MJ. (2006) Mammalian Small Nucleolar RNAs Are Mobile Genetic Elements. PLoS Genet. 2(12):e205, Luo Y. and Li S. (2007) Genome-wide analyses of retrogenes derived from the human box H/ACA snoRNAs. Nuc. Acids Res. 35(2):559-71.</evidence>
+<note></note>
+<sequence>
+GCAGACTCACTATGCACCTGACTGTACTTCCAGGCAGGTGCTTTTTCTGTCTGCCAGAGA
+AACATTCCAGGGTGCTGTGGCTGCCTCACCTATCCAGGGCGATGCAGCTCCCTGGGGACA
+CAGGT
+</sequence>
+</snoopy>

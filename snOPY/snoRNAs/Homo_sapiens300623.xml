@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300623'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-07</lastupdate>
+<blindnote>
+gene name:AC092579.3->SNORA22-pseud
+2009年6月17日（山元）SNORA22が他にもある。IDはHomo_sapiens300421。snoRNABaseにはHomo_sapiens300421が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA22-pseud->SNORA22L1 snoRNABaseより。Homo sapiens ACA22 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U4966 of 28S rRNA. The pseudouridylation of this residue was previously reported by Ofengand and Bakin (1997). However, the sequences of the 5� stem of ACA22 that might guide the modification of 28S rRNA U4966 are poorly conserved, and ACA33 is a more likely candidate. As predicted by Schattner et al. (2006), the 3� stem of ACA22 most probably guides the pseudouridylation of 28S rRNA U4975. The host gene of ACA22 (mRNA BC052238) is a paralogue of the host gene of ACA15 (CCT6A). The pericentromeric region of human chr7 contains 3 paralogues of that gene (CCT6A, mRNA BC052238 and mRNA BC071617). Each of them hosts close paralogues of both ACA15 and ACA22). 
+(20090707：吉浜）SNORA22L1→SNORA22.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA22</gene_name>
+<family_name>SNORA22</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>56090552..56090689</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>57..62</box>
+<box type='aca'>133..135</box>
+<host_id>Homo_sapiens100440</host_id>
+<host_gene>CCT6A</host_gene>
+<host_intron></host_intron>
+<host_position>4681..4818</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4966,28S:U4975</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTGCACAGTGAACACCCAAGTGTGCTTTATAGTTCCCTTGGCTTTGACCCTGTGCTAGAG
+CATTCATTACCTGTTCATCTGCTCTGCATTGAAAGGAATATTTGTCCTTTTAAATGTATT
+CAGAAAGCCAGCACATTA
+</sequence>
+</snoopy>

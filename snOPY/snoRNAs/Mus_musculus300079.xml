@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300079'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-02-12</lastupdate>
+<blindnote>
+古西：Homo_sapiens300704　box D追加。duplex_region→1ベース目不一致(HOMO-a,MUS-g)。target RNA,modification type 入力。
+(2)duplex_region,modification site 入力（complementaryはHOMOに合わせた）。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD49</gene_name>
+<family_name>SNORD49</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>62416952..62417023</genome_position>
+<strand>+</strand>
+<box type='c'>6..11</box>
+<box type='d'>35..38, 67..70</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100059</host_id>
+<host_gene>Poly:13:SNORD49</host_gene>
+<host_intron></host_intron>
+<host_position>1372..1443</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C4108</mod_site>
+<duplex_region>28S|21..33|4117..4105|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGCTGTGATGAGATGACTAAGTAGGAAGTGCCGTCAGAGTCGATAACTGACGATAACTGC
+TCCTGGCTGACT
+</sequence>
+</snoopy>

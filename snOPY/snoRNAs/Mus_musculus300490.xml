@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300490'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-22</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。aliasはACA55にヒットしたが、PU guideの配列から、5'側のシーケンスが不足していると思われる。box Hを探し切れず。duplex_regionのcomplementary,modification siteは、snoRNABaseで示された配列と同じ位置関係を入力した。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA55</gene_name>
+<family_name>SNORA55</family_name>
+<alias>ACA55</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>127503372..127503471</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'>95..97</box>
+<host_id>Mus_musculus100336</host_id>
+<host_gene>Mono:509:SNORA55</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1100</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U36</mod_site>
+<duplex_region>18S|2..2|38..44|, 18S|33..36|35..32|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTCCCAGGCCTGCTGCTTGGTGCCAGTCTGGGGACAGAGGAAATCCAGACGGGTTGTTTC
+CATCTGTCCTGAGGTGTGTCTCTACAACTCTGCCACACTT
+</sequence>
+</snoopy>

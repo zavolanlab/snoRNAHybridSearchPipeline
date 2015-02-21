@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300773'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-17</lastupdate>
+<blindnote>
+SCARNA18 is registered based on snoRNABase.
+(20100615末安)genomic positionを変更した,accession No を加えた,evidenceはsnoRNAbaseがアクセスできないため未確認。
+(20100617末安)genomic positionを更新した,evidenceをsnoRNAbaseを参考に加えた。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SCARNA18</gene_name>
+<family_name>SCARNA18</family_name>
+<alias>U109</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>82360023..82360156</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>69..74</box>
+<box type='aca'>129..131</box>
+<host_id>Homo_sapiens100539</host_id>
+<host_gene>TMEM167A</host_gene>
+<host_intron></host_intron>
+<host_position>14024..14157</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>U1 snRNA</mod_rna>
+<mod_site>U1:U6</mod_site>
+<duplex_region>U1|80..83|11..8|,U1|115..119|5..1|</duplex_region>
+<accession>NR_003139 NT_006713</accession>
+<evidence>Gu, A. D., Zhou, H., Yu, C. H., and Qu, L. H. (2005). A novel experimental approach for systematic identification of box H/ACA snoRNAs from eukaryotes. Nucleic Acids Res 33, e194, Reddy, R., Henning, D., and Busch, H. (1981a). Pseudouridine residues in the 5'-terminus of uridine-rich nuclear RNA I (U1 RNA). Biochem Biophys Res Commun, 98, 1076-1083, Richard, P., Darzacq, X., Bertrand, E., Jady, B. E., Verheggen, C., and Kiss, T. (2003). A common sequence motif determines the Cajal body-specific localization of box H/ACA scaRNAs. Embo J, 22, 4283-4293.</evidence>
+<note></note>
+<sequence>
+TTGCATGTGGAAATGTCTGCTTCTCATTCCTTGGGAGCAGGAATATGTTCATAACATGCT
+ACATTAACAAAGGAGTTCTCAGGGCTGCCAACCTTCTAGTAAAGGTTGAGTGGTAGTATA
+TTTCTCCAACATAA
+</sequence>
+</snoopy>

@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300812'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-02-13</lastupdate>
+<blindnote>
+古西：Homo_sapiens300771  box D,duplex_region,target RNA,modification type 入力。
+(2)duplex_region,modification site 入力。duplex_region,modification site はHOMOに合わせた。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD71</gene_name>
+<family_name>SNORD71</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>8</chrom_or_contig>
+<genome_position>112363195..112363279</genome_position>
+<strand>+</strand>
+<box type='c'>12..17</box>
+<box type='d'>38..41, 73..76</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100596</host_id>
+<host_gene>Ap1g1</host_gene>
+<host_intron></host_intron>
+<host_position>61634..61718</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>5.8S rRNA</mod_rna>
+<mod_site>5.8S:U14</mod_site>
+<duplex_region>5.8S|24..36|23..11|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CGTGTGCTGGAGGATGAAGTAAGGAGTGATCCATCGGCTAAGTGTTTTCCCACTGTGCTG
+ACACTCACATTGCTGACAGTGCACG
+</sequence>
+</snoopy>

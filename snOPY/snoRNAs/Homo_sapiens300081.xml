@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300081'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-30</lastupdate>
+<blindnote>
+This snoRNA gene located with SNORA76 gene. There are no host gene. The EST is registered on Pan troglodytes. It include SNORD104. Another snoRNA database introduce it [Cluster of spliced ESTs (UniGene Hs.405444)]. http://www-snorna.biotoul.fr/plus.php?id=U104 It applears to be a polycistronic cluster. 
+(20100630末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD104</gene_name>
+<family_name>SNORD104</family_name>
+<alias>U104</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>62223443..62223512</genome_position>
+<strand>+</strand>
+<box type='c'>5..10</box>
+<box type='d'>65..68</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100053</host_id>
+<host_gene>Poly:10:AC025362.12</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1070</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C1327</mod_site>
+<duplex_region>28S|24..37|1337..1324</duplex_region>
+<accession>AY349605,NT_010783</accession>
+<evidence>Vitali, P., Royo, H., Seitz, H., Bachellerie, J. P., Huttenhofer, A., and Cavaille, J. (2003). Identification of 13 novel human modification guide RNAs. Nucleic Acids Res 31, 6543-6551.</evidence>
+<note></note>
+<sequence>
+GCTGTGATGACATTCCAATTAAAGCACGTGTTAGACTGCTGACGCGGGTGATGCGAACTG
+GAGTCTGAGC
+</sequence>
+</snoopy>

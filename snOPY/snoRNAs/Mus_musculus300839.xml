@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300839'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-27</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。aliasは、U70C、U70E、U70F、U70Gがヒット。一致率からU70Gとした。box H,box ACA,duplex_region,target RNA,modification type,modification site 入力。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA70</gene_name>
+<family_name>SNORA70</family_name>
+<alias>U70G</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position>163802112..163802229</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>59..64</box>
+<box type='aca'>113..115</box>
+<host_id>Mus_musculus100620</host_id>
+<host_gene>Prps2</host_gene>
+<host_intron></host_intron>
+<host_position>19403..19520</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1692</mod_site>
+<duplex_region>18S|72..76|1698..1694|, 18S|99..103|1691..1687|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CTGTATCCAATTAAACTAAGTCCCTTTCCCCGTGGAGCGTGCTGTGCCGTGGCTGCAAAC
+AGTAGGCTTCTTGGGAGGTTTTATATAGGGGTTTCTCTAAGAGACCTTGGGGACTGAA
+</sequence>
+</snoopy>

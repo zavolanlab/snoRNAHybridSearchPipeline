@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300582'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+In fishes, xenopus, opossum and rat (but not mouse), U36A is predicted to guide the methylation of both 18S rRNA A668 (human numbering) and 28S rRNA A3703 (as U36C). The proposed nomenclature of vertebrate U36A, B and C is based on sequence alignments rather than position in the conserved RPL7A host gene. (These comments was copied from snoRNABase)(http://www-snorna.biotoul.fr/plus.php?id=U36A) . sno/scaRNAs with same target 18S rRNA A668 : SNORD36A SNORD36B   sno/scaRNAs with same target 18S rRNA A668 : SNORD36A   SNORD36B
+(20100706末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD36A</gene_name>
+<family_name>SNORD36</family_name>
+<alias>U36A</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>136217311..136217382</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>65..68</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100411</host_id>
+<host_gene>RPL7A</host_gene>
+<host_intron></host_intron>
+<host_position>3235..3306</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:A668</mod_site>
+<duplex_region>18S|50..63|678..665|</duplex_region>
+<accession>X97584,NT_035014</accession>
+<evidence>Nicoloso, M., Qu, L. H., Michot, B., and Bachellerie, J. P. (1996). Intron-encoded, antisense small nucleolar RNAs: the characterization of nine novel species points to their direct role as guides for the 2'-O-ribose methylation of rRNAs. J Mol Biol, 260, 178-195.</evidence>
+<note></note>
+<sequence>
+TTGCAATGATGTGAATCTCTCACTGAATTCAACCTTGAAGTGCGAATCCATGAGCTTTTT
+AACCCTGAGCAA
+</sequence>
+</snoopy>

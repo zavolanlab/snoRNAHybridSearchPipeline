@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300566'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-05</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA C4506 : SNORD35A and SNORD35B
+(20100706末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD35A</gene_name>
+<family_name>SNORD35</family_name>
+<alias>U35A</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>19</chrom_or_contig>
+<genome_position>49994432..49994517</genome_position>
+<strand>+</strand>
+<box type='c'>4..9</box>
+<box type='d'>33..36, 74..77</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100400</host_id>
+<host_gene>RPL13A</host_gene>
+<host_intron></host_intron>
+<host_position>4569..4654</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C4506</mod_site>
+<duplex_region>28S|18..31|4516..4503|</duplex_region>
+<accession>NR_000018,NT_011109</accession>
+<evidence>Nicoloso, M., Qu, L. H., Michot, B., and Bachellerie, J. P. (1996). Intron-encoded, antisense small nucleolar RNAs: the characterization of nine novel species points to their direct role as guides for the 2'-O-ribose methylation of rRNAs. J Mol Biol, 260, 178-195.</evidence>
+<note></note>
+<sequence>
+GGCAGATGATGTCCTTATCTCACGATGGTCTGCGGATGTCCCTGTGGGAATGGCGACAAT
+GCCAATGGCTTAGCTGATGCCAGGAG
+</sequence>
+</snoopy>

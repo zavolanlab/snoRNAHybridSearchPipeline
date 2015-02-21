@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300356'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-06-26</lastupdate>
+<blindnote>
+gene name:AL022724.2->SNORA67-pseud.
+2009年6月26日（山元）gene name：SNORA67-pseud→SNORA67L6
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA67L6</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>6</chrom_or_contig>
+<genome_position>11818038..11818179</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>49..54</box>
+<box type='aca'>137..139</box>
+<host_id>Homo_sapiens100240</host_id>
+<host_gene>Mono:80:AL022724.2</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1142</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+ATCCAAGGTGAGTCTCTCTCCAAGGGGCTGACTAGTGCCTCTCTTAGGACAGTAGCAAGT
+TGGAATAAAATCTGGCATGCCTAAGGTCTTTAAGGAACAGGGGATGCTTACTTCTTTTGC
+GTTCCTCTGGCGGCCTACATAG
+</sequence>
+</snoopy>

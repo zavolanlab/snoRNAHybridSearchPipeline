@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300731'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-23</lastupdate>
+<blindnote>
+(20100623末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA54</gene_name>
+<family_name>SNORA54</family_name>
+<alias>ACA54</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>2985001..2985123</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>58..63</box>
+<box type='aca'>118..120</box>
+<host_id>Homo_sapiens100518</host_id>
+<host_gene>NAP1L4</host_gene>
+<host_intron></host_intron>
+<host_position>29485..29607</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3801,28S:U4539</mod_site>
+<duplex_region>28S|10..13|3807..3804|,28S|44..50|3800..3794|,28S|69..78|4550..4541|,28S|99..102|4538..4535|</duplex_region>
+<accession>AJ609479 NT_009237</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Schattner, P., Barberan-Soler, S., and Lowe, T. M. (2006). A computational screen for mammalian pseudouridylation guide H/ACA RNAs. Rna 12, 15-25.</evidence>
+<note></note>
+<sequence>
+GAGCACTGTTCGTAACCCGTTAGCCTGGCTGTAGCTAATGGGTTCCATTCCGGTGCAATA
+GCATTTCCAGCGACACATGACTGACTGACTGGTGGCTTTCAGTTTCAGGTCTTGGAGACA
+AAT
+</sequence>
+</snoopy>

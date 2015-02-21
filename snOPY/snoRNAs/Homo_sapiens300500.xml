@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300500'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-09-07</lastupdate>
+<blindnote>
+(20100708末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD94</gene_name>
+<family_name>SNORD94</family_name>
+<alias>U94</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>86362993..86363129</genome_position>
+<strand>+</strand>
+<box type='c'>8..13</box>
+<box type='d'>28..31, 129..132</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100356</host_id>
+<host_gene>PTCD3</host_gene>
+<host_intron></host_intron>
+<host_position>30656..30792</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>U6 snRNA</mod_rna>
+<mod_site>U6:C62</mod_site>
+<duplex_region>18S|17..26|68..59|</duplex_region>
+<accession>AY349593,NT_022184</accession>
+<evidence>Vitali, P., Royo, H., Seitz, H., Bachellerie, J. P., Huttenhofer, A., and Cavaille, J. (2003). Identification of 13 novel human modification guide RNAs. Nucleic Acids Res 31, 6543-6551.</evidence>
+<note></note>
+<sequence>
+caggctgtgatgattggcgcaggggtacggacctcagctgagtcatgggagctgaatgta
+tgtgtttctcctttgtcctgcatgtggcaggctgatggggagcacttacatgagactgtt
+gcctcaatctgagcctg
+</sequence>
+</snoopy>

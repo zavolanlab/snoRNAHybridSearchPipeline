@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300626'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-23</lastupdate>
+<blindnote>
+古西：保留
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA7</gene_name>
+<family_name>SNORA7</family_name>
+<alias>ACA7</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>51995818..51995939</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>39..44</box>
+<box type='aca'>117..119</box>
+<host_id>Mus_musculus100463</host_id>
+<host_gene>Mono:102:SNORA7</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1122</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site></mod_site>
+<duplex_region>28S|25..28|1394..1391|, 28S|59..65|1602..1596|, 28S|104..106|1593..1591|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAATTACTAGTATTCTGTCAGCTTCGGAAGCAGGAGGGAGAACAAGTCTAGCAGAGGGAC
+CCACTCCACTCCCAGTTTGCTCTGCTCGGTAGCTGGTGATTGGAAGACACTCTGCAACAT
+CA
+</sequence>
+</snoopy>

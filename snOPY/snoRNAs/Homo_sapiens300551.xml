@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300551'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-30</lastupdate>
+<blindnote>
+SNORA74A could also guide the pseudouridylation of U3 snRNA. There are many U3 genes. Homo_sapiens300112 was used. SNORA74B is not predicted to guide the pseudouridylation of U3 snRNA U8.
+(20100630末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA74A</gene_name>
+<family_name>SNORA74</family_name>
+<alias>U19</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>138614469..138614668</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>62..67</box>
+<box type='aca'>195..197</box>
+<host_id>Homo_sapiens100389</host_id>
+<host_gene>MATR3</host_gene>
+<host_intron></host_intron>
+<host_position>5678..5877</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA,U3 snoRNA</mod_rna>
+<mod_site>28S:U3741,28S:U3743,U3:U8</mod_site>
+<duplex_region>28S|12..15|3746..3743|,28S|48..55|3740..3733|,28S|150..155|3750..3745|,28S|181..184|3742..3739|,U3|148..154|16..10|,U3|181..186|7..2|</duplex_region>
+<accession>X94290,NT_034772</accession>
+<evidence>Ganot, P., Bortolin, M. L., and Kiss, T. (1997a). Site-specific pseudouridine formation in preribosomal RNA is guided by small nucleolar RNAs. Cell 89, 799-809, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268, Kiss, T., Bortolin, M. L., and Filipowicz, W. (1996). Characterization of the intron-encoded U19 RNA, a new mammalian small nucleolar RNA that is not associated with fibrillarin. Mol Cell Biol, 16, 1391-1400, Bortolin, M. L., and Kiss, T. (1998). Human U19 intron-encoded snoRNA is processed from a long primary transcript that possesses little potential for protein coding. Rna, 4, 445-454, Schattner, P., Barberan-Soler, S., and Lowe, T. M. (2006). A computational screen for mammalian pseudouridylation guide H/ACA RNAs. Rna 12, 15-25,R eddy R, Henning D, Busch H (1979) Nucleotide sequence of nucleolar U3B RNA. J Biol Chem 254: 11097-11105.</evidence>
+<note></note>
+<sequence>
+ATCCAGCGGTTGTCAGCTATCCAGGCTCATGTGGTGCCTGTGATGGTGTTACACTGTTGG
+AAGAGCAAACACTGTCTTTATTGAGGTTTGGCTCCAAGCACTGTTTTGGTGTTGTAGCTG
+AGTACCTTTGGGCAGTGTTTTGCACCTCTGAGAGTGGAATGACTCCTGTGGAGTTGATCC
+TAGTCTGGGTGCAAACAATT
+</sequence>
+</snoopy>

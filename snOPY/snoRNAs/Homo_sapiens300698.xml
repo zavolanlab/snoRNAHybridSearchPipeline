@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300698'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA G4588 : SNORD91A and SNORD91B 
+
+(20090709：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD91B</gene_name>
+<family_name>SNORD91</family_name>
+<alias>HBII-296B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>2179163..2179257</genome_position>
+<strand>-</strand>
+<box type='c'>13..18</box>
+<box type='d'>44..47, 79..82</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100493</host_id>
+<host_gene>TSR1</host_gene>
+<host_intron></host_intron>
+<host_position>9172..9266</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G4588</mod_site>
+<duplex_region>28S|28..43|4599..4584|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CTTAAGAGCCAATGATGTTTTTATTCAAAATGTCTGAACCTGTCTGAAGCATCCCAGTGA
+TGCAACTTCTGTGTGATACTGAGGCTTTTTTGCCA
+</sequence>
+</snoopy>

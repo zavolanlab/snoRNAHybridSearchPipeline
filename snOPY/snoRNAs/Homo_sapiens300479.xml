@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300479'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-07</lastupdate>
+<blindnote>
+gene name:AL049712.12->SNORD57
+(20100707末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD57</gene_name>
+<family_name>SNORD57</family_name>
+<alias>U57</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>20</chrom_or_contig>
+<genome_position>2637585..2637656</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>66..69</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100343</host_id>
+<host_gene>NOL5A</host_gene>
+<host_intron></host_intron>
+<host_position>5408..5479</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:A99</mod_site>
+<duplex_region>18S|50..65|110..95|</duplex_region>
+<accession>NR_002738,NT_011387</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.</evidence>
+<note></note>
+<sequence>
+TGGAGGTGATGAACTGTCTGAGCCTGACCTTGTAGAATGGAGGCAAAAAAACTGATTTAA
+TGAGCCTGATCC
+</sequence>
+</snoopy>

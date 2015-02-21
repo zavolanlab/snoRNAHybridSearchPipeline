@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300510'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-07</lastupdate>
+<blindnote>
+gene name:AC017104.8->SNORD82
+(20100707末安)snoRNABaseを参考にsequenceを5'側から2nt伸ばし、3'側から3nt伸ばした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD82</gene_name>
+<family_name>SNORD82</family_name>
+<alias>U82,Z25</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>232325079..232325153</genome_position>
+<strand>-</strand>
+<box type='c'>11..16</box>
+<box type='d'>36..39, 64..67</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100362</host_id>
+<host_gene>NCL</host_gene>
+<host_intron></host_intron>
+<host_position>5055..5124</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:A1678</mod_site>
+<duplex_region>18S|24..34|1687..1677|</duplex_region>
+<accession>NR_004398,NT_005403</accession>
+<evidence>Rebane, A., and Metspalu, A. (1999). U82, a novel snoRNA identified from the fifth intron of human and mouse nucleolin gene. Biochim Biophys Acta, 1446, 426-430. Duga,S., Asselta,R., Malcovati,M., Tenchini,M.L., Ronchi,S. and Simonic,T. The intron-containing L3 ribosomal protein gene (RPL3): sequence analysis and identification of U43 and of two novel intronic small ncleolar RNAs. Biochim. Biophys. Acta 1490 (3), 225-236 (2000).</evidence>
+<note></note>
+<sequence>
+ACAGCACAAATGATGAATAACAAAGGGACTTAATACTGAAACCTGATGTTACATTGTAGT
+GTGCTGATGTGCTGT
+</sequence>
+</snoopy>

@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300373'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+gene name:AC007448.14->SNORA8-pseud.
+2009年7月1日（山元）gene name：SNORA8-pseud→SNORA8L2
+
+(20090709：吉浜）SNORA8L2→SNORA8.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA8</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>62698047..62698185</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>63..68</box>
+<box type='aca'>134..136</box>
+<host_id>Homo_sapiens100257</host_id>
+<host_gene>Mono:271:AC007448.14</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1139</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGCACTGCATGGCATCTGCACCCAGCAGTTTACTCTTGCTAAGGTGTTCAAAGGTCAGTG
+CTATAGAAATTCAGTATCTGGCATCATTGGTTTTCTTGACTTTGTGCTTGTTAAACCTAG
+TATTTCTATTGATACAGTA
+</sequence>
+</snoopy>

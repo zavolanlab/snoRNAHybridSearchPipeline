@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300275'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+locusが表示されていなかったので調べなおしました。Homo_sapiens100210->Homo_sapiens100364
+
+(20090709：吉浜)ref.setを作るために、A→B
+
+(20090709：吉浜)Poly→intronic
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD116-22</gene_name>
+<family_name>SNORD116</family_name>
+<alias>HBII-85-22</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>15</chrom_or_contig>
+<genome_position>22886163..22886254</genome_position>
+<strand>+</strand>
+<box type='c'>8..13</box>
+<box type='d'>84..87</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100364</host_id>
+<host_gene></host_gene>
+<host_intron></host_intron>
+<host_position>43771..43862</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGATCGATGATGACTTCCATATGTACATTCCTTGGAAAGCTGAACAAAATGAGTGAAAAC
+TCTATACCGTCATCCTCGTCGAACTGAGGTCC
+</sequence>
+</snoopy>

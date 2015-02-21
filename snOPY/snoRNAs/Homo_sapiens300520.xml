@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300520'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-07</lastupdate>
+<blindnote>
+gene name:AC068213.7->SNORA24-pseud
+2009年6月17日（山元）SNORA24が他にもある。IDはHomo_sapiens300098。snoRNABaseにはHomo_sapiens300098が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA24-pseud->SNORA24L1 snoRNABaseより。Homo sapiens ACA24 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U863 and U609 of 18S rRNA. The pseudouridylation of U863 was previously reported by Maden and Wakeman (1988). The pseudouridylation of U609 was experimentally confirmed by primer extension mapping by Kiss et al. (2004). 
+(20090707：吉浜）SNORA24L1→SNORA24.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA24</gene_name>
+<family_name>SNORA24</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>15</chrom_or_contig>
+<genome_position>63364852..63364982</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>56..61</box>
+<box type='aca'>126..128</box>
+<host_id>Homo_sapiens100367</host_id>
+<host_gene>PARP16</host_gene>
+<host_intron></host_intron>
+<host_position>2090..2220</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U863,18S:U609</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CTCCATGTATCTTTGGGACCTGTCAAGTGTGGCAGTCTCCCTTCCTTGCCATGGAAGAGC
+ATATTCTTGTTTACCAGCAAAGCTGTCACCATTTAATTGGTATCAGATTCTGACTTGCAC
+AAGTAACATTC
+</sequence>
+</snoopy>

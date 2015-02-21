@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300737'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+snoRNABaseによると、18SrRNAと相補の配列が二カ所ある。5'側は変異を入れるとprocessingに影響するらしい。3'側には修飾の情報が記載されている。
+2009年6月19日（山元）snoRNABaseより。Homo sapiens C/D box snoRNA U14A. This snoRNA was originally cloned in the mouse by Maxwell and Martin (1986) and named "4.5S hybridizing RNA" or hybRNA, due to its capability to hybridize with 18S rRNA in vitro. Trinh-Rohlik and Maxwell (1988) and Li et al. (1990) recognized two domains of conserved complementarity between U14 and 18S rRNA. Li et al. (1990) found that the deletion of U14 (snR128) disrupts the production of 18S rRNA in the yeast S. cerevisiae, while Liang and Fournier (1995) showed that compensatory mutations in U14 domain A and 18S rRNA could restore 18S rRNA processing. In yeast, multiple base substitutions in domain A, but not domain B, are lethal (Jarmolowski et al., 1990). The two domains are however functionally interdependent, as points mutations in domain A that don't affect growth are lethal when combined with the disruption of base-pairing at the level of domain B (Liang and Fournier, 1995). U14 is also required for the processing of a pre-rRNA substrate in mouse extracts, although the substrate lacked the 18S element complementary to U14 domain B (Enright et al., 1996). Leverette et al. (1992) showed that mouse U14 snRNA is processed from introns of the hsc70 (heat shock cognate protein ) pre-mRNA. U14 was postulated to guide the 2'O-ribose methylation of 18S rRNA C462 at the level of domain B by Kiss-Laszlo et al. (1996). Base-pairing at the level of domain A could function as a chaperone in the processing of 18S rRNA. The human snoRNA U14A, and a closely related copy, U14B, reside in introns of the RPS13 gene.
+(20100906末安)genomic positionの探しなおしをしたところUCSC[Feb.2009(GRCh37/hg19)]の記載と違っていたので17053902..17053991→17097325..17097415に変更しました。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD14A</gene_name>
+<family_name>SNORD14</family_name>
+<alias>U14A</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>17097325..17097415</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>83..86</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100522</host_id>
+<host_gene>RPS13</host_gene>
+<host_intron></host_intron>
+<host_position>2800..2890</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:C462</mod_site>
+<duplex_region>18S|24..35|94..82|,18S|69..82|471..458|</duplex_region>
+<accession>NR_001452, NT_009237</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088. Maxwell, E. S., and Martin, T. E. (1986). A low-molecular-weight RNA from mouse ascites cells that hybridizes to both 18S rRNA and mRNA sequences. Proc Natl Acad Sci U S A, 83, 7261-7265., Trinh-Rohlik, Q., and Maxwell, E. S. (1988). Homologous genes for mouse 4.5S hybRNA are found in all eukaryotes and their low molecular weight RNA transcripts intermolecularly hybridize with eukaryotic 18S ribosomal RNAs. Nucleic Acids Res, 16, 6041-6056. Li, H. D., Zagorski, J., and Fournier, M. J. (1990). Depletion of U14 small nuclear RNA (snR128) disrupts production of 18S rRNA in Saccharomyces cerevisiae. Mol Cell Biol, 10, 1145-1152.Liang, W. Q., and Fournier, M. J. (1995). U14 base-pairs with 18S rRNA: a novel snoRNA interaction required for rRNA processing. Genes Dev, 9, 2433-2443, everette, R. D., Andrews, M. T., and Maxwell, E. S. (1992). Mouse U14 snRNA is a processed intron of the cognate hsc70 heat shock pre-messenger RNA. Cell, 71, 1215-1221.  Enright, C. A., Maxwell, E. S., Eliceiri, G. L., and Sollner-Webb, B. (1996). 5'ETS rRNA processing facilitated by four small RNAs: U14, E3, U17, and U3. Rna, 2, 1094-1099. Jarmolowski A, Zagorski J, Li HV, Fournier MJ (1990). Identification of essential elements in U14 RNA of Saccharomyces cerevisiae. EMBO J. 9(13):4503-9.</evidence>
+<note></note>
+<sequence>
+TCACTGTGATGATGGTTTTCCAACATTCGCAGTTTCCACCAGAAAGGTTTTCCTTAGTGT
+TGGGTAAACCTTCCTTGGATGTCTGAGTGAG
+</sequence>
+</snoopy>

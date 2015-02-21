@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300472'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-08</lastupdate>
+<blindnote>
+
+(20100708末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD98</gene_name>
+<family_name>SNORD98</family_name>
+<alias>HBII-419</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>10</chrom_or_contig>
+<genome_position>70514929..70514995</genome_position>
+<strand>+</strand>
+<box type='c'>4..9</box>
+<box type='d'>33..36, 60..63</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100340</host_id>
+<host_gene>CCAR1</host_gene>
+<host_intron></host_intron>
+<host_position>34959..35025</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:G867</mod_site>
+<duplex_region>18S|20..32|875..863|</duplex_region>
+<accession>NR_003076,NT_030059</accession>
+<evidence>Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953. Maden, B. E. (1990). The numerous modified nucleotides in eukaryotic ribosomal RNA. Prog Nucleic Acid Res Mol Biol, 39, 241-303.</evidence>
+<note></note>
+<sequence>
+GAGTTATGATGTGTGTAAATCCTATTCCATTGCTGAAATGCAGTGTGGAACACAATGAAC
+TGAACTC
+</sequence>
+</snoopy>

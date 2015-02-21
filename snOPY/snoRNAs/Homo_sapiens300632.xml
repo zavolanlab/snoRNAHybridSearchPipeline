@@ -1,0 +1,46 @@
+<snoopy id='Homo_sapiens300632'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2013-05-07</lastupdate>
+<blindnote>
+gene name:AL732366.7->SCARNA9-pseud.
+2009年6月25日（山元）gene name：SCARNA9L-pseud→SCARNA9L2
+
+吉浜：20130507：family name -> SCARNA9, gene name：SCARNA9L2->SCARNA9L1
+
+元のSCARNA9L1(Macaca_mulatta300657) は削除しました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SCARNA9L1</gene_name>
+<family_name>SCARNA9</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position></genome_position>
+<strand>-</strand>
+<box type='c'>34..39</box>
+<box type='d'>52..55,339..342</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100444</host_id>
+<host_gene>EIF1AX</host_gene>
+<host_intron></host_intron>
+<host_position>6424..6770</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TCTCTGAGATCTGCTTTTACTGAAGTGGATCAATGATGAAACTAGCCAAATCTGAGCATC
+AGAAGGCTTTCCGGTCTACCTGATGCATGATCTCTACAGTTCTGAGAAGCAGAACTATAA
+AACAATGTAAAACAATAAGGGCATATGTCTGGTGTGTGTGTGGGGGGTGTGTGTGTGTGT
+GCACGCACACGTGTTTATAAAGGTAGCAGTTGTAGGAATGAATGAGATTGGGGGTGAGGG
+GGTGCATATGTATGTCTATGAAAGCCTAATCATTTCTGGGCAATGATGTAAAGGTTTTAC
+GACTGACCTTTGTAACTATGAAGTTTTCTACACTTGACCTGAGCTCA
+</sequence>
+</snoopy>

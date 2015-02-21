@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300732'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AC087441.9->SNORA7B-pseud.
+2009年6月18日（山元）SNORA7Bが他にもある。IDはHomo_sapiens300612。snoRNABaseにはHomo_sapiens300612が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA7B-pseud->SNORA7BL1 snoRNABaseより。Homo sapiens H/ACA box snoRNA ACA7B. This snoRNA is a close paralogue of ACA7 cloned by Kiss et al. (2004). It is predicted to guide the pseudouridylation of both 28S rRNA U1569 and U1779. Both ACA7 and ACA7B are highly similar to the mouse H/ACA box snoRNA MBI-141 cloned by H�ttenhofer et al. (2001). From its host gene (RPL32), ACA7 has to be considered as the paralogue of MBI-141.
+(20090708：吉浜）SNORA7BL1→SNORA7B.　名前にLを付けないことにしました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA7B</gene_name>
+<family_name>SNORA7</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>3900373..3900509</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>61..66</box>
+<box type='aca'>132..134</box>
+<host_id>Homo_sapiens100519</host_id>
+<host_gene>STIM1</host_gene>
+<host_intron></host_intron>
+<host_position>67865..68001</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U1569,28S:U1779</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGCCTCCTGGGATCCCATCTGGAAAGTGCTTAGTATTCTGCCTGCTTCACAAAGGGAGGG
+AAAGCAAACGTGGTGAGGCACCCTTTCCATTCCAGCTTGCTCGGTAGCTGGTGATTGGAA
+GACACTCTGTGACAGCG
+</sequence>
+</snoopy>

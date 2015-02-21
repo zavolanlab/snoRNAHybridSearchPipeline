@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300116'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-01</lastupdate>
+<blindnote>
+ホスト：Homo_sapiens100087->Homo_sapiens100364
+(20100701末安)snoRNABaseを参考にsequenceを5'側から1nt増やし3'側から1nt増やした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD116-1</gene_name>
+<family_name>SNORD116</family_name>
+<alias>HBII-85-1</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>15</chrom_or_contig>
+<genome_position>25296623..25296719</genome_position>
+<strand>+</strand>
+<box type='c'>9..14</box>
+<box type='d'>88..91</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100364</host_id>
+<host_gene>hmm16326423</host_gene>
+<host_intron></host_intron>
+<host_position>5323..5419</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_003316,NT_026446</accession>
+<evidence>Runte, M., Huttenhofer, A., Gross, S., Kiefmann, M., Horsthemke, B., and Buiting, K. (2001). The IC-SNURF-SNRPN transcript serves as a host for multiple small nucleolar RNA species and as an antisense RNA for UBE3A. Hum Mol Genet, 10, 2687-2700, Cavaille, J., Buiting, K., Kiefmann, M., Lalande, M., Brannan, C. I., Horsthemke, B., Bachellerie, J. P., Brosius, J., and Huttenhofer, A. (2000). Identification of brain-specific and imprinted small nucleolar RNA genes exhibiting an unusual genomic organization. Proc Natl Acad Sci U S A, 97, 14311-14316, Cavaille, J., Seitz, H., Paulsen, M., Ferguson-Smith, A. C., and Bachellerie, J. P. (2002). Identification of tandemly-repeated C/D snoRNA genes at the imprinted human 14q32 domain reminiscent of those at the Prader-Willi/Angelman syndrome region. Hum Mol Genet, 11, 1527-1538, Meguro, M., Mitsuya, K., Nomura, N., Kohda, M., Kashiwagi, A., Nishigaki, R., Yoshioka, H., Nakao, M., Oishi, M., and Oshimura, M. (2001). Large-scale evaluation of imprinting status in the Prader-Willi syndrome region: an imprinted direct repeat cluster resembling small nucleolar RNA genes. Hum Mol Genet, 10, 383-394, de los Santos, T., Schweizer, J., Rees, C. A., and Francke, U. (2000). Small evolutionarily conserved RNA, resembling C/D box small nucleolar RNA, is transcribed from PWCR1, a novel imprinted gene in the Prader-Willi deletion region, which Is highly expressed in brain. Am J Hum Genet, 67, 1067-1082, Ding F, Prints Y, Dahr MS, Johnson DK, Garnacho-Montero C, et al. (2005) Lack of Pwcr1/MBII-85 snoRNA is critical for neonatal lethaly in Prader-Willi syndrome mouse models. Mamm Genome 16:424-431, Runte M, Varon R, Horn D, Horsthemke B, Buiting K. (2005) Exclusion of the C/D box snoRNA gene cluster HBII-52 from a major role in Prader-Willi syndrome. Hum Genet. 116:228-230.</evidence>
+<note></note>
+<sequence>
+TGGATCGATGATGAGTCCCCTATAAAAACATTCCTTGGAAAAGCTGAACAAAATGAGTGA
+GAACTCATAACGTCATTCTCATCGGAACTGAGGTCCA
+</sequence>
+</snoopy>

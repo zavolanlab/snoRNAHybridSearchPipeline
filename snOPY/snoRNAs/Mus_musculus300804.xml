@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300804'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-03-19</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。alias,box H,box ACA,duplex_region,target RNA,modification type,modification site 入力。duplex_regionのcomplementary,modification siteは、snoRNABaseで示された配列と同じ位置関係を入力した。 target RNAに18S rRNAは必要ないか？
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA19</gene_name>
+<family_name>SNORA19</family_name>
+<alias>ACA19</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>19</chrom_or_contig>
+<genome_position>60850233..60850364</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>62..67</box>
+<box type='aca'>127..129</box>
+<host_id>Mus_musculus100589</host_id>
+<host_gene>Eif3a</host_gene>
+<host_intron></host_intron>
+<host_position>17183..17314</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3386,28S:U3295,18S:U864</mod_site>
+<duplex_region>28S|8..14|3394..3388|,28S|48..54|3385..3379|, 28S|80..85|3302..3297|,28S|114..118|3294..3290|, 18S|7..13|872..866|, 18S|49..55|863..858|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTGCACATTTCATTGACCTGCTTTCTTTTGAAAATGTGAGCAGTGTTATTTCTTATGTGC
+TATACAAATAGTTGAAGGTTAATTAGCAGAGTAACTGAATATAGTAATTCTGCCAGTCTC
+CTTCAGACAAAA
+</sequence>
+</snoopy>

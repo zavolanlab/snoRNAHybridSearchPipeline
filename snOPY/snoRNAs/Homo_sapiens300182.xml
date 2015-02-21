@@ -1,0 +1,45 @@
+<snoopy id='Homo_sapiens300182'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+http://www-snorna.biotoul.fr/plus.php?id=U3-2B
+gene name: AC007952.15 -> SNORD3@
+This snoRNA is a close paralogue of U3 snoRNA (see U3 entry). The human genome contains five U3-related genes clustered on chr17p11.2: one copy of each U3, U3-3 and U3-4, and two copies of U3-2. None is identical to the U3a and U3b sequences published by Gao et al. (1997). From their restriction maps, U3b would correspond to U3-2, and U3a to U3-4. Compared to the 4 other copies of U3, the 5' domain of U3-4 contains two mutations, one of which in the conserved GAC box.
+GAC box：3..5
+box A：18..31
+
+(20090708：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD3@</gene_name>
+<family_name>SNORD3@</family_name>
+<alias>U3-2B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>18907959..18908174</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100131</host_id>
+<host_gene>Mono:260:AC007952.15</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1216</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>Unknown</mod_site>
+<duplex_region>18S|8..11|,18S|17..27|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAGACTATACTTTCAGGGATCATTTCTATAGTGTGTTACTAGAGAAGTTTCTCTGAACGT
+GTAGAGCACCGAAAACCCCGAGGAAGAGAGGTAGCGTTTTCTCCTGAGCGTGAAGCCGGC
+TTTCTGGCGTTGCTTGGCTGCAACTGCCGTCAGCCATTGATGATCGTTCTTCTCTCCGTA
+TTGGGGAGTGAGAGGGAGAGAACGCGGTCTGAGTGG
+</sequence>
+</snoopy>

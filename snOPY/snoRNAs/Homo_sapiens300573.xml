@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300573'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-02</lastupdate>
+<blindnote>
+gene name:AL137022.8->SNORD55-pseud.
+2009年7月2日（山元）gene name：SNORD55-pseud→SNORD55L1
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD55L1</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>21514306..21514384</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100405</host_id>
+<host_gene>AL353732.14</host_gene>
+<host_intron></host_intron>
+<host_position>36314..36392</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGAAACTATTGAGAACAAAGATGCAACATACCACTCGAGTGTGCAGTGGGGAAGCCAACC
+TTGGACAGCTGAGCATGTG
+</sequence>
+</snoopy>

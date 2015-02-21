@@ -1,0 +1,42 @@
+<snoopy id='Homo_sapiens300774'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-06-24</lastupdate>
+<blindnote>
+(20100615末安)genomic positionを変更した,accession No を加えた,evidenceはsnoRNAbaseがアクセスできないためNCBIのアノテーションから抜粋。
+(20100621末安)genomic positionを更新した。
+(20110624吉浜)U1:U70→U1:A70に訂正しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SCARNA7</gene_name>
+<family_name>SCARNA7</family_name>
+<alias>U90</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>3</chrom_or_contig>
+<genome_position>160232695..160233024</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>322..325</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100540</host_id>
+<host_gene>KPNA4</host_gene>
+<host_intron></host_intron>
+<host_position>51373..51683</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>U1 snRNA</mod_rna>
+<mod_site>U1:A70</mod_site>
+<duplex_region>U1|178..190|80..67|</duplex_region>
+<accession>NR_003001NT_005612</accession>
+<evidence>Darzacq,X. et. at. 2002, Cajal body-specific small nuclear RNAs: a novel class of   2'-O-methylation and pseudouridylation guide RNAs EMBO J. 21 (11), 2746-2756</evidence>
+<note></note>
+<sequence>
+TGGAAATGATGAAATAGAGATAATTGGGTGTTGAATGTTGTATGACTGGAAATTTTTAAT
+ATGTATATTATGTAATTCTTATAAGTTTAGTGTTTTATAGGTACTTAATAGAGAGTGTGT
+ATGCATGTGTGTGTGCTTGTGGTGGCTATGGAAAGGGGGCACTGACTGGTGATGCTGATA
+TTGGAGTGCATCTGAGGCTGTTGTAGAAATAACATGGGTTGTTGATTACAACATTGCCAA
+TGATTATAACCCAAGAACAGCTCACCTAACTAGCCTGGCACCCTAAAATCTCTAACAGGT
+TCATTAAAATGGTCCTGTGATCTGATCCAA
+</sequence>
+</snoopy>

@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300549'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AC008650.8->SNORA51-pseud.
+2009年6月17日（山元）SNORA51が他にもある。IDはHomo_sapiens300476。snoRNABaseにはHomo_sapiens300476が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA51-pseud->SNORA51L1 snoRNABaseより。Homo sapiens ACA51 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It has no identified target RNA. As the C/D box snoRNA HBII-55, ACA51 snoRNA gene is located in an intron the NOL5A (nucleolar protein 5A) gene. The NOL5A protein is the orthologue of the yeast Nop56p protein, and is a common constituent of the C/D box snoRNPs.
+(20090708：吉浜）SNORA51L1→SNORA51.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA51</gene_name>
+<family_name>SNORA51</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>110048394..110048527</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>45..50</box>
+<box type='aca'>129..131</box>
+<host_id>Homo_sapiens100387</host_id>
+<host_gene>AC012622.6</host_gene>
+<host_intron></host_intron>
+<host_position>42745..42878</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGCCTCCTGGTGCTTACAAGCAGCTGTGTGCTTGCATTGACTGTACAGAAAAAAAGAGAT
+AGAGTAAACACACCCCGTATACAACTCAGCCCAGGTCCTGTGCCTTGTCTATATTGTGAA
+TAGGGGGGACATAG
+</sequence>
+</snoopy>

@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300452'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-01</lastupdate>
+<blindnote>
+gene name:AL138702.8->SNORD116-9-pseud.
+2009年7月1日（山元）gene name：SNORD116-9-pseud→SNORD116-9L1
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD116-9L1</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>13</chrom_or_contig>
+<genome_position>39329278..39329364</genome_position>
+<strand>-</strand>
+<box type='c'>5..10</box>
+<box type='d'>43..46</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100320</host_id>
+<host_gene>Mono:153:AL138702.8</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1087</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AGATTGATGATGGCACCCCCATAAAACCATTCCTTAGGAAATCTGAACAAAATGAGTGAA
+AACTCACTAGTTGTTCTCATTGAGGCT
+</sequence>
+</snoopy>

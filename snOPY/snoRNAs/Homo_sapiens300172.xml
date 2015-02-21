@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300172'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-01</lastupdate>
+<blindnote>
+gene name:AC108863.4->SNORD38B-pseud.
+2009年7月1日（山元）gene name：SNORD38B-pseud→SNORD38BL3
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD38BL3</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>8</chrom_or_contig>
+<genome_position>38995291..38995359</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>61..64</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100122</host_id>
+<host_gene>Mono:287:AC108863.4</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1069</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TCTTAGTGATGAAAACTTTGTCCAGTTCTGCTAATGACTTTAAGTGATGATAAACTATGT
+CTGAGGGGA
+</sequence>
+</snoopy>

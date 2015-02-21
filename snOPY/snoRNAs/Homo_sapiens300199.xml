@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300199'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-07</lastupdate>
+<blindnote>
+It is predicted to guide the 2'O-ribose methylation of 28S rRNA A1521 and G1612. Methylation of A1521 is also guided by SNORD77.  SNORD77 and SNORD80 share same host gene.
+(20100707末安)snoRNABaseを参考にsequenceを5'側から2nt伸ばし、3'側から2nt伸ばした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD80</gene_name>
+<family_name>SNORD80</family_name>
+<alias>U80</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>173833967..173834044</genome_position>
+<strand>-</strand>
+<box type='c'>8..13</box>
+<box type='d'>27..30, 69..72</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100146</host_id>
+<host_gene>GAS5</host_gene>
+<host_intron></host_intron>
+<host_position>3843..3924</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:A1521,28S:G1612</mod_site>
+<duplex_region>28S|17..26|1526..1518|,28S|54..68|1622..1608|</duplex_region>
+<accession>AF141346,NT_004487</accession>
+<evidence>Smith, C. M., and Steitz, J. A. (1998). Classification of gas5 as a multi-small-nucleolar-RNA (snoRNA) host gene and a member of the 5'-terminal oligopyrimidine gene family reveals common features of snoRNA host genes. Mol Cell Biol 18, 6897-6909.</evidence>
+<note></note>
+<sequence>
+GATACAATGATGATAACATAGTTCAGCAGACTAACGCTGATGAGCAATATTAAGTCTTTC
+GCTCCTATCTGATGTATC
+</sequence>
+</snoopy>

@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300230'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+gene name:AC026992.12->SNORA77-pseud.
+2009年7月1日（山元）gene name：SNORA77-pseud→SNORA77L4
+
+(20090709：吉浜）SNORA77L4→SNORA77.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA77</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>15</chrom_or_contig>
+<genome_position>67404686..67404813</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>56..61</box>
+<box type='aca'>125..127</box>
+<host_id>Homo_sapiens100170</host_id>
+<host_gene>Mono:70:AC026992.12</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1128</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCAGACTCACTGTGCACCTGGCTGCAGGCCCAGGTGGGTGCTCGTTCCCTCTGCAAGAGA
+AACAAACATTCCAGGGTGCTGTGGCTGCCTGACCTATAAGGGCGATGCAGCTGCCTGGGG
+ATAGACAG
+</sequence>
+</snoopy>

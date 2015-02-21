@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300468'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+Three close paralogs (and a degenerated copy) reside in the RPL17 gene. Due to the lack of a consensus D'box, Yang et al. (2006) predicted that U58C (SNORD58C) guides the methylation of 28S rRNA U4197, whereas Kiss-Laszlo et al. (1996) predicted that U58A guides the methylation of 28S rRNA G4198. U58ABC might guide the methylation of both bases by a sliding mechanism.(comment from snoRNABase) sno/scaRNAs with same target 28S rRNA G4198, U4197 : SNORD58A SNORD58A SNORD58C
+(20100707末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD58A</gene_name>
+<family_name>SNORD58</family_name>
+<alias>U58A</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>18</chrom_or_contig>
+<genome_position>47017653..47017717</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>29..32, 57..60</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100180</host_id>
+<host_gene>RPL17</host_gene>
+<host_intron></host_intron>
+<host_position>2133..2197</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4197,28S:G4198</mod_site>
+<duplex_region>28S|16..28|4206..4194|</duplex_region>
+<accession>X96657,NT_010966</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.</evidence>
+<note></note>
+<sequence>
+CTGCAGTGATGACTTTCTTAGGACACCTTTGGATTTACCGTGAAAATTAATAAATTCTGA
+GCAGC
+</sequence>
+</snoopy>

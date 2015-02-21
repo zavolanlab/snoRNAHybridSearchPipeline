@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300707'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+gene name:TERC->SNORD4A.sno/scaRNAs with same target 18S rRNA U121 : SNORD4A SNORD4B   
+(20100707末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。accession NoがNCBIのものと違ったが既存のaccession No のほうが情報が新しいためそのままにしておいた。
+
+(20120412吉浜）locusの配列が変わったのでsnoRNA positionを変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD4A</gene_name>
+<family_name>SNORD4</family_name>
+<alias>mgh18S-121,Z17A</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>27049600..27049671</genome_position>
+<strand>+</strand>
+<box type='c'>9..14</box>
+<box type='d'>35..38, 63..66</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100497</host_id>
+<host_gene>RPL23A</host_gene>
+<host_intron></host_intron>
+<host_position>3589..3660</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U121</mod_site>
+<duplex_region>18S|24..33|127..118|</duplex_region>
+<accession>AF221907,NT_010799</accession>
+<evidence>Maden, B. E. (1990). The numerous modified nucleotides in eukaryotic ribosomal RNA. Prog Nucleic Acid Res Mol Biol, 39, 241-303.</evidence>
+<note></note>
+<sequence>
+GGTGCAGATGATGACACTGTAAAGCGACCAAAGTCTGAACAAAGTGATTGGTACCTCGTT
+GTCTGATGCACC
+</sequence>
+</snoopy>

@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300912'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-03-18</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。aliasがACA29であることを確認したが、そのTarget RNAがunknown。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA29</gene_name>
+<family_name>SNORA29</family_name>
+<alias>ACA29</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>13112451..13112588</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>61..66</box>
+<box type='aca'>129..131</box>
+<host_id>Mus_musculus100675</host_id>
+<host_gene>Tcp1</host_gene>
+<host_intron></host_intron>
+<host_position>4121..4258</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTTCCCATTTGACTACCACATTTTTCTCCTAATAGAGTTTAGTGGCTATGCTTATGGGAT
+AGATGAAAGGTGCCATGATCTGAAGAGGGGGAGCTGTCCTGTGTCTTTCCTCTATATGAA
+ATGGCTGAACAGAAACCA
+</sequence>
+</snoopy>

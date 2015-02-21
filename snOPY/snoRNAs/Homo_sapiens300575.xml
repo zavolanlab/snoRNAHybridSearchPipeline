@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300575'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-08</lastupdate>
+<blindnote>
+This snoRNA is the human orthologue of the mouse MBII-295 described by Htenhofer et al. (2001). It has no identified RNA target.
+(20100708末安)snoRNABaseを参考にsequenceを5'側から4nt短くした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD90</gene_name>
+<family_name>SNORD90</family_name>
+<alias>HBII-295</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>125642492..125642598</genome_position>
+<strand>-</strand>
+<box type='c'>20..25</box>
+<box type='d'>88..91</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100407</host_id>
+<host_gene>RC3H2</host_gene>
+<host_intron></host_intron>
+<host_position>18788..18898</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_003071,NT_008470</accession>
+<evidence>Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953.</evidence>
+<note></note>
+<sequence>
+AAGTTTTCTAAGTGTCTAATGATGAATTTCATAGGGCAGATTCTGAGGTGAAAATTTAAT
+TCATCACTGATACTCCTACTGTGGAATCTGAAGACACTTGAAAACGT
+</sequence>
+</snoopy>

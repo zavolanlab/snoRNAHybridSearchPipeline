@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300754'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-02-16</lastupdate>
+<blindnote>
+古西；Homo_sapiens300565 box D,duplex_region,target RNA,modification type 入力。
+(2)duplex_region,modification site 入力。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD34</gene_name>
+<family_name>SNORD34</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>52381971..52382040</genome_position>
+<strand>-</strand>
+<box type='c'>9..14</box>
+<box type='d'>35..38, 60..63</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100553</host_id>
+<host_gene>Rpl13a</host_gene>
+<host_intron></host_intron>
+<host_position>3068..3137</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U2590</mod_site>
+<duplex_region>28S|23..34|2597..2586|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AGCGTCTGTGATGTTCTGCTATTACCTACATTGTTTGAGCCTCATGAAAACCCCACTGGC
+TGAGACGCCT
+</sequence>
+</snoopy>

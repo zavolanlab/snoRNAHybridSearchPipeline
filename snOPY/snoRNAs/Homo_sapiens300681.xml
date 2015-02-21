@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300681'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AC006547.9->SNORA77-pseud.
+2009年6月18日（山元）SNORA77が他にもある。IDはHomo_sapiens300674。snoRNABaseにはHomo_sapiens300674が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA77-pseud->SNORA77L2 snoRNABaseより。Homo sapiens ACA63 snoRNA. This H/ACA box RNA was characterized by bioinformatics, and its expression verified by Northern blot and primer extension in mouse (Schattner et al., 2006). ACA63 is a primate-specific Type 3 snoRT. The parental copy, ACA63B, resides in the RANBP1 gene from human to chicken and fishes (Weber, 2006; Luo and Li, 2007).
+(20090708：吉浜）SNORA77L2→SNORA77.　名前にLを付けないことにしました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA77</gene_name>
+<family_name>SNORA77</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>22</chrom_or_contig>
+<genome_position>18493925..18494049</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>56..61</box>
+<box type='aca'>120..122</box>
+<host_id>Homo_sapiens100479</host_id>
+<host_gene>TUBA8</host_gene>
+<host_intron></host_intron>
+<host_position>1510680..1510804</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U814</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCAGACTCACTCTGCATCTGACTATACTTCCAGGCGGGTGCTTTTTCTGTCTGCCAGATA
+AACATTCCAGGGTGCTGTGGCCGCCTCACGTATCCAGAGTGATGCAGCTCCCTGGGGACA
+CAGGT
+</sequence>
+</snoopy>

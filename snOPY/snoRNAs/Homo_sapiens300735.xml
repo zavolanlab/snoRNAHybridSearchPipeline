@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300735'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-22</lastupdate>
+<blindnote>
+The sequence was changed based on snoRNABase (http://www-snorna.biotoul.fr/plus.php?id=ACA23). The old data was 9nt shorter than snoRNABase. The phylogenic analysis does not support the hypothesis that the 5' stem of ACA23 guides the pseudouridylation of 28S rRNA U4331. Rather, the genuine guide for this modification is ACA64.
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA23</gene_name>
+<family_name>SNORA23</family_name>
+<alias>ACA23</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>9450313..9450501</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>106..111</box>
+<box type='aca'>186..188</box>
+<host_id>Homo_sapiens100521</host_id>
+<host_gene>IPO7</host_gene>
+<host_intron></host_intron>
+<host_position>45110..45298</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3737,28S:U4331</mod_site>
+<duplex_region>28S|120..126|3745..3739|,28S|170..173|3736..3733|,28S|6..10|4337..4333|,28S|89..92|4330..4327|</duplex_region>
+<accession>AJ609438 NT_009237</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268</evidence>
+<note></note>
+<sequence>
+CATGGCTGCTGTAATGTGTGCATAGGTTTCATCTGTGTCTGGTAGCAGTGTCTGTCTGTG
+TTTTTCATTCAGATCTTGCTATCCACACAAACATCATGCGGCCAAAGAGTAACTTGGGAT
+CATAGTACTGGTCTAGTGTTGTCTCTGGACACATCTACCACTGGCCAGCCTCCAAATTCC
+CACACACAG
+</sequence>
+</snoopy>

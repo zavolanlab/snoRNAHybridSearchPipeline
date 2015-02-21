@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300502'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA U1692 : SNORA70 SNORA70B SNORA70C SNORA70D SNORA70E SNORA70F  SNORA70G.
+2009年6月18日（山元）snoRNABaseより。Homo sapiens U70F snoRNA. This H/ACA box snoRNA was described by Weber (2006) as a primate-specific U70 Type 3 snoRT, and was also identified by Luo and Li (2007). It is present in human, chimp, orangutan, rhesus and marmoset genomes. Twelve human U70 type 3 snoRTs reside in an intron of a known gene in the sense orientation, including U70B (USP34), U70C (ASTN2), U70D (PHLPPL), U70E (RAB30), U70F (COBLL1) and U70G (RAP1B) (Weber, 2006; Luo and Li, 2007). 
+(20090708)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA70F</gene_name>
+<family_name>SNORA70</family_name>
+<alias>U70F</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>165252399..165252533</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>64..69</box>
+<box type='aca'>64..66</box>
+<host_id>Homo_sapiens100358</host_id>
+<host_gene>COBLL1</host_gene>
+<host_intron></host_intron>
+<host_position>154642..154776</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1692</mod_site>
+<duplex_region>18S|82..86|1700..1696|,18S|116..120|1693..1689|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CTGCAGTCAATTAAGTGTACTGAGTTCCTTTCCTTATGGGGGCCCAGTGTGCAATGGCTG
+CAAACAGCAGCTTCCTTGGTGGTGTATGCAGCCTGTTTCCTCTATAGGTTGCTCTAAGGG
+ACCTTGATAATAGGC
+</sequence>
+</snoopy>

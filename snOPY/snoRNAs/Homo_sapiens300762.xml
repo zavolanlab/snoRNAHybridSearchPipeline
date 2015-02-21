@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300762'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-10-14</lastupdate>
+<blindnote>
+SNORD11 is obtained from NCBI.sno/scaRNAs with same target 18S rRNA G509 : SNORD11,SNORD11B
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD11</gene_name>
+<family_name>SNORD11</family_name>
+<alias>HBII-95</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig></chrom_or_contig>
+<genome_position>1..84</genome_position>
+<strand></strand>
+<box type='c'>9..14</box>
+<box type='d'>76..79</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100360</host_id>
+<host_gene>NOP5/NOP58</host_gene>
+<host_intron></host_intron>
+<host_position>28260..28343</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D Me</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:G509</mod_site>
+<duplex_region>18S|63..75|517..505|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GTGTTCAATGATGATTTCTATTTGTTTGCCTGATTTCCTTTTGGATAATGAAGGCATCTT
+TAGTCACTACCTCTTCTGAGACAC
+</sequence>
+</snoopy>

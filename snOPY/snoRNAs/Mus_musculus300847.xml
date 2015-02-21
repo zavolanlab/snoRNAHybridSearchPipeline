@@ -1,0 +1,39 @@
+<snoopy id='Mus_musculus300847'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-21</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。alias,box H,box ACA,target RNA,入力。 
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA53</gene_name>
+<family_name>SNORA53</family_name>
+<alias>ACA53</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>10</chrom_or_contig>
+<genome_position>90581036..90581281</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>147..152</box>
+<box type='aca'>242..244</box>
+<host_id>Mus_musculus100626</host_id>
+<host_gene>Slc25a3</host_gene>
+<host_intron></host_intron>
+<host_position>6432..6677</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AACATGCTTCCTTAGATCCACCTTTGTGGATGGGTCTTGGACTGAGTTCTACCTGTAAAC
+TTCTTGTTTCTTGTGGTTCCAGTCCAAGAAACGTCCAGCAACTTTGTTGGTTGTATAGTC
+GAAGGTGCTTGAGTCATTGGCATGTGAGACTAATATACCTGCATGCTAGTCTTCAGGTTC
+TGATGGAAGTGACATGCGTGATGCTGTCATGTGTTACTGTCAGGACTCGACTGGTGTGCG
+GACACG
+</sequence>
+</snoopy>

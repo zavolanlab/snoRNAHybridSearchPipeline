@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300780'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-17</lastupdate>
+<blindnote>
+(20100615末安)genomic positionを変更した,accession No を加えた,evidenceはsnoRNAbaseがアクセスできないため未確認。
+(20100617末安)genomic positionを更新したevidenceをsnoRNAbaseを参考に加えた。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SCARNA4</gene_name>
+<family_name>SCARNA4</family_name>
+<alias>ACA26</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>155895749..155895877</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>62..67 </box>
+<box type='aca'>124..126 </box>
+<host_id>Homo_sapiens100471</host_id>
+<host_gene>KIAA0907</host_gene>
+<host_intron></host_intron>
+<host_position>9312..9440</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>U2 snRNA</mod_rna>
+<mod_site>U2:U39,U2:U41 </mod_site>
+<duplex_region>U2|11..16|48..43|,U2|46..50|40..36|,U2|76..82|47..41|,U2|111..118|37..30|</duplex_region>
+<accession>NR_003005 NT_004487</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Shibata, H., Ro-Choi, T. S., Reddy, R., Choi, Y. C., Henning, D., and Busch, H. (1975). The primary nucleotide sequence of nuclear U-2 ribonucleic acid. The 5'-terminal portion of the molecule. J Biol Chem, 250, 3909-3920.</evidence>
+<note></note>
+<sequence>
+ACTGGAGGACTAAGAAGGCTGAGTCTGATGAAGTAAGACTTTGCTGATACATTCCTCCTA
+GAAAAAAGGGTTGGAGAGAGCAGCCTTCACTGAAGAGTATCACAGGGCTGACTGTACTAC
+CCAACACTC
+</sequence>
+</snoopy>

@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300666'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AL357314.11->SNORD45C. sno/scaRNAs with same target 18S rRNA A159 : SNORD45A SNORD45C. sno/scaRNAs with same target 18S rRNA U172 : SNORD45A SNORD45B
+
+(20090708：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD45C</gene_name>
+<family_name>SNORD45</family_name>
+<alias>U45C</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>76025345..76025423</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>70..73</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100468</host_id>
+<host_gene>RABGGTB</host_gene>
+<host_intron></host_intron>
+<host_position>1872..1950</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:A159</mod_site>
+<duplex_region>18S|53..69|171..155|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGTCAATGATGAGTTGGCATGTATTCTGAATCTAAAGTTGATTATTACTACTTTAGCTCT
+AGAATTACTCTGAGACCTG
+</sequence>
+</snoopy>

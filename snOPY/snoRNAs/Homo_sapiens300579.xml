@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300579'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+SNORD62A and a second exact copy, SNORD62B, reside in the same host gene (KIAA0515 hypothetical protein). sno/scaRNAs with same target 18S rRNA A590 : SNORD62A SNORD62B
+
+(20090709：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD62B</gene_name>
+<family_name>SNORD62</family_name>
+<alias>U62B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>133355694..133355779</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>30..33, 79..82</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100410</host_id>
+<host_gene>KIAA0515</host_gene>
+<host_intron></host_intron>
+<host_position>97394..97479</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:A590</mod_site>
+<duplex_region>18S|15..29|600..586|</duplex_region>
+<accession>U72851</accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TCTCAGTGATGTAATTCCAATAGATCCTTCTGACCCTCCACTGTGGACTCAATAGCAGGG
+AGATGAAGAGGACAGTGACTGAGAGA
+</sequence>
+</snoopy>

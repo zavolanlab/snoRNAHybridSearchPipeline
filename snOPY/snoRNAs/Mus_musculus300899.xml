@@ -1,0 +1,38 @@
+<snoopy id='Mus_musculus300899'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA73</gene_name>
+<family_name>SNORA73</family_name>
+<alias>U17b</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>120038469..120038671</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>106..111</box>
+<box type='aca'>198..200</box>
+<host_id>Mus_musculus100665</host_id>
+<host_gene>Rpsa</host_gene>
+<host_intron></host_intron>
+<host_position>2565..2767</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CCAACGTGGACAACCCAGGAGGTCACTCTCCCTGGGCTCTGTCCTAGTGGCATAGGGGAG
+CATAGGCCTTGCCCAGTGACGTACAGTCCCTTTCCACGGCGTTGGAGATGAAGCTGGGCT
+TTGTGCCCGCGCCTGCATATTCCTACGACTTCTCAGAGTCCTGTGGACAGTGACTGAGGA
+GGCAAACCATGCAGGAAACAGTG
+</sequence>
+</snoopy>

@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300345'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+gene name:AP000577.5->SNORA7A-pseud.
+2009年7月1日（山元）gene name：SNORA7A-pseud→SNORA7AL2
+
+(20090709：吉浜）SNORA7AL2→SNORA7A.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA7A</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>73641107..73641245</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'>134..136</box>
+<host_id>Homo_sapiens100229</host_id>
+<host_gene>Mono:314:AP000577.5</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1139</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GAGCTTCCAGGATCACCCCTGCAGAGTGGCTAATATTCTGCCAGCTTCGGAAAGGGAGGG
+GAAGCAAGCCTGGCAGAGGCACCCATTCCATTCCCAGCTTGCTTAGTAGCTGGCCATGGG
+AAGACACTGTGCAACACTG
+</sequence>
+</snoopy>

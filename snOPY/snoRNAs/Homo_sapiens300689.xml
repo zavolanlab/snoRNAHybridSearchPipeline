@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300689'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2013-03-28</lastupdate>
+<blindnote>
+SNORA2A and SNORA2B is predicted to guide pseudouridylation of U4263 and U4282 in 28S rRNA. Pseudouridylation of U4282 in 28S rRNA is guided also SNORA34. The snoRNAs (SNORA2A, SNORA2B, SNORA34) share the same host gene (C12orf41). 
+(20090707)ref.setを作るために、A→B
+(20130328安川)duplex_regionの28S|9..15|4271..7265|を28S|9..15|4271..4265|に訂正した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA2B</gene_name>
+<family_name>SNORA2</family_name>
+<alias>ACA2b</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>12</chrom_or_contig>
+<genome_position>47347507..47347643</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>58..63</box>
+<box type='aca'>132..134</box>
+<host_id>Homo_sapiens100485</host_id>
+<host_gene>C12orf41</host_gene>
+<host_intron></host_intron>
+<host_position>15628..15764</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4263,28S:U4282</mod_site>
+<duplex_region>28S|9..15|4271..4265|,28S|44..47|4262..4259|,28S|73..82|4293..4284|,28S|118..120|4281..4279|</duplex_region>
+<accession>AJ609427</accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTGGCCCTGAATCAAGGCCAGCAGTTTGCTGAAGCTGTTGGTTTCAAGCAGGAGCCTAAA
+GAATTGTCTTTCTATGGTCTGTTGGCCATTTCATAACTTTGGAAATGTAATGGTCAATTC
+ATTAGAAAGAAACATGA
+</sequence>
+</snoopy>

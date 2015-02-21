@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300525'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-05-11</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。aliasがACA56にヒット。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA17</gene_name>
+<family_name>SNORA17</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>90106612..90106743</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>62..67</box>
+<box type='aca'></box>
+<host_id>Mus_musculus100371</host_id>
+<host_gene>Mono:183:SNORA17</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1132</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CCTGACTCTAGAGGCTTTTCAGGAGTGGCTGTTGTATCACGCGTGCATAGGTAGATGGCA
+GAGAGGAGAGAGCCTATGTCTATGCTCAATGTTCTGACCTGGAAATATCTGAATGTTTAG
+TAATCTAATACT
+</sequence>
+</snoopy>

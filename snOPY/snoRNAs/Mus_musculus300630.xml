@@ -1,0 +1,38 @@
+<snoopy id='Mus_musculus300630'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-09-26</lastupdate>
+<blindnote>
+
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>U3</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base></family_base>
+<chrom_or_contig>4</chrom_or_contig>
+<genome_position>55312528..55312717</genome_position>
+<strand>-</strand>
+<box type='c'>133..138</box>
+<box type='d'>183..186</box>
+<box type='h'>2..7</box>
+<box type='aca'>178..180</box>
+<host_id>Mus_musculus100467</host_id>
+<host_gene>Mono:468:U3</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1190</host_position>
+<organization>Mono</organization>
+<mod_type></mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAGACTATACTTTCAGGGATCATTTCTATAGTTCATTACTAGAGAAGTTTCTCTGACTGT
+GCAGAGCACCCACAACCACCTGAGCGTGAAGCCGGCTCTAGGTGCTGCTTGATTGCAGCT
+GCCTCTTGCCATTGATGATTGTTCTTCTCTCCTTTGGGAAGGTGAGAGGGAGGGAACACA
+GTCTGAGTGG
+</sequence>
+</snoopy>

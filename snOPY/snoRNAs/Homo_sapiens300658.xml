@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300658'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AL160000.15->SNORA62-pseud.
+2009年6月18日（山元）SNORA62が他にもある。IDはHomo_sapiens300604。snoRNABaseにはHomo_sapiens300604が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA62-pseud->SNORA62L1 snoRNABaseより。
+Homo sapiens E2 snoRNA. This H/ACA box snoRNA was cloned by Ruff et al. (1993). Psoralen cross-linking experiments showed that E2 interacts with human pre-rRNA within residues 3282 to 3667 of the 28S rRNA sequence (Rimoldi et al. 1993). E2 RNA degradation of frog oocytes shut down production of 18S rRNA and 36S pre-rRNA, suggesting that E2 snoRNA is involved in rRNA processing at the 3' end of 18S RNA (site 2) (Mishra and Eliceiri, 1997). Ganot et al. (1997a) recognised its hairpin-hinge-hairpin-tail structure characteristic of H/ACA box snRNAs. The role of E2 in guiding pseudouridylation of residues U3830 and U3832 in 28S rRNA was evidenced by Ganot et al. (1997b). The pseudouridylation of these residues was previously reported by Ofengand and Bakin (1997). The snoRNAs E2 and ACA6 share the same host gene (LAMR1).
+(20090708：吉浜）SNORA62L1→SNORA62.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA62</gene_name>
+<family_name>SNORA62</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>35548462..35548613</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>71..76</box>
+<box type='aca'>147..149</box>
+<host_id>Homo_sapiens100463</host_id>
+<host_gene>ZMYM4</host_gene>
+<host_intron></host_intron>
+<host_position>42308..42459</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3830,28S:U3832</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAGGCAGCATTGTTGTAGATGATTTGAAAGATTTTAAAAGGTATAAGCTCACAAGTGTAG
+GTAGTGTGCTACATGAGGGGCAAGTTTTTCACTAATATTACAAGGGTCTCTGATCCAGTG
+AGTGGAGTTTGATAGTAATTTTTGATACAAGT
+</sequence>
+</snoopy>

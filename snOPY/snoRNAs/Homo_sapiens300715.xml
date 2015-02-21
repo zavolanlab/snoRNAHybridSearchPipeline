@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300715'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-07</lastupdate>
+<blindnote>
+gene name:AC061992.11->SNORA30-pseud
+2009年6月17日（山元）SNORA30が他にもある。IDはHomo_sapiens300587。snoRNABaseにはHomo_sapiens300587が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA30-pseud->SNORA30L1 snoRNABaseより。Homo sapiens ACA30 snoRNA. This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U4643 of 28S rRNA. The pseudouridylation of this residue was previously reported by Ofengand and Bakin (1997). ACA30 resides in the SRCAP gen from human to xenopus. Intragenic duplication of ACA30 in the SRCAP gene is observed in xenopus and opossum. A close paralogue, ACA30b, resides in the KIAA1797 gene in primates and dog, and is mutated in cat, mouse, rat and cow. Primate-specific Type 1 snoRTs reside in the PSG1 and MBD2 genes. The ACA37 snoRNA is a primate-specific retrocopy of, most probably, ACA30b (Weber, 2006; Luo and Li, 2007). In fugu, medaka and tetraodon, a single ACA30-like sequence resides in the KIF22 gene. In zebrafish, four related sequences reside in the KIF22 gene.
+(20090707：吉浜）SNORA30L1→SNORA30.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA30</gene_name>
+<family_name>SNORA30</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>73907611..73907739</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..65</box>
+<box type='aca'>124..126</box>
+<host_id>Homo_sapiens100503</host_id>
+<host_gene>PGS1</host_gene>
+<host_intron></host_intron>
+<host_position>22282..22410</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4643</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGGGCCCTTTCACAGGCCCTCCCCTCGGCAGTGGGGCCAGGATTGGGTTGCTGGTGCTGA
+GAGAAAGCCCTTGATTGCATCCTTGCTCTGGGACTGTACCAGTGGCAGCTGTCACTTAGT
+GGGACAGAG
+</sequence>
+</snoopy>
