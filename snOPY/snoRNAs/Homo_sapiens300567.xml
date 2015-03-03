@@ -15,7 +15,7 @@ sno/scaRNAs with same target 28S rRNA C4506 : SNORD35A and SNORD35B
 <alias>U35B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>19</chrom_or_contig>
-<genome_position>54692789..54692875</genome_position>
+<genome_position>50000976..50001063</genome_position>
 <strand>+</strand>
 <box type='c'>4..9</box>
 <box type='d'>32..35, 75..78</box>

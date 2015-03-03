@@ -14,7 +14,7 @@ Three close paralogs (and a degenerated copy) reside in the RPL17 gene. Due to t
 <alias>U58B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>18</chrom_or_contig>
-<genome_position>45272032..45272097</genome_position>
+<genome_position>47018034..47018099</genome_position>
 <strand>-</strand>
 <box type='c'>4..9</box>
 <box type='d'>30..33, 58..61</box>

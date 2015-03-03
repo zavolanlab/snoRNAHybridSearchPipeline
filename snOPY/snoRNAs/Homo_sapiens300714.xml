@@ -13,7 +13,7 @@ sno/scaRNAs with same target 28S rRNA G4362 : SNORD1A, SNORD1B,SNORD1C (comment 
 <alias>snR38C</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>17</chrom_or_contig>
-<genome_position>72066468..72066545</genome_position>
+<genome_position>74554872..74554951</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>33..36, 68..71</box>

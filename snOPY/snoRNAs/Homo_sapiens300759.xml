@@ -10,9 +10,9 @@ SNORD5 is obtained from snoRNABase (http://www-snorna.biotoul.fr/plus.php?id=mgh
 <family_name>SNORD5</family_name>
 <alias>mgh28S-2409</alias>
 <family_base>Homo_sapiens</family_base>
-<chrom_or_contig>17</chrom_or_contig>
-<genome_position>1..73</genome_position>
-<strand>+</strand>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>93466394..93466466</genome_position>
+<strand>-</strand>
 <box type='c'>8..13</box>
 <box type='d'>65..68</box>
 <box type='h'></box>

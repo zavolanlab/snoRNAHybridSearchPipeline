@@ -11,8 +11,8 @@ sno/scaRNAs with same target 18S rRNA U799 : SNORD105 SNORD105B
 <alias>U105B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>19</chrom_or_contig>
-<genome_position>1..79</genome_position>
-<strand></strand>
+<genome_position>10220425..10220516</genome_position>
+<strand>+</strand>
 <box type='c'>12..17</box>
 <box type='d'>66..69</box>
 <box type='h'></box>

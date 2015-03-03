@@ -11,7 +11,7 @@
 <alias>HBII-437</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>15</chrom_or_contig>
-<genome_position>25232072..25232142</genome_position>
+<genome_position>25232072..25232140</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'></box>

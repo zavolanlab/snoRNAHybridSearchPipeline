@@ -14,7 +14,7 @@ sno/scaRNAs with same target 28S rRNA C3680 : SNORD88A   SNORD88B   SNORD88C
 <alias>HBII-180B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>19</chrom_or_contig>
-<genome_position>55994101..55994191</genome_position>
+<genome_position>51302286..51302382</genome_position>
 <strand>-</strand>
 <box type='c'>10..15</box>
 <box type='d'>29..32, 81..84</box>

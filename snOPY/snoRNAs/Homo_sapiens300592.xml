@@ -13,7 +13,7 @@
 <alias>HBII-82B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>16</chrom_or_contig>
-<genome_position>69120913..69120992</genome_position>
+<genome_position>70563402..70563502</genome_position>
 <strand>+</strand>
 <box type='c'>11..16</box>
 <box type='d'>37..40, 69..72</box>

@@ -11,8 +11,8 @@ SNORD127 is obtained from snoRNABase.
 <alias></alias>
 <family_base></family_base>
 <chrom_or_contig>14</chrom_or_contig>
-<genome_position>1..86</genome_position>
-<strand></strand>
+<genome_position>45580078..45580178</genome_position>
+<strand>+</strand>
 <box type='c'>10..15</box>
 <box type='d'>75..78</box>
 <box type='h'></box>

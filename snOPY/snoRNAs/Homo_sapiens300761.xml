@@ -10,9 +10,9 @@ SNORD10 is obtained from snoRNABase.
 <family_name>SNORD10</family_name>
 <alias>mgU6-77</alias>
 <family_base>Homo_sapiens</family_base>
-<chrom_or_contig></chrom_or_contig>
-<genome_position>1..148</genome_position>
-<strand></strand>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>7480129..7480276</genome_position>
+<strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>135..138 </box>
 <box type='h'></box>

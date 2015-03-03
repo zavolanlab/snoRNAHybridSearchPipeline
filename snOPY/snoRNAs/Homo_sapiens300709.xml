@@ -16,7 +16,7 @@ sno/scaRNAs with same target 18S rRNA U121 : SNORD4A SNORD4B
 <alias>Z17B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>17</chrom_or_contig>
-<genome_position>24074827..24074898</genome_position>
+<genome_position>27050699..27050772</genome_position>
 <strand>+</strand>
 <box type='c'>9..14</box>
 <box type='d'>34..37, 62..65</box>

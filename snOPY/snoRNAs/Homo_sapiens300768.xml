@@ -10,9 +10,9 @@ SNORD11B is registrationed based on snoRNABase. sno/scaRNAs with same target 18S
 <family_name>SNORD11</family_name>
 <alias>HBII-95B</alias>
 <family_base></family_base>
-<chrom_or_contig></chrom_or_contig>
-<genome_position>1..90</genome_position>
-<strand></strand>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>203156054..203156144</genome_position>
+<strand>+</strand>
 <box type='c'>10..15</box>
 <box type='d'>79..82</box>
 <box type='h'></box>
@@ -30,7 +30,6 @@ SNORD11B is registrationed based on snoRNABase. sno/scaRNAs with same target 18S
 <evidence></evidence>
 <note></note>
 <sequence>
-TGATGGCAATGATGATTTTTACACTTATTGTTGTTCACCTGATAACATAAATATGAGGGT
-GTTCAGTCACTACCTCATCTGATGCCATCA
+TGATGGCAATGATGATTTTTACACTTATTGTTGTTCACCTGATAACATAAATATGAGGGTGTTCAGTCACTACCTCATCTGATGCCATCA
 </sequence>
 </snoopy>

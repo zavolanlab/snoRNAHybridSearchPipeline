@@ -13,7 +13,7 @@
 <alias>U18C</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>15</chrom_or_contig>
-<genome_position>64580642..64580710</genome_position>
+<genome_position>66793590..66793656</genome_position>
 <strand>-</strand>
 <box type='c'>7..12</box>
 <box type='d'>36..39, 62..65</box>

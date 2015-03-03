@@ -11,7 +11,7 @@
 <alias>U59B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>12</chrom_or_contig>
-<genome_position>55323731..55323801</genome_position>
+<genome_position>57037464..57037538</genome_position>
 <strand>-</strand>
 <box type='c'>7..12</box>
 <box type='d'>35..38, 63..66</box>

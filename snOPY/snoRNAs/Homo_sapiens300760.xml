@@ -11,8 +11,8 @@ SNORD54 is obtained from SnoRNABase.
 <alias>U54</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>8</chrom_or_contig>
-<genome_position>1..63</genome_position>
-<strand>+</strand>
+<genome_position>56986398..56986460</genome_position>
+<strand>-</strand>
 <box type='c'>7..12 </box>
 <box type='d'>57..60</box>
 <box type='h'></box>

@@ -14,7 +14,7 @@ sno/scaRNAs with same target 18S rRNA A159 : SNORD45A SNORD45C. sno/scaRNAs with
 <alias>U45B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>1</chrom_or_contig>
-<genome_position>76027750..76027821</genome_position>
+<genome_position>76255162..76255232</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>28..31, 63..66</box>

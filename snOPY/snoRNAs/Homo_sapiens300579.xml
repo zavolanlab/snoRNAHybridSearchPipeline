@@ -14,7 +14,7 @@ SNORD62A and a second exact copy, SNORD62B, reside in the same host gene (KIAA05
 <alias>U62B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>9</chrom_or_contig>
-<genome_position>133355694..133355779</genome_position>
+<genome_position>134365873..134365958</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>30..33, 79..82</box>

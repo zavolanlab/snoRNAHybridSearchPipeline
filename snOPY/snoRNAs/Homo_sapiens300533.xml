@@ -14,7 +14,7 @@ This snoRNA is a paralogue of U50, with mutations in both anti-sense guiding seq
 <alias>U50B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>6</chrom_or_contig>
-<genome_position>86444026..86444095</genome_position>
+<genome_position>86387307..86387377</genome_position>
 <strand>-</strand>
 <box type='c'>7..12</box>
 <box type='d'>64..67</box>

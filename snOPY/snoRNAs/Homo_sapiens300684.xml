@@ -11,7 +11,7 @@
 <alias>U83B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>22</chrom_or_contig>
-<genome_position>38039770..38039862</genome_position>
+<genome_position>39709824..39709916</genome_position>
 <strand>-</strand>
 <box type='c'>10..15</box>
 <box type='d'>83..86</box>

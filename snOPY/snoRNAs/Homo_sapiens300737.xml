@@ -14,7 +14,7 @@ snoRNABaseによると、18SrRNAと相補の配列が二カ所ある。5'側は�
 <alias>U14A</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>11</chrom_or_contig>
-<genome_position>17097325..17097415</genome_position>
+<genome_position>17096200..17096291</genome_position>
 <strand>-</strand>
 <box type='c'>7..12</box>
 <box type='d'>83..86</box>

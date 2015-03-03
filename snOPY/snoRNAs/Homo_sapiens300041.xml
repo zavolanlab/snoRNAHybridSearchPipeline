@@ -14,7 +14,7 @@ modified box D by Konishi 09/01/27
 <alias>snR38B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>17</chrom_or_contig>
-<genome_position>72068786..72068869</genome_position>
+<genome_position>74557190..74557275</genome_position>
 <strand>+</strand>
 <box type='c'>10..15</box>
 <box type='d'>33..36, 74..77</box>

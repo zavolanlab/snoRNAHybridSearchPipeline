@@ -14,7 +14,7 @@ sno/scaRNAs with same target 28S rRNA G4588 : SNORD91A and SNORD91B
 <alias>HBII-296B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>17</chrom_or_contig>
-<genome_position>2179163..2179257</genome_position>
+<genome_position>2232419..2232504</genome_position>
 <strand>-</strand>
 <box type='c'>13..18</box>
 <box type='d'>44..47, 79..82</box>

@@ -16,7 +16,7 @@ Homo sapiens C/D box snoRNA U38B. This snoRNA was initially characterized by a b
 <alias>U38B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>1</chrom_or_contig>
-<genome_position>45016649..45016717</genome_position>
+<genome_position>45244062..45244130</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>34..37, 61..64</box>

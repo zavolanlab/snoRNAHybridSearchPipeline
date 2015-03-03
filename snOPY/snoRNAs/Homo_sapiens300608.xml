@@ -13,7 +13,7 @@ sno/scaRNAs with same target 18S rRNA G683 : SNORD19   SNORD19B
 <alias>HBII-108B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>3</chrom_or_contig>
-<genome_position>52699808..52699884</genome_position>
+<genome_position>52724754..52724846</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>61..64</box>
@@ -32,7 +32,6 @@ sno/scaRNAs with same target 18S rRNA G683 : SNORD19   SNORD19B
 <evidence></evidence>
 <note></note>
 <sequence>
-GAAATATGATGAGTGTACAAAATCTTGATTTAAGTGAATGAAAAATTACAAGATCCAACT
-CTGATTTCAGCCAGAGA
+GAAATATGATGAGTGTACAAAATCTTGATTTAAGTGAATGAAAAATTACAAGATCCAACTCTGATTTCAGCCAGAGA
 </sequence>
 </snoopy>

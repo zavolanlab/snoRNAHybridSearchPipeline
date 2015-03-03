@@ -12,7 +12,7 @@
 <alias>U15B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>11</chrom_or_contig>
-<genome_position>74793113..74793258</genome_position>
+<genome_position>75115465..75115610</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>138..141</box>

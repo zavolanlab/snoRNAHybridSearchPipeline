@@ -14,7 +14,7 @@ U36B is predicted to guide the methylation of both 18S rRNA A668 (human numberin
 <alias>U36B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>9</chrom_or_contig>
-<genome_position>135206771..135206843</genome_position>
+<genome_position>136216949..136217019</genome_position>
 <strand>+</strand>
 <box type='c'>7..12</box>
 <box type='d'>65..68</box>

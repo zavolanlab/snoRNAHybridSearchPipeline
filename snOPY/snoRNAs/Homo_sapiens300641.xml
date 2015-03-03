@@ -11,7 +11,7 @@
 <alias>U96b</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>X</chrom_or_contig>
-<genome_position>109354869..109354947</genome_position>
+<genome_position>109468217..109468288</genome_position>
 <strand>-</strand>
 <box type='c'>9..14</box>
 <box type='d'>69..72</box>

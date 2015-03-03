@@ -11,8 +11,8 @@ SNORD12B is obtained from snoRNABase.
 <alias>HBII-99B</alias>
 <family_base></family_base>
 <chrom_or_contig>20</chrom_or_contig>
-<genome_position></genome_position>
-<strand></strand>
+<genome_position>47896850..47896952</genome_position>
+<strand>+</strand>
 <box type='c'>12..17</box>
 <box type='d'>79..82</box>
 <box type='h'></box>

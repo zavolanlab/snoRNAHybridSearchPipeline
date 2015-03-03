@@ -13,7 +13,7 @@ Two perfect copies reside in the same host gene (PUM1). sno/scaRNAs with same ta
 <alias>U103B</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>1</chrom_or_contig>
-<genome_position>31194549..31194639</genome_position>
+<genome_position>31421965..31422052</genome_position>
 <strand>-</strand>
 <box type='c'>12..17</box>
 <box type='d'>80..83</box>

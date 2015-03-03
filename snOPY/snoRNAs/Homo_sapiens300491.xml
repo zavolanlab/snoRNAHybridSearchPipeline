@@ -13,7 +13,7 @@ Upstream of the D and D' boxes, it contains two conserved, 9-10 nt long, antisen
 <alias>U106</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>20</chrom_or_contig>
-<genome_position>47328884..47328972</genome_position>
+<genome_position>47895482..47895560</genome_position>
 <strand>+</strand>
 <box type='c'>12..17</box>
 <box type='d'>36..39,77..80</box>
