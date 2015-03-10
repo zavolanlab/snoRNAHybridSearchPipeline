@@ -25,7 +25,7 @@ gene name:AC017104.8->SNORD82
 <organization>Intronic</organization>
 <mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
-<mod_site>18S:A1678</mod_site>
+<mod_site>18S:A1680</mod_site>
 <duplex_region>18S|24..34|1687..1677|</duplex_region>
 <accession>NR_004398,NT_005403</accession>
 <evidence>Rebane, A., and Metspalu, A. (1999). U82, a novel snoRNA identified from the fifth intron of human and mouse nucleolin gene. Biochim Biophys Acta, 1446, 426-430. Duga,S., Asselta,R., Malcovati,M., Tenchini,M.L., Ronchi,S. and Simonic,T. The intron-containing L3 ribosomal protein gene (RPL3): sequence analysis and identification of U43 and of two novel intronic small ncleolar RNAs. Biochim. Biophys. Acta 1490 (3), 225-236 (2000).</evidence>

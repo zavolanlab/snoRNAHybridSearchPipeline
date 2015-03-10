@@ -26,7 +26,7 @@ UMASSのテーブルによると、Yeast18S:C1639はヒト18S:C1703に相同で�
 <organization>Intronic</organization>
 <mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
-<mod_site>18S:C1703</mod_site>
+<mod_site>18S:C1705</mod_site>
 <duplex_region>18S|19..28|1711..1702|</duplex_region>
 <accession>X96642,NT_011520</accession>
 <evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.</evidence>

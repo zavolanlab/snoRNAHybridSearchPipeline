@@ -26,7 +26,7 @@
 <organization>Intronic</organization>
 <mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
-<mod_site>18S:U1805</mod_site>
+<mod_site>18S:U1806</mod_site>
 <duplex_region>18S|52..71|1821..1802|</duplex_region>
 <accession>Z34290,NT_005403</accession>
 <evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.　Nicoloso, M., Caizergues-Ferrer, M., Michot, B., Azum, M. C., and Bachellerie, J. P. (1994). U20, a novel small nucleolar RNA, is encoded in an intron of the nucleolin gene in mammals. Mol Cell Biol, 14, 5766-5776.　Cavaille, J., Nicoloso, M., and Bachellerie, J. P. (1996). Targeted ribose methylation of RNA in vivo directed by tailored antisense RNA guides. Nature, 383, 732-735.</evidence>

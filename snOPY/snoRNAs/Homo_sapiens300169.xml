@@ -14,7 +14,7 @@
 <genome_position>62623037..62623103</genome_position>
 <strand>-</strand>
 <box type='c'>8..13</box>
-<box type='d'>35..38, 60..63</box>
+<box type='d'>34..37, 59..62</box>
 <box type='h'></box>
 <box type='aca'></box>
 <host_id>Homo_sapiens100119</host_id>
