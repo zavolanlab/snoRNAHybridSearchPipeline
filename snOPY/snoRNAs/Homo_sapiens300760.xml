@@ -22,7 +22,7 @@ SNORD54 is obtained from SnoRNABase.
 <host_intron></host_intron>
 <host_position>1606..1668</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
 <mod_site>18S:G644</mod_site>
 <duplex_region>18S|46..56|650..640|</duplex_region>

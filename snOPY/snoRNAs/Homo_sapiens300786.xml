@@ -24,7 +24,7 @@ sno/scaRNAs with same target U5 snRNA U46 : SCARNA10   SCARNA12
 <host_intron></host_intron>
 <host_position>17089..17418</host_position>
 <organization>Intronic</organization>
-<mod_type>H/ACA,C/D</mod_type>
+<mod_type>Both</mod_type>
 <mod_rna>U5 snRNA</mod_rna>
 <mod_site>U5:U46,U5:C45</mod_site>
 <duplex_region>U5|80..85|53..48|,U5|117..123|45..39|,U5|309..320|53..42|</duplex_region>

@@ -22,7 +22,7 @@ SNORD12B is obtained from snoRNABase.
 <host_intron></host_intron>
 <host_position>3142..3232</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>28S rRNA</mod_rna>
 <mod_site>28S:G3878</mod_site>
 <duplex_region>28S|23..35|3886..3874|</duplex_region>

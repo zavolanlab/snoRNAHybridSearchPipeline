@@ -11,8 +11,8 @@ SNORA2A and SNORA2B is predicted to guide pseudouridylation of U4263 and U4282 i
 <alias>ACA34</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>12</chrom_or_contig>
-<genome_position>1..137</genome_position>
-<strand></strand>
+<genome_position>49048165..49048301</genome_position>
+<strand>-</strand>
 <box type='c'></box>
 <box type='d'></box>
 <box type='h'>59..64 </box>
@@ -22,7 +22,7 @@ SNORA2A and SNORA2B is predicted to guide pseudouridylation of U4263 and U4282 i
 <host_intron></host_intron>
 <host_position>28703..28839</host_position>
 <organization>Intronic</organization>
-<mod_type>H/ACA Pu</mod_type>
+<mod_type>H/ACA</mod_type>
 <mod_rna>28S rRNA</mod_rna>
 <mod_site>28S:U4269,28S:U4282</mod_site>
 <duplex_region>28S|10..15|4276..4271|,28S|45..49|4268..4264|,28S|74..82|4292..4284|,28S|118..120|4281..4279|</duplex_region>

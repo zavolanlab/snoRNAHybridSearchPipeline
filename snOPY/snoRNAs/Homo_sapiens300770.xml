@@ -22,7 +22,7 @@ SNORD127 is obtained from snoRNABase.
 <host_intron></host_intron>
 <host_position>27757..27842</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
 <mod_site>18S:G1447</mod_site>
 <duplex_region>18S|64..73|1453..1444|</duplex_region>

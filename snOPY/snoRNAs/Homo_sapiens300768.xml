@@ -22,7 +22,7 @@ SNORD11B is registrationed based on snoRNABase. sno/scaRNAs with same target 18S
 <host_intron></host_intron>
 <host_position>26541..26630</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
 <mod_site>18S:G509</mod_site>
 <duplex_region>18S|66..78|517..505|</duplex_region>

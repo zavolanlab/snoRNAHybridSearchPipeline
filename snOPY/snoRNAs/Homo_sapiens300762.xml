@@ -10,9 +10,9 @@ SNORD11 is obtained from NCBI.sno/scaRNAs with same target 18S rRNA G509 : SNORD
 <family_name>SNORD11</family_name>
 <alias>HBII-95</alias>
 <family_base>Homo_sapiens</family_base>
-<chrom_or_contig></chrom_or_contig>
-<genome_position>1..84</genome_position>
-<strand></strand>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>203157774..203157857</genome_position>
+<strand>+</strand>
 <box type='c'>9..14</box>
 <box type='d'>76..79</box>
 <box type='h'></box>
@@ -22,7 +22,7 @@ SNORD11 is obtained from NCBI.sno/scaRNAs with same target 18S rRNA G509 : SNORD
 <host_intron></host_intron>
 <host_position>28260..28343</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
 <mod_site>18S:G509</mod_site>
 <duplex_region>18S|63..75|517..505|</duplex_region>

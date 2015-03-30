@@ -11,7 +11,7 @@
 <family_name>SCARNA14</family_name>
 <alias>U100</alias>
 <family_base>Homo_sapiens</family_base>
-<chrom_or_contig></chrom_or_contig>
+<chrom_or_contig>15</chrom_or_contig>
 <genome_position>66639544..66639680</genome_position>
 <strand>-</strand>
 <box type='c'>68..73</box>

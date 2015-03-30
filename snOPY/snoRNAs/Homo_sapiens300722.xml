@@ -14,7 +14,7 @@ SNORA11B  also known as U107E
 <alias>U107E</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>14</chrom_or_contig>
-<genome_position>1..131</genome_position>
+<genome_position>91592770..91592896</genome_position>
 <strand>+</strand>
 <box type='c'></box>
 <box type='d'></box>

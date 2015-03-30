@@ -22,7 +22,7 @@ sno/scaRNAs with same target 18S rRNA U799 : SNORD105 SNORD105B
 <host_intron></host_intron>
 <host_position>4390..4468</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>18S rRNA</mod_rna>
 <mod_site>18S:U799</mod_site>
 <duplex_region>18S|51..64|808..796|</duplex_region>

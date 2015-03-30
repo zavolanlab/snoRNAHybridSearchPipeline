@@ -22,7 +22,7 @@ SNORD5 is obtained from snoRNABase (http://www-snorna.biotoul.fr/plus.php?id=mgh
 <host_intron></host_intron>
 <host_position>9195..9267</host_position>
 <organization>Intronic</organization>
-<mod_type>C/D Me</mod_type>
+<mod_type>C/D</mod_type>
 <mod_rna>28S rRNA</mod_rna>
 <mod_site>28S:C2409</mod_site>
 <duplex_region>28S|21..33|2418..2406|</duplex_region>

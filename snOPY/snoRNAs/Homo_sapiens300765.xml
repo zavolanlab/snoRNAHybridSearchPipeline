@@ -11,8 +11,8 @@ SNORA78 is obtained from snoRNABase.The phylogenic analysis does not support the
 <alias>ACA64</alias>
 <family_base>Homo_sapiens</family_base>
 <chrom_or_contig>16</chrom_or_contig>
-<genome_position>1..127</genome_position>
-<strand></strand>
+<genome_position>2015185..2015311</genome_position>
+<strand>+</strand>
 <box type='c'></box>
 <box type='d'></box>
 <box type='h'></box>
@@ -22,7 +22,7 @@ SNORA78 is obtained from snoRNABase.The phylogenic analysis does not support the
 <host_intron></host_intron>
 <host_position>1189..1315</host_position>
 <organization>Intronic</organization>
-<mod_type>H/ACA Pu</mod_type>
+<mod_type>H/ACA</mod_type>
 <mod_rna>28S rRNA</mod_rna>
 <mod_site>28S:U4331</mod_site>
 <duplex_region>28S|76..78|4335..4333|,28S|108..114|4330..4324|</duplex_region>
