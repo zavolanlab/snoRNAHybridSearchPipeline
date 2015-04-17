@@ -26,7 +26,7 @@ modification type 入力。
 <organization>Poly</organization>
 <mod_type>C/D</mod_type>
 <mod_rna>28S rRNA</mod_rna>
-<mod_site>28S:A1347,28S:G1437</mod_site>
+<mod_site>28S:A1347,28S:G1438</mod_site>
 <duplex_region>28S|18..27|1352..1344|, 28S|55..69|1447..1434|</duplex_region>
 <accession></accession>
 <evidence></evidence>
