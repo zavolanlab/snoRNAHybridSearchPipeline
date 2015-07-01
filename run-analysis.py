@@ -153,7 +153,7 @@ make_statistics_command = "python %s --input %s --output %s --length 15 --fpr 1.
               )
 
 make_statistics_id = jobber.job(make_statistics_command, {'name': "MakeStats",
-                                                          'options': [('l', "h_vmem=32G")],
+                                                          'options': [('l', "h_vmem=4G")],
                                                           'dependencies': [merge_for_statistics_id]})
 
 jobber.endGroup()
@@ -224,7 +224,7 @@ map_dependancies = {}
 for input_name, convert_id in convert_dependancies.iteritems():
     map_reads_settings = settings['tasks']['MapReads']
     map_reads_script = 'bowtie2'
-    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 --local -U {input} -S {output}"""
+    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 --local -k 10 -U {input} -S {output}"""
 
     if settings['general'].get('executer', 'drmaa') == 'drmaa':
         #
@@ -547,66 +547,123 @@ for input_name, get_true_chrom_id in get_true_chrom_dependancies.iteritems():
 jobber.endGroup()
 
 
-#
-# Append PLEXY
-#
-
-append_plexy_dependancies = {}
-append_plexy_group = jobber.startGroup({'name': 'AppendPLEXY'})
-for input_name, append_sequence_id in append_sequence_dependancies.iteritems():
-    append_plexy_settings = settings['tasks']['AppendPLEXY']
-    append_plexy_script = 'scripts/rg-check-hybrids-with-plexy.py'
-    append_plexy_command = """python {script} \\
-                                    --input {input} \\
-                                    --output {output} \\
-                                    --snoRNA-paths {snorna_path} \\
-                                    --plexy-bin {plexy_bin} \\
-                                    --plexy-tmp {plexy_tmp} \\
-                                    -v
-                  """
+if settings["general"]['type'] == "CD":
     #
-    # If there is template use it for command
+    # Append PLEXY
     #
-    if settings['general'].get('executer', 'drmaa') == 'drmaa':
+
+    append_score_dependancies = {}
+    append_score_group = jobber.startGroup({'name': 'AppendPLEXY'})
+    for input_name, append_sequence_id in append_sequence_dependancies.iteritems():
+        append_score_settings = settings['tasks']['AppendPLEXY']
+        append_score_script = 'scripts/rg-check-hybrids-with-plexy.py'
+        append_score_command = """python {script} \\
+                                        --input {input} \\
+                                        --output {output} \\
+                                        --snoRNA-paths {snorna_path} \\
+                                        --plexy-bin {plexy_bin} \\
+                                        --plexy-tmp {plexy_tmp} \\
+                                        -v
+                      """
         #
-        # Copy files by default to the tmp directory
+        # If there is template use it for command
         #
-        copy_dir = "$TMPDIR"
-        copy_files = {input_name + ".sequencebed": 'input.sequencebed'}
-        moveback = {'output': input_name + ".plexybed"}
+        if settings['general'].get('executer', 'drmaa') == 'drmaa':
+            #
+            # Copy files by default to the tmp directory
+            #
+            copy_dir = "$TMPDIR"
+            copy_files = {input_name + ".sequencebed": 'input.sequencebed'}
+            moveback = {'output': input_name + ".scorebed"}
 
-        append_plexy_command_rendered = template.render(modules=append_plexy_settings.get('modules', None),
-                                           command=append_plexy_command,
-                                           copy=copy_files,
-                                           moveback=moveback,
-                                           copydir=copy_dir)
-        append_plexy_command = str(append_plexy_command_rendered).format(**{'script': os.path.join(pip_dir, append_plexy_script),
-                                        'input': 'input.sequencebed',
-                                        'output': 'output',
-                                        'snorna_path': os.path.join(working_directory, "Plexy/"),
-                                        'plexy_bin': settings['general']['PLEXY_bin'],
-                                        'plexy_tmp': './',
-                                       })
-    else:
-        append_plexy_command = str(append_plexy_command).format(**{'script': os.path.join(pip_dir, append_plexy_script),
-                                       'input': input_name + ".sequencebed",
-                                       'output': input_name + ".plexybed",
-                                       'snorna_path': os.path.join(working_directory, "Plexy/"),
-                                       'plexy_bin': settings['general']['PLEXY_bin'],
-                                       'plexy_tmp': './tmp',
-                                       })
-    append_plexy_id = jobber.job(append_plexy_command,
-                               {'name': 'AppendPLEXY',
-                                'uniqueId': True,
-                                'dependencies': [append_sequence_id],
-                                'options': [('q', append_plexy_settings.get('queue', 'short.q')),
-                                            ('l', "h_vmem=%s" % append_plexy_settings.get('mem_req', '2G'))]
-                                })
-    append_plexy_dependancies[input_name] = append_plexy_id
+            append_score_command_rendered = template.render(modules=append_score_settings.get('modules', None),
+                                               command=append_score_command,
+                                               copy=copy_files,
+                                               moveback=moveback,
+                                               copydir=copy_dir)
+            append_score_command = str(append_score_command_rendered).format(**{'script': os.path.join(pip_dir, append_score_script),
+                                            'input': 'input.sequencebed',
+                                            'output': 'output',
+                                            'snorna_path': os.path.join(working_directory, "Input/"),
+                                            'plexy_bin': settings['general']['PLEXY_bin'],
+                                            'plexy_tmp': './',
+                                           })
+        else:
+            append_score_command = str(append_score_command).format(**{'script': os.path.join(pip_dir, append_score_script),
+                                           'input': input_name + ".sequencebed",
+                                           'output': input_name + ".scorebed",
+                                           'snorna_path': os.path.join(working_directory, "Input/"),
+                                           'plexy_bin': settings['general']['PLEXY_bin'],
+                                           'plexy_tmp': './tmp',
+                                           })
+        append_score_id = jobber.job(append_score_command,
+                                   {'name': 'AppendPLEXY',
+                                    'uniqueId': True,
+                                    'dependencies': [append_sequence_id],
+                                    'options': [('q', append_score_settings.get('queue', 'short.q')),
+                                                ('l', "h_vmem=%s" % append_score_settings.get('mem_req', '2G'))]
+                                    })
+        append_score_dependancies[input_name] = append_score_id
 
-jobber.endGroup()
+    jobber.endGroup()
+elif settings["general"]['type'] == "HACA":
+    #
+    # Append RNAsnoop
+    #
 
+    append_score_dependancies = {}
+    append_score_group = jobber.startGroup({'name': 'AppendRNAsnoop'})
+    for input_name, append_sequence_id in append_sequence_dependancies.iteritems():
+        append_score_settings = settings['tasks']['AppendRNAsnoop']
+        append_score_script = 'scripts/rg-check-hybrids-with-rnasnoop.py'
+        append_score_command = """python {script} \\
+                                        --input {input} \\
+                                        --output {output} \\
+                                        --snoRNA-paths {snorna_path} \\
+                                        --rnasnoop {rnasnoop_bin} \\
+                                        -v
+                      """
+        #
+        # If there is template use it for command
+        #
+        if settings['general'].get('executer', 'drmaa') == 'drmaa':
+            #
+            # Copy files by default to the tmp directory
+            #
+            copy_dir = "$TMPDIR"
+            copy_files = {input_name + ".sequencebed": 'input.sequencebed'}
+            moveback = {'output': input_name + ".scorebed"}
 
+            append_score_command_rendered = template.render(modules=append_score_settings.get('modules', None),
+                                               command=append_score_command,
+                                               copy=copy_files,
+                                               moveback=moveback,
+                                               copydir=copy_dir)
+            append_score_command = str(append_score_command_rendered).format(**{'script': os.path.join(pip_dir, append_score_script),
+                                            'input': 'input.sequencebed',
+                                            'output': 'output',
+                                            'snorna_path': os.path.join(working_directory, "Input/"),
+                                            'rnasnoop_bin': settings['general']['RNAsnoop_bin'],
+                                           })
+        else:
+            append_score_command = str(append_score_command).format(**{'script': os.path.join(pip_dir, append_score_script),
+                                           'input': input_name + ".sequencebed",
+                                           'output': input_name + ".scorebed",
+                                           'snorna_path': os.path.join(working_directory, "Input/"),
+                                           'rnasnoop_bin': settings['general']['RNAsnoop_bin'],
+                                           })
+        append_score_id = jobber.job(append_score_command,
+                                   {'name': 'AppendRNAsnoop',
+                                    'uniqueId': True,
+                                    'dependencies': [append_sequence_id],
+                                    'options': [('q', append_score_settings.get('queue', 'short.q')),
+                                                ('l', "h_vmem=%s" % append_score_settings.get('mem_req', '2G'))]
+                                    })
+        append_score_dependancies[input_name] = append_score_id
+
+    jobber.endGroup()
+else:
+    raise Exception("Unknown snoRNA type: %s" % settings["general"]['type'])
 
 
     # #

@@ -45,7 +45,7 @@ pipeline_directory = os.path.dirname(os.path.abspath(__file__))
 output_directory = os.path.join(working_directory, "output")
 index_directory = os.path.join(working_directory, "index")
 plots_directory = os.path.join(working_directory, "Plots")
-plexy_directory = os.path.join(working_directory, "Plexy")
+plexy_directory = os.path.join(working_directory, "Input")
 mkdir_p(output_directory)
 mkdir_p(index_directory)
 mkdir_p(plots_directory)
@@ -93,11 +93,11 @@ generate_fasta_id = jobber.job(generate_fasta_command, {'name': "GenerateFasta"}
 #
 # Generate plexy input files
 generate_plexy_command = "python %s --input %s --dir %s --type %s -v --switch-box" % (
-                                             os.path.join(pipeline_directory, "scripts/rg-generate-plexy.py"),
+                                             os.path.join(pipeline_directory, "scripts/rg-generate-input-for-plexy-or-rnasnoop.py"),
                                              settings['general']['snoRNAs'],
                                              plexy_directory,
                                              settings['general']['type'])
-generate_plexy_id = jobber.job(generate_plexy_command, {'name': "GeneratePlexy"})
+generate_plexy_id = jobber.job(generate_plexy_command, {'name': "GenerateInput"})
 
 #
 # Generate snoRNA bed
@@ -134,7 +134,7 @@ calculate_snorna_expression_tuple = (os.path.join(pipeline_directory, 'scripts/r
                    os.path.join(working_directory, "mapped_reads_annotated_with_snornas.tab"),
                    os.path.join(working_directory, "snoRNAs.rpkm"),
                    settings['general']['bed_for_index'],
-                   os.path.join(working_directory, "snoRNAs.fa"))
+                   os.path.join(working_directory, "snoRNAs.bed"))
 
 calculate_snorna_expression_command = "python %s --input %s --output %s --library %s --snoRNAs %s --quantile 0.0" % calculate_snorna_expression_tuple
 
@@ -243,7 +243,7 @@ jobber.job(analysis_command, {'name': "CreateAnalysisJobs"})
 jobber.endGroup()
 
 # We merge the files into our result file after analysis finishes
-merge_results_command = "cat {output_dir}/*.plexybed > {cwd}/results_with_plexy.tab".format(output_dir=output_directory,
+merge_results_command = "cat {output_dir}/*.scorebed > {cwd}/results_with_score.tab".format(output_dir=output_directory,
                                                                                                    cwd=working_directory)
 merge_results_id = jobber.job(merge_results_command, {'name': "MergeResults",
                                  'dependencies': [analyse_files_id]})
@@ -259,19 +259,20 @@ merge_raw_results_id = jobber.job(merge_raw_results_command, {'name': "MergeRawR
 # #
 # generate_fasta_command = "python %s --input %s --output %s" % (
 #                                              os.path.join(pipeline_directory, "scripts/rg-generate-fasta.py"),
-#                                                                os.path.join(working_directory, "results_with_plexy.tab"),
-#                                                                os.path.join(working_directory, "results_with_plexy_clustered.tab")
+#                                                                os.path.join(working_directory, "results_with_score.tab"),
+#                                                                os.path.join(working_directory, "results_with_score_clustered.tab")
 #                                              )
 # generate_fasta_id = jobber.job(generate_fasta_command, {'name': "GenerateFasta"})
 
 # Add RPKM to results
 #
-add_rpkm_command = "python %s --input %s --output %s --rpkm %s --annotated-reads %s -v" % (
-                                             os.path.join(pipeline_directory, "scripts/rg-add-rpkm-to-plexy.py"),
-                                             os.path.join(working_directory, "results_with_plexy.tab"),
-                                             os.path.join(working_directory, "results_with_plexy_and_rpkm.tab"),
+add_rpkm_command = "python %s --input %s --output %s --rpkm %s --annotated-reads %s --type -v" % (
+                                             os.path.join(pipeline_directory, "scripts/rg-add-rpkm-to-score.py"),
+                                             os.path.join(working_directory, "results_with_score.tab"),
+                                             os.path.join(working_directory, "results_with_score_and_rpkm.tab"),
                                              os.path.join(working_directory, "snoRNAs.rpkm"),
-                                             os.path.join(working_directory, "mapped_reads_annotated_with_snornas.tab")
+                                             os.path.join(working_directory, "mapped_reads_annotated_with_snornas.tab"),
+                                             settings['general']['type']
                                              )
 add_rpkm_id = jobber.job(add_rpkm_command, {'name': "AddRPKM",
                                             'dependencies': [merge_results_id]})
@@ -279,9 +280,9 @@ add_rpkm_id = jobber.job(add_rpkm_command, {'name': "AddRPKM",
 # Cluster results
 #
 aggregate_by_site_command = "python %s --input %s --output %s" % (
-                               os.path.join(pipeline_directory, "scripts/rg-aggregate-plexy-results.py"),
-                                                 os.path.join(working_directory, "results_with_plexy_and_rpkm.tab"),
-                                                 os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab")
+                               os.path.join(pipeline_directory, "scripts/rg-aggregate-scored-results.py"),
+                                                 os.path.join(working_directory, "results_with_score_and_rpkm.tab"),
+                                                 os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab")
                                )
 aggregate_by_site_id = jobber.job(aggregate_by_site_command, {'name': "AggregateBySite",
                                                               'dependencies': [add_rpkm_id]})
@@ -318,7 +319,7 @@ if settings['general'].get('executer', 'drmaa') == 'drmaa':
     # Copy files by default to the tmp directory
     #
     copy_dir = "$TMPDIR"
-    copy_files = {os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"): 'input'}
+    copy_files = {os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab"): 'input'}
     moveback = {'output': os.path.join(working_directory, "accessibility.tab")}
 
     calculate_contrafold_command_rendered = template.render(modules=calculate_contrafold_settings.get('modules', None),
@@ -333,7 +334,7 @@ if settings['general'].get('executer', 'drmaa') == 'drmaa':
                                        })
 else:
     calculate_contrafold_command = str(calculate_contrafold_command).format(**{'script': os.path.join(pipeline_directory, calculate_contrafold_script),
-                                       'coords': os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"),
+                                       'coords': os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab"),
                                        'output': os.path.join(working_directory, "accessibility.tab"),
                                        'genome_dir': settings['general']['genome'],
                                        })
@@ -364,7 +365,7 @@ if settings['general'].get('executer', 'drmaa') == 'drmaa':
     # Copy files by default to the tmp directory
     #
     copy_dir = "$TMPDIR"
-    copy_files = {os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"): 'input'}
+    copy_files = {os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab"): 'input'}
     moveback = {'output': os.path.join(working_directory, "flanks.tab")}
 
     calculate_flanks_command_rendered = template.render(modules=calculate_flanks_settings.get('modules', None),
@@ -379,7 +380,7 @@ if settings['general'].get('executer', 'drmaa') == 'drmaa':
                                        })
 else:
     calculate_flanks_command = str(calculate_flanks_command).format(**{'script': os.path.join(pipeline_directory, calculate_flanks_script),
-                                       'coords': os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"),
+                                       'coords': os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab"),
                                        'output': os.path.join(working_directory, "flanks.tab"),
                                        'genome_dir': settings['general']['genome'],
                                        })
@@ -398,7 +399,7 @@ jobber.endGroup()
 calculate_probability_settings = settings['tasks']['CalculateProbability']
 calculate_probability_command = "python %s --input %s --output %s --accessibility %s --flanks %s --model %s" % (
                                              os.path.join(pipeline_directory, "scripts/rg-calculate-probability.py"),
-                                             os.path.join(working_directory, 'results_with_plexy_and_rpkm_aggregated.tab'),
+                                             os.path.join(working_directory, 'results_with_score_and_rpkm_aggregated.tab'),
                                              os.path.join(working_directory, 'results_with_probability.tab'),
                                              os.path.join(working_directory, "accessibility.tab"),
                                              os.path.join(working_directory, "flanks.tab"),
