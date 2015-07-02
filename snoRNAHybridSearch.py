@@ -266,7 +266,7 @@ merge_raw_results_id = jobber.job(merge_raw_results_command, {'name': "MergeRawR
 
 # Add RPKM to results
 #
-add_rpkm_command = "python %s --input %s --output %s --rpkm %s --annotated-reads %s --type -v" % (
+add_rpkm_command = "python %s --input %s --output %s --rpkm %s --annotated-reads %s --type %s -v" % (
                                              os.path.join(pipeline_directory, "scripts/rg-add-rpkm-to-score.py"),
                                              os.path.join(working_directory, "results_with_score.tab"),
                                              os.path.join(working_directory, "results_with_score_and_rpkm.tab"),
