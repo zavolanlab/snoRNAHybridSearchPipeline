@@ -224,7 +224,7 @@ map_dependancies = {}
 for input_name, convert_id in convert_dependancies.iteritems():
     map_reads_settings = settings['tasks']['MapReads']
     map_reads_script = 'bowtie2'
-    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 --local -U {input} -S {output}"""
+    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 --local -k 10 -U {input} -S {output}"""
 
     if settings['general'].get('executer', 'drmaa') == 'drmaa':
         #
