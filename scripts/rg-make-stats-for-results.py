@@ -27,7 +27,7 @@ from argparse import ArgumentParser, RawTextHelpFormatter
 # add path to sys and import snoRNA module
 file_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(file_dir, "../modules"))
-from snoRNA import CD_snoRNA
+from snoRNA import CD_snoRNA, HACA_snoRNA
 
 pl.rcParams['figure.figsize'] = (14, 10)
 pl.rcParams['ytick.labelsize'] = 20
@@ -466,7 +466,36 @@ def read_snoRNAs_to_dict(path, type_of_snor):
         return snor_dict
 
     elif options.type == "HACA":
-        raise NotImplementedError("Pipeline was not implemented for HACA box snoRNAs yet")
+        snoRNAs = pd.read_table(path, names=names)
+        if len(set(snoRNAs.mod_type)) != 1:
+            Exception("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
+        counter = 0
+        snor_dict = {}
+        for ind, snor in snoRNAs.iterrows():
+            try:
+                s = HACA_snoRNA(snor_id=snor.snor_id,
+                              organism=snor.organism,
+                              chrom=snor.chrom,
+                              start=snor.start,
+                              end=snor.end,
+                              strand=snor.strand,
+                              sequence=snor.sequence,
+                              snor_type=snor.mod_type,
+                              h_box=snor.box_h,
+                              aca_box=snor.box_aca,
+                              alias=snor.alias,
+                              gene_name=snor.gene_name,
+                              accession=snor.accession,
+                              modified_sites=snor.mod_site,
+                              host_id=snor.host_id,
+                              organization=snor.organization,
+                              note=snor.note)
+                counter += 1
+                snor_dict[s.snor_id + "_stem1"] = s
+                snor_dict[s.snor_id + "_stem2"] = s
+            except Exception, e:
+                sys.stderr.write(str(e) + "\n")
+        return snor_dict
 
 
 

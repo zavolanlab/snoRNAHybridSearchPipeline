@@ -19,6 +19,7 @@ __license__ = "GPL"
 # imports
 import sys
 import time
+import csv
 import pandas as pd
 from Bio import SeqIO
 from collections import Counter
@@ -45,7 +46,7 @@ parser.add_argument("--library",
 parser.add_argument("--snoRNAs",
                     dest="snoRNAs",
                     required=True,
-                    help="Fasta file with snoRNAs")
+                    help="BED file with snoRNAs")
 parser.add_argument("--quantile",
                     dest="quantile",
                     type=float,
@@ -73,14 +74,18 @@ def main():
     df[8] = [i.split(";")[0] for i in df[8]]
     ndf = pd.DataFrame({'count': Counter(df[8].tolist())})
     with open(options.snoRNAs) as f:
-        snor_lengths = {str(rec.id): float(len(rec.seq)) for rec in SeqIO.parse(f, 'fasta')}
+        snor_lengths = {rec[3].split(":")[-1]: float(int(rec[2]) - int(rec[1])) for rec in csv.reader(f, delimiter="\t")}
     ndf['snor_length'] = [snor_lengths[i] for i in ndf.index]
     ndf['library_size'] = float(library_count)
     ndf['rpkm'] = (ndf['count'].astype(float)*1000000000)/(ndf['snor_length']*ndf['library_size'])
     ndf = ndf[ndf['rpkm']>=ndf['rpkm'].quantile(options.quantile)]
     ndf = ndf.sort('rpkm', ascending=False)
     rpkms = ndf['rpkm']
-    rpkms.to_csv(options.output, sep="\t", header=None)
+    with open(options.output, "w") as out:
+        for idx, row in rpkms.iteritems():
+            out.write("%s_stem1\t%f\n" % (idx, row))
+            out.write("%s_stem2\t%f\n" % (idx, row))
+    # rpkms.to_csv(options.output, sep="\t", header=None)
 
 
 

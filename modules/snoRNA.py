@@ -3,6 +3,7 @@ from warnings import warn
 from collections import defaultdict
 from HTSeq import GenomicInterval
 from Bio.Seq import Seq
+from pandas import isnull
 
 class WrongCDBoxOrderExeption(Exception): pass
 class ToManyBoxesException(Exception): pass
@@ -436,7 +437,7 @@ class HACA_snoRNA(snoRNA):
         Assign H-box to snoRNA based on the string provided. H-box should be in the
         form of "H-box_start..H-box_end"
         """
-        if h_box != None:
+        if h_box != None and not isnull(h_box):
             hstart, hend = [int(i) for i in h_box.split("..")]
             self.h_box = (hstart, hend)
         else:
@@ -448,7 +449,7 @@ class HACA_snoRNA(snoRNA):
         Assign H-box to snoRNA based on the string provided. H-box should be in the
         form of "H-box_start..H-box_end"
         """
-        if aca_box != None:
+        if aca_box != None and not isnull(aca_box):
             acastart, acaend = [int(i) for i in aca_box.split("..")]
             self.aca_box = (acastart, acaend)
         else:
@@ -476,16 +477,37 @@ class HACA_snoRNA(snoRNA):
 
     def get_left_stem_sequence(self):
         """Get the sequence of the left stem of the snoRNA"""
-        return self.sequence[:self.h_box[0]]
+        return self.sequence[:self.h_box[1]]
 
     def get_right_stem_sequence(self):
         """Get the sequence of the right stem of the snoRNA"""
-        return self.sequence[self.h_box[1]:]
+        return self.sequence[self.h_box[0]:]
 
     def get_left_stem_fasta(self):
         """Get the fasta string of the left stem of the snoRNA"""
-        return ">%s_stem1\n%s" % (self.snor_id, self.get_left_stem_sequence())
+        seq = self.get_left_stem_sequence()
+        if len(seq) < 12:
+            return None
+        else:
+            return ">%s_stem1\n%s" % (self.snor_id, seq)
 
     def get_right_stem_fasta(self):
         """Get the fasta string of the right stem of the snoRNA"""
-        return ">%s_stem2\n%s" % (self.snor_id, self.get_right_stem_sequence())
+        seq = self.get_right_stem_sequence()
+        if len(seq) < 12:
+            return None
+        else:
+            return ">%s_stem2\n%s" % (self.snor_id, seq)
+
+    def get_split_fasta(self):
+        """Get the fasta string of two stems separatly"""
+        left_stem = self.get_left_stem_fasta()
+        right_stem = self.get_right_stem_fasta()
+        if left_stem and right_stem:
+            return left_stem + "\n" + right_stem + "\n"
+        elif left_stem and not right_stem:
+            return left_stem + "\n"
+        elif not left_stem and right_stem:
+            return right_stem + "\n"
+        else:
+            return None

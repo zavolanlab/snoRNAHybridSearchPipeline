@@ -35,6 +35,11 @@ parser.add_argument("--threshold",
                     type=float,
                     default=-1.0,
                     help="Threshold for the site, defaults to -1.0")
+parser.add_argument("--type",
+                    dest="type",
+                    default="CD",
+                    choices=("CD", "HACA"),
+                    help="Type of snoRNA , defaults to CD")
 
 try:
     options = parser.parse_args()
@@ -56,7 +61,10 @@ def main():
         c = float(read_id.split(":")[0].split("-")[-1])
         snor_count.append(1.0/c)
     df['count'] = snor_count
-    df['modification'] = [re.search("[ACTGactg]m", i).group()[0] if not pd.isnull(i) else np.nan for i in df[10]]
+    if options.type == "CD":
+        df['modification'] = [re.search("[ACTGactg]m", i).group()[0] if not pd.isnull(i) else np.nan for i in df[10]]
+    else:
+        df['modification'] = [seq[struc.index("|")] if not pd.isnull(struc) else np.nan for struc, seq in zip(df[9].tolist(), df[10].tolist())]
     df = df.groupby([0, 6, 12]).agg({14: max, 'count': sum, 8: min, 5: max, 15: np.mean, 16: np.mean,
                                      "modification": lambda x: ":".join(str(i) for i in set(x)),
                                      9: lambda x: [str(i) for i in set(x)][0]}).reset_index()

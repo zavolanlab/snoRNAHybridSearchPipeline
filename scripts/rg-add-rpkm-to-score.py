@@ -40,6 +40,11 @@ parser.add_argument("--annotated-reads",
                     dest="annotated_reads",
                     required=True,
                     help="Mapped reads annotated as snoRNAs")
+parser.add_argument("--type",
+                    dest="type",
+                    default="CD",
+                    choices=("CD", "HACA"),
+                    help="Type of snoRNAs , defaults to CD")
 
 try:
     options = parser.parse_args()
@@ -56,6 +61,12 @@ def main():
     raw_count = pd.read_table(options.annotated_reads, header=None)
     raw_count[8] = [i.split(";")[0] for i in raw_count[8]]
     raw_count = raw_count.groupby(8).size()
+    if options.type == "HACA":
+        new_raw_count = {}
+        for idx, count in raw_count.iteritems():
+            new_raw_count[idx + "_stem1"] = count
+            new_raw_count[idx + "_stem2"] = count
+        raw_count = pd.Series(new_raw_count)
     ndf = pd.read_table(options.rpkm,
                         names=['rpkm'],
                         index_col=0)
