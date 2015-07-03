@@ -7,3 +7,4 @@
 !.gitignore
 !*.py
 !*.ini
+/test

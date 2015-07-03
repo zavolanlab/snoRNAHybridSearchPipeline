@@ -1,17 +1,18 @@
 #!/usr/bin/env python
 """
-Convert Probability results into bed for annotations
+Split text file into files with desired number of lines
 """
 
-__date__ = "2015-05-31"
+__date__ = "2015-07-03"
 __author__ = "Rafal Gumienny"
 __email__ = "r.gumienny@unibas.ch"
 __license__ = "GPL"
 
 # imports
 import sys
+import os
 import time
-import pandas as pd
+import itertools
 from contextlib import contextmanager
 from argparse import ArgumentParser, RawTextHelpFormatter
 
@@ -25,11 +26,24 @@ parser.add_argument("-v",
 parser.add_argument("--input",
                     dest="input",
                     required=True,
-                    help="Input file")
-parser.add_argument("--output",
-                    dest="output",
+                    help="Input file in txt format. Defaults to sys.stdin.")
+parser.add_argument("--lines",
+                    dest="lines",
+                    type=int,
                     required=True,
-                    help="Output file")
+                    help="Number of lines in each file")
+parser.add_argument("--prefix",
+                    dest="prefix",
+                    default="file_",
+                    help="Prefix to the file, defaults to file_")
+parser.add_argument("--dir",
+                    dest="dir",
+                    default="./",
+                    help="Directory to put files, defaults to ./")
+parser.add_argument("--suffix",
+                    dest="suffix",
+                    default=".part",
+                    help="Suffix to the file, defaults to .part")
 
 try:
     options = parser.parse_args()
@@ -43,23 +57,16 @@ sysout = sys.stdout.write
 
 def main():
     """Main logic of the script"""
-    df = pd.read_table(options.input)
-    df["beg"] = df["Modification"] - 1
-    df["end"] = df["Modification"]
-    columns = ["chrom",
-               "beg",
-               "end",
-               "snoRNAs",
-               "count",
-               "strand",
-               "score",
-               "logsitespec",
-               "modified_nucleotide",
-               "alignment",
-               "Probability",
-               "Modification",
-               ]
-    df[columns].to_csv(options.output, header=None, index=None, sep="\t")
+    with open(options.input) as f:
+        groups = itertools.groupby(f, key=lambda x, line=itertools.count(): next(line)//options.lines)
+        counter = 0
+        for k, group in groups:
+            counter += 1
+            with open(os.path.join(options.dir, "%s%i%s" % (options.prefix,
+                                                             counter,
+                                                             options.suffix)), 'w') as out:
+                for line in group:
+                    out.write(line)
 
 
 if __name__ == '__main__':

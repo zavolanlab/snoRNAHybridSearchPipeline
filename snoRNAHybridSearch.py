@@ -43,6 +43,7 @@ def mkdir_p(path_to_dir):
 working_directory = os.getcwd()
 pipeline_directory = os.path.dirname(os.path.abspath(__file__))
 output_directory = os.path.join(working_directory, "output")
+for_features_directory = os.path.join(working_directory, "output/ForFeatures")
 index_directory = os.path.join(working_directory, "index")
 plots_directory = os.path.join(working_directory, "Plots")
 plexy_directory = os.path.join(working_directory, "Plexy")
@@ -50,6 +51,7 @@ mkdir_p(output_directory)
 mkdir_p(index_directory)
 mkdir_p(plots_directory)
 mkdir_p(plexy_directory)
+mkdir_p(for_features_directory)
 jobber_path = settings['general']['jobber_path']
 sys.path.append(jobber_path)
 from jobber import JobClient
@@ -289,106 +291,30 @@ aggregate_by_site_id = jobber.job(aggregate_by_site_command, {'name': "Aggregate
 # Features for model
 #
 
+#First step is to split the file with results
+split_res_tuple =  (os.path.join(pipeline_directory, "scripts/rg-split-file-into-chunks.py"),
+                    os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"),
+                    for_features_directory,
+                    5000,
+                    "part_",
+                    ".result"
+                    )
+split_res_command = "python %s --input %s --dir %s --lines %s --prefix %s --suffix %s -v" % split_res_tuple
+split_res_files_id = jobber.job(split_res_command, {'name': "SplitResult",
+                                                    'dependencies': [aggregate_by_site_id]})
+
 calculate_features_group_id = jobber.startGroup({'name': "FeaturesGroup",
-                                                 'dependencies': [aggregate_by_site_id]})
+                                                 'dependencies': [split_res_files_id]})
 
-template = settings['general']['template']
-with open(template) as tmpl:
-    template = Template(tmpl.read())
-
-#
-# Calculate accessibility of the sites
-
-calculate_contrafold_settings = settings['tasks']['CalculateCONTRAFold']
-calculate_contrafold_script = 'scripts/Contrafold.py'
-calculate_contrafold_command = """python {script} \\
-                                    --coords {coords} \\
-                                    --out {output} \\
-                                    --genome-dir {genome_dir} \\
-                                    --contextLen_L 14 \\
-                                    --contextLen_U 0 \\
-                                    --context 30 \\
-                                    -v
-                              """
-#
-# If there is template use it for command
-#
-if settings['general'].get('executer', 'drmaa') == 'drmaa':
-    #
-    # Copy files by default to the tmp directory
-    #
-    copy_dir = "$TMPDIR"
-    copy_files = {os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"): 'input'}
-    moveback = {'output': os.path.join(working_directory, "accessibility.tab")}
-
-    calculate_contrafold_command_rendered = template.render(modules=calculate_contrafold_settings.get('modules', None),
-                                       command=calculate_contrafold_command,
-                                       copy=copy_files,
-                                       moveback=moveback,
-                                       copydir=copy_dir)
-    calculate_contrafold_command = str(calculate_contrafold_command_rendered).format(**{'script': os.path.join(pipeline_directory, calculate_contrafold_script),
-                                       'coords': 'input',
-                                       'output': 'output',
-                                       'genome_dir': settings['general']['genome'],
-                                       })
-else:
-    calculate_contrafold_command = str(calculate_contrafold_command).format(**{'script': os.path.join(pipeline_directory, calculate_contrafold_script),
-                                       'coords': os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"),
-                                       'output': os.path.join(working_directory, "accessibility.tab"),
-                                       'genome_dir': settings['general']['genome'],
-                                       })
-calculate_contrafold_id = jobber.job(calculate_contrafold_command,
-                       {'name': 'CalculateCONTRAFold',
-                        'uniqueId': True,
-                        'options': [('q', calculate_contrafold_settings.get('queue', 'short.q')),
-                                    ('l', "h_vmem=%s" % calculate_contrafold_settings.get('mem_req', '2G'))]
-                        })
-
-#
-# Calulate Flanks composition
-
-calculate_flanks_settings = settings['tasks']['CalculateFlanks']
-calculate_flanks_script = 'scripts/Flanks_Composition.py'
-calculate_flanks_command = """python {script} \\
-                                    --coords {coords} \\
-                                    --out {output} \\
-                                    --genome-dir {genome_dir} \\
-                                    --contextLen 30 \\
-                                    -v
-                              """
-#
-# If there is template use it for command
-#
-if settings['general'].get('executer', 'drmaa') == 'drmaa':
-    #
-    # Copy files by default to the tmp directory
-    #
-    copy_dir = "$TMPDIR"
-    copy_files = {os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"): 'input'}
-    moveback = {'output': os.path.join(working_directory, "flanks.tab")}
-
-    calculate_flanks_command_rendered = template.render(modules=calculate_flanks_settings.get('modules', None),
-                                       command=calculate_flanks_command,
-                                       copy=copy_files,
-                                       moveback=moveback,
-                                       copydir=copy_dir)
-    calculate_flanks_command = str(calculate_flanks_command_rendered).format(**{'script': os.path.join(pipeline_directory, calculate_flanks_script),
-                                       'coords': 'input',
-                                       'output': 'output',
-                                       'genome_dir': settings['general']['genome'],
-                                       })
-else:
-    calculate_flanks_command = str(calculate_flanks_command).format(**{'script': os.path.join(pipeline_directory, calculate_flanks_script),
-                                       'coords': os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"),
-                                       'output': os.path.join(working_directory, "flanks.tab"),
-                                       'genome_dir': settings['general']['genome'],
-                                       })
-calculate_flanks_id = jobber.job(calculate_flanks_command,
-                       {'name': 'CalculateFlanks',
-                        'uniqueId': True,
-                        'options': [('q', calculate_flanks_settings.get('queue', 'short.q')),
-                                    ('l', "h_vmem=%s" % calculate_flanks_settings.get('mem_req', '2G'))]
-                        })
+#We call the script that will generate the jobs that will analyse the split files. We pass the id of the group
+#and the folder where the script will find the splitted files.
+feat_tuple = (os.path.join(pipeline_directory, "run-features.py"),
+                  for_features_directory,
+                  calculate_features_group_id,
+                  os.path.abspath(options.config),
+                  working_directory)
+feat_command = "python %s --input-dir %s --group-id %s --config %s --working-dir %s -v" % feat_tuple
+jobber.job(feat_command, {'name': "CreateFeaturesJobs"})
 
 jobber.endGroup()
 
