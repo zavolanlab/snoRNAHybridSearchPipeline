@@ -1,6 +1,8 @@
 import os
 import random
 import sys
+import shutil
+import traceback
 from errno import EEXIST
 
 from configobj import ConfigObj
@@ -8,27 +10,125 @@ from jinja2 import Template
 from argparse import ArgumentParser, RawTextHelpFormatter
 
 parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
-parser.add_argument("-v",
+subparsers = parser.add_subparsers(help="Commands", dest='command')
+run_parser = subparsers.add_parser("run", help="Run a pipeline")
+run_parser.add_argument("-v",
                     "--verbose",
                     dest="verbose",
                     action="store_true",
                     default=False,
                     help="Be loud!")
-parser.add_argument("--config",
+run_parser.add_argument("--config",
                     dest="config",
                     required=True,
                     help="Config file")
-parser.add_argument("--name-suffix",
+run_parser.add_argument("--name-suffix",
                     dest="name_suffix",
                     default="test_run",
                     help="Suffix to add to pipeline name in order to easily differentiate between different run, defaults to test_run")
+
+clean_parser = subparsers.add_parser("clean", help="Clean after previous run")
+clean_parser.add_argument("-v",
+                          "--verbose",
+                          dest="verbose",
+                          action="store_true",
+                          default=False,
+                          help="Be loud!")
+clean_parser.add_argument("-y",
+                          "--yes",
+                          dest="yes",
+                          action="store_true",
+                          default=False,
+                          help="Force deletion of files.")
+clean_parser.add_argument("--make-backup",
+                          dest="make_backup",
+                          action="store_true",
+                          default=False,
+                          help="Instead of deleting file with results make its backup")
 
 try:
     options = parser.parse_args()
 except Exception, e:
     parser.print_help()
 
-settings = ConfigObj(options.config).dict()
+
+# redefine a functions for writing to stdout and stderr to save some writting
+syserr = sys.stderr.write
+sysout = sys.stdout.write
+
+# Define directories
+working_directory = os.getcwd()
+pipeline_directory = os.path.dirname(os.path.abspath(__file__))
+output_directory = os.path.join(working_directory, "output")
+for_features_directory = os.path.join(working_directory, "output/ForFeatures")
+index_directory = os.path.join(working_directory, "index")
+plots_directory = os.path.join(working_directory, "Plots")
+plexy_directory = os.path.join(working_directory, "Input")
+
+
+if options.command == 'clean':
+    try:
+        if options.yes:
+            is_sure = "yes"
+        else:
+            is_sure = raw_input("Do you really want to delete previous run (yes/no)?:  ")
+        if is_sure.upper().startswith("Y"):
+            dirs_to_delete = [plots_directory,
+                              index_directory,
+                              plexy_directory,
+                              output_directory]
+            for directory in dirs_to_delete:
+                try:
+                    if options.verbose:
+                        syserr("Deleting %s\n" % directory)
+                    shutil.rmtree(directory)
+                except OSError:
+                    if options.verbose:
+                        syserr(" -> no such a directory: %s\n" % directory)
+            files_to_backup = ["results_with_probability_annotated.tab"]
+            files_to_delete = ["search_anchors.stats",
+                               "accessibility.tab",
+                               "snoRNAs.rpkm",
+                               "flanks.tab",
+                               "snoRNAs.bed",
+                               "results_with_probability.bed",
+                               "results_with_plexy_and_rpkm_aggregated.tab",
+                               "results_with_probability.tab",
+                               "snoRNAs.fa",
+                               "raw_reads_results.tab",
+                               "search_anchors_for_statistics",
+                               "results_with_plexy.tab",
+                               "results_with_plexy_and_rpkm.tab",
+                               "anchors.tab",
+                               "for_index.clustered",
+                               "for_index.fasta",
+                               "mapped_reads_annotated_with_snornas.tab"]
+            if options.make_backup:
+                for f in files_to_backup:
+                    if options.verbose:
+                        syserr("Backing up %s\n" % os.path.join(working_directory, f))
+                    try:
+                        os.rename(os.path.join(working_directory, f), os.path.join(working_directory, f + ".bak"))
+                    except OSError, e:
+                        if options.verbose:
+                            syserr(" -> no such a file: %s\n" % os.path.join(working_directory, f))
+            else:
+                files_to_delete.extend(files_to_backup)
+            for f in files_to_delete:
+                if options.verbose:
+                    syserr("Removing %s\n" % os.path.join(working_directory, f))
+                try:
+                    os.remove(os.path.join(working_directory, f))
+                except OSError, e:
+                    if options.verbose:
+                        syserr(" -> no such file: %s\n" % os.path.join(working_directory, f))
+            if options.verbose:
+                syserr("All output files and directories were cleaned\n")
+    except Exception as e:
+        syserr(traceback.format_exc())
+    finally:
+        sys.exit()
+
 
 
 def mkdir_p(path_to_dir):
@@ -40,13 +140,7 @@ def mkdir_p(path_to_dir):
         else:
             raise e
 
-working_directory = os.getcwd()
-pipeline_directory = os.path.dirname(os.path.abspath(__file__))
-output_directory = os.path.join(working_directory, "output")
-for_features_directory = os.path.join(working_directory, "output/ForFeatures")
-index_directory = os.path.join(working_directory, "index")
-plots_directory = os.path.join(working_directory, "Plots")
-plexy_directory = os.path.join(working_directory, "Input")
+settings = ConfigObj(options.config).dict()
 mkdir_p(output_directory)
 mkdir_p(index_directory)
 mkdir_p(plots_directory)
