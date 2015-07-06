@@ -52,6 +52,11 @@ parser.add_argument("--quantile",
                     type=float,
                     default=0.25,
                     help="Quantile for the expression cut-off, defaults to 0.25")
+parser.add_argument("--type",
+                    dest="type",
+                    default="CD",
+                    choices=("CD", "HACA"),
+                    help="Type of snoRNA, defaults to CD")
 
 try:
     options = parser.parse_args()
@@ -82,9 +87,15 @@ def main():
     ndf = ndf.sort('rpkm', ascending=False)
     rpkms = ndf['rpkm']
     with open(options.output, "w") as out:
-        for idx, row in rpkms.iteritems():
-            out.write("%s_stem1\t%f\n" % (idx, row))
-            out.write("%s_stem2\t%f\n" % (idx, row))
+        if options.type == "HACA":
+            for idx, row in rpkms.iteritems():
+                out.write("%s_stem1\t%f\n" % (idx, row))
+                out.write("%s_stem2\t%f\n" % (idx, row))
+        elif options.type == "CD":
+            for idx, row in rpkms.iteritems():
+                out.write("%s\t%f\n" % (idx, row))
+        else:
+            raise Exception("Not such a snoRNA type: %s" % options.type)
     # rpkms.to_csv(options.output, sep="\t", header=None)
 
 

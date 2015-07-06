@@ -92,13 +92,13 @@ if options.command == 'clean':
                                "flanks.tab",
                                "snoRNAs.bed",
                                "results_with_probability.bed",
-                               "results_with_plexy_and_rpkm_aggregated.tab",
+                               "results_with_score_and_rpkm_aggregated.tab",
                                "results_with_probability.tab",
                                "snoRNAs.fa",
                                "raw_reads_results.tab",
                                "search_anchors_for_statistics",
-                               "results_with_plexy.tab",
-                               "results_with_plexy_and_rpkm.tab",
+                               "results_with_score.tab",
+                               "results_with_score_and_rpkm.tab",
                                "anchors.tab",
                                "for_index.clustered",
                                "for_index.fasta",
@@ -230,9 +230,10 @@ calculate_snorna_expression_tuple = (os.path.join(pipeline_directory, 'scripts/r
                    os.path.join(working_directory, "mapped_reads_annotated_with_snornas.tab"),
                    os.path.join(working_directory, "snoRNAs.rpkm"),
                    settings['general']['bed_for_index'],
-                   os.path.join(working_directory, "snoRNAs.bed"))
+                   os.path.join(working_directory, "snoRNAs.bed"),
+                                     settings['general']['type'])
 
-calculate_snorna_expression_command = "python %s --input %s --output %s --library %s --snoRNAs %s --quantile 0.0" % calculate_snorna_expression_tuple
+calculate_snorna_expression_command = "python %s --input %s --output %s --library %s --snoRNAs %s --quantile 0.0 --type %s" % calculate_snorna_expression_tuple
 
 
 calculate_snorna_expression_id = jobber.job(calculate_snorna_expression_command, {'name': "CalculateSnoRNAsExpression",
@@ -388,7 +389,7 @@ aggregate_by_site_id = jobber.job(aggregate_by_site_command, {'name': "Aggregate
 
 #First step is to split the file with results
 split_res_tuple =  (os.path.join(pipeline_directory, "scripts/rg-split-file-into-chunks.py"),
-                    os.path.join(working_directory, "results_with_plexy_and_rpkm_aggregated.tab"),
+                    os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab"),
                     for_features_directory,
                     5000,
                     "part_",
