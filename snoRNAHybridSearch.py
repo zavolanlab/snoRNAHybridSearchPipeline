@@ -286,7 +286,7 @@ cluster_reads_command = """python {script} \\
 
 cluster_reads_id = jobber.job(cluster_reads_command, {'name': "ClusterReads",
                                         'options': [('q', settings['tasks']['ClusterReads'].get('queue', 'short.q')),
-                                                    ('l', "h_vmem=%s" % settings['tasks']['ClusterReads'].get('mem_req', '2G'))]
+                                                    ('l', "membycore=%s" % settings['tasks']['ClusterReads'].get('mem_req', '2G'))]
                                                       })
 
 #
@@ -302,7 +302,7 @@ make_fasta_command = "python %s --genome-dir %s --input %s --output %s --format 
 make_fasta_id = jobber.job(make_fasta_command, {'name': "MakeFasta",
                                                 'dependencies': [cluster_reads_id],
                                                 'options': [('q', settings['tasks']['MakeFastaFromClusters'].get('queue', 'short.q')),
-                                                            ('l', "h_vmem=%s" % settings['tasks']['MakeFastaFromClusters'].get('mem_req', '2G'))]
+                                                            ('l', "membycore=%s" % settings['tasks']['MakeFastaFromClusters'].get('mem_req', '2G'))]
                                                 })
 
 
@@ -316,7 +316,7 @@ make_index_command =  "bowtie2-build %s %s/%s 2> /dev/null" % (os.path.join(work
 make_bowtie_index_id = jobber.job(make_index_command, {'name': "BuildBowtieIndex",
                                                 'dependencies': [make_fasta_id],
                                                 'options': [('q', settings['tasks']['BuildBowtieIndex'].get('queue', 'short.q')),
-                                                            ('l', "h_vmem=%s" % settings['tasks']['BuildBowtieIndex'].get('mem_req', '2G'))]
+                                                            ('l', "membycore=%s" % settings['tasks']['BuildBowtieIndex'].get('mem_req', '2G'))]
                                                 })
 
 jobber.endGroup()
@@ -427,7 +427,7 @@ calculate_probability_command = "python %s --input %s --output %s --accessibilit
                                              settings['general']['model'])
 calculate_probability_id = jobber.job(calculate_probability_command, {'name': "CalculateProbability",
                                     'options': [('q', calculate_probability_settings.get('queue', 'short.q')),
-                                                ('l', "h_vmem=%s" % calculate_probability_settings.get('mem_req', '2G'))],
+                                                ('l', "membycore=%s" % calculate_probability_settings.get('mem_req', '2G'))],
                                     'dependencies': [calculate_features_group_id,
                                                      aggregate_by_site_id]})
 
@@ -483,7 +483,7 @@ annotate_results_command = "python %s --input %s --output %s --genes %s --region
 
 annotate_results_id = jobber.job(annotate_results_command, {'name': "AnnotateResults",
                                     'options': [('q', annotate_results_settings.get('queue', 'short.q')),
-                                                ('l', "h_vmem=%s" % annotate_results_settings.get('mem_req', '2G'))],
+                                                ('l', "membycore=%s" % annotate_results_settings.get('mem_req', '2G'))],
                                         'dependencies': [convert_to_bed_id]})
 
 

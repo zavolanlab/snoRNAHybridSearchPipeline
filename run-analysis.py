@@ -123,7 +123,7 @@ for f in glob.glob(options.input_dir + "/*.inputfasta"):
                                {'name': 'AnchorSearch',
                                 'uniqueId': True,
                                 'options': [('q', search_anchors_settings.get('queue', 'short.q')),
-                                            ('l', "h_vmem=%s" % search_anchors_settings.get('mem_req', '2G'))]
+                                            ('l', "membycore=%s" % search_anchors_settings.get('mem_req', '2G'))]
                                 })
     files_to_run[input_name] = search_anchors_id
 
@@ -153,7 +153,7 @@ make_statistics_command = "python %s --input %s --output %s --length 15 --fpr 1.
               )
 
 make_statistics_id = jobber.job(make_statistics_command, {'name': "MakeStats",
-                                                          'options': [('l', "h_vmem=4G")],
+                                                          'options': [('l', "membycore=4G")],
                                                           'dependencies': [merge_for_statistics_id]})
 
 jobber.endGroup()
@@ -209,7 +209,7 @@ for input_name, search_anchor_id in files_to_run.iteritems():
                                       'name': 'ConvertToFasta',
                                       'dependencies': [search_anchor_id],
                                        'options': [('q', convert_to_fasta_settings.get('queue', 'short.q')),
-                                                   ('l', "h_vmem=%s" % convert_to_fasta_settings.get('mem_req', '2G'))],
+                                                   ('l', "membycore=%s" % convert_to_fasta_settings.get('mem_req', '2G'))],
                                       'uniqueId': True})
     convert_dependancies[input_name] = convert_to_fasta_id
 
@@ -256,7 +256,7 @@ for input_name, convert_id in convert_dependancies.iteritems():
                                       'name': 'MapReads',
                                       'dependencies': [convert_id],
                                        'options': [('q', map_reads_settings.get('queue', 'short.q')),
-                                                   ('l', "h_vmem=%s" % map_reads_settings.get('mem_req', '2G'))],
+                                                   ('l', "membycore=%s" % map_reads_settings.get('mem_req', '2G'))],
                                       'uniqueId': True})
     map_dependancies[input_name] = map_reads_id
 
@@ -300,7 +300,7 @@ jobber.endGroup()
 #                                       'name': 'FilterMapped',
 #                                       'dependencies': [map_id],
 #                                        'options': [('q', filter_mapped_settings.get('queue', 'short.q')),
-#                                                    ('l', "h_vmem=%s" % filter_mapped_settings.get('mem_req', '2G'))],
+#                                                    ('l', "membycore=%s" % filter_mapped_settings.get('mem_req', '2G'))],
 #                                       'uniqueId': True})
 #     filter_map_dependancies[input_name] = filter_mapped_id
 
@@ -345,7 +345,7 @@ jobber.endGroup()
 #                                       'name': 'ConvertToBed',
 #                                       'dependencies': [filter_map_id],
 #                                        'options': [('q', convert_mapped_to_bed_settings.get('queue', 'short.q')),
-#                                                    ('l', "h_vmem=%s" % convert_mapped_to_bed_settings.get('mem_req', '2G'))],
+#                                                    ('l', "membycore=%s" % convert_mapped_to_bed_settings.get('mem_req', '2G'))],
 #                                       'uniqueId': True})
 #     convert_to_bed_dependancies[input_name] = convert_mapped_to_bed_id
 
@@ -388,7 +388,7 @@ for input_name, map_id in map_dependancies.iteritems():
                                       'name': 'ConvertToBed',
                                       'dependencies': [map_id],
                                        'options': [('q', convert_mapped_to_bed_settings.get('queue', 'short.q')),
-                                                   ('l', "h_vmem=%s" % convert_mapped_to_bed_settings.get('mem_req', '2G'))],
+                                                   ('l', "membycore=%s" % convert_mapped_to_bed_settings.get('mem_req', '2G'))],
                                       'uniqueId': True})
     convert_to_bed_dependancies[input_name] = convert_mapped_to_bed_id
 
@@ -435,7 +435,7 @@ for input_name, convert_mapped_to_bed_id in convert_to_bed_dependancies.iteritem
                                       'name': 'FilterBed',
                                       'dependencies': [convert_mapped_to_bed_id],
                                        'options': [('q', filter_bed_settings.get('queue', 'short.q')),
-                                                   ('l', "h_vmem=%s" % filter_bed_settings.get('mem_req', '2G'))],
+                                                   ('l', "membycore=%s" % filter_bed_settings.get('mem_req', '2G'))],
                                       'uniqueId': True})
     filter_bed_dependancies[input_name] = filter_bed_id
 
@@ -484,7 +484,7 @@ for input_name, filter_bed_id in filter_bed_dependancies.iteritems():
                                 'uniqueId': True,
                                  'dependencies': [filter_bed_id],
                                 'options': [('q', get_true_chrom_settings.get('queue', 'short.q')),
-                                            ('l', "h_vmem=%s" % get_true_chrom_settings.get('mem_req', '2G'))]
+                                            ('l', "membycore=%s" % get_true_chrom_settings.get('mem_req', '2G'))]
                                 })
     get_true_chrom_dependancies[input_name] = get_true_chrom_id
 
@@ -540,7 +540,7 @@ for input_name, get_true_chrom_id in get_true_chrom_dependancies.iteritems():
                                 'uniqueId': True,
                                  'dependencies': [get_true_chrom_id],
                                 'options': [('q', append_sequence_settings.get('queue', 'short.q')),
-                                            ('l', "h_vmem=%s" % append_sequence_settings.get('mem_req', '2G'))]
+                                            ('l', "membycore=%s" % append_sequence_settings.get('mem_req', '2G'))]
                                 })
     append_sequence_dependancies[input_name] = append_sequence_id
 
@@ -601,7 +601,7 @@ if settings["general"]['type'] == "CD":
                                     'uniqueId': True,
                                     'dependencies': [append_sequence_id],
                                     'options': [('q', append_score_settings.get('queue', 'short.q')),
-                                                ('l', "h_vmem=%s" % append_score_settings.get('mem_req', '2G'))]
+                                                ('l', "membycore=%s" % append_score_settings.get('mem_req', '2G'))]
                                     })
         append_score_dependancies[input_name] = append_score_id
 
@@ -657,7 +657,7 @@ elif settings["general"]['type'] == "HACA":
                                     'uniqueId': True,
                                     'dependencies': [append_sequence_id],
                                     'options': [('q', append_score_settings.get('queue', 'short.q')),
-                                                ('l', "h_vmem=%s" % append_score_settings.get('mem_req', '2G'))]
+                                                ('l', "membycore=%s" % append_score_settings.get('mem_req', '2G'))]
                                     })
         append_score_dependancies[input_name] = append_score_id
 
@@ -719,7 +719,7 @@ else:
     #                            {'name': 'SeedCount',
     #                             'uniqueId': True,
     #                             'options': [('q', seed_count_settings.get('queue', 'short.q')),
-    #                                         ('l', "h_vmem=%s" % seed_count_settings.get('mem_req', '2G'))]
+    #                                         ('l', "membycore=%s" % seed_count_settings.get('mem_req', '2G'))]
     #                             })
 
 

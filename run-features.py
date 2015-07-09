@@ -107,7 +107,7 @@ for f in glob.glob(options.input_dir + "/*.result"):
                            {'name': 'CalculateCONTRAFold',
                             'uniqueId': True,
                             'options': [('q', calculate_contrafold_settings.get('queue', 'short.q')),
-                                        ('l', "h_vmem=%s" % calculate_contrafold_settings.get('mem_req', '2G'))]
+                                        ('l', "membycore=%s" % calculate_contrafold_settings.get('mem_req', '2G'))]
                             })
 jobber.endGroup()
 
@@ -158,7 +158,7 @@ for f in glob.glob(options.input_dir + "/*.result"):
                            {'name': 'CalculateFlanks',
                             'uniqueId': True,
                             'options': [('q', calculate_flanks_settings.get('queue', 'short.q')),
-                                        ('l', "h_vmem=%s" % calculate_flanks_settings.get('mem_req', '2G'))]
+                                        ('l', "membycore=%s" % calculate_flanks_settings.get('mem_req', '2G'))]
                             })
 
 jobber.endGroup()
