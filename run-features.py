@@ -167,14 +167,14 @@ jobber.endGroup()
 merge_contrafold_command = "cat {output_dir}/*.accessibility > {cwd}/accessibility.tab".format(output_dir=output_directory,
                                                                                                    cwd=working_directory)
 merge_contrafold_id = jobber.job(merge_contrafold_command, {'name': "MergeCONTRAfold",
-                                 'dependencies': [calculate_contrafold_id]})
+                                 'dependencies': [contrafold_group]})
 
 
 # We merge the files into our result file after analysis finishes
 merge_flanks_command = "cat {output_dir}/*.flanks > {cwd}/flanks.tab".format(output_dir=output_directory,
                                                                              cwd=working_directory)
 merge_flanks_id = jobber.job(merge_flanks_command, {'name': "MergeFlanks",
-                                 'dependencies': [calculate_contrafold_id]})
+                                 'dependencies': [flanks_group]})
 
 
 jobber.endGroup()

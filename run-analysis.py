@@ -153,7 +153,7 @@ make_statistics_command = "python %s --input %s --output %s --length 15 --fpr 1.
               )
 
 make_statistics_id = jobber.job(make_statistics_command, {'name': "MakeStats",
-                                                          'options': [('l', "membycore=4G")],
+                                                          'options': [('l', "membycore=10G")],
                                                           'dependencies': [merge_for_statistics_id]})
 
 jobber.endGroup()
@@ -200,7 +200,7 @@ for input_name, search_anchor_id in files_to_run.iteritems():
     else:
         convert_to_fasta_command = str(convert_to_fasta_command).format(**{'script': os.path.join(pip_dir, convert_to_fasta_script),
                             'output': input_name + ".anchorfasta",
-                            'input': input_name + ".searchanchors",
+                            'input': input_name + ".anchorsearch",
                             'stats': os.path.join(working_directory, "search_anchors.stats"),
                             'length': convert_to_fasta_settings.get('length', "15"),
                             })

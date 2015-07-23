@@ -80,7 +80,7 @@ def main():
     ndf = ndf.dropna()
     model = pd.read_pickle(options.model)
     features_for_model = ['const', 'score', 'logsitespec', 'flanksA', 'ContraScore']
-    ndf['Probability'] = model.predict(ndf[features_for_model], transform=False)
+    ndf['Probability'] = model.predict(ndf[features_for_model].astype(np.float64), transform=False)
     ndf['Modification'] = ndf['beg'] + 3
     names_to_keep = ['chrom',
                      'snoRNAs',

@@ -376,10 +376,11 @@ add_rpkm_id = jobber.job(add_rpkm_command, {'name': "AddRPKM",
 
 # Cluster results
 #
-aggregate_by_site_command = "python %s --input %s --output %s" % (
+aggregate_by_site_command = "python %s --input %s --output %s --type %s" % (
                                os.path.join(pipeline_directory, "scripts/rg-aggregate-scored-results.py"),
                                                  os.path.join(working_directory, "results_with_score_and_rpkm.tab"),
-                                                 os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab")
+                                                 os.path.join(working_directory, "results_with_score_and_rpkm_aggregated.tab"),
+                                                 settings['general']['type']
                                )
 aggregate_by_site_id = jobber.job(aggregate_by_site_command, {'name': "AggregateBySite",
                                                               'dependencies': [add_rpkm_id]})
@@ -427,7 +428,7 @@ calculate_probability_command = "python %s --input %s --output %s --accessibilit
                                              settings['general']['model'])
 calculate_probability_id = jobber.job(calculate_probability_command, {'name': "CalculateProbability",
                                     'options': [('q', calculate_probability_settings.get('queue', 'short.q')),
-                                                ('l', "membycore=%s" % calculate_probability_settings.get('mem_req', '2G'))],
+                                                ('l', "membycore=%s" % calculate_probability_settings.get('mem_req', '4G'))],
                                     'dependencies': [calculate_features_group_id,
                                                      aggregate_by_site_id]})
 
@@ -452,6 +453,7 @@ make_plots_command = """
                                   'dir': os.path.join(working_directory, "Plots")
                                   })
 make_plots_id = jobber.job(make_plots_command, {'name': "MakePlots",
+                                    'options': [('l', "membycore=4G")],
                                     'dependencies': [merge_raw_results_id,
                                                      calculate_probability_id]})
 
