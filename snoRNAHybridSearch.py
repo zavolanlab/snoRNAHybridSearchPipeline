@@ -146,9 +146,8 @@ mkdir_p(index_directory)
 mkdir_p(plots_directory)
 mkdir_p(plexy_directory)
 mkdir_p(for_features_directory)
-jobber_path = settings['general']['jobber_path']
-sys.path.append(jobber_path)
-from jobber import JobClient
+
+from Jobber import JobClient
 
 jobber = JobClient.Jobber()
 
@@ -494,7 +493,7 @@ jobber.endGroup()
 
 # Before launching we print the command to stop the pipeline
 print "In order to stop the pipeline run a command:"
-print "python %s/jobber_server.py -command delete -jobId %i" % (jobber_path, pipeline_id)
+print "jobber_server -command delete -jobId %i, or use web interface" % (pipeline_id)
 
 #You need to always launch, otherwise jobs wont get executed.
 jobber.launch(pipeline_id)

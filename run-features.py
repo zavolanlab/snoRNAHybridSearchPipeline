@@ -41,9 +41,8 @@ working_directory = options.working_dir
 index_directory = os.path.join(working_directory, 'index')
 output_directory = options.input_dir
 pipeline_directory = os.path.dirname(os.path.abspath(__file__))
-jobberDir = settings['general']['jobber_path']
-sys.path.append(jobberDir)
-from jobber import JobClient
+
+from Jobber import JobClient
 
 jobber = JobClient.Jobber()
 
