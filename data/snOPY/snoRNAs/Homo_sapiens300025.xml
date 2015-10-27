@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300025'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AL132709.5->SNORD114-1-pseud.
+2009年7月1日（山元）gene name：SNORD114-1-pseud→SNORD114-1L1
+(20090708：吉浜）名前にLを付けないことにしたんだけど、マルチコピーのさらにマルチコピー、、、どうしましょう。SNORD114-1L1
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD114-1L1</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>100513479..100513555</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100555</host_id>
+<host_gene>SNORD113@,SNORD114@</host_gene>
+<host_intron></host_intron>
+<host_position>53569..53645</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGGACCAATGATGATGACTGGTGGTGTATGAGTTAAAGGTGATGAATAGTAAGTGTCTTT
+GTTAGTGGCAAGTTCAG
+</sequence>
+</snoopy>

@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300771'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-07</lastupdate>
+<blindnote>
+(20100707末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋,NCBIとUCSCを参考にchromosome or contig nameを加えた。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD71</gene_name>
+<family_name>SNORD71</family_name>
+<alias>HBII-239</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>16</chrom_or_contig>
+<genome_position>71792305..71792390</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'>39..42, 74..77</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100537</host_id>
+<host_gene>AP1G1</host_gene>
+<host_intron></host_intron>
+<host_position>32130..32215</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>5.8S rRNA</mod_rna>
+<mod_site>5.8S:U14</mod_site>
+<duplex_region>5.8S|25..37|23..11|</duplex_region>
+<accession>NR_003059,NT_010498</accession>
+<evidence>Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953.</evidence>
+<note></note>
+<sequence>
+TGTGTGTTGGAGGATGAAAGTACGGAGTGATCCATCGGCTAAGTGTCTTGTCACAATGCT
+GACACTCAAACTGCTGACAGCACACG
+</sequence>
+</snoopy>

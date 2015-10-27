@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300446'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-08</lastupdate>
+<blindnote>
+(20100708末安)snoRNABaseを参考にsequenceを5'側から6nt短くし、3'側から7nt短くした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD87</gene_name>
+<family_name>SNORD87</family_name>
+<alias>HBII-276</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>8</chrom_or_contig>
+<genome_position>67834709..67834784</genome_position>
+<strand>-</strand>
+<box type='c'>5..10</box>
+<box type='d'>39..42, 71..74</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100314</host_id>
+<host_gene>Mono:295:AC011031.12</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1089</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G3723</mod_site>
+<duplex_region>28S|21..36|3736..3721|</duplex_region>
+<accession>NR_002598,NT_008183</accession>
+<evidence>Darzacq, X., Jady, B. E., Verheggen, C., Kiss, A. M., Bertrand, E., and Kiss, T. (2002). Cajal body-specific small nuclear RNAs: a novel class of 2'-O-methylation and pseudouridylation guide RNAs. Embo J 21, 2746-2756. Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953. Gogolevskaya, I. K., Makarova, J. A., Gause, L. N., Kulichkova, V. A., Konstantinova, I. M., and Kramerov, D. A. (2002). U87 RNA, a novel C/D box small nucleolar RNA from mammalian cells. Gene, 292, 199-204.</evidence>
+<note></note>
+<sequence>
+ACAATGATGACTTAAATTACTTTTTGCCGTTTACCCAGCTGAGGTTGTCTTTGAAGAAAT
+AATTTTAAGACTGAGA
+</sequence>
+</snoopy>

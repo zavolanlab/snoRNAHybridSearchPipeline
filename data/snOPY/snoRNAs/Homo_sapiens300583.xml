@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300583'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+U36C is predicted to guide the 2'O-ribose methylation of 28S rRNA A3703.  (These comments was copied from snoRNABase)(http://www-snorna.biotoul.fr/plus.php?id=U36C) .
+(20100706末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20120412吉浜）locusの配列が変わったので、snoRNA positionを変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD36C</gene_name>
+<family_name>SNORD36C</family_name>
+<alias>U36C</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>136217701..136217768</genome_position>
+<strand>+</strand>
+<box type='c'>8..13</box>
+<box type='d'>30..33, 59..62</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100411</host_id>
+<host_gene>RPL7A</host_gene>
+<host_intron></host_intron>
+<host_position>3625..3692</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:A3703</mod_site>
+<duplex_region>28S|18..29|3710..3699|</duplex_region>
+<accession>X97587,NR_000016,NT_035014</accession>
+<evidence>Nicoloso, M., Qu, L. H., Michot, B., and Bachellerie, J. P. (1996). Intron-encoded, antisense small nucleolar RNAs: the characterization of nine novel species points to their direct role as guides for the 2'-O-ribose methylation of rRNAs. J Mol Biol, 260, 178-195.</evidence>
+<note></note>
+<sequence>
+TTGCCAATGATGGTTAAGAATTTCTTCACCTGAATAAACCATGTGGTCAGCATTGCATCT
+GAGGCAAA
+</sequence>
+</snoopy>

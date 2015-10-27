@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300720'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AF111168.2->SNORA46-pseud
+2009年6月17日（山元）SNORA46が他にもある。IDはHomo_sapiens300589。snoRNABaseにはHomo_sapiens300589が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA46-pseud->SNORA46L1 snoRNABaseより。Homo sapiens ACA46 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U649 of 18S rRNA. The pseudouridylation of this residue was experimentally confirmed by primer extension mapping by Kiss et al. (2004). ACA46 and ACA50 share the same host gene (KIAA1007).
+(20090708：吉浜）SNORA46L1→SNORA46.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA46</gene_name>
+<family_name>SNORA46</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>77002407..77002532</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>10..15</box>
+<box type='aca'>121..123</box>
+<host_id>Homo_sapiens100507</host_id>
+<host_gene>AHSA1</host_gene>
+<host_intron></host_intron>
+<host_position>9253..9378</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U649</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AATCTTACTAGAAAAGTGAATGGCCATTCTTGGTTACTCTGTAGCACAGAAGAATTCCTG
+GCTTCTTTGTGTTGCACAGCTGACTTGTGCCATTCTGCTGCTATAGTGTGGAGTTGAGAA
+ACATGA
+</sequence>
+</snoopy>

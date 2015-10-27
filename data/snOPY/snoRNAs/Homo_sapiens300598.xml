@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300598'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA U4522 : SNORA27 and SNORA26
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA27</gene_name>
+<family_name>SNORA27</family_name>
+<alias>ACA27</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>13</chrom_or_contig>
+<genome_position>27829538..27829663</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>59..64</box>
+<box type='aca'>121..123</box>
+<host_id>Homo_sapiens100422</host_id>
+<host_gene>RPL21</host_gene>
+<host_intron></host_intron>
+<host_position>4844..4969</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3694,28S:U4522</mod_site>
+<duplex_region>28S|8..17|3705..3696|,28S|45..50|3693..3688|,28S|75..80|4529..4524|,28S|108..113|4520..4515|</duplex_region>
+<accession>AJ609439 NT_024524</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268.</evidence>
+<note></note>
+<sequence>
+TACCCCCTTTTCACTTTGCCAGTTGGACTTATGTCTTTATTGGTCATTCAAGTGGGGCAA
+AGGAAATATCCTTTTAAAACTCAGGCAAACTGGGTGTTTGTCTGTATCCTGTCAGAGGAA
+ACAAAT
+</sequence>
+</snoopy>

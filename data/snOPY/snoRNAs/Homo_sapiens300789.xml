@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300789'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-17</lastupdate>
+<blindnote>
+sno/scaRNAs with same target U6 snRNA U40 : SCARNA23 SCARNA3
+(20100615末安)genomic positionを変更した,accession No を加えた,evidenceはsnoRNAbaseがアクセスできないためNCBIのアノテーションから抜粋。
+(20100617末安)genomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SCARNA3</gene_name>
+<family_name>SCARNA3</family_name>
+<alias>HBI-100</alias>
+<family_base>Cryptococcus_neoformans</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>175937533..175937676</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>73..78</box>
+<box type='aca'>139..141</box>
+<host_id>Homo_sapiens100549</host_id>
+<host_gene>RFWD2</host_gene>
+<host_intron></host_intron>
+<host_position>239695..239838</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>U6 snRNA</mod_rna>
+<mod_site>U6:U40</mod_site>
+<duplex_region>U6|90..95|47..42|,U6|125..131|39..33|</duplex_region>
+<accession>NR_002998 NT_004487</accession>
+<evidence>Yi,C., Wang,H., Wei,N. and Deng,X.W. 2002, An initial biochemical and cell biological characterization of the mammalian homologue of a central plant developmental switch, COP1, BMC Cell Biol. 3, 30</evidence>
+<note></note>
+<sequence>
+AATGGAAGCTGCTGGAACCAGCCATGTGGACAAATGAAAAAATGCCTTTTGTCTACAGAT
+TGCAGCGATCCTACATAAATATATGGAGGTCTCTGTCTGGCTTAGGACAGCTGGCTAAGT
+CTGATCGTTCCCCTCCGTACAGCC
+</sequence>
+</snoopy>

@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300836'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-03-10</lastupdate>
+<blindnote>
+古西：snoRNABaseにてBLASTしたが、MUSに対応するboxH”agaaga”、"atataa”には一致せず。web site "sfold"を使って配置を考慮すると、"acagga"が最も近い（dog、ratと同じ）。target RNA、modification type  入力。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA11</gene_name>
+<family_name>SNORA11</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position>147242402..147242529</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>58..63</box>
+<box type='aca'>91..93</box>
+<host_id>Mus_musculus100617</host_id>
+<host_gene>Maged2</host_gene>
+<host_intron></host_intron>
+<host_position>6722..6849</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GTGGTGTGCTCAGAGCAGGGACGGTGAAAAGAGGCCTCTCTGTTTACAACACACCCAACA
+GGAATCTGGCACCATGTAACAAGGAGCACAACACTCATGTCCTCCCTGTGAGCAAGTGCC
+CTGCACGT
+</sequence>
+</snoopy>

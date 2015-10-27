@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300835'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-15</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLASTし、aliasはHBI-36であったが、target RNAはUnknownであった。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA35</gene_name>
+<family_name>SNORA35</family_name>
+<alias>HBI-36</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position>143428924..143429051</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..65</box>
+<box type='aca'>123..125</box>
+<host_id>Mus_musculus100616</host_id>
+<host_gene>Htr2c</host_gene>
+<host_intron></host_intron>
+<host_position>32869..32996</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CAGCACTGGCAAGTGACCCATTGGACTTTTTCTTGACCAACTGGGCATCGAGCAGTGCGA
+AAACAAAACCCTCCGAAAGATGGGAGAGTCACACTGTGGGCTACTCCCGCATGCAGGTGG
+GTACATAG
+</sequence>
+</snoopy>

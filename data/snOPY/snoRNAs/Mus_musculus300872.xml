@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300872'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-28</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。alias,box H,box ACA,duplex_region,target RNA,modification type,modification site 入力。duplex_regionのcomplementary,modification siteは、snoRNABaseで示された配列と同じ位置関係を入力した。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA77</gene_name>
+<family_name>SNORA77</family_name>
+<alias>ACA63</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>16</chrom_or_contig>
+<genome_position>18240810..18240935</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>56..61</box>
+<box type='aca'>121..123</box>
+<host_id>Mus_musculus100649</host_id>
+<host_gene>Ranbp1</host_gene>
+<host_intron></host_intron>
+<host_position>8226..8351</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U815</mod_site>
+<duplex_region>18S|8..13|822..817|, 18S|42..46|814..810|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCAGATTCACTCTGCACCTGGCTGCAGCTCCAGTCTGGTGCTTTTTCCATCTGCCAAAGA
+AACAGTCCAGAATGCTGTGGCTTCCTCTGCCTATCAGAGGCAGTGCAGCTGCCTGGGGAC
+ACAGCC
+</sequence>
+</snoopy>

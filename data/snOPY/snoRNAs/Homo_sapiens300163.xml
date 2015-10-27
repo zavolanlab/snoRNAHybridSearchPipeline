@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300163'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-01</lastupdate>
+<blindnote>
+28S:A4166とありますが、4166の位置はGです。一番近いAだと、28S:A4162です。boxD'から数えると28S:G4166が正解かもしれない。吉浜：28S:G4166に変更しました。
+2009年6月19日（山元）snoRNABaseより。
+Homo sapiens C/D box snoRNA U31. This snoRNA was initially characterized as a conserved intronic sequence in the U22 host gene, UGH. Other introns of the same gene host the C/D box snoRNAs U26-U30 (Tycowski, Shu and Steitz, 1996). U31 was postulated to guide the 2'O-ribose methylation of 28S rRNA G4166 by Kiss-Laszlo et al. (1996), although this methylated base was not mapped by Maden (1990).
+(20100701末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD31</gene_name>
+<family_name>SNORD31</family_name>
+<alias>U31</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>62620797..62620867</genome_position>
+<strand>-</strand>
+<box type='c'>9..14</box>
+<box type='d'>33..36, 62..65</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100119</host_id>
+<host_gene>SNHG1</host_gene>
+<host_intron></host_intron>
+<host_position>3238..3308</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G4166</mod_site>
+<duplex_region>28S|21..32|4162..4173|</duplex_region>
+<accession>NR_002560,NT_167190</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088. Tycowski, K. T., Shu, M. D., and Steitz, J. A. (1996). A mammalian gene with introns instead of exons generating stable RNA products. Nature, 379, 464-466. Maden, B. E. (1990). The numerous modified nucleotides in eukaryotic ribosomal RNA. Prog Nucleic Acid Res Mol Biol, 39, 241-303.</evidence>
+<note></note>
+<sequence>
+CTCACCAGTGATGAGTTGAATACCGCCCCAGTCTGATCAATGTGTGACTGAAAGGTATTT
+TCTGAGCTGTG
+</sequence>
+</snoopy>

@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300219'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-02</lastupdate>
+<blindnote>
+gene name:AC023855.15->SNORD3@-pseud.
+2009年7月2日（山元）gene name：SNORD3@-pseud→SNORD3@L21
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD3@L21</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>39457915..39458117</genome_position>
+<strand>-</strand>
+<box type='c'>147..152</box>
+<box type='d'>196..199</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100159</host_id>
+<host_gene>Mono:268:AC023855.15</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1203</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAGCTTGTACTCTCAGTGATCATTGCTGTAGTTACGAGATAAGCTTCTCTGAACATGCAG
+AGCAGTGGTAACTATGAGGAGGCACAGTCTCTCCTGAGCATGACTCTGGCTGTTGGTGTG
+GCTTTGCTGCAGCTGCCGTGTGCCATTGATGATCCTGCTCCTCTTCCTTCGGGAAAGTAA
+GAGGGAGAGAACAGTCTGAGTGG
+</sequence>
+</snoopy>

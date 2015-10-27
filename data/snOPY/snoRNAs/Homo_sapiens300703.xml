@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300703'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AC093484.2->SNORD49B, sno/scaRNAs with same target 28S rRNA C4426 : SNORD49A and SNORD49B 
+
+(20090708：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD49B</gene_name>
+<family_name>SNORD49</family_name>
+<alias>U49B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>16342823..16342870</genome_position>
+<strand>+</strand>
+<box type='c'>6..11</box>
+<box type='d'>34..37, 67..70</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100496</host_id>
+<host_gene>C17orf45</host_gene>
+<host_intron></host_intron>
+<host_position>1464..1535</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C4426</mod_site>
+<duplex_region>28S|20..32|4435..4423|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGTCCTGATGATACTTGTAATAGGAAGTGCCGTCAGAAGCGATAACTGACGACGTCTAAT
+GTCTATCTGACC
+</sequence>
+</snoopy>

@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300059'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-11-20</lastupdate>
+<blindnote>
+十分な相同性のあるsnoRNAなし。
+20141211　Ensemblの情報が更新していた。AL359396.5 -> SNORD37L2、名前はSNORD37L1まであったのでSNORD37L2とした。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD37L2</gene_name>
+<family_name>SNORD37L</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>25345694..25345758</genome_position>
+<strand>-</strand>
+<box type='c'>3..8</box>
+<box type='d'>60..63</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100031</host_id>
+<host_gene>Mono:273:AL359396.5</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1065</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GTTCATGATAAGTAACATTTCTTCAATTTGACCTGATGTGTATTGAAGAAAACCAGCATC
+TGAGG
+</sequence>
+</snoopy>

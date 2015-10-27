@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300506'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-09-07</lastupdate>
+<blindnote>
+SNORD51 is predicted to guide the 2'O-ribose methylation of 28S rRNA A1511. methylation of A1511 is also guided by SNORD32.
+(20100907末安)snoRNABaseを参考にsequenceを5'側から1nt短くし、3'側から4nt短くした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD51</gene_name>
+<family_name>SNORD51</family_name>
+<alias>U51</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>207026605..207026674</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>38..41, 65..68</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100361</host_id>
+<host_gene>EEF1B2</host_gene>
+<host_intron></host_intron>
+<host_position>3287..3361</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:A1511</mod_site>
+<duplex_region>28S|24..37|1520..1507|</duplex_region>
+<accession>X96650,NR_002589,NT_005403</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.</evidence>
+<note></note>
+<sequence>
+GTTGCATGATGAATAAAATCAAATCACCATCTTTCGGCTGAGTTCGTGATGGATTTGCTT
+TTTTCTGATT
+</sequence>
+</snoopy>

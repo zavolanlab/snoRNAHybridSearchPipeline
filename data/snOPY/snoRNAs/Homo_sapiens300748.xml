@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300748'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-07</lastupdate>
+<blindnote>
+(20100707末安)snoRNABaseを参考にsequenceを5'側から1nt減らし、3'側から1nt減らした,UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスに記載がなかったため保留。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD6</gene_name>
+<family_name>SNORD6</family_name>
+<alias>mgh28S-2411</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>93464669..93464739</genome_position>
+<strand>-</strand>
+<box type='c'>8..13</box>
+<box type='d'>35..38, 63..66</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100529</host_id>
+<host_gene>JOSD3</host_gene>
+<host_intron></host_intron>
+<host_position>10921..10993</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G2411</mod_site>
+<duplex_region>28S|22..34|2419..2407|</duplex_region>
+<accession>AJ609489,NT_167190</accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GATGTTATGATGATGGGCGAAATGTTCAACTGCTCTGAAGGGGCTGAATGAAAATGGCCT
+TTCTGAACATC
+</sequence>
+</snoopy>

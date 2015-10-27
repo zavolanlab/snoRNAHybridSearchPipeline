@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300422'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-07</lastupdate>
+<blindnote>
+gene name:AC073107.7->SNORA15-pseud
+2009年6月12日（山元）SNORA15が他にもある。IDはHomo_sapiens300624。snoRNABaseにはHomo_sapiens300624が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA15-pseud->SNORA15L1 snoRNABaseより。
+Homo sapiens ACA15 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residues U1367 of 18S rRNA. Maden and Wakeman (1988) could not determine whether U1367 or U1368 was modified. The pseudouridylation of residue U1367 was experimentally confirmed by primer extension mapping by Kiss et al. (2004).
+(20090707：吉浜）SNORA15L1→SNORA15.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA15</gene_name>
+<family_name>SNORA15</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>64862474..64862608</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>47..52</box>
+<box type='aca'>130..132</box>
+<host_id>Homo_sapiens100292</host_id>
+<host_gene>CCT6P1</host_gene>
+<host_intron></host_intron>
+<host_position>9948..10082</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1367</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCATGGCTGAATACTGTGTTCTTTTATCAGTAGTTTACACAGCCAGACACCATGCAAAAG
+CAGTCTTCCCTTTAGAATGACTGATGGTATGCTAAGGTTTTTCATAGCATATCATTATTA
+AAGGTGAATACAAAT
+</sequence>
+</snoopy>

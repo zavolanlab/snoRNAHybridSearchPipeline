@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300770'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-10-15</lastupdate>
+<blindnote>
+SNORD127 is obtained from snoRNABase.
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD127</gene_name>
+<family_name>SNORD127</family_name>
+<alias></alias>
+<family_base></family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>45580078..45580178</genome_position>
+<strand>+</strand>
+<box type='c'>10..15</box>
+<box type='d'>75..78</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100505</host_id>
+<host_gene>PRPF39</host_gene>
+<host_intron></host_intron>
+<host_position>27757..27842</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:G1447</mod_site>
+<duplex_region>18S|64..73|1453..1444|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGGCAACTGTGATGAAAGATTTGGTCTGTATGTAATAGATTTTATTACTAAATGAGGACA
+ACAGTCCCTCTAAACTGATGTTGCCA
+</sequence>
+</snoopy>

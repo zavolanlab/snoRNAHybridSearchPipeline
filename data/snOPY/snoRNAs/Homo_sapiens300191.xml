@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300191'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-01</lastupdate>
+<blindnote>
+SNORD3@に断片的に似ている。gene name：AC003014.1->SNORD3-pseud.
+2009年7月1日（山元）gene name：SNORD3-pseud→SNORD3L5
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD3L5</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position>113073744..113073956</genome_position>
+<strand>-</strand>
+<box type='c'>155..160</box>
+<box type='d'>51..54</box>
+<box type='h'>2..7</box>
+<box type='aca'>89..91</box>
+<host_id>Homo_sapiens100140</host_id>
+<host_gene>Mono:209:AC003014.1</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1213</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAGACTATTTTCAAGGTTCATTTCTATAGTTCACTACTGGAGAAGTTTCTCTGAACATGT
+GGAACACCAGGAAACATGAGGAAGAAGCACAGCATTCTCTCCTAAATGTGAAGCCAGCTG
+TTGGTGTTGCTTTGCTATAACTGCTATTTGCCATTGATGATTATTTTCCTCTTCTTCCCA
+GAGAGTAAGAGGGAGAGGATGCAGTCTGTGTGG
+</sequence>
+</snoopy>

@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300444'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-06-26</lastupdate>
+<blindnote>
+gene name:AC083867.7->SNORA51-pseud.
+2009年6月26日（山元）gene name：SNORA51-pseud→SNORA51L7
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA51L7</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>137523284..137523415</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>19..24</box>
+<box type='aca'>127..129</box>
+<host_id>Homo_sapiens100312</host_id>
+<host_gene>Mono:196:AC083867.7</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1132</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AGCCTCCTGGTGCTCAGCACAGGATGTGTTCTTACCCTAACCAAATAGAAAGAGTAGGCT
+GAATTAACCTATGCCATATACACCTCAACCCAGGCCCTGCAACTCCTCTGTATTGTCAAT
+GGGTGGACATGG
+</sequence>
+</snoopy>

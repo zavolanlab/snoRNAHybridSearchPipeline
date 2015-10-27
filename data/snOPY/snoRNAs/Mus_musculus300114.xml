@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300114'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-03-09</lastupdate>
+<blindnote>
+古西：Homo_sapiens300556  box C(HOMO-tgatgaに対し、MUS-acaaga）で、OKとした。box D(HOMO-ctgaに対し、MUS-ctaa)、2つ目のbox D（HOMO-ctgaに対し、MUS-ttgt）が成立するか判断要。duplex_region 5'側1ベース差異（HOMO－c、MUS－T）。target RNA, modification type 入力。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD95</gene_name>
+<family_name>SNORD95</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>8</chrom_or_contig>
+<genome_position>43607490..43607557</genome_position>
+<strand>-</strand>
+<box type='c'>8..13</box>
+<box type='d'>28..31, 61..64</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100083</host_id>
+<host_gene>Mono:141:SNORD95</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1068</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:A2568, 28S:C2577</mod_site>
+<duplex_region>28S|48..60|2576..2564|, 28S|16..26|2584..2574|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TACAGATACAAGACCTCAACATGCCATCTAACTGTGGAGCTGAAAATCCAGAGGCTGTTT
+TTGTACTC
+</sequence>
+</snoopy>

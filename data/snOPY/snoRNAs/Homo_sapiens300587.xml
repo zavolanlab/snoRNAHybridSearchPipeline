@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300587'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-22</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA U4643 : SNORA37 and SNORA30
+2009年6月17日（山元）snoRNABaseより。Homo sapiens ACA30 snoRNA. This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U4643 of 28S rRNA. The pseudouridylation of this residue was previously reported by Ofengand and Bakin (1997). ACA30 resides in the SRCAP gen from human to xenopus. Intragenic duplication of ACA30 in the SRCAP gene is observed in xenopus and opossum. A close paralogue, ACA30b, resides in the KIAA1797 gene in primates and dog, and is mutated in cat, mouse, rat and cow. Primate-specific Type 1 snoRTs reside in the PSG1 and MBD2 genes. The ACA37 snoRNA is a primate-specific retrocopy of, most probably, ACA30b (Weber, 2006; Luo and Li, 2007). In fugu, medaka and tetraodon, a single ACA30-like sequence resides in the KIF22 gene. In zebrafish, four related sequences reside in the KIF22 gene.
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA30</gene_name>
+<family_name>SNORA30</family_name>
+<alias>ACA30</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>16</chrom_or_contig>
+<genome_position>30721858..30721986</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..65</box>
+<box type='aca'>124..126</box>
+<host_id>Homo_sapiens100414</host_id>
+<host_gene>TAOK2</host_gene>
+<host_intron></host_intron>
+<host_position>733765..733893</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4643</mod_site>
+<duplex_region>28S|8..14|4652..4645|,28S|45..52|4642..4635|</duplex_region>
+<accession>AJ609440 NT_010393</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268, Weber MJ. (2006) Mammalian Small Nucleolar RNAs Are Mobile Genetic Elements. PLoS Genet. 2(12):e205, Luo Y. and Li S. (2007) Genome-wide analyses of retrogenes derived from the human box H/ACA snoRNAs. Nuc. Acids Res. 35(2):559-71.</evidence>
+<note></note>
+<sequence>
+CTGGCACTTTCACAGTTCCTTCCCCAGGCAGTGGGGCCAGGATTTGGTAGCTGGTGCTGA
+GAGAAAACCCTTGATTGTATTCTTGCCCTGGGATTATACCAGTGGCAACTGTCACTCAAT
+GGGACAGTG
+</sequence>
+</snoopy>

@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300438'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-21</lastupdate>
+<blindnote>
+The box H is moved based on snoRNABase.
+(20100616末安)genomic positionを変更した,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100621末安)UCSCを参考にgenomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA13</gene_name>
+<family_name>SNORA13</family_name>
+<alias>ACA13</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>111497182..111497314</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>59..64</box>
+<box type='aca'>128..130</box>
+<host_id>Homo_sapiens100306</host_id>
+<host_gene>C5orf26</host_gene>
+<host_intron></host_intron>
+<host_position>1635..1767</host_position>
+<organization>intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1248</mod_site>
+<duplex_region>18S|5..12|1257..1250|,18S|45..50|1247..1242|</duplex_region>
+<accession>AJ609455 NT_034772</accession>
+<evidence> Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Maden, E. H., and Wakeman, J. A. (1988). Pseudouridine distribution in mammalian 18 S ribosomal RNA. A major cluster in the central region of the molecule. Biochem J 249, 459-464.</evidence>
+<note></note>
+<sequence>
+AGCCTTTGTGTTGCCCATTCACTTTGGAAACTAGTGAATGTGGTGTCAAAAAAGGCGTAA
+ATTAAACGCTTTGCAGCCTTTTCCTGCCCTTAAATTTGATACCTTTGGTGTAGGAGCTGC
+ATAAGTAACAGTT
+</sequence>
+</snoopy>

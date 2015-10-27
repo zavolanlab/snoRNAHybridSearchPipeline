@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300657'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-08</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA G601 : SNORD103A   SNORD85   SNORD103B   
+(20100708末安)snoRNABaseを参考にsequenceを5'側から4nt伸ばし、3'側から2nt伸ばした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD85</gene_name>
+<family_name>SNORD85</family_name>
+<alias>HBII-251</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>31441010..31441084</genome_position>
+<strand>-</strand>
+<box type='c'>10..15</box>
+<box type='d'>32..35, 65..68</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100462</host_id>
+<host_gene>PUM1</host_gene>
+<host_intron></host_intron>
+<host_position>92334..92402</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:G601</mod_site>
+<duplex_region>18S|21..30|607..598|</duplex_region>
+<accession>NR_003066,NT_032977</accession>
+<evidence>Huttenhofer, A., Kiefmann, M., Meier-Ewert, S., O'Brien, J., Lehrach, H., Bachellerie, J. P., and Brosius, J. (2001). RNomics: an experimental approach that identifies 201 candidates for novel, small, non-messenger RNAs in mouse. Embo J 20, 2943-2953.</evidence>
+<note></note>
+<sequence>
+GACTGGCAAGGATGATACACACTTGCCCTCACTTAGACTATAGTTCACTGATGAGAGCAT
+TGTTCTGAGCCAGTC
+</sequence>
+</snoopy>

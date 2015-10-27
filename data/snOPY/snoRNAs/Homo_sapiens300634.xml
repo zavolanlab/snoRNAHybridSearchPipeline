@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300634'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-07</lastupdate>
+<blindnote>
+gene name:AL591503.9->SNORA11C.  It was characterized as a primate-specific U106 (SNORA11) Type 1 snoRT (Weber, 2006; Luo and Li, 2007). See entry U107 for alignement (U107e in C14orf159).
+(20090707)ref.setを作るために、A→B
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA11C</gene_name>
+<family_name>SNORA11</family_name>
+<alias>U107d</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position>47132992..47133120</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>58..63</box>
+<box type='aca'>124..126</box>
+<host_id>Homo_sapiens100446</host_id>
+<host_gene>ZNF157</host_gene>
+<host_intron></host_intron>
+<host_position>19050..19178</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGGGTGTGCTCAGAGCAGGGGGCCTGAAGAATGCTTCTTCTGTTTACAACACACCCAATA
+GGAATCTGGGGTCATTGTGACGGGGGGCACAAAACTTGTGACCTCTCTATGAACAAATGC
+CCCACATGT
+</sequence>
+</snoopy>

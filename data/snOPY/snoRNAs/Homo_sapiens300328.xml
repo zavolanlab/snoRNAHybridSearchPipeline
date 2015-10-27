@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300328'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+gene name:AC124303.5->SNORD115-28
+(20090709：吉浜)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD115-28</gene_name>
+<family_name>SNORD115</family_name>
+<alias>HBII-52-28</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>15</chrom_or_contig>
+<genome_position>23018588..23018668</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>28..31</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100228</host_id>
+<host_gene>SNORD115@</host_gene>
+<host_intron></host_intron>
+<host_position>52626..52706</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGGTGGTGATGAGAACCTTGTATTCTTCTGAAGAGAGGTGATGACTTAAAAACCATGCTC
+AATAGGATTACACTTAGGCCG
+</sequence>
+</snoopy>

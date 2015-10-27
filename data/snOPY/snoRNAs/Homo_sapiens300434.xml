@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300434'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-30</lastupdate>
+<blindnote>
+(20100630末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD113-1</gene_name>
+<family_name>SNORD113</family_name>
+<alias>14q(I-1)</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>14</chrom_or_contig>
+<genome_position>101391158..101391227</genome_position>
+<strand>+</strand>
+<box type='c'>9..14</box>
+<box type='d'>62..65</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100555</host_id>
+<host_gene>SNORD113@</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1070</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_003229,NT_026437</accession>
+<evidence>Cavaille, J., Seitz, H., Paulsen, M., Ferguson-Smith, A. C., and Bachellerie, J. P. (2002). Identification of tandemly-repeated C/D snoRNA genes at the imprinted human 14q32 domain reminiscent of those at the Prader-Willi/Angelman syndrome region. Hum Mol Genet, 11, 1527-1538.</evidence>
+<note></note>
+<sequence>
+AAAGTGAGTGATGAATAGTTCTGTGGCATATGAATCATTAATTTTGATTAAACCCTAAAC
+TCTGAAGTCC
+</sequence>
+</snoopy>

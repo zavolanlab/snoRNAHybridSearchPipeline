@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300364'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-03</lastupdate>
+<blindnote>
+gene name:AC104842.4->SNORD80-pseud.
+2009年7月3日（山元）gene name：SNORD80-pseud→SNORD80L1
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD80L1</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>125602879..125602960</genome_position>
+<strand>+</strand>
+<box type='c'>10..15</box>
+<box type='d'>71..74</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100248</host_id>
+<host_gene>Mono:44:AC104842.4</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1082</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CACATACAATGATGATAATACAGTTCAGCAGACAAAAACTGATTCGCAATATTAAGTGTT
+TCACTCATTTCTGATGTAAAAC
+</sequence>
+</snoopy>

@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300421'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-22</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA U4966 : SNORA22 and SNORA33
+2009年6月12日（山元）snoRNABaseより。Homo sapiens ACA22 snoRNA This H/ACA box RNA was cloned by Kiss et al. (2004) from a HeLa cell extract immunoprecipitated with an anti-GAR1 antibody. It is predicted to guide the pseudouridylation of residue U4966 of 28S rRNA. The pseudouridylation of this residue was previously reported by Ofengand and Bakin (1997). However, the sequences of the 5� stem of ACA22 that might guide the modification of 28S rRNA U4966 are poorly conserved, and ACA33 is a more likely candidate. As predicted by Schattner et al. (2006), the 3� stem of ACA22 most probably guides the pseudouridylation of 28S rRNA U4975. The host gene of ACA22 (mRNA BC052238) is a paralogue of the host gene of ACA15 (CCT6A). The pericentromeric region of human chr7 contains 3 paralogues of that gene (CCT6A, mRNA BC052238 and mRNA BC071617). Each of them hosts close paralogues of both ACA15 and ACA22).
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA22</gene_name>
+<family_name>SNORA22</family_name>
+<alias>ACA22</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>65220513..65220646</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>57..62</box>
+<box type='aca'>129..131</box>
+<host_id>Homo_sapiens100292</host_id>
+<host_gene>CCT6P1</host_gene>
+<host_intron></host_intron>
+<host_position>5422..5555</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4966,28S:U4975</mod_site>
+<duplex_region>28S|8..11|4971..4968|,28S|42..50|4965..4957|,28S|75..83|4985..4977|,28S|111..114|4974..4971|</duplex_region>
+<accession>AJ609437 NT_007933</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268, Schattner, P., Barberan-Soler, S., and Lowe, T. M. (2006). A computational screen for mammalian pseudouridylation guide H/ACA RNAs. Rna 12, 15-25</evidence>
+<note></note>
+<sequence>
+TTGCACAGTGAACACCCAAGTGTGCTTTATAGTTCCCTTGGCTTTGACCCTGTGCTAGAG
+CATTGCCTGCTCTTCTCCTCTGCATTAAAAGGAATATTTATCCTTTTAAATGTATTCAGA
+AAGCCAGCACATTA
+</sequence>
+</snoopy>

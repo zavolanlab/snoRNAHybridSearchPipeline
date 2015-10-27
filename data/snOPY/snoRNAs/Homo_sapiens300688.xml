@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300688'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-22</lastupdate>
+<blindnote>
+SNORA2A and SNORA2B is predicted to guide pseudouridylation of U4263 and U4282 in 28S rRNA. Pseudouridylation of U4282 in 28S rRNA is guided also SNORA34. The snoRNAs (SNORA2A, SNORA2B, SNORA34) share the same host gene (C12orf41). 
+古西：snoRNABaseでbox Hの配列を確認し、修正。
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA2A</gene_name>
+<family_name>SNORA2</family_name>
+<alias>ACA2a</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>12</chrom_or_contig>
+<genome_position>49050431..49050565</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>58..63</box>
+<box type='aca'>130..132</box>
+<host_id>Homo_sapiens100485</host_id>
+<host_gene>C12orf41</host_gene>
+<host_intron></host_intron>
+<host_position>26439..26573</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4263,28S:U4282</mod_site>
+<duplex_region>28S|9..15|4271..7265|,28S|44..47|4262..4259|,28S|73..82|4293..4284|,28S|116..118|4281..4279|</duplex_region>
+<accession>AJ609426 NT_029419</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268.</evidence>
+<note></note>
+<sequence>
+TAGGCCCTGAATCAAGACCAATGGTTTGCTGTAGCTGTTGGTTTCAAACAGGAGCTAAGA
+GTGATGTCTTCCTTGTGGTCTGTTGGCTATTCAGTATTCCAGTGCGAATTGCCAATTCAG
+TTGGAAGAAACATAG
+</sequence>
+</snoopy>

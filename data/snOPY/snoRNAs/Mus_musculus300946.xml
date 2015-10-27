@@ -1,0 +1,39 @@
+<snoopy id='Mus_musculus300946'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2013-01-18</lastupdate>
+<blindnote>
+古西：Homo_sapiens300714  box cd、target RNA,modification type 入力。
+(2)duplex_region,modification site 入力。
+(20130116安川)duplex_regionをSaccharomyces_cerevisiaeと比べると5'側が1nt短いです。
+(20130118安川)gene nameをsnR38-1に変更しました。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>snR38-1</gene_name>
+<family_name>SNORD1</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>116533820..116533895</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>32..35, 66..69</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100696</host_id>
+<host_gene>1810032O08Rik</host_gene>
+<host_intron></host_intron>
+<host_position>1838..1913</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G4044</mod_site>
+<duplex_region>28S|20..31|4051..4040|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTGAGCTGAGGATGATTTAAGTTATCCCTGTCTGAAATGACACTTTTGTGAAGAGTCATG
+GTTTACTGAGGCTCGA
+</sequence>
+</snoopy>

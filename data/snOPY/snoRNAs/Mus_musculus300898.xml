@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300898'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-13</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLAST。alias,box H,box ACA,duplex_region,target RNA,modification type,modification site 入力。duplex_regionのcomplementary,modification siteは、snoRNABaseで示された配列と同じ位置関係を入力した。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA62</gene_name>
+<family_name>SNORA62</family_name>
+<alias>E2</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>120037898..120038053</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>72..77</box>
+<box type='aca'>151..153</box>
+<host_id>Mus_musculus100665</host_id>
+<host_gene>Rpsa</host_gene>
+<host_intron></host_intron>
+<host_position>1994..2149</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28SU:3507,28S:U3509</mod_site>
+<duplex_region>28S|9..16|3516..3509|, 28S|58..65|3506..3499|, 28S|92..99|3518..3511|, 28S|137..141|3508..3504|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CCTGCACACTATTAAAGCTCAGAGTGGAGGCCAGTCTTGGCCAGTGAACTTCTGAGTGTC
+GGAAGTGTGCTACATTGAATTTATGGCAGGATTTTCGCTAACACCAGTAGAGCTTGCCTC
+TATGACTGGAGTTTGGTAGTGGTCACTGCCACATGC
+</sequence>
+</snoopy>

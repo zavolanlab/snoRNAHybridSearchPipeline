@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300552'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-07</lastupdate>
+<blindnote>
+gene name:AC005370.1->SNORA36C-pseud
+2009年6月17日（山元）SNORA36Cが他にもある。IDはHomo_sapiens300499。snoRNABaseにはHomo_sapiens300499が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA36C-pseud->SNORA36CL1 snoRNABaseより。Human SNORA36C H/ACA box snoRNA. This snoRNA was discovered by Yang et al. (2006) with the snooSeeker software. It was characterized as a primate-specific ACA36 type 2 snoRT by Weber (2006) and Luo and Li (2007). 
+(20090707：吉浜）SNORA36CL1→SNORA36C.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA36C</gene_name>
+<family_name>SNORA36</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>141985918..141986054</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>70..75</box>
+<box type='aca'>135..137</box>
+<host_id>Homo_sapiens100390</host_id>
+<host_gene>FGF1</host_gene>
+<host_intron></host_intron>
+<host_position>60368..60504</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA </mod_rna>
+<mod_site>18S:U1244</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CAATGCCTTGAGTTCAGTCGAGGACAGCTTCCCTTTTCTGTTAATTAAACTTTGGAATGT
+TGGGGCATTAAAACAGGCTAGGGTAGGTGATTGCACAGAGAATACTATTCTATTCATTTC
+CTTCCTAGCCAAAAACA
+</sequence>
+</snoopy>

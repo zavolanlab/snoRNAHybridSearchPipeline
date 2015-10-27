@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300477'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-08</lastupdate>
+<blindnote>
+(20100708末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD86</gene_name>
+<family_name>SNORD86</family_name>
+<alias>U86</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>20</chrom_or_contig>
+<genome_position>2636743..2636828</genome_position>
+<strand>+</strand>
+<box type='c'>9..14</box>
+<box type='d'>77..80</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100343</host_id>
+<host_gene>NOL5A</host_gene>
+<host_intron></host_intron>
+<host_position>4566..4651</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_004399,NT_011387</accession>
+<evidence>Filippini, D., Renzi, F., Bozzoni, I., and Caffarelli, E. (2001). U86, a novel snoRNA with an unprecedented gene organization in yeast. Biochem Biophys Res Commun, 288, 16-21.</evidence>
+<note></note>
+<sequence>
+GATCACGGTGATGGCTGACCAGGGCTCCCTGACCTATACAGGCCTCTGCTATGGGGGTGA
+TGGCCAGTCCTGGTGTCTGAGTGATT
+</sequence>
+</snoopy>

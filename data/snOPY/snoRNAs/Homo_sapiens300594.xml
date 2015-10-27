@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300594'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA U1692 : SNORA70 SNORA70B SNORA70C SNORA70D SNORA70E SNORA70F  SNORA70G
+(20090708)ref.setを作るために、A→B
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA70D</gene_name>
+<family_name>SNORA70</family_name>
+<alias>U70D</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>16</chrom_or_contig>
+<genome_position>70289971..70290105</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>64..69</box>
+<box type='aca'>130..132</box>
+<host_id>Homo_sapiens100419</host_id>
+<host_gene>PHLPPL</host_gene>
+<host_intron></host_intron>
+<host_position>17101..17235</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1692</mod_site>
+<duplex_region>18S|82..86|1700..1696|,18S|116..120|1693..1689|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CTGCAGACAGTTAAGCCAACTGAGTTCCTTTCCTCAGGGAGGCCCAGTGTACAATGGCTG
+CCCACAGCAGCTTCCTTGGTAGCGTACTCAGCCTGTTTCTTGTATGGGTTGCTCTAAGGG
+ACCTTAGAGACAGGC
+</sequence>
+</snoopy>

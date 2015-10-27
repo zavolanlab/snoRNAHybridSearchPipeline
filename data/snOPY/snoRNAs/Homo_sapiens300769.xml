@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300769'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2008-10-15</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 18S rRNA U799 : SNORD105 SNORD105B
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD105B</gene_name>
+<family_name>SNORD105</family_name>
+<alias>U105B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>19</chrom_or_contig>
+<genome_position>10220425..10220516</genome_position>
+<strand>+</strand>
+<box type='c'>12..17</box>
+<box type='d'>66..69</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100395</host_id>
+<host_gene>P2RY11</host_gene>
+<host_intron></host_intron>
+<host_position>4390..4468</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U799</mod_site>
+<duplex_region>18S|51..64|808..796|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CCACATGCGGCTGATGACAGCACTTCTGCTGAGACGCTGTGATTGCTCTGTCCAAAGTAA
+ACGCCCTGACGCACTGTGG
+</sequence>
+</snoopy>

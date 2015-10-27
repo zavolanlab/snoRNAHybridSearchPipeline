@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300630'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-06-26</lastupdate>
+<blindnote>
+gene name:AC005046.3->SNORD3-pseud.
+2009年6月19日（山元）snoRNABaseのU3-3に89%の相同性。本登録はintronicなので、発現の有無が未確認である。SNORD3-pseud->SNORD3L2 snoRNABaseのU3-3より。Homo sapiens C/D box U3-3 snoRNA. This snoRNA is a close paralogue of U3 snoRNA (see U3 entry). The human genome contains five U3-related genes clustered on chr17p11.2: one copy of each U3, U3-3 and U3-4, and two copies of U3-2. None is identical to the U3a and U3b sequences published by Gao et al. (1997). From their restriction maps, U3b would correspond to U3-2, and U3a to U3-4. Compared to the 4 other copies of U3, the 5' domain of U3-4 contains two mutations, one of which in the conserved GAC box. 
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD3L2</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>107427473..107427663</genome_position>
+<strand>-</strand>
+<box type='c'>17..22</box>
+<box type='d'>106..109</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100443</host_id>
+<host_gene>LAMB1</host_gene>
+<host_intron></host_intron>
+<host_position>3046..3236</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAGACTATCCTCTCAGTGATGATTTCTATAGTTCGTTACTAGAGAAGTTTCTCTAAACAT
+GTAGAGAGCATCAGAAACCACAAAAAAGAGGTGCAGCGGTCTCTCCTGAGTGTGAAGCTG
+GCTCTTGGTATTGCTTCTTGGTTCTTCTCTTCCTTTGGGAGAGTAAGAGGAAGAGGATGC
+AGTCTTAGTAG
+</sequence>
+</snoopy>

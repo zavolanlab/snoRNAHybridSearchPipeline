@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300546'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+40bp程度の相同性だけど、gene name:AC008810.8->SNORA57.
+2009年6月17日（山元）SNORA57が他にもある。IDはHomo_sapiens300739。snoRNABaseにはHomo_sapiens300739が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA57-pseud->SNORA57L1 snoRNABaseより。Homo sapiens U99 snoRNA. This H/ACA box RNA was originally cloned from a mouse brain library by Huttenhofer et al. (2001) and named MBII-104. The human orthologue was named U99 by Vitali et al. (2003) and found to be enriched in the nucleolar fraction of HeLa cells. This snoRNA is predicted to guide the pseudouridylation of 18S rRNA U1004 (Schattner et al., 2006). Maden and Wakeman (1988) could not determine whether U1003 or U1004 was modified. U99 is hosted by the LOC751071 gene, that encodes a predicted protein well conserved in marmoset, cow, dog, opossum (XP_001362339)and xenopus tropicalis (EST CX918306). However, the mouse and rat orthologous genes are predicted to encode unrelated proteins (mouse mRNA AK011444). In lizard, a U99 copy resides in the GNAI1 gene. In fugu, tetraodon, stickleback and medaka, U99 resides, as U20, U23 and U82, in the nucleolin (NCL) gene (one intragenic duplication in stickleback). In zebrafish, one U99 copy resides in the SIAHBP1 gene, and a second one near the GANAB gene (as in the human genome). 
+(20090708：吉浜）SNORA57L1→SNORA57.　名前にLを付けないことにしました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA57</gene_name>
+<family_name>SNORA57</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>40825936..40826063</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>84..89</box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100384</host_id>
+<host_gene>PRKAA1</host_gene>
+<host_intron></host_intron>
+<host_position>8992..9119</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1004</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CCTCCTTTTCTTGTCAGGGACTGAGTGTGTGGTCCTGCTCCTGTTATGTATGGAGGCAAA
+GGGAAAGGGCTCCGGCCCCCTCAAAATCATGTCTTTGGTGCCAGCCGGTTCTGTTCTCAG
+TCACCTGG
+</sequence>
+</snoopy>

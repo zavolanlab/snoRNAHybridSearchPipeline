@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300708'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+gene name;AC010761.10->SNORD42A.  sno/scaRNAs with same target 18S rRNA U116 : SNORD42A SNORD42B
+(20100706末安)snoRNABaseを参考にsequenceを5'側から5nt減らし3'側から1nt減らした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+
+(20120412吉浜）locusの配列が変わったのでsnoRNA positionを変更しました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD42A</gene_name>
+<family_name>SNORD42</family_name>
+<alias>U42A</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>27050452..27050509</genome_position>
+<strand>+</strand>
+<box type='c'>3..8</box>
+<box type='d'>51..54</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100497</host_id>
+<host_gene>RPL23A</host_gene>
+<host_intron></host_intron>
+<host_position>4441..4498</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U116</mod_site>
+<duplex_region>18S|40..50|122..112|</duplex_region>
+<accession>NR_000014,NT_010799</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.</evidence>
+<note></note>
+<sequence>
+AATGATGGAAAAATCATTATTGGAAAAGAATGACATGAACAAAGGAACCACTGAAGTG
+</sequence>
+</snoopy>

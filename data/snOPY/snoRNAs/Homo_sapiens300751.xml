@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300751'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-21</lastupdate>
+<blindnote>
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20100621末安)UCSCを参考にgenomic positionを更新した。
+
+
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA18</gene_name>
+<family_name>SNORA18</family_name>
+<alias>ACA18</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>11</chrom_or_contig>
+<genome_position>93466632..93466763</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>61..66</box>
+<box type='aca'>127..129</box>
+<host_id>Homo_sapiens100529</host_id>
+<host_gene>JOSD3</host_gene>
+<host_intron></host_intron>
+<host_position>8898..9029</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_002959 NT_167190</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807</evidence>
+<note></note>
+<sequence>
+GTTGAGGTCTATCCCGATGGGGCTTTTCCTGTAGCCTGCACATCGTTGGAAACGCCTCAT
+AGAGTAACTCTGTGGTTTTACTTTACTCACAGGACTATTGTTAGATCTGTGGGAAGGAAT
+TACAAGACAGTT
+</sequence>
+</snoopy>

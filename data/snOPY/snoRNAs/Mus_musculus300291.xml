@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300291'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-04-14</lastupdate>
+<blindnote>
+古西：snoRNABaseでBLASTした結果、U1 snRNAとしてヒット。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORA32</gene_name>
+<family_name>SNORA32</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>X</chrom_or_contig>
+<genome_position>152890542..152890649</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>18..23</box>
+<box type='aca'>103..105</box>
+<host_id>Mus_musculus100144</host_id>
+<host_gene>Mono:215:SNORA32</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1108</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TATTTATTTATTTGTAGAAATAAAAATTTCACATTTAACCATAAAGAAAAATTCCCATTA
+GGTTTTCCATATGCTACTTCACTAGCAGTTAACCTGTTGGGAACATTT
+</sequence>
+</snoopy>

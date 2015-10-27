@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300664'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+2009年6月19日（山元）snoRNABaseより。
+Homo sapiens C/D box snoRNA U38B. This snoRNA was initially characterized by a bioinformatics search for C/D motives in a vertebrate intron database (Nicoloso et al. 1996). It is predicted to guide the 2'O-ribose methylation of 28S rRNA A1858. U38B shares the same host gene with a closely related copy, U38A, and the C/D box snoRNAs U40 and U55 (RPS8).
+
+(20090708：吉浜)ref.setを作るために、A→B
+(20120412吉浜）locusの配列が変わったのでsnoRNA positionを変更しました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD38B</gene_name>
+<family_name>SNORD38</family_name>
+<alias>U38B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>45244062..45244130</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>34..37, 61..64</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100466</host_id>
+<host_gene>RPS8</host_gene>
+<host_intron></host_intron>
+<host_position>3817..3885</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:A1858</mod_site>
+<duplex_region>28S|21..31|1865..1855|</duplex_region>
+<accession>X97583</accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TCTCAGTGATGAAAACTTTGTCCAGTTCTGCTACTGACAGTAAGTGAAGATAAAGTGTGT
+CTGAGGAGA
+</sequence>
+</snoopy>

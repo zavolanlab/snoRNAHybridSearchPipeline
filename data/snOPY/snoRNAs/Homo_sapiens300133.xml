@@ -1,0 +1,39 @@
+<snoopy id='Homo_sapiens300133'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-06-25</lastupdate>
+<blindnote>
+gene name:AC016559.3->SNORA18-pseud.
+2009年6月25日（山元）gene name：SNORA18-pseud→SNORA18-L2
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA18L2</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>5</chrom_or_contig>
+<genome_position>78552521..78552652</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>60..65</box>
+<box type='aca'>127..129</box>
+<host_id>Homo_sapiens100093</host_id>
+<host_gene>Mono:129:AC016559.3</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1132</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GTGGAGGTCTATTCCAATGGGGCTTTTCCTGTAGCTGCATGTTGTTGGAAACTCCTCATA
+GACTAACTCTGTGGTTTTGCTTTACTCACAGGACTATTAGTTAGGTCTGTGGGAAGGAAC
+TACAAGACAGTT
+</sequence>
+</snoopy>

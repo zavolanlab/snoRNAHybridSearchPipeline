@@ -1,0 +1,37 @@
+<snoopy id='Mus_musculus300910'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-02-12</lastupdate>
+<blindnote>
+古西：Homo_sapiens300667 duplex_region 2つめ3'側1ベース不一致（HOMO-t,MUS-g),target RNA,modification type 入力
+(2)duplex_region,modification site 入力（HOMOに合わせた）。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD45</gene_name>
+<family_name>SNORD45</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>3</chrom_or_contig>
+<genome_position>153574574..153574654</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>28..31, 72..75</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100673</host_id>
+<host_gene>Rabggtb</host_gene>
+<host_intron></host_intron>
+<host_position>1370..1450</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:A159,18S:U172 </mod_site>
+<duplex_region>18S|13..26|182..169|, 18S|55..71|171..155|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGTCAATGATGTGTTGGCATGTATTATCTGAATTCGCTGATGTGTCATAACACTTTAGCT
+CTAGAATTACGCTGAGACCTT
+</sequence>
+</snoopy>

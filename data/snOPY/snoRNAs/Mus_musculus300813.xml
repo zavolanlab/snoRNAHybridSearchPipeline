@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300813'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-03-04</lastupdate>
+<blindnote>
+古西：Homo_sapiens300592　box D,target RNA,modification type 入力。(2)duplex_region,modification site 入力。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD111</gene_name>
+<family_name>SNORD111</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>8</chrom_or_contig>
+<genome_position>113362428..113362516</genome_position>
+<strand>-</strand>
+<box type='c'>11..16</box>
+<box type='d'>39..42, 78..81</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100597</host_id>
+<host_gene>Sf3b3</host_gene>
+<host_intron></host_intron>
+<host_position>9161..9249</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G3600</mod_site>
+<duplex_region>28S|25..37|3608..3597|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CAGCCTGAAATGATGACCATTTAATTCATGTCTCTTCTCTGACATTCTCCTCTGGAGATG
+ATTTTTGCCTTATTGATCTGATCAGGCTG
+</sequence>
+</snoopy>

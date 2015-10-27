@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300669'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+There are SNORD21 with two copies in OLD snoOPY, but there is one copy in new snOPY.
+(20100701末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD21</gene_name>
+<family_name>SNORD21</family_name>
+<alias>U21</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>93302846..93302940</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>85..88</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100469</host_id>
+<host_gene>RPL5</host_gene>
+<host_intron></host_intron>
+<host_position>6250..6344</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G1303</mod_site>
+<duplex_region>28S|70..83|1313..1300</duplex_region>
+<accession>NR_000006,NT_032977</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088. Maden, B. E. (1990). The numerous modified nucleotides in eukaryotic ribosomal RNA. Prog Nucleic Acid Res Mol Biol, 39, 241-303. Qu, L. H., Nicoloso, M., Michot, B., Azum, M. C., Caizergues-Ferrer, M., Renalier, M. H., and Bachellerie, J. P. (1994). U21, a novel small nucleolar RNA with a 13 nt. complementarity to 28S rRNA, is encoded in an intron of ribosomal protein L5 gene in chicken and mammals. Nucleic Acids Res, 22, 4073-4081.</evidence>
+<note></note>
+<sequence>
+GCTGAATGATGATATCCCACTAACTGAGCAGTCAGTAGTTGGTCCTTTGGTTGCATATGA
+TGCGATAATTGTTTCAAGACGGGACTGATGGCAGC
+</sequence>
+</snoopy>

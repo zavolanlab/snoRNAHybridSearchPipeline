@@ -1,0 +1,42 @@
+<snoopy id='Homo_sapiens300618'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AC005995.3->SNORA80B-pseud.
+2009年6月18日（山元）SNORA80Bが他にもある。IDはHomo_sapiens300493。snoRNABaseにはHomo_sapiens300493が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA80B-pseud->SNORA80BL1 snoRNABaseより。
+Homo sapiens ACA67B H/ACA box snoRNA. This snoRNA is the most likely parental copy of snoRT ACA67 (Weber,2006; Luo and Li, 2007). A second primate-specific Type 1 ACA67B snoRT resides in the JTV1 gene (chr7:6,023,034-6,023,168). A third one (extragenic, chr16:30,338,447-30,338,581) is embedded in a complex array of Alu elements. ACA42 might be an old ACA67B snoRT. A rodent-specific snoRT resides in the RPL6 gene, and a cow-specific one in the EIF2A gene. In opossum, platypus, lizard and Xenopus tropicalis, the closest paralog of ACA67B (ACA67E) resides in the SSR4 gene.
+(20090708：吉浜）SNORA80BL1→SNORA80B.　名前にLを付けないことにしました。
+
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA80B</gene_name>
+<family_name>SNORA80</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>6023034..6023168</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>59..64</box>
+<box type='aca'>130..132</box>
+<host_id>Homo_sapiens100437</host_id>
+<host_gene>JTV1</host_gene>
+<host_intron></host_intron>
+<host_position>8627..8761</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U109,18S:U572</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GCATGGGTTTGGATTATGACAGGCCCATCCCCCTGGACCTCTCATAGTGCCCCATGCCAG
+AGCAAACTGTGGCCCCGAACCATTGCCTGGCTTCTGTACCCGTGGGCCACTGGCACTGAA
+GAGGGTTACACAGTG
+</sequence>
+</snoopy>

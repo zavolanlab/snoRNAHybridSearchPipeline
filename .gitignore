@@ -8,3 +8,4 @@
 !*.pl
 !*.sh
 !*.ini
+.bash_history

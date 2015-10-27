@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300871'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2013-05-07</lastupdate>
+<blindnote>
+古西：Homo_sapiens300745　BLASTしてヒットしたが、そのHOMOにduplex_region情報無し。family name,family base,modification type 入力。(2)target RNA をUnknownとした。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>snoU2-30</gene_name>
+<family_name>SCARNA9</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>13</chrom_or_contig>
+<genome_position>107780482..107780547</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>58..61</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100648</host_id>
+<host_gene>Kif2a</host_gene>
+<host_intron></host_intron>
+<host_position>32643..32708</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GAGTAATGATGAAAAATTGTATCACGGAACTTTTTAAATGGGATTTCTACATTTGACCTG
+AGCTTG
+</sequence>
+</snoopy>

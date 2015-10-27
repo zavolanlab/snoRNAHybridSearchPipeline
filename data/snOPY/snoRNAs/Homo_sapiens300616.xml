@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300616'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-06-24</lastupdate>
+<blindnote>
+2009年6月18日（山元）snoRNABaseより。
+Homo sapiens E3 snoRNA. This H/ACA box snoRNA was cloned by Ruff et al. (1993). It was shown by Rimoldi et al. (1993) that E3 can be cross-linked by psoralen to the 18S rRNA region (between residues 1021 and 1639) of the nucleolar pre-rRNA. E3 RNA degradation of frog oocytes shuts down production of 32S pre-rRNA from 36S pre-rRNA, suggesting that E3 snoRNA is involved in rRNA processing at or near the 5' end of 5.8S RNA (site 3) (Mishra and Eliceiri, 1997). Ganot et al. (1997b) recognised its hairpin-hinge-hairpin-tail structure characteristic of H/ACA box snRNAs. The role of E3 in guiding the pseudouridylation of U4390 in 28S rRNA was evidenced by Ganot et al. (1997a). The pseudouridylation of this residue was previously reported by Ofengand and Bakin (1997). The H/ACA box snoRNAs E3,HBI-61 and ACA4, and the C/D box snoRNA snR39B share the same host gene (EIF4A2).
+(20100624末安)snoRNABaseを参考にsequenceを5'側から1nt増やした3'側から2nt増やした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA63</gene_name>
+<family_name>SNORA63</family_name>
+<alias>E3</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>3</chrom_or_contig>
+<genome_position>186505088..186505222</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>61..66</box>
+<box type='aca'>130..132</box>
+<host_id>Homo_sapiens100436</host_id>
+<host_gene>EIF4A2</host_gene>
+<host_intron></host_intron>
+<host_position>4729..4860</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4390</mod_site>
+<duplex_region>28S|80..83|4395..4392|,28S|116..125|4389..4380|</duplex_region>
+<accession>L07384 NT_005612</accession>
+<evidence>Ganot, P., Bortolin, M. L., and Kiss, T. (1997a). Site-specific pseudouridine formation in preribosomal RNA is guided by small nucleolar RNAs. Cell 89, 799-809, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268, Ruff, E. A., Rimoldi, O. J., Raghu, B., and Eliceiri, G. L. (1993). Three small nucleolar RNAs of unique nucleotide sequences. Proc Natl Acad Sci U S A 90, 635-638, Rimoldi, O. J., Raghu, B., Nag, M. K., and Eliceiri, G. L. (1993). Three new small nucleolar RNAs that are psoralen cross-linked in vivo to unique regions of pre-rRNA. Mol Cell Biol 13, 4382-4390, Ganot, P., Caizergues-Ferrer, M., and Kiss, T. (1997b). The family of box ACA small nucleolar RNAs is defined by an evolutionarily conserved secondary structure and ubiquitous sequence elements essential for RNA accumulation. Genes Dev 11, 941-956, Mishra, R. K., and Eliceiri, G. L. (1997). Three small nucleolar RNAs that are involved in ribosomal RNA precursor processing. Proc Natl Acad Sci U S A, 94, 4972-4977.</evidence>
+<note></note>
+<sequence>
+AAAGCAGGATTCAGACTACAATATAGCTGCTAAGTGCTGTGTTGTCGTTCCCCCTGCTTA
+AAATAAAGTTGTTTCTTAACTATACCTGTCTGCTATTCTCCTGTAGCAGCCAGGGACGCT
+TGGTCTCATACATGT
+</sequence>
+</snoopy>

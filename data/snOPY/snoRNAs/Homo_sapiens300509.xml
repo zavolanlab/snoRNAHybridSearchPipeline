@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300509'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-01</lastupdate>
+<blindnote>
+古西：modification site 18S:U1804→U1805に修正。
+(20100701末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD20</gene_name>
+<family_name>SNORD20</family_name>
+<alias>U20</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>232321155..232321234</genome_position>
+<strand>-</strand>
+<box type='c'>7..12</box>
+<box type='d'>72..75</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100362</host_id>
+<host_gene>NCL</host_gene>
+<host_intron></host_intron>
+<host_position>8972..9051</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>18S rRNA</mod_rna>
+<mod_site>18S:U1806</mod_site>
+<duplex_region>18S|52..71|1821..1802|</duplex_region>
+<accession>Z34290,NT_005403</accession>
+<evidence>Kiss-Laszlo, Z., Henry, Y., Bachellerie, J. P., Caizergues-Ferrer, M., and Kiss, T. (1996). Site-specific ribose methylation of preribosomal RNA: a novel function for small nucleolar RNAs. Cell, 85, 1077-1088.　Nicoloso, M., Caizergues-Ferrer, M., Michot, B., Azum, M. C., and Bachellerie, J. P. (1994). U20, a novel small nucleolar RNA, is encoded in an intron of the nucleolin gene in mammals. Mol Cell Biol, 14, 5766-5776.　Cavaille, J., Nicoloso, M., and Bachellerie, J. P. (1996). Targeted ribose methylation of RNA in vivo directed by tailored antisense RNA guides. Nature, 383, 732-735.</evidence>
+<note></note>
+<sequence>
+TGGATATGATGACTGATTACCTGAGAAATAATTGATGAAATCTCAAGAAAATTCCTCTAG
+ATAGTCAAGTTCTGATCCAG
+</sequence>
+</snoopy>

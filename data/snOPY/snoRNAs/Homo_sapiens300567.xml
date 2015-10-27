@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300567'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-12</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA C4506 : SNORD35A and SNORD35B   
+
+(20090709：吉浜)ref.setを作るために、A→B
+
+(20120412吉浜）locusの配列が変わったのでsnoRNA positionを変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD35B</gene_name>
+<family_name>SNORD35</family_name>
+<alias>U35B</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>19</chrom_or_contig>
+<genome_position>50000976..50001063</genome_position>
+<strand>+</strand>
+<box type='c'>4..9</box>
+<box type='d'>32..35, 75..78</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100401</host_id>
+<host_gene>RPS11</host_gene>
+<host_intron></host_intron>
+<host_position>2291..2377</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:C4506</mod_site>
+<duplex_region>28S|17..30|4516..4503|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGCAGATGATGTTTGTTTTCACGATGGTCTTCAGATGCCCACGTGGGCACTGCTGAGAAA
+GCCACTTGGTAAAACTGATGCCGGAAA
+</sequence>
+</snoopy>

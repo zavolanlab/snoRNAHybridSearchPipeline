@@ -1,0 +1,35 @@
+<snoopy id='Homo_sapiens300229'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2014-12-10</lastupdate>
+<blindnote></blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA63L6</gene_name>
+<family_name>SNORA63</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>4</chrom_or_contig>
+<genome_position>14301432..14301554</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>15..20</box>
+<box type='aca'>120..122</box>
+<host_id>Homo_sapiens100169</host_id>
+<host_gene>Mono:104:AC093777.4</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1123</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AGGCAGGTACTGTTAGAATATAACTGAAGTGTTTTATTGTTATTGTCATTGCTTAAAGCA
+TTGGATACATAACTATCTCTAACTCCATTCCATACTAAGACAGAGATGTTGCATCTCAAA
+CAT
+</sequence>
+</snoopy>

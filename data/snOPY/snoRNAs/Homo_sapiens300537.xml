@@ -1,0 +1,40 @@
+<snoopy id='Homo_sapiens300537'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+sno/scaRNAs with same target 28S rRNA U4966 : SNORA22 and SNORA33 
+(20100616末安)genomic positionは保留,accession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋。snoRNAbaseを参考にsequenceを3'側を3nt伸ばした。
+(20100622末安)UCSCを参考にgenomic positionを更新した。
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA33</gene_name>
+<family_name>SNORA33</family_name>
+<alias>ACA33</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>6</chrom_or_contig>
+<genome_position>133138358..133138490</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>63..68</box>
+<box type='aca'>128..130</box>
+<host_id>Homo_sapiens100377</host_id>
+<host_gene>RPS12</host_gene>
+<host_intron></host_intron>
+<host_position>3652..3784</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U4966</mod_site>
+<duplex_region>28S|78..82|4972..4968|,28S|111..116|4965..4960|</duplex_region>
+<accession>AJ609473　NT_025741</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807</evidence>
+<note></note>
+<sequence>
+AAGCCAGCCAATGAATCTGCTTACCTGATTGTGTTTGTGCAGACATACTTTAAAAACTGG
+CAATAGTAAAGCCATGTTACGAGCCTTAAGGACATTGAAGTCGTTAAGGTCCCTGAGAAT
+GGCTATAACAAAT
+</sequence>
+</snoopy>

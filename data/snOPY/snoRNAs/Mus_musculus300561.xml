@@ -1,0 +1,36 @@
+<snoopy id='Mus_musculus300561'>
+<dataquality>C</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-02-24</lastupdate>
+<blindnote>
+古西：ヒットしたHOMOにduplex_region情報なし。modification typeのみ変更。。(2)HOMOに合わせ、target RNA をUnknownとした。 
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD113</gene_name>
+<family_name>SNORD113</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>12</chrom_or_contig>
+<genome_position>110912123..110912204</genome_position>
+<strand>+</strand>
+<box type='c'>10..15</box>
+<box type='d'>72..75</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100403</host_id>
+<host_gene>Mono:418:SNORD113</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1082</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TGCAGCACCTGATGCCCCCGGATTGCTGTGGCATGTGAGGCATGTATGTTGAATATCATA
+TGTCTAGAACTCTGATCTAAAA
+</sequence>
+</snoopy>

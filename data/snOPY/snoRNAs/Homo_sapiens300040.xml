@@ -1,0 +1,37 @@
+<snoopy id='Homo_sapiens300040'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-06-26</lastupdate>
+<blindnote>
+gene name:AC092685.2->SNORA63-pseud.
+2009年6月26日（山元）gene name：SNORA63-pseud→SNORA63L3
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA63L3</gene_name>
+<family_name></family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>7</chrom_or_contig>
+<genome_position>64429723..64429821</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>1..6</box>
+<box type='aca'>96..98</box>
+<host_id>Homo_sapiens100013</host_id>
+<host_gene>Mono:193:AC092685.2</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1099</host_position>
+<organization>Mono</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AAAAAAAAAAAAAGATAAATAAAATAAAATAAAGTTGTTTCTTAACTATACCTGTCTGCT
+ATTCTCCTGTAGCAACCAGGGATGATTGGTTTCATACAT
+</sequence>
+</snoopy>

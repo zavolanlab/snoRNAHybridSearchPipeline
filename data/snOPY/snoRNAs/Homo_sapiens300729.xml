@@ -1,0 +1,38 @@
+<snoopy id='Homo_sapiens300729'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-06-12</lastupdate>
+<blindnote>
+gene name:AP000324.1->SNORA11E-pseud
+2009年6月12日（山元）SNORA11E-pseud->SNORA11E　Human SNORA11E H/ACA snoRNA. This snoRNA was discovered by Yang et al. (2006) with the snooSeeker software. An exact copy,SNORA11D, resides in a duplicated inverted copy of the MAGED4 host gene. Paralogous snoRNAs, SNORA11 (U107) and U107B reside in paralogous host genes, MAGED2 and TRO, and thus originated from complex gene duplications in the pericentromeric region of chrX. Conversely, SNORA11B and SNORA11C are retrotransposons. See U107 entry for alignment.
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA11E</gene_name>
+<family_name>SNORA11</family_name>
+<alias>U107</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>21</chrom_or_contig>
+<genome_position>34750278..34750405</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'>125..127</box>
+<host_id>Homo_sapiens100516</host_id>
+<host_gene>KCNE1</host_gene>
+<host_intron></host_intron>
+<host_position>4368..4495</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna></mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+GGGGTGCACTCAGGGCAGGGGGCTTGAAGAACGGCTCCTCTGTTTACGACACACTCAACA
+GGGGTGTGAGGTCACAGTGATGAGAGGCCCAAACTTGTGGCCTCCCCGTGAACAAATGCC
+CTACACAT
+</sequence>
+</snoopy>

@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300675'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-08</lastupdate>
+<blindnote>
+gene name:AC119673.3->SNORA72-pseud.
+2009年6月18日（山元）SNORA72が他にもある。IDはHomo_sapiens300726。snoRNABaseにはHomo_sapiens300726が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORA72-pseud->SNORA72L1 snoRNABaseより。
+Homo sapiens U72 snoRNA. This H/ACA box RNA was cloned from HeLa cells by Ganot et al. (1997b). It is predicted to guide pseudouridylation of U55 in 5.8S rRNA (Ganot et al., 1997a). The pseudouridylation of this residue was established by Ofengand and Bakin (1997). Note that the published sequence differs from the genomic sequence by 1nt.
+(20090708：吉浜）SNORA72L1→SNORA72.　名前にLを付けないことにしました。
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA72</gene_name>
+<family_name>SNORA72</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>1</chrom_or_contig>
+<genome_position>203966972..203967103</genome_position>
+<strand>-</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>65..70</box>
+<box type='aca'>41..43</box>
+<host_id>Homo_sapiens100474</host_id>
+<host_gene>NUCKS1</host_gene>
+<host_intron></host_intron>
+<host_position>19818..19949</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>5.8S rRNA</mod_rna>
+<mod_site>5.8S:U55</mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+CTGCAGATATTCTCACTGTTTTGATTTTGTAATAGTCAGGACAGGCTAACCATTCACTTT
+ATTAAGACCATGCATATATCCCCAGAACTAGTTCTTTCCTGAGGTCTAGTTTTATAAATG
+TTGCTGATAAAC
+</sequence>
+</snoopy>

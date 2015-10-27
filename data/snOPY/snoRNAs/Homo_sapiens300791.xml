@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300791'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-09-07</lastupdate>
+<blindnote>
+(20100907末安)snoRNABaseを参考にsequenceを3'側から2nt伸ばした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋。
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD108</gene_name>
+<family_name>SNORD108</family_name>
+<alias>HBII-437</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>15</chrom_or_contig>
+<genome_position>25232072..25232140</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'></box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100553</host_id>
+<host_gene>SNRPN partial-1</host_gene>
+<host_intron></host_intron>
+<host_position>5932..6000</host_position>
+<organization>Poly</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession>NR_001292,NT_026446</accession>
+<evidence>Runte, M., Huttenhofer, A., Gross, S., Kiefmann, M., Horsthemke, B., and Buiting, K. (2001). The IC-SNURF-SNRPN transcript serves as a host for multiple small nucleolar RNA species and as an antisense RNA for UBE3A. Hum Mol Genet, 10, 2687-2700.</evidence>
+<note></note>
+<sequence>
+GCTTAATGATGAGAATCATTATTTCTTGAATTGGATGACACTTTCCATTCCTGCAAAGGG
+AGCGTGAGGTC
+</sequence>
+</snoopy>

@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300543'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-03-08</lastupdate>
+<blindnote>
+(20100707末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD73A</gene_name>
+<family_name>SNORD73</family_name>
+<alias>U73a</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>4</chrom_or_contig>
+<genome_position>152024979..152025043</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>31..34, 58..61</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100381</host_id>
+<host_gene>RPS3A</host_gene>
+<host_intron></host_intron>
+<host_position>5226..5290</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:G1747</mod_site>
+<duplex_region>28S|18..30|1755..1743|</duplex_region>
+<accession>NR_000007,NT_016354</accession>
+<evidence>Rebane, A., Tamme, R., Laan, M., Pata, I., and Metspalu, A. (1998). A novel snoRNA (U73) is encoded within the introns of the human and mouse ribosomal protein S3a genes. Gene 210, 255-263.</evidence>
+<note></note>
+<sequence>
+AATAAGTGATGAAAAAAGTTTCGGTCCCAGATGATGGCCAGTGATAACAACATTTTTCTG
+ATGTT
+</sequence>
+</snoopy>

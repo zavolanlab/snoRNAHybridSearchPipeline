@@ -1,0 +1,36 @@
+<snoopy id='Homo_sapiens300437'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2010-07-07</lastupdate>
+<blindnote>
+(20100707末安)UCSCを参考にgenomic positionを変更した,NCBIを参考にaccession Noを加えた,evidenceはsnoRNAbaseのレファレンスから抜粋
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD7</gene_name>
+<family_name>SNORD7</family_name>
+<alias>mgU6-47</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>17</chrom_or_contig>
+<genome_position>33900676..33900772</genome_position>
+<strand>+</strand>
+<box type='c'>7..12</box>
+<box type='d'>90..93</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100305</host_id>
+<host_gene>Mono:266:AC015911.8</host_gene>
+<host_intron></host_intron>
+<host_position>1001..1097</host_position>
+<organization>Mono</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>U6 snRNA</mod_rna>
+<mod_site>U6:A47</mod_site>
+<duplex_region>U6|78..89|53..42|</duplex_region>
+<accession>AJ007733,NT_010799</accession>
+<evidence>Tycowski, K. T., You, Z. H., Graham, P. J., and Steitz, J. A. (1998). Modification of U6 spliceosomal RNA is guided by other small RNAs. Mol Cell, 2, 629-638. Zhou, H., Chen, Y. Q., Du, Y. P., and Qu, L. H. (2002). The Schizosaccharomyces pombe mgU6-47 gene is required for 2'-O-methylation of U6 snRNA at A41. Nucleic Acids Res, 30, 894-902.</evidence>
+<note></note>
+<sequence>
+ATGCGATGATGAGTGAAGTAGAGCCTGACCTGGTATTGCCATTGCTTCACTGTTGGCTTT
+GACCAGGGTATGATCTCTTAATCTTCTCTCTGAGCTG
+</sequence>
+</snoopy>

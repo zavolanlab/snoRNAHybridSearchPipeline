@@ -1,0 +1,43 @@
+<snoopy id='Homo_sapiens300576'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2009-07-09</lastupdate>
+<blindnote>
+gene name:AC006443.1->SNORD116-21-pseud.
+2009年6月19日（山元）SNORD116-21が他にもある。IDはHomo_sapiens300274。snoRNABaseにはHomo_sapiens300274が登録されている。本登録はintronicなので、発現の有無が未確認である。SNORD116-21-pseud->SNORD116-21L1 snoRNABaseより。
+Homo sapiens C/D box snoRNA HBII-85-21: this snoRNA was first characterized by Cavaill� et al. (2000), de los Santos et al. (2000) and Meguro et al. (2001). It is highly expressed in the brain and uterus, and to a lesser extent in kidney, heart and lung (Cavaille et al., 2002). Due to cross-hybridisation in Northern blot analysis, it could not be assessed if all predicted snoRNAs in this cluster are indeed expressed. As HBII-52 and HBII-13, HBI-85 was not expressed in the brain of a patient with a paternal 15q11-q13 deletion (Prader-Willi syndrome), but was normally expressed when the deletion was maternally inherited (Angelman syndrome). Genomic sequencing revealed that 27 closely related copies HBII-85 are encoded in introns of the large (460kb), paternally expressed, transcription unit (SNURF-SNRNP-UBE3A AS), that is antisense to the maternally expressed UBE3A gene (Runte et al., 2001). The same transcription unit hosts HBII-13, HBII-436, HBII-437 and HBII-438A/B, and 47 copies of HBII-52). The snoRNAs of this cluster are not predicted to guide to 2'O-methylation of a rRNA or snRNA.
+
+
+(20090709：吉浜）SNORD116-21L1→SNORD116-21.　名前にLを付けないことにしました。マルチコピーのさらにマルチコピー。
+
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORD116-21</gene_name>
+<family_name>SNORD116</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>9</chrom_or_contig>
+<genome_position>128228993..128229070</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'>35..38</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Homo_sapiens100408</host_id>
+<host_gene>FAM125B</host_gene>
+<host_intron></host_intron>
+<host_position>101045..101122</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>Unknown</mod_rna>
+<mod_site></mod_site>
+<duplex_region></duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+AGCGCTGACTCCCACATATGCATTCCTTAGAAAGCTGAACAAAATGAGCAAAAAACCTCT
+ACCGCCAAAATGAGTGCT
+</sequence>
+</snoopy>

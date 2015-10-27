@@ -1,0 +1,38 @@
+<snoopy id='Mus_musculus300969'>
+<dataquality>B</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2012-04-10</lastupdate>
+<blindnote>
+古西：Homo_sapiens300583 box C　3'側1ベース不一致。box D　追加。duplex_region,target RNA,modification type 入力。
+(2)duplex_region,modification site 入力。
+（20100410吉浜）locusの配列を変更したのでsnoRNA positionを変更しました。
+</blindnote>
+<organism>Mus_musculus</organism>
+<gene_name>SNORD36</gene_name>
+<family_name>SNORD36</family_name>
+<alias></alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>2</chrom_or_contig>
+<genome_position>26768368..26768435</genome_position>
+<strand>+</strand>
+<box type='c'>8..13</box>
+<box type='d'>30..33, 59..62</box>
+<box type='h'></box>
+<box type='aca'></box>
+<host_id>Mus_musculus100708</host_id>
+<host_gene>Rpl7a</host_gene>
+<host_intron></host_intron>
+<host_position>3043..3110</host_position>
+<organization>Intronic</organization>
+<mod_type>C/D</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:A3379</mod_site>
+<duplex_region>28S|18..29|3387..3376|</duplex_region>
+<accession></accession>
+<evidence></evidence>
+<note></note>
+<sequence>
+TTGCCAGTGATGCTTAGGAATTTCTTCACCTGAATCAACTATGTGGTCACACTGTTGTCT
+GAGGCAAA
+</sequence>
+</snoopy>

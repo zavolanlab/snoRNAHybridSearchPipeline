@@ -1,0 +1,41 @@
+<snoopy id='Homo_sapiens300603'>
+<dataquality>A</dataquality>
+<openstatus>+</openstatus>
+<lastupdate>2011-12-01</lastupdate>
+<blindnote>
+(20100624末安)snoRNABaseを参考にsequenceを5'側から2nt減らした,NCBIを参考にaccession Noを加えた,UCSCを参考にgenomic positionを変更した,evidenceはsnoRNAbaseのレファレンスから抜粋
+(20111201吉浜)ホスト遺伝子の塩基配列と構造をRPGを参考に変更しました。
+
+
+
+</blindnote>
+<organism>Homo_sapiens</organism>
+<gene_name>SNORA6</gene_name>
+<family_name>SNORA6</family_name>
+<alias>ACA6</alias>
+<family_base>Homo_sapiens</family_base>
+<chrom_or_contig>3</chrom_or_contig>
+<genome_position>39449882..39450030</genome_position>
+<strand>+</strand>
+<box type='c'></box>
+<box type='d'></box>
+<box type='h'>70..79</box>
+<box type='aca'>144..146</box>
+<host_id>Homo_sapiens100427</host_id>
+<host_gene>RPSA</host_gene>
+<host_intron></host_intron>
+<host_position>2672..2820</host_position>
+<organization>Intronic</organization>
+<mod_type>H/ACA</mod_type>
+<mod_rna>28S rRNA</mod_rna>
+<mod_site>28S:U3616</mod_site>
+<duplex_region>28S|9..14|3623..3618|,28S|56..61|3615..3610|</duplex_region>
+<accession>AJ609429 NT_022517</accession>
+<evidence>Kiss, A. M., Jady, B. E., Bertrand, E., and Kiss, T. (2004). Human box H/ACA pseudouridylation guide RNA machinery. Mol. Cell .Biol. 24, 5797-5807, Ofengand, J., and Bakin, A. (1997). Mapping to nucleotide resolution of pseudouridine residues in large subunit ribosomal RNAs from representative eukaryotes, prokaryotes, archaebacteria, mitochondria and chloroplasts. J Mol Biol 266, 246-268.</evidence>
+<note></note>
+<sequence>
+TGCACACTATTAAAGCTCAGGGTGGAGGCCAGTCTTGGCTCATGAACTTCTGAGTGTCGG
+AAGTGTGCTATATCAATGGCAGGATTTTCGCTAACACCAGTAGAGCTTGCCTCTATGACT
+GGAGTTTGGTAGTACTCGCTGCCACATAG
+</sequence>
+</snoopy>
