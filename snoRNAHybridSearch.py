@@ -477,9 +477,10 @@ annotate_results_tuple =  (os.path.join(pipeline_directory, 'scripts/rg-annotate
                            os.path.join(working_directory, "results_with_probability_annotated.tab"),
                            settings['general']['annotations_genes'],
                            settings['general']['annotations_regions'],
+                           settings['general']['annotations_repeats'],
                            )
 
-annotate_results_command = "python %s --input %s --output %s --genes %s --regions %s" % annotate_results_tuple
+annotate_results_command = "python %s --input %s --output %s --genes %s --regions %s --repeats %s" % annotate_results_tuple
 
 
 annotate_results_id = jobber.job(annotate_results_command, {'name': "AnnotateResults",

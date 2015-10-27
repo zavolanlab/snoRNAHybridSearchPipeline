@@ -9,6 +9,8 @@ __email__ = "r.gumienny@unibas.ch"
 __license__ = "GPL"
 
 # imports
+import matplotlib
+matplotlib.use('Agg')
 import os
 import sys
 import time

@@ -40,6 +40,10 @@ parser.add_argument("--genes",
 parser.add_argument("--snoRNAs",
                     dest="snoRNAs",
                     help="GFF file with annotations for snoRNAs in the same format as genes file")
+parser.add_argument("--repeats",
+                    dest="repeats",
+                    required=True,
+                    help="GTF file with annotations for repeats in the format from rmsk table in UCSC")
 
 try:
     options = parser.parse_args()
@@ -73,33 +77,41 @@ def main():
     with open(options.genes) as g_inf:
         for rec in HTSeq.GFF_Reader(g_inf):
             try:
-                genes[rec.iv] = GeneInfo(rec.name,
+                genes[rec.iv] += GeneInfo(rec.name,
                                          rec.attr["gene_name"],
                                          rec.attr["gene_biotype"])
             except KeyError:
-                genes[rec.iv] = GeneInfo(rec.name,
+                genes[rec.iv] += GeneInfo(rec.name,
                                          rec.attr["gene_id"],
                                          rec.attr["gene_biotype"])
     if options.snoRNAs:
         with open(options.snoRNAs) as g_inf:
             for rec in HTSeq.GFF_Reader(g_inf):
                 try:
-                    genes[rec.iv] = GeneInfo(rec.name,
+                    genes[rec.iv] += GeneInfo(rec.name,
                                              rec.attr["gene_name"],
                                              rec.attr["gene_biotype"])
                 except KeyError:
-                    genes[rec.iv] = GeneInfo(rec.name,
+                    genes[rec.iv] += GeneInfo(rec.name,
                                              rec.attr["gene_id"],
                                              rec.attr["gene_biotype"])
+    if options.repeats:
+        with open(options.repeats) as g_inf:
+            for rec in HTSeq.GFF_Reader(g_inf):
+                rep_type = 'repeat'
+                rec.iv.chrom = rec.iv.chrom[3:] if rec.iv.chrom.startswith("chr") else rec.iv.chrom
+                genes[rec.iv] += GeneInfo(rec.attr['gene_id'],
+                                         rec.attr["transcript_id"],
+                                         rep_type)
 
     id_to_name = {}
     for rec in HTSeq.GFF_Reader(options.regions):
         if rec.type == "gene":
             id_to_name[rec.type] = rec.attr["Name"]
         elif rec.type == 'intron' or rec.type == 'exon':
-            intron_exon[rec.iv] = rec.type
+            intron_exon[rec.iv] += rec.type
         elif rec.type == "CDS" or rec.type == "three_prime_UTR" or rec.type == "five_prime_UTR":
-            mRNA_part[rec.iv] = rec.type
+            mRNA_part[rec.iv] += rec.type
         else:
             pass
     if options.verbose:
@@ -109,17 +121,17 @@ def main():
         for row in csv.reader(infile, delimiter="\t"):
             chrom = row[0][3:] if row[0].startswith("chr") else row[0]
             iv = HTSeq.GenomicInterval(chrom, int(row[1]), int(row[2]), row[5])
-            annot_gene_types = ",".join(set([i.gene_type if i else "NA" for i in genes[iv]]))
-            annot_gene_ids = ",".join(set([i.gene_id if i else "NA" for i in genes[iv]]))
-            annot_gene_names = ",".join(set([i.gene_name if i else "NA" for i in genes[iv]]))
-            annot_int_ex = ",".join(set([str(i) if i else "NA" for i in intron_exon[iv]]))
-            annot_mRNA_part = ",".join(set([str(i) if i else "NA" for i in mRNA_part[iv]]))
+            annot_gene_types = ",".join(set([i.gene_type for g in genes[iv] for i in g]))
+            annot_gene_ids = ",".join(set([i.gene_id for g in genes[iv] for i in g]))
+            annot_gene_names = ",".join(set([i.gene_name for g in genes[iv] for i in g]))
+            annot_int_ex = ",".join(set([str(i) for g in intron_exon[iv] for i in g]))
+            annot_mRNA_part = ",".join(set([str(i) for g in mRNA_part[iv] for i in g]))
             outfile.write("%s\t%s\t%s\t%s\t%s\t%s\n" % ("\t".join(row),
-                                                        annot_gene_types,
-                                                        annot_gene_ids,
-                                                        annot_gene_names,
-                                                        annot_int_ex,
-                                                        annot_mRNA_part))
+                                                        annot_gene_types if annot_gene_types else 'NA',
+                                                        annot_gene_ids if annot_gene_ids else 'NA',
+                                                        annot_gene_names if annot_gene_names else 'NA',
+                                                        annot_int_ex if annot_int_ex else 'NA',
+                                                        annot_mRNA_part if annot_mRNA_part else 'NA'))
 
 if __name__ == '__main__':
     try:
