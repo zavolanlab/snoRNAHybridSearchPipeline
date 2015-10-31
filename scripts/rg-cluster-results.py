@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 """
-Cluster results according to the position of the hit
+Cluster results according to the position of the hit and miRNA
+The input file looks like that:
+
+chr6    99846856    99846871    2628039_1-Unique-1:hsa-miR-129-3p:8   30  -
+chr3    30733346    30733368    2630171_1-Unique-1:hsa-miR-93:N       36  +
+chr17   3627403     3627417     2632714_1-Unique-1:hsa-miR-186:N      28  +
+chr17   3627403     3627417     2639898_1-Unique-1:hsa-miR-16:N       28  +
 """
 
 __date_ = "2014-08-11"
@@ -43,7 +49,7 @@ parser.add_argument("--cluster-size",
 parser.add_argument("--overlap",
                     dest="overlap",
                     type=int,
-                    default=-1,
+                    default=-40,
                     help="Distance in basepairs for two reads to be in the same cluster. "
                      "For instance 20 would group all reads with 20bp of each other. Negative "
                      "number means overlap eg. -10 - read must overlap at leas 10 basepairs, defaults to -1")
@@ -70,13 +76,16 @@ def main():
     with open(options.output, 'w') as o:
         for contig, cluster_tree in cluster_trees.items():
             for start, end, read_ids in cluster_tree.getregions():
-                chrom, strand, mirna = contig.split(":")
-                o.write("%s\t%i\t%i\t%s\t%i\t%s\n" %(chrom,
-                                                     start,
-                                                     end,
-                                                     mirna,
-                                                     len(read_ids),
-                                                     strand))
+                chrom, strand, snoRNA = contig.split(":")
+                row = read_map[read_ids[0]] # just take one representative
+                o.write("%s\t%i\t%i\t%s\t%s\t%s\t%s\n" % (chrom,
+                                                          start,
+                                                          end,
+                                                          snoRNA,
+                                                          len(read_ids),
+                                                          strand,
+                                                          "\t".join(row[8:]),
+                                                          ))
 
 
 def parse_bed_input(bed_path):
@@ -85,12 +94,7 @@ def parse_bed_input(bed_path):
     with open(bed_path) as bed:
         for row in csv.reader(bed, delimiter='\t'):
             # returns: read_id, chrom, strand, start, end
-            yield (row[3],
-                   row[0],
-                   row[5],
-                   int(row[1]),  # input is 1-based
-                   int(row[2]),
-                   row[6])
+            yield row
 
 
 def build_cluster_trees(bed_generator, cluser_distance, read_count):
@@ -106,9 +110,9 @@ def build_cluster_trees(bed_generator, cluser_distance, read_count):
     cluster_trees = defaultdict(lambda: ClusterTree(cluser_distance, read_count))
     i = 0
     read_ids_mapping = {}
-    for read_id, match_id, strand, start, end, mirna in bed_generator:
-        cluster_trees["%s:%s:%s" % (match_id, strand, mirna)].insert(start, end, i)
-        read_ids_mapping[i] = read_id
+    for row in bed_generator:
+        cluster_trees["%s:%s:%s" % (row[0], row[5], row[6])].insert(int(row[1]), int(row[2]), i)
+        read_ids_mapping[i] = row
         i += 1
     return cluster_trees, read_ids_mapping
 

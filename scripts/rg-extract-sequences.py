@@ -31,11 +31,11 @@ parser.add_argument("-v",
 parser.add_argument("--input",
                     dest="input",
                     default=sys.stdin,
-                    help="Input file in Bed format.")
+                    help="Input file in Bed format. Defaults to stdin")
 parser.add_argument("--output",
                     dest="output",
                     default=sys.stdout,
-                    help="Output file in Bed format.")
+                    help="Output file in Bed format. Defaults to stdout")
 parser.add_argument("--format",
                     dest="format",
                     choices=("bed", "fasta"),
@@ -59,6 +59,11 @@ parser.add_argument("--window-right",
                     type=int,
                     default=0,
                     help="Add nucleotides to the right (downstream). This option does not work if sequence-length is specified, defaults to 0")
+parser.add_argument("--adjust-coordinates",
+                    dest="adjust_coordinates",
+                    action="store_true",
+                    default=False,
+                    help="Adjust coordinates to new values dictated by windows length, defaults to False")
 
 try:
     options = parser.parse_args()
@@ -71,6 +76,7 @@ sysout = sys.stdout.write
 
 class NoSuchAFileException(IOError): pass
 
+options.adjust_coordinates = True
 
 def main():
     """Main logic of the script"""
@@ -97,6 +103,7 @@ def main():
                 continue
             for row in rows:
                 old_beg, old_end = (int(row[1]), int(row[2]))
+                assert row[5] in ["+", "-"], "Wrong strand: %s" % "\t".join(row)
                 if options.sequence_length:
                     target_sequence, beg, end = get_equal_length_sequence(chromosome_sequence,
                                                                           old_beg,
@@ -105,6 +112,9 @@ def main():
                     if row[5] == "-":
                         seq = target_sequence.translate(translation_table)[::-1]
                         if options.format == "bed":
+                            if not options.adjust_coordinates:
+                                beg = old_beg
+                                end = old_end
                             outfile.write("%s\t%s\n" % ("\t".join(row[:1] + [str(beg),
                                                                              str(end)] + row[3:]),
                                                         seq))
@@ -122,9 +132,10 @@ def main():
                             raise Exception("No such a format: %s" % options.format)
                     else:
                         if options.format == "bed":
-                            outfile.write("%s\t%s\n" % ("\t".join(row[:1] + [str(beg),
-                                                                             str(end)] + row[3:]),
-                                                        target_sequence))
+                            if not options.adjust_coordinates:
+                                beg = old_beg
+                                end = old_end
+                            outfile.write("%s\t%s\n" % ("\t".join(row[:1] + [str(beg), str(end)] + row[3:]), target_sequence))
                         elif options.format == "fasta":
                             header = "%s_%s|%s|%s|%i|%i|%i|%i" % (row[3],
                                                                   row[4],
@@ -144,7 +155,15 @@ def main():
                         target_sequence = get_sequence(chromosome_sequence, new_beg, new_end)
                         seq = target_sequence.translate(translation_table)[::-1]
                         if options.format == "bed":
-                            outfile.write("%s\t%s\n" % ("\t".join(row), seq))
+                            if options.adjust_coordinates:
+                                bedstr = "%s\t%i\t%i\t%s\t%s\n" % (row[0],
+                                                                   new_beg,
+                                                                   new_end,
+                                                                   "\t".join(row[3:]),
+                                                                   seq)
+                                outfile.write(bedstr)
+                            else:
+                                outfile.write("%s\t%s\n" % ("\t".join(row), seq))
                         elif options.format == "fasta":
                             header = "%s_%s|%s|%s|%i|%i|%i|%i" % (row[3],
                                                                   row[4],
@@ -162,7 +181,15 @@ def main():
                         new_end = old_end + options.window_right
                         target_sequence = get_sequence(chromosome_sequence, new_beg, new_end)
                         if options.format == "bed":
-                            outfile.write("%s\t%s\n" % ("\t".join(row), target_sequence))
+                            if options.adjust_coordinates:
+                                bedstr = "%s\t%i\t%i\t%s\t%s\n" % (row[0],
+                                                                   new_beg,
+                                                                   new_end,
+                                                                   "\t".join(row[3:]),
+                                                                   target_sequence)
+                                outfile.write(bedstr)
+                            else:
+                                outfile.write("%s\t%s\n" % ("\t".join(row), target_sequence))
                         elif options.format == "fasta":
                             header = "%s_%s|%s|%s|%i|%i|%i|%i" % (row[3],
                                                                   row[4],

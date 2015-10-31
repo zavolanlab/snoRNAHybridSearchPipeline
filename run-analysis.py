@@ -665,6 +665,64 @@ else:
     raise Exception("Unknown snoRNA type: %s" % settings["general"]['type'])
 
 
+if settings["general"]['type'] == "CD":
+    #
+    # Append RNAduplex
+    #
+
+    append_duplex_dependancies = {}
+    append_duplex_group = jobber.startGroup({'name': 'AppendRNAduplex'})
+    for input_name, append_plexy_id in append_score_dependancies.iteritems():
+        append_duplex_settings = settings['tasks']['AppendRNAduplex']
+        append_duplex_script = 'scripts/rg-check-hybrids-with-rnaduplex.py'
+        append_duplex_command = """python {script} \\
+                                        --input {input} \\
+                                        --output {output} \\
+                                        --snoRNA-paths {snorna_path} \\
+                                        --RNAduplex-bin {RNAduplex_bin} \\
+                                        -v
+                      """
+        #
+        # If there is template use it for command
+        #
+        if settings['general'].get('executer', 'drmaa') == 'drmaa':
+            #
+            # Copy files by default to the tmp directory
+            #
+            copy_dir = "$TMPDIR"
+            copy_files = {input_name + ".scorebed": 'input.scorebed'}
+            moveback = {'output': input_name + ".duplexbed"}
+
+            append_duplex_command_rendered = template.render(modules=append_duplex_settings.get('modules', None),
+                                               command=append_duplex_command,
+                                               copy=copy_files,
+                                               moveback=moveback,
+                                               copydir=copy_dir)
+            append_duplex_command = str(append_duplex_command_rendered).format(**{'script': os.path.join(pip_dir, append_duplex_script),
+                                            'input': 'input.scorebed',
+                                            'output': 'output',
+                                            'snorna_path': os.path.join(working_directory, "Input/"),
+                                            'RNAduplex_bin': settings['general'].get('RNAduplex_bin', "RNAduplex"),
+                                           })
+        else:
+            append_duplex_command = str(append_duplex_command).format(**{'script': os.path.join(pip_dir, append_duplex_script),
+                                           'input': input_name + ".scorebed",
+                                           'output': input_name + ".duplexbed",
+                                           'snorna_path': os.path.join(working_directory, "Input/"),
+                                           'RNAduplex_bin': settings['general'].get('RNAduplex_bin', "RNAduplex"),
+                                           })
+        append_duplex_id = jobber.job(append_duplex_command,
+                                   {'name': 'AppendRNAduplex',
+                                    'uniqueId': True,
+                                    'dependencies': [append_plexy_id],
+                                    'options': [('q', append_duplex_settings.get('queue', 'short.q')),
+                                                ('l', "membycore=%s" % append_duplex_settings.get('mem_req', '2G'))]
+                                    })
+        append_duplex_dependancies[input_name] = append_duplex_id
+
+    jobber.endGroup()
+
+
     # #
     # # Calculate seed matches
     # #
