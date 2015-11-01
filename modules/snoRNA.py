@@ -1,4 +1,5 @@
 import sys
+import os
 from re import split
 from warnings import warn
 from collections import defaultdict
@@ -479,7 +480,7 @@ class HACA_snoRNA(snoRNA):
 
     def get_hbox_sequence(self):
         if self.h_box:
-            return self.sequence[self.d_box[0] - 1: self.d_box[1]]
+            return self.sequence[self.h_box[0] - 1: self.h_box[1]]
         else:
             raise NoBoxException("No H-box in this H/ACA snoRNA")
 
@@ -607,8 +608,6 @@ def read_snoRNAs_from_table(path, type_of_snor):
                               snor_family=snor.snor_family,
                               snor_precise_type=snor.snor_precise_type)
                 snor_dict['CD'][s.snor_id] = s
-                if s.d_box:
-                    print s.snor_id, s.get_dbox_sequence()
             except Exception, e:
                 sys.stderr.write(str(e) + "\n")
         elif snor.mod_type == "HACA":
