@@ -386,12 +386,15 @@ class CD_snoRNA(snoRNA):
 
 
     def get_d_interaction_region(self, length):
-        region = self.sequence[self.d_box[0] - length - 1: self.d_box[0] - 1]
+        left_coordinate = self.d_box[0] - length - 1 # 0 based
+        if left_coordinate < 0:
+            left_coordinate = 0
+        region = self.sequence[left_coordinate: self.d_box[0] - 1]
         if len(region) == length:
             return region
         else:
             raise InteractionRegionTooShortException("Cannot extract D-box interaction region" +
-                                                     " for %s (too short)" % self.snor_id)
+                                                     " for %s (too short: %i vs %i)" % (self.snor_id, len(region), length))
 
     def get_dprime_interaction_region(self, length):
         if self.dprime_box:
@@ -527,7 +530,7 @@ class HACA_snoRNA(snoRNA):
         else:
             return None
 
-def read_snoRNAs_from_table(path, type_of_snor):
+def read_snoRNAs_from_table(path, type_of_snor=None, only_with_box=False, min_interaction_region_length=21):
     """
     Read snoRNAs from the table with the columns:
     1. Chromosome   Chromosome on which gene is located
@@ -578,8 +581,6 @@ def read_snoRNAs_from_table(path, type_of_snor):
              "snor_name",
              "snor_family",
              "snor_precise_type"]
-    if type_of_snor not in ['CD', 'HACA']:
-        raise Exception("Only CD or HACA types are implemented now")
     snoRNAs = read_table(path, names=names)
     snoRNAs['chrom'] = snoRNAs.chrom.map(str)
     snor_dict = {'CD': {}, 'HACA': {}}
@@ -607,7 +608,12 @@ def read_snoRNAs_from_table(path, type_of_snor):
                               snor_name=snor.snor_name,
                               snor_family=snor.snor_family,
                               snor_precise_type=snor.snor_precise_type)
-                snor_dict['CD'][s.snor_id] = s
+                if only_with_box:
+                    if s.d_box is not None:
+                        s.get_d_interaction_region(min_interaction_region_length)
+                        snor_dict['CD'][s.snor_id] = s
+                else:
+                    snor_dict['CD'][s.snor_id] = s
             except Exception, e:
                 sys.stderr.write(str(e) + "\n")
         elif snor.mod_type == "HACA":
@@ -632,9 +638,19 @@ def read_snoRNAs_from_table(path, type_of_snor):
                               snor_name=snor.snor_name,
                               snor_family=snor.snor_family,
                               snor_precise_type=snor.snor_precise_type)
-                snor_dict['HACA'][s.snor_id] = s
+                if only_with_box:
+                    if s.h_box is not None:
+                        snor_dict['HACA'][s.snor_id] = s
+                else:
+                    snor_dict['HACA'][s.snor_id] = s
             except Exception, e:
                 sys.stderr.write(str(e) + "\n")
         else:
             sys.stderr.write("Unknwon modification type: %s\n" % snor.mod_type)
-    return snor_dict[type_of_snor]
+    if type_of_snor is not None:
+        sys.stderr.write("Number of %s snoRNA (with box = %s): %i\n" % (type_of_snor, str(only_with_box), len(snor_dict[type_of_snor])))
+        return snor_dict[type_of_snor]
+    else:
+        sys.stderr.write("Number of CD snoRNA (with box = %s): %i\nNumber of HACA snoRNA (with box = %s): %i\n" % (str(only_with_box), len(snor_dict["CD"]),
+                                                                                                                 str(only_with_box), len(snor_dict["HACA"])))
+        return snor_dict
