@@ -151,11 +151,23 @@ def parse_supp_D1(path):
         if not pd.isnull(rep1):
             if rep1 != '-':
                 for m in rep1.split(";"):
-                    tmp_mods.append(m.split("-")[0] + ":N" + m.split("-")[1])
+                    if len(m.split("-")) == 2:
+                        tmp_mods.append(m.split("-")[0] + ":N" + m.split("-")[1])
+                    elif len(m.split("-")) == 3:
+                        # this is for situations like this: 5-8S-75
+                        tmp_mods.append(".".join(m.split("-")[:2]) + ":N" + m.split("-")[2])
+                    else:
+                        syserr("The modifications site is strange for %s: %s\n" % (snor_id, m))
         if not pd.isnull(rep2):
             if rep2 != '-':
                 for m in rep2.split(";"):
-                    tmp_mods.append(m.split("-")[0] + ":N" + m.split("-")[1])
+                    if len(m.split("-")) == 2:
+                        tmp_mods.append(m.split("-")[0] + ":N" + m.split("-")[1])
+                    elif len(m.split("-")) == 3:
+                        # this is for situations like this: 5-8S-75
+                        tmp_mods.append(".".join(m.split("-")[:2]) + ":N" + m.split("-")[2])
+                    else:
+                        syserr("The modifications site is strange for %s: %s\n" % (snor_id, m))
         if len(tmp_mods) > 0:
             mods[snor_id] = ",".join(tmp_mods)
         else:

@@ -90,7 +90,7 @@ class snoRNA(object):
             try:
                 modsites = filter(None, split(r",\s*", sites))
             except Exception, e:
-                warn("Exception raised in __assign_modification_sites: %s" % str(e), Warning)
+                warn("Exception raised in __assign_modification_sites for %s: %s" % (self.snor_id, str(e)), Warning)
                 modsites = []
             if len(modsites) == 0:
                 self.modified_sites = None
@@ -101,8 +101,9 @@ class snoRNA(object):
                         rna, pos = site.split(":")
                         self.modified_sites[rna].append((int(pos[1:]), pos[0]))
                     except Exception, e:
-                        warn("Exception raised in __assign_modification_sites: %s, %s" % (str(e),
-                                                                                          str(modsites)), Warning)
+                        warn("Exception raised in __assign_modification_sites for %s: %s, %s" % (self.snor_id,
+                                                                                                 str(e),
+                                                                                                 str(modsites)), Warning)
                         if count + 1 == len(modsites):
                             self.modified_sites = None
                             break
