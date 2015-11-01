@@ -1,9 +1,10 @@
+import sys
 from re import split
 from warnings import warn
 from collections import defaultdict
 from HTSeq import GenomicInterval
 from Bio.Seq import Seq
-from pandas import isnull
+from pandas import isnull, read_table
 
 class WrongCDBoxOrderExeption(Exception): pass
 class ToManyBoxesException(Exception): pass
@@ -32,6 +33,9 @@ class snoRNA(object):
             snor_type (str): @todo
 
         Kwargs:
+            snor_name (str): an official name for snoRNA
+            snor_family (str): snoRNA family
+            snor_precise_typ (str): snoRNA precise type as opposed to general type of snor_type
             alias (str): anlternative name for snoRNA
             gene_name (str): snoRNA gene name
             accession (str): accession for the snoRNA (eg. NCBI)
@@ -57,6 +61,9 @@ class snoRNA(object):
         #
         # kwargs
         #
+        self.snor_name = kwargs.get("snor_name", None)
+        self.snor_family = kwargs.get("snor_family", None)
+        self.snor_precise_type = kwargs.get("snor_precise_type", None)
         self.alias = kwargs.get("alias", None)
         self.gene_name = kwargs.get("gene_name", None)
         self.accession = kwargs.get("accession", None)
@@ -79,7 +86,7 @@ class snoRNA(object):
             warn(m, Warning)
 
     def __assign_modification_sites(self, sites):
-        if sites is not None:
+        if sites is not None and not isnull(sites):
             try:
                 modsites = filter(None, split(r",\s*", sites))
             except Exception, e:
@@ -160,6 +167,9 @@ class CD_snoRNA(snoRNA):
             c_boxes (str): coma separated list of d boxes positions: "1..2,5..6".
                            Start and end should be separated by .. and maximum length is 2.
             switch_boxes (bool): if the boxes are in wrong order switch the order, default False
+            snor_name (str): an official name for snoRNA
+            snor_family (str): snoRNA family
+            snor_precise_typ (str): snoRNA precise type as opposed to general type of snor_type
             alias (str): anlternative name for snoRNA
             gene_name (str): snoRNA gene name
             accession (str): accession for the snoRNA (eg. NCBI)
@@ -270,7 +280,7 @@ class CD_snoRNA(snoRNA):
         used in calculations"""
         if self.d_box:
             if (self.d_box[1] > len(self.sequence)) or (self.d_box[0] < 0):
-                raise WrongBoxException("Box outside snoRNA")
+                raise WrongBoxException("Box outside snoRNA with id %s" % self.snor_id)
             if len(self.get_dbox_sequence()) != 4:
                 raise WrongBoxException("D-box should be four nucleotide long")
 
@@ -416,6 +426,9 @@ class HACA_snoRNA(snoRNA):
                              Start and end should be separated by "..".
 
         Kwargs:
+            snor_name (str): an official name for snoRNA
+            snor_family (str): snoRNA family
+            snor_precise_typ (str): snoRNA precise type as opposed to general type of snor_type
             alias (str): anlternative name for snoRNA
             gene_name (str): snoRNA gene name
             accession (str): accession for the snoRNA (eg. NCBI)
@@ -511,3 +524,117 @@ class HACA_snoRNA(snoRNA):
             return right_stem + "\n"
         else:
             return None
+
+def read_snoRNAs_from_table(path, type_of_snor):
+    """
+    Read snoRNAs from the table with the columns:
+    1. Chromosome   Chromosome on which gene is located
+    2. Start    0-based start coordinate
+    3. End  1-based end coordinate
+    4. snoRNA ID    ID for snoRNA
+    5. Type General type of snoRNA (C/D or H/ACA)
+    6. Strand   Strand on which gene is located
+    7. Sequence Sequence of snoRNA
+    8. D-boxes  1-based coordinates snoRNA D-boxes in form of D-box_start..D-box_end or D'-box_start..D'-box_end,D-box_start..D-box_end eg. 60..63 or 30..33,60..63. It must be 4 nucleotides long.
+    9. C-boxes  Same as above (not that prime boxes are reversed in positions) with exception of the length constraint
+    10. H-box   1-based position of the H box in H/ACA box snoRNAs in form of start..end
+    11. ACA-box 1-based position of the ACA box in H/ACA box snoRNA in form of start..end
+    12. Alias   Alias/Alternative name for snoRNA
+    13. Gene name   Name of the snoRNA gene
+    14. Accession   Accession (NCBI, RefSeq etc) for snoRNA
+    15. Modification sites  Coma separated list of modified sites in form of ModifiedRNA:NucleotidePosition eg. 28S:U46,18S:G52
+    16. Host gene   Host gene name if any
+    17. Host ID Host locus ID
+    18. Organization    Organisation of the gene eg. intronic
+    19. Organism    Species
+    20. Note    Additional info about snoRNA
+    21. snoRNA name    The official name for snoRNA (if available)
+    22. snoRNA family    The family of snoRNA (if available)
+    23. snoRNA precise type    Precise type of the snoRNA as opposed to general type
+
+    """
+    names = ["chrom",
+             "start",
+             "end",
+             "snor_id",
+             "mod_type",
+             "strand",
+             "sequence",
+             "box_d",
+             "box_c",
+             "box_h",
+             "box_aca",
+             "alias",
+             "gene_name",
+             "accession",
+             "mod_site",
+             "host_gene",
+             "host_id",
+             "organization",
+             "organism",
+             "note",
+             "snor_name",
+             "snor_family",
+             "snor_precise_type"]
+    if type_of_snor not in ['CD', 'HACA']:
+        raise Exception("Only CD or HACA types are implemented now")
+    snoRNAs = read_table(path, names=names)
+    snoRNAs['chrom'] = snoRNAs.chrom.map(str)
+    snor_dict = {'CD': {}, 'HACA': {}}
+    for ind, snor in snoRNAs.iterrows():
+        if snor.mod_type == "CD":
+            try:
+                s = CD_snoRNA(snor_id=snor.snor_id,
+                              organism=snor.organism,
+                              chrom=snor.chrom,
+                              start=snor.start,
+                              end=snor.end,
+                              strand=snor.strand,
+                              sequence=snor.sequence,
+                              snor_type=snor.mod_type,
+                              d_boxes=snor.box_d,
+                              c_boxes=snor.box_c,
+                              switch_boxes=True,
+                              alias=snor.alias,
+                              gene_name=snor.gene_name,
+                              accession=snor.accession,
+                              modified_sites=snor.mod_site,
+                              host_id=snor.host_id,
+                              organization=snor.organization,
+                              note=snor.note,
+                              snor_name=snor.snor_name,
+                              snor_family=snor.snor_family,
+                              snor_precise_type=snor.snor_precise_type)
+                snor_dict['CD'][s.snor_id] = s
+                if s.d_box:
+                    print s.snor_id, s.get_dbox_sequence()
+            except Exception, e:
+                sys.stderr.write(str(e) + "\n")
+        elif snor.mod_type == "HACA":
+            try:
+                s = HACA_snoRNA(snor_id=snor.snor_id,
+                              organism=snor.organism,
+                              chrom=snor.chrom,
+                              start=snor.start,
+                              end=snor.end,
+                              strand=snor.strand,
+                              sequence=snor.sequence,
+                              snor_type=snor.mod_type,
+                              h_box=snor.box_h,
+                              aca_box=snor.box_aca,
+                              alias=snor.alias,
+                              gene_name=snor.gene_name,
+                              accession=snor.accession,
+                              modified_sites=snor.mod_site,
+                              host_id=snor.host_id,
+                              organization=snor.organization,
+                              note=snor.note,
+                              snor_name=snor.snor_name,
+                              snor_family=snor.snor_family,
+                              snor_precise_type=snor.snor_precise_type)
+                snor_dict['HACA'][s.snor_id] = s
+            except Exception, e:
+                sys.stderr.write(str(e) + "\n")
+        else:
+            sys.stderr.write("Unknwon modification type: %s\n" % snor.mod_type)
+    return snor_dict[type_of_snor]

@@ -1,5 +1,6 @@
 # Ignore everything
 *
+.bash_history
 
 # But not these files...
 !*/
@@ -8,4 +9,5 @@
 !*.pl
 !*.sh
 !*.ini
-.bash_history
+!/data/human/snoRNAs/Supplementary_Dataset_S1.csv
+!/data/human/snoRNAs/Supplementary_Dataset_S5.gff
