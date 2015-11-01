@@ -614,7 +614,15 @@ def read_snoRNAs_from_table(path, type_of_snor=None, only_with_box=False, min_in
                         snor_dict['CD'][s.snor_id] = s
                 else:
                     snor_dict['CD'][s.snor_id] = s
-            except Exception, e:
+            except WrongCDBoxPlacementException, e:
+                sys.stderr.write(str(e) + "\n")
+            except IncompatibleStrandAndCoordsException, e:
+                sys.stderr.write(str(e) + "\n")
+            except TypeError, e:
+                sys.stderr.write(str(e) + "\n")
+            except WrongBoxException, e:
+                sys.stderr.write(str(e) + "\n")
+            except InteractionRegionTooShortException, e:
                 sys.stderr.write(str(e) + "\n")
         elif snor.mod_type == "HACA":
             try:
@@ -643,7 +651,9 @@ def read_snoRNAs_from_table(path, type_of_snor=None, only_with_box=False, min_in
                         snor_dict['HACA'][s.snor_id] = s
                 else:
                     snor_dict['HACA'][s.snor_id] = s
-            except Exception, e:
+            except IncompatibleStrandAndCoordsException, e:
+                sys.stderr.write(str(e) + "\n")
+            except TypeError, e:
                 sys.stderr.write(str(e) + "\n")
         else:
             sys.stderr.write("Unknwon modification type: %s\n" % snor.mod_type)
