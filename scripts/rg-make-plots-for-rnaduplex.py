@@ -30,7 +30,7 @@ from Bio import SeqIO
 file_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(file_dir, "../modules"))
 sys.path.append("/scicore/home/zavolan/gumiennr/PythonModules/MetaProfile/")
-from snoRNA import CD_snoRNA, HACA_snoRNA
+from snoRNA import read_snoRNAs_from_table
 import MetaProfile
 
 pl.rcParams['figure.figsize'] = (14, 10)
@@ -92,7 +92,7 @@ class Signal(MetaProfile.Signal):
 
 def main():
     """Main logic of the script"""
-    snoRNAs = read_snoRNAs_to_dict(options.snoRNAs, "CD")
+    snoRNAs = read_snoRNAs_from_table(options.snoRNAs, options.type, True)
     mod_sites = get_target_sites(snoRNAs, get_chomosomes_mapping(snoRNAs))
     real_mod_sites = get_real_target_sites(snoRNAs, get_chomosomes_mapping(snoRNAs))
 
@@ -191,96 +191,10 @@ def plot_duplex_structures(df, snoRNAs, suffix=''):
             syserr(" - %s\n" % snor)
         hybrids = np.asarray([list(i) for i in df[df[3]==snor][17]])
         plot_hybrid_statistics_with_boxes(snor, snoRNAs, hybrids)
-        pl.savefig(os.path.join(options.dir, "Structures/structure_%s_%s.pdf" % (snor, suffix)))
-        pl.savefig(os.path.join(options.dir, "Structures/structure_%s_%s.png" % (snor, suffix)), dpi=300)
+        pl.savefig(os.path.join(options.dir, "Structures/structure_%s_%s_%s.pdf" % (snor, str(snoRNAs[snor].snor_name), suffix)))
+        pl.savefig(os.path.join(options.dir, "Structures/structure_%s_%s_%s.png" % (snor, str(snoRNAs[snor].snor_name), suffix)), dpi=300)
         fig = pl.gcf()
         pl.close(fig)
-
-
-def read_snoRNAs_to_dict(path, type_of_snor):
-    names = ["chrom",
-             "start",
-             "end",
-             "snor_id",
-             "mod_type",
-             "strand",
-             "sequence",
-             "box_d",
-             "box_c",
-             "box_h",
-             "box_aca",
-             "alias",
-             "gene_name",
-             "accession",
-             "mod_site",
-             "host_gene",
-             "host_id",
-             "organization",
-             "organism",
-             "note"]
-    if type_of_snor == "CD":
-        snoRNAs = pd.read_table(path, names=names)
-        if len(set(snoRNAs.mod_type)) != 1:
-            Exception("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
-        counter = 0
-        snor_dict = {}
-        for ind, snor in snoRNAs.iterrows():
-            try:
-                s = CD_snoRNA(snor_id=snor.snor_id,
-                              organism=snor.organism,
-                              chrom=snor.chrom,
-                              start=snor.start,
-                              end=snor.end,
-                              strand=snor.strand,
-                              sequence=snor.sequence,
-                              snor_type=snor.mod_type,
-                              d_boxes=snor.box_d,
-                              c_boxes=snor.box_c,
-                              switch_boxes=True,
-                              alias=snor.alias,
-                              gene_name=snor.gene_name,
-                              accession=snor.accession,
-                              modified_sites=snor.mod_site,
-                              host_id=snor.host_id,
-                              organization=snor.organization,
-                              note=snor.note)
-                counter += 1
-                snor_dict[s.snor_id] = s
-            except Exception, e:
-                sys.stderr.write(str(e) + "\n")
-        return snor_dict
-
-    elif options.type == "HACA":
-        snoRNAs = pd.read_table(path, names=names)
-        if len(set(snoRNAs.mod_type)) != 1:
-            Exception("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
-        counter = 0
-        snor_dict = {}
-        for ind, snor in snoRNAs.iterrows():
-            try:
-                s = HACA_snoRNA(snor_id=snor.snor_id,
-                              organism=snor.organism,
-                              chrom=snor.chrom,
-                              start=snor.start,
-                              end=snor.end,
-                              strand=snor.strand,
-                              sequence=snor.sequence,
-                              snor_type=snor.mod_type,
-                              h_box=snor.box_h,
-                              aca_box=snor.box_aca,
-                              alias=snor.alias,
-                              gene_name=snor.gene_name,
-                              accession=snor.accession,
-                              modified_sites=snor.mod_site,
-                              host_id=snor.host_id,
-                              organization=snor.organization,
-                              note=snor.note)
-                counter += 1
-                snor_dict[s.snor_id + "_stem1"] = s
-                snor_dict[s.snor_id + "_stem2"] = s
-            except Exception, e:
-                sys.stderr.write(str(e) + "\n")
-        return snor_dict
 
 
 def is_known(chrom, snor_id, pos, modsites):
@@ -291,7 +205,7 @@ def is_known(chrom, snor_id, pos, modsites):
 
 
 def plot_hybrid_statistics_with_boxes(snor, snoRNAs, hybrids):
-    ax = plot_hybrid_statistics(hybrids, title=snor + " (" + str(len(hybrids)) + ")")
+    ax = plot_hybrid_statistics(hybrids, title=snor + ", " + str(snoRNAs[snor].snor_name) + " (" + str(len(hybrids)) + ")")
     ax.get_xaxis().set_visible(False)
     line_dbox = pl.Line2D([snoRNAs[snor].d_box[0] - 0.3 - 1,
                            snoRNAs[snor].d_box[1] + 0.7 - 1],

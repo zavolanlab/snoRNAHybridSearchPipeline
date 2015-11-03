@@ -109,7 +109,7 @@ def main():
                     outtexts[i] += shuffled_text
             else:
                 for i, text in enumerate(outtexts):
-                    outtexts[i] += "\tNA\tNA\tNA\tNA\n"
+                    outtexts[i] += "\tNA\tNA\tNA\tNA\tNA\n"
             for text in outtexts:
                 out.write(text)
 

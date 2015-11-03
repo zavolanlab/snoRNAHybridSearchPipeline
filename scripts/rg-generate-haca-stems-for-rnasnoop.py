@@ -58,65 +58,10 @@ sysout = sys.stdout.write
 
 def main():
     """Main logic of the script"""
-    names = ["chrom",
-             "start",
-             "end",
-             "snor_id",
-             "mod_type",
-             "strand",
-             "sequence",
-             "box_d",
-             "box_c",
-             "box_h",
-             "box_aca",
-             "alias",
-             "gene_name",
-             "accession",
-             "mod_site",
-             "host_gene",
-             "host_id",
-             "organization",
-             "organism",
-             "note"]
-    snoRNAs = pd.read_table(options.input, names=names)
-    if len(set(snoRNAs.mod_type)) != 1:
-        WrongTypeException("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
-    counter = 0
-    if options.type == "CD":
-        for ind, snor in snoRNAs.iterrows():
-                try:
-                    s = CD_snoRNA(snor_id=snor.snor_id,
-                              organism=snor.organism,
-                              chrom=snor.chrom,
-                              start=snor.start,
-                              end=snor.end,
-                              strand=snor.strand,
-                              sequence=snor.sequence,
-                              snor_type=snor.mod_type,
-                              d_boxes=snor.box_d,
-                              c_boxes=snor.box_c,
-                              switch_boxes=options.switch_boxes,
-                              alias=snor.alias,
-                              gene_name=snor.gene_name,
-                              accession=snor.accession,
-                              modified_sites=snor.mod_site,
-                              host_id=snor.host_id,
-                              organization=snor.organization,
-                              note=snor.note)
-                    with open(os.path.join(options.dir, snor.snor_id + ".fa"), "w") as o:
-                        o.write(s.get_plexy_string())
-                    counter += 1
-                except WrongCDBoxPlacementException, e:
-                    syserr(str(e) + "\n")
-                except IncompatibleStrandAndCoordsException, e:
-                    syserr(str(e) + "\n")
-                except TypeError, e:
-                    syserr(str(e) + "\n")
-        syserr("%i snoRNAs was written\n" % counter)
-    elif options.type == "HACA":
-        raise NotImplementedError("This function has not been implemented yet")
-    else:
-        raise Exception("Unknown type of snoRNA")
+    snoRNAs = read_snoRNAs_from_table(options.input, type_of_snor=options.type, only_with_box=True)
+    for s in snoRNAs:
+        with open(os.path.join(options.dir, snor.snor_id + ".fa"), "w") as o:
+            o.write(s.get_plexy_string())
 
 if __name__ == '__main__':
     try:

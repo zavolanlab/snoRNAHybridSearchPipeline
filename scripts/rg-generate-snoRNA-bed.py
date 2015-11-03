@@ -14,7 +14,7 @@ import os
 file_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(file_dir, ".."))
 import time
-from modules.snoRNA import CD_snoRNA, HACA_snoRNA, WrongCDBoxPlacementException, IncompatibleStrandAndCoordsException
+from modules.snoRNA import read_snoRNAs_from_table
 import pandas as pd
 from argparse import ArgumentParser, RawTextHelpFormatter
 
@@ -57,94 +57,17 @@ sysout = sys.stdout.write
 
 def main():
     """Main logic of the script"""
-    names = ["chrom",
-             "start",
-             "end",
-             "snor_id",
-             "mod_type",
-             "strand",
-             "sequence",
-             "box_d",
-             "box_c",
-             "box_h",
-             "box_aca",
-             "alias",
-             "gene_name",
-             "accession",
-             "mod_site",
-             "host_gene",
-             "host_id",
-             "organization",
-             "organism",
-             "note"]
-    snoRNAs = pd.read_table(options.input, names=names)
-    if len(set(snoRNAs.mod_type)) != 1:
-        WrongTypeException("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
-    counter = 0
+    snoRNAs = read_snoRNAs_from_table(options.input, type_of_snor=options.type, only_with_box=True)
     with open(options.output, "w") as o:
-        if options.type == "CD":
-            for ind, snor in snoRNAs.iterrows():
-                try:
-                    s = CD_snoRNA(snor_id=snor.snor_id,
-                              organism=snor.organism,
-                              chrom=snor.chrom,
-                              start=snor.start,
-                              end=snor.end,
-                              strand=snor.strand,
-                              sequence=snor.sequence,
-                              snor_type=snor.mod_type,
-                              d_boxes=snor.box_d,
-                              c_boxes=snor.box_c,
-                              switch_boxes=options.switch_boxes,
-                              alias=snor.alias,
-                              gene_name=snor.gene_name,
-                              accession=snor.accession,
-                              modified_sites=snor.mod_site,
-                              host_id=snor.host_id,
-                              organization=snor.organization,
-                              note=snor.note)
+        for snorid, s in snoRNAs.iteritems():
+            if options.type == "CD":
+                o.write(s.get_bed_string())
+            elif options.type == "HACA":
+                fasta_seq = s.get_split_fasta()
+                if fasta_seq:
                     o.write(s.get_bed_string())
-                    counter += 1
-                except WrongCDBoxPlacementException, e:
-                    syserr(str(e) + "\n")
-                except IncompatibleStrandAndCoordsException, e:
-                    syserr(str(e) + "\n")
-                except TypeError, e:
-                    syserr(str(e) + "\n")
-                except AttributeError:
-                    import ipdb; ipdb.set_trace()
-            syserr("%i snoRNAs was written\n" % counter)
-        elif options.type == "HACA":
-            for ind, snor in snoRNAs.iterrows():
-                try:
-                    s = HACA_snoRNA(snor_id=snor.snor_id,
-                                    organism=snor.organism,
-                                    chrom=snor.chrom,
-                                    start=snor.start,
-                                    end=snor.end,
-                                    strand=snor.strand,
-                                    sequence=snor.sequence,
-                                    snor_type=snor.mod_type,
-                                    h_box=snor.box_h,
-                                    aca_box=snor.box_aca,
-                                    alias=snor.alias,
-                                    gene_name=snor.gene_name,
-                                    accession=snor.accession,
-                                    modified_sites=snor.mod_site,
-                                    host_id=snor.host_id,
-                                    organization=snor.organization,
-                                    note=snor.note)
-                    fasta_seq = s.get_split_fasta()
-                    if fasta_seq:
-                        o.write(s.get_bed_string())
-                        counter += 1
-                except IncompatibleStrandAndCoordsException, e:
-                    syserr(str(e) + "\n")
-                except TypeError, e:
-                    syserr(str(e) + "\n")
-            syserr("%i snoRNAs was written\n" % counter)
-        else:
-            raise Exception("Unknown type of snoRNA")
+            else:
+                print "Wrong type"
 
 if __name__ == '__main__':
     try:

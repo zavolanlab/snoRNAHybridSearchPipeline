@@ -29,7 +29,7 @@ from argparse import ArgumentParser, RawTextHelpFormatter
 # add path to sys and import snoRNA module
 file_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(file_dir, "../modules"))
-from snoRNA import CD_snoRNA, HACA_snoRNA
+from snoRNA import read_snoRNAs_from_table
 
 pl.rcParams['figure.figsize'] = (14, 10)
 pl.rcParams['ytick.labelsize'] = 20
@@ -97,7 +97,7 @@ def main():
     """Main logic of the script"""
     if options.verbose:
         syserr("Reading snoRNAs\n")
-    snoRNAs = read_snoRNAs_to_dict(options.snoRNAs, options.type)
+    snoRNAs = read_snoRNAs_from_table(options.snoRNAs, options.type, True)
     chromosome_mapping = get_chomosomes_mapping(snoRNAs)
 
     if options.verbose:
@@ -326,7 +326,7 @@ def get_chomosomes_mapping(snor_dict):
                 if chrom in ['18S', '28S']:
                     mod_chroms[chrom] = "RNA" + chrom
                 elif chrom == '5.8S':
-                    mod_chroms[chrom] = "RNA5S"
+                    mod_chroms[chrom] = "RNA5.8S"
                 else:
                     mod_chroms[chrom] = chrom
     return mod_chroms
@@ -412,93 +412,6 @@ def get_target_sites(snors, chrom):
                 for site, nuc in snor.modified_sites[chrom]:
                     sites.append(site)
     return sites
-
-
-def read_snoRNAs_to_dict(path, type_of_snor):
-    names = ["chrom",
-             "start",
-             "end",
-             "snor_id",
-             "mod_type",
-             "strand",
-             "sequence",
-             "box_d",
-             "box_c",
-             "box_h",
-             "box_aca",
-             "alias",
-             "gene_name",
-             "accession",
-             "mod_site",
-             "host_gene",
-             "host_id",
-             "organization",
-             "organism",
-             "note"]
-    if type_of_snor == "CD":
-        snoRNAs = pd.read_table(path, names=names)
-        if len(set(snoRNAs.mod_type)) != 1:
-            Exception("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
-        counter = 0
-        snor_dict = {}
-        for ind, snor in snoRNAs.iterrows():
-            try:
-                s = CD_snoRNA(snor_id=snor.snor_id,
-                              organism=snor.organism,
-                              chrom=snor.chrom,
-                              start=snor.start,
-                              end=snor.end,
-                              strand=snor.strand,
-                              sequence=snor.sequence,
-                              snor_type=snor.mod_type,
-                              d_boxes=snor.box_d,
-                              c_boxes=snor.box_c,
-                              switch_boxes=True,
-                              alias=snor.alias,
-                              gene_name=snor.gene_name,
-                              accession=snor.accession,
-                              modified_sites=snor.mod_site,
-                              host_id=snor.host_id,
-                              organization=snor.organization,
-                              note=snor.note)
-                counter += 1
-                snor_dict[s.snor_id] = s
-            except Exception, e:
-                sys.stderr.write(str(e) + "\n")
-        return snor_dict
-
-    elif options.type == "HACA":
-        snoRNAs = pd.read_table(path, names=names)
-        if len(set(snoRNAs.mod_type)) != 1:
-            Exception("More than one type of snoRNAs detected: %s" % str(set(snoRNAs.mod_type)))
-        counter = 0
-        snor_dict = {}
-        for ind, snor in snoRNAs.iterrows():
-            try:
-                s = HACA_snoRNA(snor_id=snor.snor_id,
-                              organism=snor.organism,
-                              chrom=snor.chrom,
-                              start=snor.start,
-                              end=snor.end,
-                              strand=snor.strand,
-                              sequence=snor.sequence,
-                              snor_type=snor.mod_type,
-                              h_box=snor.box_h,
-                              aca_box=snor.box_aca,
-                              alias=snor.alias,
-                              gene_name=snor.gene_name,
-                              accession=snor.accession,
-                              modified_sites=snor.mod_site,
-                              host_id=snor.host_id,
-                              organization=snor.organization,
-                              note=snor.note)
-                counter += 1
-                snor_dict[s.snor_id + "_stem1"] = s
-                snor_dict[s.snor_id + "_stem2"] = s
-            except Exception, e:
-                sys.stderr.write(str(e) + "\n")
-        return snor_dict
-
 
 
 if __name__ == '__main__':
