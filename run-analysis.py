@@ -172,6 +172,7 @@ for input_name, search_anchor_id in files_to_run.iteritems():
                     --length {length} \\
                     --assign-score-threshold \\
                     --stats {stats} \\
+                    --five-prime-adapter {five_prime_adapter} \\
                     -v
               """
 
@@ -195,6 +196,7 @@ for input_name, search_anchor_id in files_to_run.iteritems():
                             'input': "input.anchorsearch",
                             'stats': "input.stats",
                             'length': convert_to_fasta_settings.get('length', "15"),
+                            'five_prime_adapter': convert_to_fasta_settings.get('five_prime_adapter', "NNNNNNNNNNNNNN"),
                             })
     else:
         convert_to_fasta_command = str(convert_to_fasta_command).format(**{'script': os.path.join(pip_dir, convert_to_fasta_script),
@@ -202,6 +204,7 @@ for input_name, search_anchor_id in files_to_run.iteritems():
                             'input': input_name + ".anchorsearch",
                             'stats': os.path.join(working_directory, "search_anchors.stats"),
                             'length': convert_to_fasta_settings.get('length', "15"),
+                            'five_prime_adapter': convert_to_fasta_settings.get('five_prime_adapter', "NNNNNNNNNNNNNN"),
                             })
 
     convert_to_fasta_id = jobber.job(convert_to_fasta_command, {
@@ -223,7 +226,7 @@ map_dependancies = {}
 for input_name, convert_id in convert_dependancies.iteritems():
     map_reads_settings = settings['tasks']['MapReads']
     map_reads_script = 'bowtie2'
-    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 --local -k 10 -U {input} -S {output}"""
+    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 -k 10 -U {input} -S {output}"""
 
     if settings['general'].get('executer', 'drmaa') == 'drmaa':
         #

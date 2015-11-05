@@ -13,6 +13,7 @@ import re
 import sys
 import csv
 import time
+import swalign
 from argparse import ArgumentParser
 
 parser = ArgumentParser(description=__doc__)
@@ -46,6 +47,22 @@ parser.add_argument("--filter-ambiguous",
                     action="store_true",
                     default=False,
                     help="Filter reads that can be assigned to more than one snoRNA")
+parser.add_argument("--five-prime-adapter",
+                    dest="five_prime_adapter",
+                    help="Five prime adapter sequence used in experiment - will be used to remove reads that are similar")
+parser.add_argument("--three-prime-adapter",
+                    dest="three_prime_adapter",
+                    help="Three prime adapter sequence used in experiment - will be used to remove reads that are similar")
+parser.add_argument("--five-prime-adapter-threshold",
+                    dest="five_prime_adapter_threshold",
+                    type=float,
+                    default=0.8,
+                    help="Threshold of the identity to the 5' adapter, defaults to 0.8")
+parser.add_argument("--three-prime-adapter-threshold",
+                    dest="three_prime_adapter_threshold",
+                    type=float,
+                    default=0.8,
+                    help="Threshold of the identity to the 3' adapter, defaults to 0.8")
 
 try:
     options = parser.parse_args()
@@ -69,6 +86,13 @@ def main():
     else:
         score_thersh = 0.0
 
+    if options.five_prime_adapter or options.three_prime_adapter:
+        scoring = swalign.NucleotideScoringMatrix(match=1,
+                                                  mismatch=-1)
+        sw = swalign.LocalAlignment(scoring,
+                                    gap_penalty=-6,
+                                    gap_extension_penalty=-4)
+
     with open(options.input) as f:
         with open(options.output, 'w') as out:
             if options.filter_ambiguous:
@@ -76,21 +100,54 @@ def main():
                     if row[6] == "NA":
                         continue
                     if len(row[6]) >= options.length and float(row[2]) >= score_thersh and row[7] == "Unique":
-                        out.write(">%s:N\n%s\n" % (row[0], row[6]))
-                        for match in re.finditer("C", row[6]):
-                            out.write(">%s\n%s\n" % (row[0] + ":" + str(match.span()[0]),
-                                                     row[6][:match.span()[0]] + "T" + row[6][match.span()[1]:]))
+                        if options.five_prime_adapter is not None:
+                            alignment_five = sw.align(options.five_prime_adapter, row[6])
+                            score_five = alignment_five.score
+                            normed_five = score_five/float(len(row[6]))
+                        else:
+                            normed_five = 0.0
+                        if options.three_prime_adapter is not None:
+                            alignment_three = sw.align(options.three_prime_adapter, row[6])
+                            score_three = alignment_three.score
+                            normed_three = score_three/float(len(row[6]))
+                        else:
+                            normed_three = 0.0
+
+                        if normed_three < options.three_prime_adapter_threshold and normed_five < options.five_prime_adapter_threshold:
+                            out.write(">%s:N\n%s\n" % (row[0], row[6]))
+                            for match in re.finditer("C", row[6]):
+                                out.write(">%s\n%s\n" % (row[0] + ":" + str(match.span()[0]),
+                                                         row[6][:match.span()[0]] + "T" + row[6][match.span()[1]:]))
             else:
+                counter_adapt = 0
+                counter = 0
                 for row in csv.reader(f, delimiter='\t'):
                     if row[6] == "NA":
                         continue
                     if len(row[6]) >= options.length and float(row[2]) >= score_thersh:
-                        out.write(">%s:N\n%s\n" % (row[0], row[6]))
-                        for match in re.finditer("C", row[6]):
-                            out.write(">%s\n%s\n" % (row[0] + ":" + str(match.span()[0]),
-                                                     row[6][:match.span()[0]] + "T" + row[6][match.span()[1]:]))
+                        counter += 1
+                        if options.five_prime_adapter is not None:
+                            alignment_five = sw.align(options.five_prime_adapter, row[6])
+                            score_five = alignment_five.score
+                            normed_five = score_five/float(len(row[6]))
+                        else:
+                            normed_five = 0.0
+                        if options.three_prime_adapter is not None:
+                            alignment_three = sw.align(options.three_prime_adapter, row[6])
+                            score_three = alignment_three.score
+                            normed_three = score_three/float(len(row[6]))
+                        else:
+                            normed_three = 0.0
 
+                        if normed_three < options.three_prime_adapter_threshold and normed_five < options.five_prime_adapter_threshold:
+                            counter_adapt += 1
+                            out.write(">%s:N\n%s\n" % (row[0], row[6]))
+                            for match in re.finditer("C", row[6]):
+                                out.write(">%s\n%s\n" % (row[0] + ":" + str(match.span()[0]),
+                                                         row[6][:match.span()[0]] + "T" + row[6][match.span()[1]:]))
 
+                if options.verbose:
+                    syserr("%i seqs was removed out of %s because they were similar to the adapter\n" % (counter - counter_adapt, counter))
 
 
 if __name__ == '__main__':
