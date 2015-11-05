@@ -226,7 +226,7 @@ map_dependancies = {}
 for input_name, convert_id in convert_dependancies.iteritems():
     map_reads_settings = settings['tasks']['MapReads']
     map_reads_script = 'bowtie2'
-    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 -k 10 -U {input} -S {output}"""
+    map_reads_command = """{script} -x {index} -f -D100 -L 13 -i C,1 --local -k 10 -U {input} -S {output}"""
 
     if settings['general'].get('executer', 'drmaa') == 'drmaa':
         #
@@ -670,19 +670,19 @@ else:
 
 if settings["general"]['type'] == "CD":
     #
-    # Append RNAduplex
+    # Append RNAplex
     #
 
     append_duplex_dependancies = {}
-    append_duplex_group = jobber.startGroup({'name': 'AppendRNAduplex'})
+    append_duplex_group = jobber.startGroup({'name': 'AppendRNAplex'})
     for input_name, append_plexy_id in append_score_dependancies.iteritems():
-        append_duplex_settings = settings['tasks']['AppendRNAduplex']
-        append_duplex_script = 'scripts/rg-check-hybrids-with-rnaduplex.py'
+        append_duplex_settings = settings['tasks']['AppendRNAplex']
+        append_duplex_script = 'scripts/rg-check-hybrids-with-rnaplex.py'
         append_duplex_command = """python {script} \\
                                         --input {input} \\
                                         --output {output} \\
                                         --snoRNA-paths {snorna_path} \\
-                                        --RNAduplex-bin {RNAduplex_bin} \\
+                                        --RNAplex-bin {RNAplex_bin} \\
                                         -v
                       """
         #
@@ -705,17 +705,17 @@ if settings["general"]['type'] == "CD":
                                             'input': 'input.scorebed',
                                             'output': 'output',
                                             'snorna_path': os.path.join(working_directory, "Input/"),
-                                            'RNAduplex_bin': settings['general'].get('RNAduplex_bin', "RNAduplex"),
+                                            'RNAplex_bin': settings['general'].get('RNAplex_bin', "RNAplex"),
                                            })
         else:
             append_duplex_command = str(append_duplex_command).format(**{'script': os.path.join(pip_dir, append_duplex_script),
                                            'input': input_name + ".scorebed",
                                            'output': input_name + ".duplexbed",
                                            'snorna_path': os.path.join(working_directory, "Input/"),
-                                           'RNAduplex_bin': settings['general'].get('RNAduplex_bin', "RNAduplex"),
+                                           'RNAplex_bin': settings['general'].get('RNAplex_bin', "RNAplex"),
                                            })
         append_duplex_id = jobber.job(append_duplex_command,
-                                   {'name': 'AppendRNAduplex',
+                                   {'name': 'AppendRNAplex',
                                     'uniqueId': True,
                                     'dependencies': [append_plexy_id],
                                     'options': [('q', append_duplex_settings.get('queue', 'short.q')),
