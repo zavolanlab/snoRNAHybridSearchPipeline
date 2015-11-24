@@ -73,15 +73,16 @@ def main():
                   'sitespec',
                   'snorspec']
     df['logsitespec'] = np.log(df['sitespec'])
+    df['logsnorspec'] = np.log(df['snorspec'])
 
     ndf = df.join(accessibility)
     ndf = ndf.join(flanks)
     ndf['const'] = 1.0
     ndf = ndf.dropna()
     model = pd.read_pickle(options.model)
-    features_for_model = ['const', 'score', 'logsitespec', 'flanksA', 'ContraScore']
+    features_for_model = ['const', 'score', 'flanksA', 'ContraScore']
     ndf['Probability'] = model.predict(ndf[features_for_model].astype(np.float64), transform=False)
-    ndf['Modification'] = ndf['beg'] + 3
+    ndf['Modification'] = [pos + 3 if strand == "+" else pos + 4 for pos, strand in zip(ndf['beg'], ndf['strand'])]
     names_to_keep = ['chrom',
                      'snoRNAs',
                      'beg',

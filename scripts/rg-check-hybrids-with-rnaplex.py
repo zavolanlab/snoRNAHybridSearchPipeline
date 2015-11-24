@@ -83,11 +83,11 @@ def main():
             shuffled_target = shuffle(sequence, len(sequence), 2)
             shuffled_snorna = shuffle(snorna_sequence, len(snorna_sequence), 2)
 
-            proc = subprocess.Popen('printf "%s\n%s" | %s -c 20 -l 30' % (sequence, snorna_sequence, options.RNAplex_bin),
+            proc = subprocess.Popen('printf "%s\n%s" | %s' % (sequence, snorna_sequence, options.RNAplex_bin),
                                     stdout=subprocess.PIPE, shell=True)
-            proc_shuf = subprocess.Popen('printf "%s\n%s" | %s -c 20 -l 30' % (sequence, snorna_sequence_random, options.RNAplex_bin),
+            proc_shuf = subprocess.Popen('printf "%s\n%s" | %s' % (sequence, snorna_sequence_random, options.RNAplex_bin),
                                     stdout=subprocess.PIPE, shell=True)
-            proc_shuf_tar = subprocess.Popen('printf "%s\n%s" | %s -c 20 -l 30' % (shuffled_target, snorna_sequence, options.RNAplex_bin),
+            proc_shuf_tar = subprocess.Popen('printf "%s\n%s" | %s' % (shuffled_target, snorna_sequence, options.RNAplex_bin),
                                     stdout=subprocess.PIPE, shell=True)
             sout, serr = proc.communicate()
             sout_shuf, serr_shuf = proc_shuf.communicate()
