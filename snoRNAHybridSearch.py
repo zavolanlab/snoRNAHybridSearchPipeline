@@ -103,9 +103,9 @@ if options.command == 'clean':
                                "anchors.tab",
                                "for_index.clustered",
                                "for_index.fasta",
-                               "results_with_RNAplex_score.tab",
-                               "results_with_RNAplex_score_clustered.tab",
-                               "results_with_RNAplex_score_annotated.tab",
+                               "results_with_RNAduplex_score.tab",
+                               "results_with_RNAduplex_score_clustered.tab",
+                               "results_with_RNAduplex_score_annotated.tab",
                                "mapped_reads_annotated_with_snornas.tab"]
             if options.make_backup:
                 for f in files_to_backup:
@@ -343,16 +343,16 @@ jobber.job(analysis_command, {'name': "CreateAnalysisJobs"})
 
 jobber.endGroup()
 
-# We merge the files from RNAplex into our result file after analysis finishes
-merge_duplexresults_command = "cat {output_dir}/*.duplexbed > {cwd}/results_with_RNAplex_score.tab".format(output_dir=output_directory,
+# We merge the files from RNAduplex into our result file after analysis finishes
+merge_duplexresults_command = "cat {output_dir}/*.duplexbed > {cwd}/results_with_RNAduplex_score.tab".format(output_dir=output_directory,
                                                                                                        cwd=working_directory)
 merge_duplexresults_id = jobber.job(merge_duplexresults_command, {'name': "MergeDuplexResults",
                                    'dependencies': [analyse_files_id]})
 
 # cluster duplex results
 cluster_duplex_results_command = "python %s --input %s --output %s" % (os.path.join(pipeline_directory, 'scripts/rg-cluster-results.py'),
-                                                                       os.path.join(working_directory, "results_with_RNAplex_score.tab"),
-                                                                       os.path.join(working_directory, "results_with_RNAplex_score_clustered.tab"))
+                                                                       os.path.join(working_directory, "results_with_RNAduplex_score.tab"),
+                                                                       os.path.join(working_directory, "results_with_RNAduplex_score_clustered.tab"))
 cluster_duplex_results_id = jobber.job(cluster_duplex_results_command, {'name': "ClusterDuplexResults",
                                     'options': [('q', 'short.q'),
                                                 ('l', "membycore=%s" % ('2G',))],
@@ -360,8 +360,8 @@ cluster_duplex_results_id = jobber.job(cluster_duplex_results_command, {'name': 
 
 # annotate duplex results
 annotate_duplex_results_tuple =  (os.path.join(pipeline_directory, 'scripts/rg-annotate-positions.py'),
-                                  os.path.join(working_directory, "results_with_RNAplex_score_clustered.tab"),
-                                  os.path.join(working_directory, "results_with_RNAplex_score_annotated.tab"),
+                                  os.path.join(working_directory, "results_with_RNAduplex_score_clustered.tab"),
+                                  os.path.join(working_directory, "results_with_RNAduplex_score_annotated.tab"),
                                   settings['general']['annotations_genes'],
                                   settings['general']['annotations_regions'],
                                   settings['general']['annotations_repeats'],
@@ -375,7 +375,7 @@ annotate_duplex_results_id = jobber.job(annotate_duplex_results_command, {'name'
                                         'dependencies': [cluster_duplex_results_id]})
 
 makestats_duplex_results_command = "python %s --input %s --snoRNAs %s --type %s --dir %s -v" % (os.path.join(pipeline_directory, 'scripts/rg-make-plots-for-rnaduplex.py'),
-                                                                                          os.path.join(working_directory, "results_with_RNAplex_score_annotated.tab"),
+                                                                                          os.path.join(working_directory, "results_with_RNAduplex_score_annotated.tab"),
                                                                                           settings['general']['snoRNAs'],
                                                                                           settings['general']['type'],
                                                                                           os.path.join(working_directory, "Plots"))

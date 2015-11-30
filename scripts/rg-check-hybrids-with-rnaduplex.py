@@ -47,10 +47,10 @@ parser.add_argument("--snoRNA-paths",
                     dest="snoRNA_paths",
                     default="./Plexy/",
                     help="Path to snoRNAs with Plexy , defaults to ./Plexy/")
-parser.add_argument("--RNAplex-bin",
-                    dest="RNAplex_bin",
-                    default="RNAplex",
-                    help="Path to RNAplex binary, defaults to RNAcofold")
+parser.add_argument("--RNAduplex-bin",
+                    dest="RNAduplex_bin",
+                    default="RNAduplex",
+                    help="Path to RNAduplex binary, defaults to RNAcofold")
 
 try:
     options = parser.parse_args()
@@ -83,11 +83,11 @@ def main():
             shuffled_target = shuffle(sequence, len(sequence), 2)
             shuffled_snorna = shuffle(snorna_sequence, len(snorna_sequence), 2)
 
-            proc = subprocess.Popen('printf "%s\n%s" | %s' % (sequence, snorna_sequence, options.RNAplex_bin),
+            proc = subprocess.Popen('printf "%s\n%s" | %s' % (snorna_sequence, sequence, options.RNAduplex_bin),
                                     stdout=subprocess.PIPE, shell=True)
-            proc_shuf = subprocess.Popen('printf "%s\n%s" | %s' % (sequence, snorna_sequence_random, options.RNAplex_bin),
+            proc_shuf = subprocess.Popen('printf "%s\n%s" | %s' % (snorna_sequence_random, sequence, options.RNAduplex_bin),
                                     stdout=subprocess.PIPE, shell=True)
-            proc_shuf_tar = subprocess.Popen('printf "%s\n%s" | %s' % (shuffled_target, snorna_sequence, options.RNAplex_bin),
+            proc_shuf_tar = subprocess.Popen('printf "%s\n%s" | %s' % (snorna_sequence, shuffled_target, options.RNAduplex_bin),
                                     stdout=subprocess.PIPE, shell=True)
             sout, serr = proc.communicate()
             sout_shuf, serr_shuf = proc_shuf.communicate()
@@ -100,8 +100,8 @@ def main():
             score = sout.split()[-1][1:-1]
             part1 = sout.split()[1]
             part2 = sout.split()[3]
-            structure = get_complete_structure(snorna_sequence, sout.split()[0].split("&")[1], part2)
-            structure_random = get_complete_structure(snorna_sequence_random, sout_shuf.split()[0].split("&")[1], sout_shuf.split()[3])
+            structure = get_complete_structure(snorna_sequence, sout.split()[0].split("&")[0], part1)
+            structure_random = get_complete_structure(snorna_sequence_random, sout_shuf.split()[0].split("&")[0], sout_shuf.split()[1])
             outfile.write("%s\t%s\n" % ("\t".join(row), "\t".join([str(i) for i in [len(snorna_sequence), get_GC_frac(snorna_sequence), score, score_shuf, score_shuf_tar, structure, part1, part2, structure_random]])))
 
 def get_complete_structure(snoRNA_sequence, partial_structure, positions, index=None):
