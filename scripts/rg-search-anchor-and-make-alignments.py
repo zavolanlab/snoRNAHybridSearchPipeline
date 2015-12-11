@@ -154,19 +154,24 @@ def get_best_alignment(alignments, read_id, read):
         #read_id name score beg end which_end target qbeg qend isambig matches:mismatches:identity
         ambiguous_string = "Ambiguous-%i" % ambiguous_count if ambiguous else "Unique-1"
         read_name = read_id + "-" + ambiguous_string + ":" + name
-        text = "%s\t%s\t%f\t%i\t%i\t%s\t%s\t%i\t%i\t%s\t%s" % (read_name,
-                                                               name,
-                                                               score,
-                                                               beg,
-                                                               end,
-                                                               which_end,
-                                                               read_rest,
-                                                               alignment.q_pos,
-                                                               alignment.q_end,
-                                                               "Ambiguous" if ambiguous else "Unique",
-                                                               "%i:%i:%.4f" % (alignment.matches,
-                                                                               alignment.mismatches,
-                                                                               alignment.identity))
+
+        # check if snoRNA is on one edge of the read
+        if (which_end == '5p' and len(five_prime_end) > 2) or (which_end == '3p' and len(three_prime_end) > 2):
+            text = "%s\tNA\tNA\tNA\tNA\tNA\tNA\tNA\tNA\tNA\tNA" % (read_id,)
+        else:
+            text = "%s\t%s\t%f\t%i\t%i\t%s\t%s\t%i\t%i\t%s\t%s" % (read_name,
+                                                                   name,
+                                                                   score,
+                                                                   beg,
+                                                                   end,
+                                                                   which_end,
+                                                                   read_rest,
+                                                                   alignment.q_pos,
+                                                                   alignment.q_end,
+                                                                   "Ambiguous" if ambiguous else "Unique",
+                                                                   "%i:%i:%.4f" % (alignment.matches,
+                                                                                   alignment.mismatches,
+                                                                                   alignment.identity))
         texts.append(text)
     return texts
 

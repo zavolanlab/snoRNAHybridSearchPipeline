@@ -161,6 +161,7 @@ jobber = JobClient.Jobber()
 pipeline_id = jobber.startGroup({'name': "snoRNAHybridSearch-%s" % options.name_suffix,
                                  'options': [['module', "Python"],
                                              ['module', "GCC"],
+                                             ['module', "DRMAA"],
                                              ['module', "Bowtie2"],
                                              ['module', "OpenBLAS"],
                                              ['module', "BEDTools"],
