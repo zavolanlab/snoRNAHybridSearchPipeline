@@ -156,7 +156,7 @@ def get_best_alignment(alignments, read_id, read):
         read_name = read_id + "-" + ambiguous_string + ":" + name
 
         # check if snoRNA is on one edge of the read
-        if (which_end == '5p' and len(five_prime_end) > 2) or (which_end == '3p' and len(three_prime_end) > 2):
+        if (which_end == '5p' and len(five_prime_end) > 6) or (which_end == '3p' and len(three_prime_end) > 6):
             text = "%s\tNA\tNA\tNA\tNA\tNA\tNA\tNA\tNA\tNA\tNA" % (read_id,)
         else:
             text = "%s\t%s\t%f\t%i\t%i\t%s\t%s\t%i\t%i\t%s\t%s" % (read_name,

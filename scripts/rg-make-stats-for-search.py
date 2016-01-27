@@ -143,7 +143,10 @@ def main():
         out.write("Number of found sites\t%i\n" % (found_sites))
         out.write("Number of found sites with target site over %i nuc\t%i\n" % (options.length, found_sites_thres))
         out.write("Number of unique sites (over threshold)\t%i\n" % (ambigous["Unique"]))
-        out.write("Number of ambiguous sites (over threshold)\t%i\n" % (ambigous["Ambiguous"]))
+        try:
+            out.write("Number of ambiguous sites (over threshold)\t%i\n" % (ambigous["Ambiguous"]))
+        except KeyError:
+            out.write("Number of ambiguous sites (over threshold)\t0\n")
         out.write("Number of 5' end sites (over threshold)\t%i\n" % (ends['5p']))
         out.write("Number of 3' end sites (over threshold)\t%i\n" % (ends['3p']))
         out.write("Averaged length of alignment:\t%.2f +- %.2f\n" % (df.length.mean(), df.length.std()))

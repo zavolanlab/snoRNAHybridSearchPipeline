@@ -144,7 +144,7 @@ merge_for_statistics_id = jobber.job(merge_for_statistics_command, {'name': "Mer
 #
 
 
-make_statistics_command = "python %s --input %s --output %s --length 15 --fpr 1.0 --dir %s" % (
+make_statistics_command = "python %s --input %s --output %s --length 15 --fpr 100.0 --dir %s" % (
             os.path.join(pip_dir, 'scripts/rg-make-stats-for-search.py'),
             os.path.join(working_directory, "search_anchors_for_statistics"),
             os.path.join(working_directory, "search_anchors.stats"),

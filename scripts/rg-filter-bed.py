@@ -46,11 +46,23 @@ def main():
     df = pd.read_table(options.input, names=['chr', 'beg', 'end', 'name', 'score', 'strand'])
     df['mutpos'] = [ i.split(":")[-1] for i in df.name ]
     df['id'] = [":".join(i.split(":")[:-1])for i in df.name]
+    df['true_chrom'] = [i.split("|")[1] for i in df.chr]
+    canonical_targets = ['RNA18S', 'RNA28S', 'RNA5.8S', "U1", "U1.2", "U1.3", "U1.4", "U1.5", "U1.7",
+                         "U1.9", "U1.10", "U2", "U2.1", "U2.2", "U2.3", "U4", "U4.2", "U4atac.1",
+                         "U4atac.2", "U4atac.3", "U5", "U5.2", "U5.3", "U5.4", "hsa_U5.5", "U6",
+                         "U6.2", "U6.3", "U6.4", "U6.5", "U6.6", "U6.7", "U6atac.1", "U7", "U7.2",
+                         "U11", "U12"]
     with open(options.output, 'w') as o:
         for name, group in df.groupby("id"):
             tmpdf_score = group[group.score == group.score.max()]
+            if any(tmpdf_score.true_chrom.isin(canonical_targets)):
+                tmpdf_score = tmpdf_score[tmpdf_score.true_chrom.isin(canonical_targets)]
+
+
+            # number_of_targets = len(tmpdf_score.groupby(["chr", "beg"]))
             for gname, gdf in tmpdf_score.groupby(["chr", "beg"]):
-                o.write("\t".join(str(i) for i in gdf.iloc[0].tolist()[:-2]) + "\n")
+                # o.write("\t".join(str(i) for i in gdf.iloc[0].tolist()[:-3]) + "\t" + str(number_of_targets) + "\n")
+                o.write("\t".join(str(i) for i in gdf.iloc[0].tolist()[:-3]) + "\n")
 
 if __name__ == '__main__':
     try:

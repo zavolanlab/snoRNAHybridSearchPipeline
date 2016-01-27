@@ -224,6 +224,7 @@ annotate_reads_with_snornas_command = "python %s --input %s --output %s --annota
 
 
 annotate_reads_with_snornas_id = jobber.job(annotate_reads_with_snornas_command, {'name': "AnnotateWithSnoRNAs",
+                                        'options': [('l', "membycore=4G")],
                                         'dependencies': [generate_snoRNA_bed_id]})
 
 
