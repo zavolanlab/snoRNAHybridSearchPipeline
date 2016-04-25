@@ -10,4 +10,5 @@
 !*.sh
 !*.ini
 !/data/human/snoRNAs/Supplementary_Dataset_S1.csv
+!/data/human/snoRNAs/Supplementary_Dataset_S1_addnonCanonicalFunc.csv
 !/data/human/snoRNAs/Supplementary_Dataset_S5.gff
