@@ -194,11 +194,15 @@ def main():
         if options.verbose:
             syserr(" - %s\n" % mod_chrom)
         fig, ax = pl.subplots()
-        profile = get_profile(coverage,
-                              mod_chrom,
-                              0,
-                              chromosome_lengths[mod_chrom],
-                              '+')
+        try:
+            profile = get_profile(coverage,
+                                  mod_chrom,
+                                  0,
+                                  chromosome_lengths[mod_chrom],
+                                  '+')
+        except KeyError:
+            syserr("KeyError: No chromosome named %s\n" % mod_chrom)
+            continue
         ax.plot(profile, color=c2, label='Hybrid Coverage')
         ax.plot(get_target_sites(snoRNAs, mod_chrom_alt),
                 [[-1*max(profile)/25.0]]*len(get_target_sites(snoRNAs, mod_chrom_alt)),

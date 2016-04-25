@@ -142,6 +142,18 @@ class snoRNA(object):
                                                                attr)
         return gff_str
 
+    def get_modified_sites(self, with_snorna=False):
+        tmp = []
+        if self.modified_sites is not None:
+            for chrom, positions in self.modified_sites.iteritems():
+                for pos, nuc in positions:
+                    if with_snorna:
+                        tmp.append("%s:%s:%i" % (self.snor_id, chrom, pos))
+                    else:
+                        tmp.append("%s:%i" % (chrom, pos))
+        return tmp
+
+
     def __repr__(self):
         return "<%s %s>" % (self.snor_type, self.snor_id)
 
@@ -585,7 +597,7 @@ def read_snoRNAs_from_table(path, type_of_snor=None, only_with_box=False, min_in
     snoRNAs['chrom'] = snoRNAs.chrom.map(str)
     snor_dict = {'CD': {}, 'HACA': {}}
     for ind, snor in snoRNAs.iterrows():
-        if snor.mod_type == "CD":
+        if snor.mod_type.upper() == "CD" or snor.mod_type.upper() == "C/D":
             try:
                 s = CD_snoRNA(snor_id=snor.snor_id,
                               organism=snor.organism,
@@ -624,7 +636,7 @@ def read_snoRNAs_from_table(path, type_of_snor=None, only_with_box=False, min_in
                 sys.stderr.write(str(e) + "\n")
             except InteractionRegionTooShortException, e:
                 sys.stderr.write(str(e) + "\n")
-        elif snor.mod_type == "HACA":
+        elif snor.mod_type.upper() == "HACA" or snor.mod_type.upper() == "H/ACA":
             try:
                 s = HACA_snoRNA(snor_id=snor.snor_id,
                               organism=snor.organism,
