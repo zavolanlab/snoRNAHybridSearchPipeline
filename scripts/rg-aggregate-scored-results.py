@@ -58,8 +58,8 @@ def main():
     df = df[df[8] <= options.threshold]
     snor_count = []
     for read_id in df[3]:
-        c = float(read_id.split(":")[0].split("-")[-1])
-        snor_count.append(1.0/c)
+        # c = float(read_id.split(":")[0].split("-")[-1])
+        snor_count.append(1.0)
     df['count'] = snor_count
     if options.type == "CD":
         df['modification'] = [re.search("[ACTGactg]m", i).group()[0] if not pd.isnull(i) else np.nan for i in df[10]]
