@@ -6,6 +6,8 @@ from collections import defaultdict
 from HTSeq import GenomicInterval
 from Bio.Seq import Seq
 from pandas import isnull, read_table
+from scipy.stats import entropy
+import numpy as np
 
 class WrongCDBoxOrderExeption(Exception): pass
 class ToManyBoxesException(Exception): pass
@@ -99,8 +101,8 @@ class snoRNA(object):
                 self.modified_sites = defaultdict(list)
                 for count, site in enumerate(modsites):
                     try:
-                        rna, pos = site.split(":")
-                        self.modified_sites[rna].append((int(pos[1:]), pos[0]))
+                        rna, pos, box = site.split(":")
+                        self.modified_sites[rna].append((int(pos[1:]), pos[0], box))
                     except Exception, e:
                         warn("Exception raised in __assign_modification_sites for %s: %s, %s" % (self.snor_id,
                                                                                                  str(e),
@@ -124,11 +126,22 @@ class snoRNA(object):
     def get_fasta_string(self):
         return ">%s\n%s\n" % (self.snor_id, self.sequence)
 
-    def is_orphan(self):
-        if not self.modified_sites:
-            return True
+    def is_orphan(self, box=None):
+        if box is None:
+            if self.modified_sites is None:
+                return True
+            else:
+                return False
         else:
-            return False
+            if self.modified_sites is None:
+                return True
+            else:
+                filtered = [i for i in self.modified_sites if i[2] == box]
+                if len(filtered) == 0:
+                    return True
+                else:
+                    return False
+
 
     def get_gff_ensembl_string(self):
         attr_tup = (self.gene_name,
@@ -416,6 +429,72 @@ class CD_snoRNA(snoRNA):
             else:
                 raise InteractionRegionTooShortException("Cannot extract D'-box interaction region" +
                                                          " for %s (too short)" % self.snor_id)
+        else:
+            return None
+
+    def calculate_nucleotide_fractions(self, sequence):
+        sequence = str(sequence).upper().replace('U', 'T')
+        length = float(len(sequence))
+        a = sequence.count("A")/length
+        c = sequence.count("C")/length
+        t = sequence.count("T")/length
+        g = sequence.count("G")/length
+        return np.asarray([a, c, t, g])
+
+    def get_entropy_of_ase(self, length=21, box='D'):
+        """Calculate entropy of the distribution of nucleotide composition of the ASE of snoRNA"""
+        if box == 'D':
+            ase = self.get_d_interaction_region(length=length)
+        elif box == 'Dprime':
+            ase = self.get_dprime_interaction_region(length=length)
+        if ase is None:
+            sys.stderr.write("Interaction region is non for %s" % self.name)
+            return
+        random_probabilities = np.asarray([0.25, 0.25, 0.25, 0.25])
+        ase_fractions = self.calculate_nucleotide_fractions(ase)
+        return entropy(random_probabilities) - entropy(ase_fractions)
+
+    def get_dprime_stem_sequence(self, ase_length=25):
+        """Get the sequence of the left stem of the snoRNA"""
+        if self.dprime_box:
+            return self.sequence[:self.dprime_box[1]]
+        else:
+            return None
+
+    def get_d_stem_sequence(self, length=25):
+        """Get the sequence of the right stem of the snoRNA"""
+        left_coordinate = self.d_box[0] - length - 1 # 0 based
+        if left_coordinate < 0:
+            left_coordinate = 0
+        region = self.sequence[left_coordinate: ]
+        return region
+
+    def get_dprime_stem_fasta(self, length=25):
+        """Get the fasta string of the left stem of the snoRNA"""
+        seq = self.get_dprime_stem_sequence(length=length)
+        if len(seq) < 12:
+            return None
+        else:
+            return ">%s_dprime\n%s" % (self.snor_id, seq)
+
+    def get_d_stem_fasta(self, length=25):
+        """Get the fasta string of the right stem of the snoRNA"""
+        seq = self.get_d_stem_sequence(length=length)
+        if len(seq) < 12:
+            return None
+        else:
+            return ">%s_d\n%s" % (self.snor_id, seq)
+
+    def get_split_fasta(self, length=25):
+        """Get the fasta string of two stems separatly"""
+        left_stem = self.get_dprime_stem_fasta(length=length)
+        right_stem = self.get_d_stem_fasta(length=length)
+        if left_stem is not None and right_stem is not None:
+            return left_stem + "\n" + right_stem + "\n"
+        elif left_stem is not None and right_stem is None:
+            return left_stem + "\n"
+        elif left_stem is None and right_stem is not None:
+            return right_stem + "\n"
         else:
             return None
 
