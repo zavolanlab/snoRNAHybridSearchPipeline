@@ -30,6 +30,11 @@ parser.add_argument("--output",
                     dest="output",
                     required=True,
                     help="Output file")
+parser.add_argument("--filter-multimappers",
+                    dest="filter_multimappers",
+                    action="store_true",
+                    default=False,
+                    help="Filter chimeras that can be mapped to multiple places in the genome (with exception of mapping to cannonical targets)")
 
 try:
     options = parser.parse_args()
@@ -55,11 +60,16 @@ def main():
     with open(options.output, 'w') as o:
         for name, group in df.groupby("id"):
             tmpdf_score = group[group.score == group.score.max()]
+            is_canonical_target = False
             if any(tmpdf_score.true_chrom.isin(canonical_targets)):
                 tmpdf_score = tmpdf_score[tmpdf_score.true_chrom.isin(canonical_targets)]
+                is_canonical_target = True
 
 
             # number_of_targets = len(tmpdf_score.groupby(["chr", "beg"]))
+            if options.filter_multimappers:
+                if not is_canonical_target and len(tmpdf_score.groupby(["chr", "beg"]).size()) > 1:
+                    continue
             for gname, gdf in tmpdf_score.groupby(["chr", "beg"]):
                 # o.write("\t".join(str(i) for i in gdf.iloc[0].tolist()[:-3]) + "\t" + str(number_of_targets) + "\n")
                 o.write("\t".join(str(i) for i in gdf.iloc[0].tolist()[:-3]) + "\n")
