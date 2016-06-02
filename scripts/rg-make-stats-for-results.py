@@ -413,7 +413,7 @@ def get_target_sites(snors, chrom):
         if snor.modified_sites:
             # print snor.modified_sites, chrom
             if chrom in snor.modified_sites:
-                for site, nuc in snor.modified_sites[chrom]:
+                for site, nuc, box in snor.modified_sites[chrom]:
                     sites.append(site)
     return sites
 

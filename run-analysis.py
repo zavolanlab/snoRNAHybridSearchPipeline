@@ -29,6 +29,11 @@ parser.add_argument("--working-dir",
                     dest="working_dir",
                     required=True,
                     help="Working directory of the pipeline. Required because this file is launched from ~")
+parser.add_argument("--filter-multimappers",
+                    dest="filter_multimappers",
+                    action="store_true",
+                    default=False,
+                    help="Filter reads that map to multiple genomic locus with exception of reads that map also to canonical targets")
 
 try:
     options = parser.parse_args()
@@ -404,11 +409,19 @@ filter_bed_dependancies = {}
 for input_name, convert_mapped_to_bed_id in convert_to_bed_dependancies.iteritems():
     filter_bed_settings = settings['tasks']['FilterBed']
     filter_bed_script = 'scripts/rg-filter-bed.py'
-    filter_bed_command = """python {script} \\
-                                --input {input} \\
-                                --output {output} \\
-                                -v
-                      """
+    if options.filter_multimappers:
+        filter_bed_command = """python {script} \\
+                                    --input {input} \\
+                                    --output {output} \\
+                                    --filter-multimappers \\
+                                    -v
+                          """
+    else:
+        filter_bed_command = """python {script} \\
+                                    --input {input} \\
+                                    --output {output} \\
+                                    -v
+                          """
 
     if settings['general'].get('executer', 'drmaa') == 'drmaa':
         #

@@ -26,6 +26,11 @@ run_parser.add_argument("--name-suffix",
                     dest="name_suffix",
                     default="test_run",
                     help="Suffix to add to pipeline name in order to easily differentiate between different run, defaults to test_run")
+run_parser.add_argument("--filter-multimappers",
+                    dest="filter_multimappers",
+                    action="store_true",
+                    default=False,
+                    help="Filter reads that map to multiple genomic locus with exception of reads that map also to canonical targets")
 
 clean_parser = subparsers.add_parser("clean", help="Clean after previous run")
 clean_parser.add_argument("-v",
@@ -339,7 +344,10 @@ analysis_tuple = (os.path.join(pipeline_directory, "run-analysis.py"),
                   analyse_files_id,
                   os.path.abspath(options.config),
                   working_directory)
-analysis_command = "python %s --input-dir %s --group-id %s --config %s --working-dir %s -v" % analysis_tuple
+if options.filter_multimappers:
+    analysis_command = "python %s --input-dir %s --group-id %s --config %s --working-dir %s --filter-multimappers -v" % analysis_tuple
+else:
+    analysis_command = "python %s --input-dir %s --group-id %s --config %s --working-dir %s -v" % analysis_tuple
 jobber.job(analysis_command, {'name': "CreateAnalysisJobs"})
 
 
