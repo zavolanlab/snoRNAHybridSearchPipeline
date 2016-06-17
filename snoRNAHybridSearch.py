@@ -164,13 +164,16 @@ jobber = JobClient.Jobber()
 #Create a group for whole pipeline. The module "Python" will be inherited by all jobs that are in this group,
 # so we don't need to define it for each job that calls a python script
 pipeline_id = jobber.startGroup({'name': "snoRNAHybridSearch-%s" % options.name_suffix,
-                                 'options': [['module', "Python"],
-                                             ['module', "GCC"],
-                                             ['module', "DRMAA"],
-                                             ['module', "Bowtie2"],
-                                             ['module', "OpenBLAS"],
-                                             ['module', "BEDTools"],
-                                             ['module', "SAMtools"],
+                                 'options': [['module', "Python/2.7.5-goolf-1.4.10"],
+                                             ['module', "GCC/4.7.2"],
+                                             ['module', "DRMAA/0.7.6-goolf-1.4.10-Python-2.7.5"],
+                                             ['module', "HTSeq/0.6.1p1-goolf-1.4.10-Python-2.7.5"],
+                                             ['module', "Bowtie2/2.2.6-goolf-1.4.10"],
+                                             ['module', "OpenBLAS/0.2.6-gompi-1.4.10-LAPACK-3.4.2"],
+                                             ['module', "BEDTools/2.25.0-goolf-1.4.10"],
+                                             ['module', "CONTRAfold/2.02-goolf-1.4.10"],
+                                             ['module', "ViennaRNA/2.1.8-goolf-1.4.10"],
+                                             ['module', "SAMtools/1.2-goolf-1.4.10"],
                                              ],
                                  'executer': settings['general'].get('executer', 'drmaa')})
 

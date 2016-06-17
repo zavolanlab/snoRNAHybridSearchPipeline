@@ -62,7 +62,7 @@ def main():
         snor_count.append(1.0)
     df['count'] = snor_count
     if options.type == "CD":
-        df['modification'] = [re.search("[ACTGactg]m", i).group()[0] if not pd.isnull(i) else np.nan for i in df[10]]
+        df['modification'] = [re.search("[ACTGUactgu]m", i).group()[0] if not pd.isnull(i) else np.nan for i in df[10]]
     else:
         df['modification'] = [seq[struc.index("|")] if not pd.isnull(struc) else np.nan for struc, seq in zip(df[9].tolist(), df[10].tolist())]
     df = df.groupby([0, 6, 12]).agg({14: max, 'count': sum, 8: min, 5: max, 15: np.mean, 16: np.mean,
