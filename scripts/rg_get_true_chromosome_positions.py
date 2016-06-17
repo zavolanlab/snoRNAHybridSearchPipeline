@@ -31,17 +31,13 @@ parser.add_argument("--output",
                     default=sys.stdout,
                     help="Output file in special bed format. Defaults to sys.stdout.")
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
 
-def main():
+def main(options):
     """Main logic of the script"""
     mapped = pd.read_table(options.input, names=['chr', 'beg', 'end', 'name', 'score', 'strand'])
     mapped.index = [":".join(i.split(":")[:-1]) for i in mapped.name]
@@ -73,12 +69,17 @@ def get_beg(cluster_beg, cluster_end, beg, end, strand):
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" %
                    start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,

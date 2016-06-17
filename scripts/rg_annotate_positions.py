@@ -45,10 +45,6 @@ parser.add_argument("--repeats",
                     required=True,
                     help="GTF file with annotations for repeats in the format from rmsk table in UCSC")
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
@@ -66,7 +62,7 @@ class GeneInfo:
                           self.gene_id)
 
 
-def main():
+def main(options):
     """Main logic of the script"""
     genes = HTSeq.GenomicArrayOfSets("auto", stranded=True)
     intron_exon = HTSeq.GenomicArrayOfSets("auto", stranded=True)
@@ -135,12 +131,17 @@ def main():
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" %
                    start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,

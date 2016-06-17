@@ -56,17 +56,13 @@ parser.add_argument("--fpr",
                     default=0.05,
                     help="False positive rate threshold, defaults to 0.05")
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
 
-def main():
+def main(options):
     """Main logic of the script"""
     names_string = "read_id\tname\tscore\tbeg\tend\twhich_end\ttarget\tqbeg\tqend\tisambig\t"
     names_string += "matches:mismatches:identity\tshuf_snor\tshuf_score\tshuf_target_len\tshuf_qbeg\tshuf_qend"
@@ -173,12 +169,17 @@ def plot_stats(df, col, ylabel, title):
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" %
                    start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,

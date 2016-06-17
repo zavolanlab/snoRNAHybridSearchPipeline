@@ -74,10 +74,6 @@ parser.add_argument("--threshold",
                     help="Threshold for RNAduplex energy, defaults to -25.0")
 
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
@@ -90,7 +86,7 @@ class Signal(MetaProfile.Signal):
         self.stranded = True
 
 
-def main():
+def main(options):
     """Main logic of the script"""
     snoRNAs = read_snoRNAs_from_table(options.snoRNAs, options.type, True)
     mod_sites = get_target_sites(snoRNAs, get_chomosomes_mapping(snoRNAs))
@@ -383,12 +379,17 @@ def smart_open(filepath, mode='r'):
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" %
                    start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,

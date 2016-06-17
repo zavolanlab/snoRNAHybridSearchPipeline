@@ -46,17 +46,13 @@ parser.add_argument("--switch-boxes",
                     default=False,
                     help="If the CD box is located wrongly it will try to relabel it")
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
 
-def main():
+def main(options):
     """Main logic of the script"""
     snoRNAs = read_snoRNAs_from_table(options.input, type_of_snor=options.type, only_with_box=True)
     for s in snoRNAs:
@@ -65,12 +61,17 @@ def main():
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" %
                    start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,

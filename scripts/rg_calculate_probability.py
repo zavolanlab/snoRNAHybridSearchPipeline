@@ -44,17 +44,13 @@ parser.add_argument("--model",
                     required=True,
                     help="Statsmodel binary file with the model for snoRNA")
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
 
-def main():
+def main(options):
     """Main logic of the script"""
     accessibility = pd.read_table(options.accessibility, index_col=0)
     flanks = pd.read_table(options.flanks, index_col=0)
@@ -105,12 +101,17 @@ def main():
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" %
                    start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,

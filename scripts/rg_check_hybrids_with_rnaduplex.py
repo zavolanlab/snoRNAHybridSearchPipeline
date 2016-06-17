@@ -52,17 +52,13 @@ parser.add_argument("--RNAduplex-bin",
                     default="RNAduplex",
                     help="Path to RNAduplex binary, defaults to RNAcofold")
 
-try:
-    options = parser.parse_args()
-except Exception, e:
-    parser.print_help()
 
 # redefine a functions for writing to stdout and stderr to save some writting
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
 
-def main():
+def main(options):
     nan = "NaN"
     """Main logic of the script"""
     snorna_paths = options.snoRNA_paths
@@ -128,11 +124,16 @@ def get_modification_position(rel_pos, start, end, strand):
 
 if __name__ == '__main__':
     try:
+        try:
+            options = parser.parse_args()
+        except Exception, e:
+            parser.print_help()
+            sys.exit()
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
             syserr("############## Started script on %s ##############\n" % start_date)
-        main()
+        main(options)
         if options.verbose:
             syserr("### Successfully finished in %i seconds, on %s ###\n" % (time.time() - start_time, time.strftime("%d-%m-%Y at %H:%M:%S")))
     except KeyboardInterrupt:
