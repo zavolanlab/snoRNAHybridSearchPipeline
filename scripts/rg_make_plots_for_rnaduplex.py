@@ -29,18 +29,9 @@ from Bio import SeqIO
 
 file_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(file_dir, "../modules"))
-sys.path.append("/scicore/home/zavolan/gumiennr/PythonModules/MetaProfile/")
 from snoRNA import read_snoRNAs_from_table
 import MetaProfile
 
-pl.rcParams['figure.figsize'] = (14, 10)
-pl.rcParams['ytick.labelsize'] = 20
-pl.rcParams['xtick.labelsize'] = 20
-pl.rcParams['axes.labelsize'] = 23
-pl.rcParams['legend.fontsize'] = 20
-sns.set_style('ticks')
-colors = ["windows blue", "amber", "green", "tomato", "dusty purple"]
-c1, c2, c3, c4, c5 = sns.xkcd_palette(colors)
 
 
 parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
@@ -88,6 +79,14 @@ class Signal(MetaProfile.Signal):
 
 def main(options):
     """Main logic of the script"""
+    pl.rcParams['figure.figsize'] = (14, 10)
+    pl.rcParams['ytick.labelsize'] = 20
+    pl.rcParams['xtick.labelsize'] = 20
+    pl.rcParams['axes.labelsize'] = 23
+    pl.rcParams['legend.fontsize'] = 20
+    sns.set_style('ticks')
+    colors = ["windows blue", "amber", "green", "tomato", "dusty purple"]
+    c1, c2, c3, c4, c5 = sns.xkcd_palette(colors)
     snoRNAs = read_snoRNAs_from_table(options.snoRNAs, options.type, True)
     mod_sites = get_target_sites(snoRNAs, get_chomosomes_mapping(snoRNAs))
     real_mod_sites = get_real_target_sites(snoRNAs, get_chomosomes_mapping(snoRNAs))

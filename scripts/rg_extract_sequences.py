@@ -72,7 +72,6 @@ sysout = sys.stdout.write
 
 class NoSuchAFileException(IOError): pass
 
-options.adjust_coordinates = True
 
 def main(options):
     """Main logic of the script"""
@@ -258,6 +257,7 @@ if __name__ == '__main__':
     try:
         try:
             options = parser.parse_args()
+            options.adjust_coordinates = True
         except Exception, e:
             parser.print_help()
             sys.exit()

@@ -25,18 +25,11 @@ from argparse import ArgumentParser, RawTextHelpFormatter
 # add path to sys and import snoRNA module
 #
 file_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(file_dir, "/import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch_snOPY/modules"))
-from snoRNA import CD_snoRNA
+sys.path.append(os.path.join(file_dir, ".."))
+from modules.snoRNA import CD_snoRNA
 #
 # Params for figures
 #
-pl.rcParams['figure.figsize'] = (14, 10)
-pl.rcParams['ytick.labelsize'] = 20
-pl.rcParams['xtick.labelsize'] = 20
-pl.rcParams['axes.labelsize'] = 23
-pl.rcParams['legend.fontsize'] = 20
-sns.set_style('ticks')
-c1, c2, c3 = sns.color_palette("Set1", 3)
 
 parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
 parser.add_argument("-v",
@@ -89,6 +82,13 @@ class Signal:
 
 
 def main(options):
+    pl.rcParams['figure.figsize'] = (14, 10)
+    pl.rcParams['ytick.labelsize'] = 20
+    pl.rcParams['xtick.labelsize'] = 20
+    pl.rcParams['axes.labelsize'] = 23
+    pl.rcParams['legend.fontsize'] = 20
+    sns.set_style('ticks')
+    c1, c2, c3 = sns.color_palette("Set1", 3)
     """Main logic of the script"""
     if options.verbose:
         syserr("Reading snoRNAs\n")

@@ -13,17 +13,12 @@ import StringIO
 #import logging
 #import logging.handlers
 from bx.intervals.intersection import Intersecter, Interval
-from optparse import OptionParser
+from argparse import ArgumentParser, RawTextHelpFormatter
 
 
 ####################################
 #   DEFINE OPTIONS OF THE SCRIPT   #
 ####################################
-
-class MyParser(OptionParser):
-    """Change parsing of the epilog"""
-    def format_epilog(self, formatter):
-        return self.epilog
 
 # you might want to add eppilog. It will be formatted as you write it!
 epilog = """
@@ -44,11 +39,12 @@ epilog = """
 
         ########################## FILE DESCRIPTION ###################################################
         """
-parser = MyParser(version="%prog 1.0", usage="\n\n    %progs [options]", epilog=epilog)
+parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter,
+                        epilog=epilog)
 #
 #   general options: verbosity / logging
 #
-parser.add_option("-v",
+parser.add_argument("-v",
                   "--verbose",
                   dest="verbose",
                   action="count",
@@ -57,45 +53,38 @@ parser.add_option("-v",
 #
 #   script options
 #
-parser.add_option("--input",
+parser.add_argument("--input",
                   dest="input",
                   metavar="FILE",
-                  type="string",
+                  required=True,
                   help="a bed file that you want to annotate")
-parser.add_option("--output",
+parser.add_argument("--output",
                   dest="output",
                   metavar="FILE",
-                  type="string",
                   default="output.tab",
                   help="an output table with annotations")
-parser.add_option("--annotations",
+parser.add_argument("--annotations",
                   dest="annotations",
                   metavar="FILE",
-                  type="string",
+                  required=True,
                   help="a bed file with annotations")
-parser.add_option("--fraction",
+parser.add_argument("--fraction",
                   dest="fraction",
                   metavar="FLOAT",
                   type=float,
                   default=0.25,
                   help="Fraction of read that must overlap the feature to be accepted")
-parser.add_option("--placeholder", dest="placeholder",
+parser.add_argument("--placeholder", dest="placeholder",
                   metavar="STRING",
-                  type="string",
                   default=".",
                   help="A placeholder for empty annotations")
-parser.add_option("--un_stranded",
+parser.add_argument("--un_stranded",
                   action="store_true",
                   default=False,
                   help="Pass if your protocol is un-stranded")
-parser.add_option("--filter-by",
+parser.add_argument("--filter-by",
                   dest="filter_by",
                   help="Filter by these (coma separated) list of annotation types")
-
-# in the end add default values for options
-for option in parser.option_list:
-    if option.default != ("NO", "DEFAULT"):
-        option.help += (" " if option.help else "") + "[default: " + str(option.default) + "]"
 
 
 ####################################
@@ -184,13 +173,11 @@ def filter_results(start, end, results, min_moverlap):
 
 
 if __name__ == '__main__':
-    options, remaining_args = parser.parse_args()
-    f = StringIO.StringIO()
-    parser.print_help(f)
-    helpstr = f.getvalue()
-    mandatory_options = ["input",
-                         "annotations"]
-    check_mandatory_options(options, mandatory_options, helpstr)
+    try:
+        options = parser.parse_args()
+    except Exception, e:
+        parser.print_help()
+        sys.exit()
     #
     # read the bed file with annotations
     #

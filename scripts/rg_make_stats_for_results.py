@@ -31,13 +31,6 @@ file_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(file_dir, "../modules"))
 from snoRNA import read_snoRNAs_from_table
 
-pl.rcParams['figure.figsize'] = (14, 10)
-pl.rcParams['ytick.labelsize'] = 20
-pl.rcParams['xtick.labelsize'] = 20
-pl.rcParams['axes.labelsize'] = 23
-pl.rcParams['legend.fontsize'] = 20
-sns.set_style('ticks')
-c1, c2, c3 = sns.color_palette("Set1", 3)
 
 
 parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
@@ -91,6 +84,13 @@ class Point:
 
 def main(options):
     """Main logic of the script"""
+    pl.rcParams['figure.figsize'] = (14, 10)
+    pl.rcParams['ytick.labelsize'] = 20
+    pl.rcParams['xtick.labelsize'] = 20
+    pl.rcParams['axes.labelsize'] = 23
+    pl.rcParams['legend.fontsize'] = 20
+    sns.set_style('ticks')
+    c1, c2, c3 = sns.color_palette("Set1", 3)
     if options.verbose:
         syserr("Reading snoRNAs\n")
     snoRNAs = read_snoRNAs_from_table(options.snoRNAs, options.type, True)

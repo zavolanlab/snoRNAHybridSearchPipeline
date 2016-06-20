@@ -19,13 +19,6 @@ import numpy as np
 import pylab as pl
 import seaborn as sns
 from argparse import ArgumentParser, RawTextHelpFormatter
-pl.rcParams['figure.figsize'] = (14, 10)
-pl.rcParams['ytick.labelsize'] = 20
-pl.rcParams['xtick.labelsize'] = 20
-pl.rcParams['axes.labelsize'] = 23
-pl.rcParams['legend.fontsize'] = 20
-sns.set_style('ticks')
-c1, c2, c3 = sns.color_palette("Set1", 3)
 
 parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
 parser.add_argument("-v",
@@ -64,6 +57,13 @@ sysout = sys.stdout.write
 
 def main(options):
     """Main logic of the script"""
+    pl.rcParams['figure.figsize'] = (14, 10)
+    pl.rcParams['ytick.labelsize'] = 20
+    pl.rcParams['xtick.labelsize'] = 20
+    pl.rcParams['axes.labelsize'] = 23
+    pl.rcParams['legend.fontsize'] = 20
+    sns.set_style('ticks')
+    c1, c2, c3 = sns.color_palette("Set1", 3)
     names_string = "read_id\tname\tscore\tbeg\tend\twhich_end\ttarget\tqbeg\tqend\tisambig\t"
     names_string += "matches:mismatches:identity\tshuf_snor\tshuf_score\tshuf_target_len\tshuf_qbeg\tshuf_qend"
     names = names_string.split("\t")
