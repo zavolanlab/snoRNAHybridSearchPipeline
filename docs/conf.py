@@ -26,7 +26,7 @@ class Mock(MagicMock):
 MOCK_MODULES = ['biopython', 'HTSeq', 'drmaa', 'drmaa.errors', 'numpy', 'pandas',
                 'mysql-python', 'statsmodels', 'statsmodels.api', 'Jobber',
                 'ushuffle', 'pylab', 'seaborn', 'scipy', 'modules', 'modules.snoRNA',
-                'matplotlib', 'matplotlib.gridspec', 'scipy.stats', 'pybedtools', 'bx.bbi.bigwig_file', 'MetaProfile']
+                'matplotlib', 'matplotlib.gridspec', 'scipy.stats', 'pybedtools', 'bx.bbi.bigwig_file', 'MetaProfile', 'bx.intervals.intersection']
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 # If extensions (or modules to document with autodoc) are in another directory,
