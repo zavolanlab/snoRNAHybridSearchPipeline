@@ -1,10 +1,11 @@
 """
-rg-annotate-bed.py
-@Author:      Rafal Gumienny (gumiennr@unibas.ch)
-@Created:     12-Dec-12
-@Description: Annotate bed file with another bed file containing annotations
-@Usage:       python rg-annotate-bed.py -h
+Annotate bed file with another bed file containing annotations
 """
+
+__date__ = "2015-02-24"
+__author__ = "Rafal Gumienny"
+__email__ = "r.gumienny@unibas.ch"
+__license__ = "GPL"
 
 
 import sys
