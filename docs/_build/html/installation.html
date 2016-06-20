@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instalation &mdash; snoRNAHybridSearch 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="snoRNAHybridSearch 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Usage" href="usage.html"/>
+        <link rel="prev" title="Welcome to snoRNAHybridSearch’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> snoRNAHybridSearch
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instalation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contrafold">CONTRAfold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jobber">Jobber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#download">Download</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">Pipeline flow</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">snoRNAHybridSearch</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Instalation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/installation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instalation">
+<h1>Instalation<a class="headerlink" href="#instalation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="contrafold">
+<h3>CONTRAfold<a class="headerlink" href="#contrafold" title="Permalink to this headline">¶</a></h3>
+<p>Download and install <a class="reference external" href="http://contra.stanford.edu/contrafold/download.html">CONTRAfold</a>.
+It might be that you experience an error when compiling CONTRAfold. Something like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>In file included from LBFGS.hpp:52:0,
+                 from InnerOptimizationWrapper.hpp:12,
+                 from OptimizationWrapper.hpp:12,
+                 from Contrafold.cpp:16:
+LBFGS.ipp: In instantiation of ‘Real LBFGS&lt;Real&gt;::Minimize<span class="o">(</span>std::vector&lt;T&gt;<span class="p">&amp;</span><span class="o">)</span> <span class="o">[</span>with <span class="nv">Real</span> <span class="o">=</span> double<span class="o">]</span>’:
+OptimizationWrapper.ipp:260:9:   required from ‘void OptimizationWrapper&lt;RealT&gt;::LearnHyperparameters<span class="o">(</span>std::vector&lt;int&gt;, std::vector&lt;T&gt;<span class="p">&amp;</span><span class="o">)</span> <span class="o">[</span>with <span class="nv">RealT</span> <span class="o">=</span> double<span class="o">]</span>’
+Contrafold.cpp:451:9:   required from ‘void RunTrainingMode<span class="o">(</span>const Options<span class="p">&amp;</span>, const std::vector&lt;FileDescription&gt;<span class="p">&amp;</span><span class="o">)</span> <span class="o">[</span>with <span class="nv">RealT</span> <span class="o">=</span> double<span class="o">]</span>’
+Contrafold.cpp:68:54:   required from here
+LBFGS.ipp:112:105: error: ‘DoLineSearch’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation <span class="o">[</span>-fpermissive<span class="o">]</span>
+LBFGS.ipp:112:105: note: declarations in dependent base ‘LineSearch&lt;double&gt;’ are not found by unqualified lookup
+LBFGS.ipp:112:105: note: use ‘this-&gt;DoLineSearch’ instead
+make: *** <span class="o">[</span>Contrafold.o<span class="o">]</span> Error 1
+</pre></div>
+</div>
+<p>To fix it:</p>
+<ul class="simple">
+<li>add -fpermissive flag to CSXXFLAGS in Makefile:</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">CXXFLAGS</span> <span class="o">=</span> <span class="o">-</span><span class="n">O3</span> <span class="o">-</span><span class="n">DNDEBUG</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">pipe</span> <span class="o">-</span><span class="n">Wundef</span> <span class="o">-</span><span class="n">Winline</span> <span class="o">--</span><span class="n">param</span> <span class="n">large</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="n">growth</span><span class="o">=</span><span class="mi">100000</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">fpermissive</span>
+
+<span class="n">instead</span> <span class="n">of</span>
+<span class="n">CXXFLAGS</span> <span class="o">=</span> <span class="o">-</span><span class="n">O3</span> <span class="o">-</span><span class="n">DNDEBUG</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">pipe</span> <span class="o">-</span><span class="n">Wundef</span> <span class="o">-</span><span class="n">Winline</span> <span class="o">--</span><span class="n">param</span> <span class="n">large</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="n">growth</span><span class="o">=</span><span class="mi">100000</span> <span class="o">-</span><span class="n">Wall</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>add in Utilities.hpp:</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;limits.h&gt;</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jobber">
+<h3>Jobber<a class="headerlink" href="#jobber" title="Permalink to this headline">¶</a></h3>
+<p>Download and setup Jobber python library for workflow managment.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install Jobber
+</pre></div>
+</div>
+<p>After installation start the Jobber daemon:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ nohup jobber_server &gt; jobber.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you installed Jobber as user you might not have an access to the jobber_server. By
+default the binary location is $HOME/.local/bin and you have to export it in bash:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>$ export PATH=&quot;$HOME/.local/bin:$PATH&quot;
+</pre></div>
+</div>
+<p>or add this statement to .bashrc file.</p>
+<p class="last">jobber_server produces ~/.jobber/jobber.pid file that indicates whether the Jobber is already
+running. If the file exists one cannot start new instance of the jobber_server. This file is
+not clean when jobber_server is killed - only when it was stopped with stop command. Thus,
+after some crash one have to remove this file in order to start jobber_server again.</p>
+</div>
+<p>This will automatically create a ~/.jobber and ~/jobber/log directories and
+it will put there config.py and executers.py files. Look at them and adjust
+according to your needs.</p>
+<p>This should create a jobber.sqlite file next to config.py where jobs will be stored (all in ~/.jobber).
+Now you can create pipelines that will be managed with a python script.</p>
+<p>To stop the jobber daemon, run following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jobber_server -stop
+</pre></div>
+</div>
+<p>You can watch and control your jobs and pipelines present in the database using simple we interface.
+To launch it type:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jobber_web
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jobber_web --ip Your.IP.addres --port YourPort
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you would like to run snoRNAHybridSearch pipeline locally without DRMAA change executer
+in config.py file from &#8220;drmaa&#8221; to &#8220;local&#8221;</p>
+</div>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Install python modules:</dt>
+<dd><ul class="first last simple">
+<li>Jobber (see upper paragraph)</li>
+<li>drmaa (if you are going to submit it to the cluster)</li>
+<li>statsmodels</li>
+<li>pandas</li>
+<li>BioPython</li>
+<li>numpy</li>
+<li>scipy</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p>The pipeline is available as a git repository on GitHub:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/guma44/snoRNAHybridSearch.git
+</pre></div>
+</div>
+<p>Download additional data:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearch_data.tar.gz
+</pre></div>
+</div>
+<p>You can also download whole package including alignments from out website:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearch.tar.gz
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to snoRNAHybridSearch’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Rafal Gumienny.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

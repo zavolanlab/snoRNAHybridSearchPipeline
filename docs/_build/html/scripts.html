@@ -1,0 +1,1966 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pipeline flow &mdash; snoRNAHybridSearch 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="snoRNAHybridSearch 1.0.0 documentation" href="index.html"/>
+        <link rel="prev" title="Usage" href="usage.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> snoRNAHybridSearch
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Instalation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pipeline flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cd-box-snornas">CD-box snoRNAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#split-the-input">1. Split the input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-various-files-from-snornas">2. Generate various files from snoRNAs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-make-fasta">i. Make FASTA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-generate-separate-files">ii. Generate separate files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-make-bed">iii. Make BED</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#annotate-with-snornas">3. Annotate with snoRNAs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculate-snorna-expression">4. Calculate snoRNA expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-anchors">5. Prepare anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-bowtie2-index">6. Build Bowtie2 index</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-cluster-reads">i. Cluster reads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-make-fasta">ii. Make FASTA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-build-index">iii. Build index</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#run-analysis">7. Run analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-search-anchors">i. Search anchors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-make-statistics">ii. Make statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-convert-to-fasta">iii. Convert to FASTA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv-map-reads">iv. Map reads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v-convert-result-to-bed">v. Convert result to BED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vi-filter-bed">vi. Filter BED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vi-reasign-chromosome">vi. Reasign chromosome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vii-append-sequence">vii. Append sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viii-calculate-plexy">viii. Calculate PLEXY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ix-calculate-rnaduplex">ix. Calculate RNAduplex</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analyse-rnaduplex-results">8. Analyse RNAduplex results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-merge-results">i. Merge results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-cluster-results">ii. Cluster results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-annotate-results">iii. Annotate results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv-make-statistics">iv. Make statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analyse-plexy">9. Analyse PLEXY</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">i. Merge results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-merge-raw-results">ii. Merge raw results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-append-rpkm">iii. Append RPKM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv-aggregate-results-by-site">iv. Aggregate results by site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v-calculate-features">v. Calculate features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vi-calculate-probability">vi. Calculate probability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vii-make-plots">vii. Make plots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viii-convert-to-bed">viii. Convert to BED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ix-annotate-results">ix. Annotate results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">snoRNAHybridSearch</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Pipeline flow</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/scripts.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pipeline-flow">
+<h1>Pipeline flow<a class="headerlink" href="#pipeline-flow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cd-box-snornas">
+<h2>CD-box snoRNAs<a class="headerlink" href="#cd-box-snornas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="split-the-input">
+<h3>1. Split the input<a class="headerlink" href="#split-the-input" title="Permalink to this headline">¶</a></h3>
+<p>At first split the input unmapped sequences into manageable chunks.</p>
+<p>Split fasta file into batches</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_split_fasta</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">OUTPUT_DIR</span><span class="p">]</span>
+                      <span class="p">[</span><span class="o">--</span><span class="n">batch</span><span class="o">-</span><span class="n">size</span> <span class="n">BATCH_SIZE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">prefix</span> <span class="n">PREFIX</span><span class="p">]</span>
+                      <span class="p">[</span><span class="o">--</span><span class="n">suffix</span> <span class="n">SUFFIX</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7f9cdd0fa0c0&gt;</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Input file in fasta format. Defaults to sys.stdin.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output-dir=./</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output directory for split files. Defaults to .</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--batch-size=100</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Batch size to split, defaults to 100</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--prefix=part_</span></kbd></td>
+<td>Prefix to file name , defaults to part_</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--suffix=inputfasta</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Suffix (extension) to the file name , defaults to inputfasta</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="generate-various-files-from-snornas">
+<h3>2. Generate various files from snoRNAs<a class="headerlink" href="#generate-various-files-from-snornas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="i-make-fasta">
+<h4>i. Make FASTA<a class="headerlink" href="#i-make-fasta" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Generate fasta file from snoRNA input</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_generate_fasta</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span> <span class="o">--</span><span class="nb">type</span>
+                         <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="n">switch</span><span class="o">-</span><span class="n">boxes</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in fasta format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--switch-boxes=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>If the CD box is located wrongly it will try to relabel it</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="ii-generate-separate-files">
+<h4>ii. Generate separate files<a class="headerlink" href="#ii-generate-separate-files" title="Permalink to this headline">¶</a></h4>
+<p>Generate fasta files for PLEXY from snoRNA input</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_generate_input_for_plexy_or_rnasnoop</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="nb">type</span>
+                                               <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span>
+                                               <span class="p">[</span><span class="o">--</span><span class="n">switch</span><span class="o">-</span><span class="n">boxes</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA. If CD is chosen an input for PLEXY will be generated. If HACA is chosen two stems for RNASnoop will be saved.</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=Input</span></kbd></td>
+<td>Directory to put output , defaults to Plexy</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--switch-boxes=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>If the CD box is located wrongly it will try to relabel it</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iii-make-bed">
+<h4>iii. Make BED<a class="headerlink" href="#iii-make-bed" title="Permalink to this headline">¶</a></h4>
+<p>Generate fasta file from snoRNA input</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_generate_snoRNA_bed</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span> <span class="o">--</span><span class="nb">type</span>
+                              <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="n">switch</span><span class="o">-</span><span class="n">boxes</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in fasta format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--switch-boxes=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>If the CD box is located wrongly it will try to relabel it</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="annotate-with-snornas">
+<h3>3. Annotate with snoRNAs<a class="headerlink" href="#annotate-with-snornas" title="Permalink to this headline">¶</a></h3>
+<p>Annotate input BED file used for generation of clusters
+with snoRNAs.</p>
+<p>Annotate bed file with another bed file containing annotations</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_annotate_bed</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">FILE</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">FILE</span><span class="p">]</span> <span class="o">--</span><span class="n">annotations</span>
+                       <span class="n">FILE</span> <span class="p">[</span><span class="o">--</span><span class="n">fraction</span> <span class="n">FLOAT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">placeholder</span> <span class="n">STRING</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">un_stranded</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">filter</span><span class="o">-</span><span class="n">by</span> <span class="n">FILTER_BY</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=0</span>, <span class="option">--verbose=0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Print more verbose messages for each additional verbose level.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>a bed file that you want to annotate</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=output.tab</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>an output table with annotations</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--annotations</span></kbd></td>
+<td>a bed file with annotations</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fraction=0.25</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Fraction of read that must overlap the feature to be accepted</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--placeholder=.</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>A placeholder for empty annotations</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--un_stranded=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Pass if your protocol is un-stranded</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--filter-by</span></kbd></td>
+<td>Filter by these (coma separated) list of annotation types</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p><blockquote>
+<div><p>########################## FILE DESCRIPTION ###################################################</p>
+<dl class="docutils">
+<dt>BED FILE FOR WITH ANNOTATION EXAMPLE</dt>
+<dd>1   24740163    24740215    miRNA:ENST00000003583 0   -
+1   24727808    24727946    miRNA:ENST00000003583 0   -
+1   24710391    24710493    miRNA:ENST00000003583 0   -</dd>
+</dl>
+<p>fields: chr start end annot_type:annot_name num strand&#8221;]</p>
+<dl class="docutils">
+<dt>INPUT BED FILE EXAMPLE</dt>
+<dd>1   24685109    24687340    ENST00000003583 0   -
+1   24687531    24696163    ENST00000003583 0   -
+1   24696329    24700191    ENST00000003583 0   -</dd>
+</dl>
+<p>########################## FILE DESCRIPTION ###################################################</p>
+</div></blockquote>
+</p>
+</div>
+<div class="section" id="calculate-snorna-expression">
+<h3>4. Calculate snoRNA expression<a class="headerlink" href="#calculate-snorna-expression" title="Permalink to this headline">¶</a></h3>
+<p><p>Based on annotations calculate RPKM values for each snoRNA
+and filter all that falls below given quantile.</p>
+<p>RPKM = (10^9 * C)/(N * L)</p>
+<dl class="docutils">
+<dt>where:</dt>
+<dd>C = Number of reads mapped to a gene
+N = Total mapped reads in the experiment (library size)
+L = Length of the feature (in this case snoRNA length)</dd>
+</dl>
+</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_calculate_snoRNA_RPKM</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                                <span class="o">--</span><span class="n">library</span> <span class="n">LIBRARY</span> <span class="o">--</span><span class="n">snoRNAs</span> <span class="n">SNORNAS</span>
+                                <span class="p">[</span><span class="o">--</span><span class="n">quantile</span> <span class="n">QUANTILE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Part of the library that is annotated as snoRNA</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--library</span></kbd></td>
+<td>Library from which the annotations were generated (in bed format)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNAs</span></kbd></td>
+<td>BED file with snoRNAs</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--quantile=0.25</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Quantile for the expression cut-off, defaults to 0.25</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type=CD</span></kbd></td>
+<td><p class="first">Type of snoRNA, defaults to CD</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="prepare-anchors">
+<h3>5. Prepare anchors<a class="headerlink" href="#prepare-anchors" title="Permalink to this headline">¶</a></h3>
+<p>Prepare anchor sequences from provided fasta</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_prepare_anchors</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">fasta</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">anchor</span> <span class="n">FASTA_TO_ANCHOR</span><span class="p">]</span>
+                          <span class="p">[</span><span class="o">--</span><span class="n">anchor</span><span class="o">-</span><span class="n">length</span> <span class="n">ANCHOR_LENGTH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                          <span class="o">--</span><span class="n">expressed</span><span class="o">-</span><span class="n">snoRNAs</span> <span class="n">EXPRESSED_SNORNAS</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fasta-to-anchor</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Fasta to anchor</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--anchor-length=12</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Anchor length, defaults to 12</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file name</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--expressed-snoRNAs</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>A list with expressed snoRNAs with RPKMs in form of: snoR_ID	RPKM</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="build-bowtie2-index">
+<h3>6. Build Bowtie2 index<a class="headerlink" href="#build-bowtie2-index" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="i-cluster-reads">
+<h4>i. Cluster reads<a class="headerlink" href="#i-cluster-reads" title="Permalink to this headline">¶</a></h4>
+<p>Cluster reads into more convinient bed file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_cluster_reads</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">bed</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">cluster</span><span class="o">-</span><span class="n">size</span> <span class="n">CLUSTER_SIZE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">overlap</span> <span class="n">OVERLAP</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">expand</span><span class="o">-</span><span class="n">cluster</span> <span class="n">EXPAND_CLUSTER</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">expand</span><span class="o">-</span><span class="n">read</span> <span class="n">EXPAND_READ</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">asmbed</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">rRNAs</span> <span class="n">RRNAS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tRNAs</span> <span class="n">TRNAS</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">snRNAs</span> <span class="n">SNRNAS</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="nb">filter</span><span class="o">-</span><span class="n">by</span> <span class="n">FILTER_BY</span> <span class="o">|</span> <span class="o">--</span><span class="nb">filter</span><span class="o">-</span><span class="k">except</span> <span class="n">FILTER_EXCEPT</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in special asmbed format or in bed format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--bed=False</span></kbd></td>
+<td>Specifies if the input file is in bed format</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--cluster-size=1</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Number of reads necessary for a group to be considered a cluster. eg. 2 returns all groups with 2 or more overlapping reads, defaults to 1</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--overlap=-1</span></kbd></td>
+<td>Distance in basepairs for two reads to be in the same cluster. For instance 20 would group all reads with 20bp of each other. Negative number means overlap eg. -10 - read must overlap at leas 10 basepairs, defaults to -1</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--expand-cluster=0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Expand cluster in both directions, defaults to 0</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--expand-read=15</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Expand read in both directions (some alternative to expand cluseter), defaults to 15</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=output.bed</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output file in bed format , defaults to output.bed</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--asmbed=False</span></kbd></td>
+<td>Write in asmbed format for fasta extraction</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--rRNAs</span></kbd></td>
+<td>rRNAs to add in the end of the clusters</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--tRNAs</span></kbd></td>
+<td>tRNAs to add in the end of the clusters</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snRNAs</span></kbd></td>
+<td>snRNAs to add in the end of the clusters</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--filter-by</span></kbd></td>
+<td>Keep only read with these tags in read_ids.
+Input is coma separated list of tags</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--filter-except</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Keep read except with these tags in read_ids.
+Input is coma separated list of tags</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="ii-make-fasta">
+<h4>ii. Make FASTA<a class="headerlink" href="#ii-make-fasta" title="Permalink to this headline">¶</a></h4>
+<p>Prepare FASTA file from clustered reads</p>
+<p>Given bed file extract sequences according to chromosome and strand and save it as additional
+column in input file or fasta</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_extract_sequences</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                            <span class="p">[</span><span class="o">--</span><span class="nb">format</span> <span class="p">{</span><span class="n">bed</span><span class="p">,</span><span class="n">fasta</span><span class="p">}]</span>
+                            <span class="p">[</span><span class="o">--</span><span class="n">sequence</span><span class="o">-</span><span class="n">length</span> <span class="n">SEQUENCE_LENGTH</span><span class="p">]</span> <span class="o">--</span><span class="n">genome</span><span class="o">-</span><span class="nb">dir</span>
+                            <span class="n">GENOME_DIR</span> <span class="p">[</span><span class="o">--</span><span class="n">window</span><span class="o">-</span><span class="n">left</span> <span class="n">WINDOW_LEFT</span><span class="p">]</span>
+                            <span class="p">[</span><span class="o">--</span><span class="n">window</span><span class="o">-</span><span class="n">right</span> <span class="n">WINDOW_RIGHT</span><span class="p">]</span>
+                            <span class="p">[</span><span class="o">--</span><span class="n">adjust</span><span class="o">-</span><span class="n">coordinates</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7f9cdd0fa0c0&gt;</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Input file in Bed format. Defaults to stdin</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=&lt;open file '&lt;stdout&gt;', mode 'w' at 0x7f9cdd0fa150&gt;</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output file in Bed format. Defaults to stdout</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--format=bed</span></kbd></td>
+<td><p class="first">Output format, defaults to bed</p>
+<p class="last">Possible choices: bed, fasta</p>
+</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--sequence-length</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Final length of sequence to extract independently of coordinates.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--genome-dir</span></kbd></td>
+<td>Directory where the fasta sequences with all the chromosomes are stored</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--window-left=0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Add nucleotides to the left (upstream). This option does not work if sequence-length is specified, defaults to 0</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--window-right=0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Add nucleotides to the right (downstream). This option does not work if sequence-length is specified, defaults to 0</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--adjust-coordinates=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Adjust coordinates to new values dictated by windows length, defaults to False</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iii-build-index">
+<h4>iii. Build index<a class="headerlink" href="#iii-build-index" title="Permalink to this headline">¶</a></h4>
+<p>The index is build with following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bowtie2-build input.fa path/to/index/bowtie_index 2&gt; /dev/null
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="run-analysis">
+<h3>7. Run analysis<a class="headerlink" href="#run-analysis" title="Permalink to this headline">¶</a></h3>
+<p>For each part split in first task an analysis is run.</p>
+<div class="section" id="i-search-anchors">
+<h4>i. Search anchors<a class="headerlink" href="#i-search-anchors" title="Permalink to this headline">¶</a></h4>
+<p>For each read in the file check if there is an anchor sequence
+and if this is the case make local alignment (SW) for each associated
+sequence. As a sequence in the read take only that with the best score.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_search_anchor_and_make_alignments</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">anchors</span> <span class="n">ANCHORS</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">anchor</span><span class="o">-</span><span class="n">sequences</span> <span class="n">ANCHOR_SEQUENCES</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">reads</span> <span class="n">READS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">match</span> <span class="n">MATCH</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">mismatch</span> <span class="n">MISMATCH</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">gap</span><span class="o">-</span><span class="nb">open</span> <span class="n">GAP_OPEN</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">gap</span><span class="o">-</span><span class="n">extend</span> <span class="n">GAP_EXTEND</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">RNase</span><span class="o">-</span><span class="n">T1</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--anchors</span></kbd></td>
+<td>File with anchors (tab-separated)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--anchor-sequences</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Sequences from which anchors were generated</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--reads</span></kbd></td>
+<td>File with reads</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--match=2</span></kbd></td>
+<td>Match score, defaults to 2</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--mismatch=-5</span></kbd></td>
+<td>Mismatch penalty, defaults to -5</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--gap-open=-6</span></kbd></td>
+<td>Open gap penalty, defaults to -6</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--gap-extend=-4</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Gap extension penalty, defaults to -4</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output table</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--RNase-T1=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Indicates if in the experiment RNase T1 was used</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="ii-make-statistics">
+<h4>ii. Make statistics<a class="headerlink" href="#ii-make-statistics" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>This is set of two tasks:</dt>
+<dd><ol class="first last loweralpha simple">
+<li>Merging the files from anchor search</li>
+<li>Making statistics with following script:</li>
+</ol>
+</dd>
+</dl>
+<p>Make statistic, prepare plots and evaluate thresholds</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_make_stats_for_search</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                                <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">length</span> <span class="n">LENGTH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">fpr</span> <span class="n">FPR</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=Plots</span></kbd></td>
+<td>Directory to store the plots , defaults to Plots</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--length=15</span></kbd></td>
+<td>Threshold for length of the target site, defaults to 15</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--fpr=0.05</span></kbd></td>
+<td>False positive rate threshold, defaults to 0.05</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iii-convert-to-fasta">
+<h4>iii. Convert to FASTA<a class="headerlink" href="#iii-convert-to-fasta" title="Permalink to this headline">¶</a></h4>
+<p>Convert output table from alignment search into fasta</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_convert_tab_to_fasta</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">stats</span> <span class="n">STATS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">length</span> <span class="n">LENGTH</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">assign</span><span class="o">-</span><span class="n">score</span><span class="o">-</span><span class="n">threshold</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">filter</span><span class="o">-</span><span class="n">ambiguous</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">five</span><span class="o">-</span><span class="n">prime</span><span class="o">-</span><span class="n">adapter</span> <span class="n">FIVE_PRIME_ADAPTER</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">three</span><span class="o">-</span><span class="n">prime</span><span class="o">-</span><span class="n">adapter</span> <span class="n">THREE_PRIME_ADAPTER</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">five</span><span class="o">-</span><span class="n">prime</span><span class="o">-</span><span class="n">adapter</span><span class="o">-</span><span class="n">threshold</span> <span class="n">FIVE_PRIME_ADAPTER_THRESHOLD</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">three</span><span class="o">-</span><span class="n">prime</span><span class="o">-</span><span class="n">adapter</span><span class="o">-</span><span class="n">threshold</span> <span class="n">THREE_PRIME_ADAPTER_THRESHOLD</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input table</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output fasta file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--stats</span></kbd></td>
+<td>Undocumented</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--length=15</span></kbd></td>
+<td>Length of the target site to keep, defaults to 15</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--assign-score-threshold=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Undocumented</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--filter-ambiguous=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Filter reads that can be assigned to more than one snoRNA</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--five-prime-adapter</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Five prime adapter sequence used in experiment - will be used to remove reads that are similar</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--three-prime-adapter</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Three prime adapter sequence used in experiment - will be used to remove reads that are similar</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--five-prime-adapter-threshold=0.8</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Threshold of the identity to the 5&#8217; adapter, defaults to 0.8</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--three-prime-adapter-threshold=0.8</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Threshold of the identity to the 3&#8217; adapter, defaults to 0.8</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iv-map-reads">
+<h4>iv. Map reads<a class="headerlink" href="#iv-map-reads" title="Permalink to this headline">¶</a></h4>
+<p>Map target parts to the cluster with following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bowtie2 -x ./index/bowtie_index -f -D100 -L <span class="m">13</span> -i C,1 --local -k <span class="m">10</span> -U input.anchorfasta -S output.sam
+</pre></div>
+</div>
+</div>
+<div class="section" id="v-convert-result-to-bed">
+<h4>v. Convert result to BED<a class="headerlink" href="#v-convert-result-to-bed" title="Permalink to this headline">¶</a></h4>
+<p>Convert result from mapping into BED file with following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>samtools view -S input.sam -b -u <span class="p">|</span> bamToBed -tag AS <span class="p">|</span> grep -P <span class="s2">&quot;\t\+&quot;</span> &gt; output
+</pre></div>
+</div>
+</div>
+<div class="section" id="vi-filter-bed">
+<h4>vi. Filter BED<a class="headerlink" href="#vi-filter-bed" title="Permalink to this headline">¶</a></h4>
+<p>Filter bed file based on the alignment
+score/number of reads in cluster/number of mutations</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_filter_bed</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                     <span class="p">[</span><span class="o">--</span><span class="nb">filter</span><span class="o">-</span><span class="n">multimappers</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input bed file with special fields</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--filter-multimappers=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Filter chimeras that can be mapped to multiple places in the genome (with exception of mapping to cannonical targets)</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="vi-reasign-chromosome">
+<h4>vi. Reasign chromosome<a class="headerlink" href="#vi-reasign-chromosome" title="Permalink to this headline">¶</a></h4>
+<p>From the bed from FilterBed step get the positions of the found target sites
+in terms of real chromosomes not clusters.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_get_true_chromosome_positions</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span><span class="p">]</span>
+                                        <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7f9cdd0fa0c0&gt;</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Input file in special bed format. Defaults to sys.stdin.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=&lt;open file '&lt;stdout&gt;', mode 'w' at 0x7f9cdd0fa150&gt;</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output file in special bed format. Defaults to sys.stdout.</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="vii-append-sequence">
+<h4>vii. Append sequence<a class="headerlink" href="#vii-append-sequence" title="Permalink to this headline">¶</a></h4>
+<p>The same script as for the FASTA extraction from Bowtie2 index.</p>
+</div>
+<div class="section" id="viii-calculate-plexy">
+<h4>viii. Calculate PLEXY<a class="headerlink" href="#viii-calculate-plexy" title="Permalink to this headline">¶</a></h4>
+<p><p>RNA5-8S5|NR_003285.2    15  30  SNORD16 1   +
+RNA5-8S5|NR_003285.2    86  105 SNORD16 1   +
+RNA28S5|NR_003287.2 1563    1582    SNORD56B    1   +</p>
+<p>SNORD50A|chr7|+|57640816|57640830|20|20 SNORD50A    TCATGCTTTGTGTTGTGAAGACCGCCTGGGACTACCGGGCAGGGTGTAGTAGGCA
+SNORD50A|chr7|+|68527467|68527482|20|20 SNORD50A    ACTGAAGAAATTCAGTGAAATGCGGGTAAACGGCGGGAGTAACTATGACTCTCTTA
+SNORD50A|chr7|+|68527638|68527654|20|20 SNORD50A    AATCAGCGGGGAAAGAAGACCCTGTTGAGTTTGACTCTAGTCTGGCATGGTGAAGAG</p>
+</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_check_hybrids_with_plexy</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                                   <span class="p">[</span><span class="o">--</span><span class="n">snoRNA</span><span class="o">-</span><span class="n">paths</span> <span class="n">SNORNA_PATHS</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="o">--</span><span class="n">plexy</span><span class="o">-</span><span class="n">tmp</span> <span class="n">PLEXY_TMP</span><span class="p">]</span> <span class="o">--</span><span class="n">plexy</span><span class="o">-</span><span class="nb">bin</span>
+                                   <span class="n">PLEXY_BIN</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--snoRNA-paths=./Plexy/</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Path to snoRNAs with Plexy , defaults to ./Plexy/</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--plexy-tmp=temp/</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Plexy temporary directory , defaults to temp/</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--plexy-bin</span></kbd></td>
+<td>Path to PLEXY binary</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="ix-calculate-rnaduplex">
+<h4>ix. Calculate RNAduplex<a class="headerlink" href="#ix-calculate-rnaduplex" title="Permalink to this headline">¶</a></h4>
+<p><p>RNA5-8S5|NR_003285.2    15  30  SNORD16 1   +
+RNA5-8S5|NR_003285.2    86  105 SNORD16 1   +
+RNA28S5|NR_003287.2 1563    1582    SNORD56B    1   +</p>
+<p>SNORD50A|chr7|+|57640816|57640830|20|20 SNORD50A    TCATGCTTTGTGTTGTGAAGACCGCCTGGGACTACCGGGCAGGGTGTAGTAGGCA
+SNORD50A|chr7|+|68527467|68527482|20|20 SNORD50A    ACTGAAGAAATTCAGTGAAATGCGGGTAAACGGCGGGAGTAACTATGACTCTCTTA
+SNORD50A|chr7|+|68527638|68527654|20|20 SNORD50A    AATCAGCGGGGAAAGAAGACCCTGTTGAGTTTGACTCTAGTCTGGCATGGTGAAGAG</p>
+</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_check_hybrids_with_rnaduplex</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                                       <span class="p">[</span><span class="o">--</span><span class="n">snoRNA</span><span class="o">-</span><span class="n">paths</span> <span class="n">SNORNA_PATHS</span><span class="p">]</span>
+                                       <span class="p">[</span><span class="o">--</span><span class="n">RNAduplex</span><span class="o">-</span><span class="nb">bin</span> <span class="n">RNADUPLEX_BIN</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--snoRNA-paths=./Plexy/</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Path to snoRNAs with Plexy , defaults to ./Plexy/</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--RNAduplex-bin=RNAduplex</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Path to RNAduplex binary, defaults to RNAcofold</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="analyse-rnaduplex-results">
+<h3>8. Analyse RNAduplex results<a class="headerlink" href="#analyse-rnaduplex-results" title="Permalink to this headline">¶</a></h3>
+<p>RNAduplex and PLEXY results goes slightly different analysis.</p>
+<div class="section" id="i-merge-results">
+<h4>i. Merge results<a class="headerlink" href="#i-merge-results" title="Permalink to this headline">¶</a></h4>
+<p>Nothing to add</p>
+</div>
+<div class="section" id="ii-cluster-results">
+<h4>ii. Cluster results<a class="headerlink" href="#ii-cluster-results" title="Permalink to this headline">¶</a></h4>
+<p><p>Cluster results according to the position of the hit and miRNA
+The input file looks like that:</p>
+<p>chr6    99846856    99846871    2628039_1-Unique-1:hsa-miR-129-3p:8   30  -
+chr3    30733346    30733368    2630171_1-Unique-1:hsa-miR-93:N       36  +
+chr17   3627403     3627417     2632714_1-Unique-1:hsa-miR-186:N      28  +
+chr17   3627403     3627417     2639898_1-Unique-1:hsa-miR-16:N       28  +</p>
+</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_cluster_results</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                          <span class="p">[</span><span class="o">--</span><span class="n">cluster</span><span class="o">-</span><span class="n">size</span> <span class="n">CLUSTER_SIZE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">overlap</span> <span class="n">OVERLAP</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input table file in bed like format</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=output.tab</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output table , defaults to output.tab</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--cluster-size=1</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Number of reads necessary for a group to be considered a cluster. eg. 2 returns all groups with 2 or more overlapping reads, defaults to 1</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--overlap=-40</span></kbd></td>
+<td>Distance in basepairs for two reads to be in the same cluster. For instance 20 would group all reads with 20bp of each other. Negative number means overlap eg. -10 - read must overlap at leas 10 basepairs, defaults to -1</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iii-annotate-results">
+<h4>iii. Annotate results<a class="headerlink" href="#iii-annotate-results" title="Permalink to this headline">¶</a></h4>
+<p>Annotate found snoRNA target sites</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_annotate_positions</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                             <span class="o">--</span><span class="n">regions</span> <span class="n">REGIONS</span> <span class="o">--</span><span class="n">genes</span> <span class="n">GENES</span>
+                             <span class="p">[</span><span class="o">--</span><span class="n">snoRNAs</span> <span class="n">SNORNAS</span><span class="p">]</span> <span class="o">--</span><span class="n">repeats</span> <span class="n">REPEATS</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--regions</span></kbd></td>
+<td>GFF file with annotations for different gene regions eg. UTRs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--genes</span></kbd></td>
+<td>Positions of all genes in GFF format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNAs</span></kbd></td>
+<td>GFF file with annotations for snoRNAs in the same format as genes file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--repeats</span></kbd></td>
+<td>GTF file with annotations for repeats in the format from rmsk table in UCSC</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iv-make-statistics">
+<h4>iv. Make statistics<a class="headerlink" href="#iv-make-statistics" title="Permalink to this headline">¶</a></h4>
+<p>Make some useful plots for RNAduplex results</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_make_plots_for_rnaduplex</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">snoRNAs</span> <span class="n">SNORNAS</span>
+                                   <span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="o">--</span><span class="n">threshold</span> <span class="n">THRESHOLD</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in TAB</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNAs</span></kbd></td>
+<td>Table with snoRNAs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=Plots</span></kbd></td>
+<td>Directory to store plots, defaults to Plots</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--threshold=-25.0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Threshold for RNAduplex energy, defaults to -25.0</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="analyse-plexy">
+<h3>9. Analyse PLEXY<a class="headerlink" href="#analyse-plexy" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>i. Merge results<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>cat output/*.scorebed &gt; results_with_score.tab
+</pre></div>
+</div>
+</div>
+<div class="section" id="ii-merge-raw-results">
+<h4>ii. Merge raw results<a class="headerlink" href="#ii-merge-raw-results" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>cat output/*.truechrombed &gt; raw_reds_results.tab
+</pre></div>
+</div>
+</div>
+<div class="section" id="iii-append-rpkm">
+<h4>iii. Append RPKM<a class="headerlink" href="#iii-append-rpkm" title="Permalink to this headline">¶</a></h4>
+<p>Append rpkm values to the plexy predictions</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_add_rpkm_to_score</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span> <span class="o">--</span><span class="n">rpkm</span>
+                            <span class="n">RPKM</span> <span class="o">--</span><span class="n">annotated</span><span class="o">-</span><span class="n">reads</span> <span class="n">ANNOTATED_READS</span>
+                            <span class="p">[</span><span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--rpkm</span></kbd></td>
+<td>File with rpkms of snoRNAs</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--annotated-reads</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Mapped reads annotated as snoRNAs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type=CD</span></kbd></td>
+<td><p class="first">Type of snoRNAs , defaults to CD</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="iv-aggregate-results-by-site">
+<h4>iv. Aggregate results by site<a class="headerlink" href="#iv-aggregate-results-by-site" title="Permalink to this headline">¶</a></h4>
+<p>Divide plexy output into positives and negatives set</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_aggregate_scored_results</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="o">--</span><span class="n">threshold</span> <span class="n">THRESHOLD</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in Tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in Tab format.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--threshold=-1.0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Threshold for the site, defaults to -1.0</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type=CD</span></kbd></td>
+<td><p class="first">Type of snoRNA , defaults to CD</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="v-calculate-features">
+<h4>v. Calculate features<a class="headerlink" href="#v-calculate-features" title="Permalink to this headline">¶</a></h4>
+<p>For each of the site calculate features: accessibility and flanks composition. The PLEXY
+is already calculated.</p>
+</div>
+<div class="section" id="vi-calculate-probability">
+<h4>vi. Calculate probability<a class="headerlink" href="#vi-calculate-probability" title="Permalink to this headline">¶</a></h4>
+<p>Calculate probability of snoRNA methylation being functional</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_calculate_probability</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                                <span class="o">--</span><span class="n">accessibility</span> <span class="n">ACCESSIBILITY</span> <span class="o">--</span><span class="n">flanks</span> <span class="n">FLANKS</span>
+                                <span class="o">--</span><span class="n">model</span> <span class="n">MODEL</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format. Defaults to sys.stdin.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format. Defaults to sys.stdout.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--accessibility</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>File with calculated accessibility</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--flanks</span></kbd></td>
+<td>File with calculated flanks composition</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--model</span></kbd></td>
+<td>Statsmodel binary file with the model for snoRNA</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="vii-make-plots">
+<h4>vii. Make plots<a class="headerlink" href="#vii-make-plots" title="Permalink to this headline">¶</a></h4>
+<p>Make some useful plots for results</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_make_stats_for_results</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="n">results</span><span class="o">-</span><span class="n">probability</span><span class="o">-</span><span class="nb">complex</span>
+                                 <span class="n">RESULTS_PROBABILITY_COMPLEX</span> <span class="o">--</span><span class="n">results</span><span class="o">-</span><span class="n">raw</span>
+                                 <span class="n">RESULTS_RAW</span> <span class="o">--</span><span class="n">snoRNAs</span> <span class="n">SNORNAS</span> <span class="o">--</span><span class="nb">type</span>
+                                 <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span> <span class="o">--</span><span class="n">genome</span><span class="o">-</span><span class="nb">dir</span> <span class="n">GENOME_DIR</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--results-probability-complex</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Main part of the results</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--results-raw</span></kbd></td>
+<td>Row results</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNAs</span></kbd></td>
+<td>Table with snoRNAs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=Plots</span></kbd></td>
+<td>Directory to store plots, defaults to Plots</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--genome-dir</span></kbd></td>
+<td>Path to genome directory where the chromosomes are stored</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="viii-convert-to-bed">
+<h4>viii. Convert to BED<a class="headerlink" href="#viii-convert-to-bed" title="Permalink to this headline">¶</a></h4>
+<p>Convert Probability results into bed for annotations</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_convert_to_bed</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="ix-annotate-results">
+<h4>ix. Annotate results<a class="headerlink" href="#ix-annotate-results" title="Permalink to this headline">¶</a></h4>
+<p>Annotate found snoRNA target sites</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_annotate_positions</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                             <span class="o">--</span><span class="n">regions</span> <span class="n">REGIONS</span> <span class="o">--</span><span class="n">genes</span> <span class="n">GENES</span>
+                             <span class="p">[</span><span class="o">--</span><span class="n">snoRNAs</span> <span class="n">SNORNAS</span><span class="p">]</span> <span class="o">--</span><span class="n">repeats</span> <span class="n">REPEATS</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--regions</span></kbd></td>
+<td>GFF file with annotations for different gene regions eg. UTRs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--genes</span></kbd></td>
+<td>Positions of all genes in GFF format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNAs</span></kbd></td>
+<td>GFF file with annotations for snoRNAs in the same format as genes file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--repeats</span></kbd></td>
+<td>GTF file with annotations for repeats in the format from rmsk table in UCSC</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<p>Those scripts are not used (yet) or are used to calculate HACA-box
+snoRNAs chimeras. For the sake of documentation they are placed here.</p>
+<p>rg-annotate-bed.py
+&#64;Author:      Rafal Gumienny (<a class="reference external" href="mailto:gumiennr&#37;&#52;&#48;unibas&#46;ch">gumiennr<span>&#64;</span>unibas<span>&#46;</span>ch</a>)
+&#64;Created:     12-Dec-12
+&#64;Description: Annotate bed file with another bed file containing annotations
+&#64;Usage:       python rg-annotate-bed.py -h</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_annotate_results_bed</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">FILE</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">FILE</span><span class="p">]</span>
+                               <span class="o">--</span><span class="n">annotations</span> <span class="n">FILE</span> <span class="p">[</span><span class="o">--</span><span class="n">fraction</span> <span class="n">FLOAT</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="n">placeholder</span> <span class="n">STRING</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">un_stranded</span><span class="p">]</span>
+                               <span class="p">[</span><span class="o">--</span><span class="nb">filter</span><span class="o">-</span><span class="n">by</span> <span class="n">FILTER_BY</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=0</span>, <span class="option">--verbose=0</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Print more verbose messages for each additional verbose level.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>a bed file that you want to annotate</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=output.tab</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>an output table with annotations</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--annotations</span></kbd></td>
+<td>a bed file with annotations</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--fraction=0.1</span></kbd></td>
+<td>Fraction of read that must overlap the feature to be accepted</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--placeholder=.</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>A placeholder for empty annotations</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--un_stranded=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Pass if your protocol is un-stranded</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--filter-by</span></kbd></td>
+<td>Filter by these (coma separated) list of annotation types</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p><blockquote>
+<div><p>########################## FILE DESCRIPTION ###################################################</p>
+<dl class="docutils">
+<dt>BED FILE FOR WITH ANNOTATION EXAMPLE</dt>
+<dd>1   24740163    24740215    miRNA:ENST00000003583 0   -
+1   24727808    24727946    miRNA:ENST00000003583 0   -
+1   24710391    24710493    miRNA:ENST00000003583 0   -</dd>
+</dl>
+<p>fields: chr start end annot_type:annot_name num strand&#8221;]</p>
+<dl class="docutils">
+<dt>INPUT BED FILE EXAMPLE</dt>
+<dd>1   24685109    24687340    ENST00000003583 0   -
+1   24687531    24696163    ENST00000003583 0   -
+1   24696329    24700191    ENST00000003583 0   -</dd>
+</dl>
+<p>########################## FILE DESCRIPTION ###################################################</p>
+</div></blockquote>
+</p>
+<p></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_append_genes_and_names</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                                 <span class="p">[</span><span class="o">--</span><span class="n">mapping</span> <span class="n">MAPPING</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--mapping=/import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch/data/Annotations/transcript_2_gene_mapping.txt.clean</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Mapping from ENSEMBL transcript to gene,
+defaults to /import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch/data/Annotations/transcript_2_gene_mapping.txt.clean</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p><p>RNA5-8S5|NR_003285.2    15  30  SNORD16 1   +
+RNA5-8S5|NR_003285.2    86  105 SNORD16 1   +
+RNA28S5|NR_003287.2 1563    1582    SNORD56B    1   +</p>
+<p>SNORD50A|chr7|+|57640816|57640830|20|20 SNORD50A    TCATGCTTTGTGTTGTGAAGACCGCCTGGGACTACCGGGCAGGGTGTAGTAGGCA
+SNORD50A|chr7|+|68527467|68527482|20|20 SNORD50A    ACTGAAGAAATTCAGTGAAATGCGGGTAAACGGCGGGAGTAACTATGACTCTCTTA
+SNORD50A|chr7|+|68527638|68527654|20|20 SNORD50A    AATCAGCGGGGAAAGAAGACCCTGTTGAGTTTGACTCTAGTCTGGCATGGTGAAGAG</p>
+</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_check_hybrids_with_rnasnoop</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                                      <span class="p">[</span><span class="o">--</span><span class="n">rnasnoop</span> <span class="n">RNASNOOP</span><span class="p">]</span> <span class="o">--</span><span class="n">snoRNA</span><span class="o">-</span><span class="n">paths</span>
+                                      <span class="n">SNORNA_PATHS</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--rnasnoop=RNAsnoop</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Path to RNAsnoop binary, defaults to RNAsnoop</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNA-paths</span></kbd></td>
+<td>Path to snoRNAs stems</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Compare output results with original data</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_compare_results_to_original</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">only</span><span class="o">-</span><span class="n">chrom</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Bed file with special fields</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--only-chrom=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>If there is a bed file with only chromosome information use this flag</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Convert result to asmbed and in the same time extend sequences to be equal
+desired length</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_convert_to_asmbed</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                            <span class="p">[</span><span class="o">--</span><span class="n">length</span> <span class="n">LENGTH</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input table</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=output.asmbed</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output asmbed file , defaults to output.asmbed</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--length=50</span></kbd></td>
+<td>Desired read length, defaults to 50</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Convert result to coordinate file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_convert_to_coords</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">sequences</span> <span class="n">SEQUENCES</span>
+                            <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input result file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--sequences</span></kbd></td>
+<td>File with sequences</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=coords.tab</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output coordinate file , defaults to coords.tab</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>convert unmapped sequences to fasta</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_convert_unmapped_to_fasta</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Coma separated list of files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output name</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Make some plots of the results</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_correlate_expression_with_hybrids</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">clustered</span><span class="p">]</span> <span class="o">--</span><span class="n">expressions</span>
+                                            <span class="n">EXPRESSIONS</span> <span class="p">[</span><span class="o">--</span><span class="n">level</span> <span class="n">LEVEL</span><span class="p">]</span>
+                                            <span class="p">[</span><span class="o">--</span><span class="n">top</span> <span class="n">TOP</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input table</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--clustered=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Is the result clustered?</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--expressions</span></kbd></td>
+<td>File with miRNA expression</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--level=0</span></kbd></td>
+<td>Expression level (in log scale), defaults to 0</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--top=20</span></kbd></td>
+<td>Show top mirnas and number of hybrids found, defaults to 20</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Filter reads based on annotation in the last column</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_filter_reads_for_clustering</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                                      <span class="p">[</span><span class="o">--</span><span class="n">annotations</span> <span class="n">ANNOTATIONS</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input table</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output table</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--annotations=None</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Coma separated list of annotations to consider, defaults to None</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Generate fasta files for PLEXY from snoRNA input</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_generate_haca_stems_for_rnasnoop</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="nb">type</span>
+                                           <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span>
+                                           <span class="p">[</span><span class="o">--</span><span class="n">switch</span><span class="o">-</span><span class="n">boxes</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=Plexy</span></kbd></td>
+<td>Directory to put output , defaults to Plexy</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--switch-boxes=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>If the CD box is located wrongly it will try to relabel it</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_get_search_info</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="n">snoRNAs</span> <span class="n">SNORNAS</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span>
+                          <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span> <span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="n">window</span> <span class="n">WINDOW</span><span class="p">]</span>
+                          <span class="p">[</span><span class="o">--</span><span class="n">smooth</span><span class="o">-</span><span class="n">window</span> <span class="n">SMOOTH_WINDOW</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--snoRNAs</span></kbd></td>
+<td>Table with snoRNAs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--window=100</span></kbd></td>
+<td>Window, defaults to 100</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--smooth-window=1</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Smoothing window length, defaults to 1</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=Plots</span></kbd></td>
+<td>Direcory for plots, defaults to Plots</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Generate fasta file from snoRNA input</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_get_snoRNA_gff</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in fasta format.</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Generate fasta file from snoRNA input</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_make_cd_snoRNAs_families</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                                   <span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">CD</span><span class="p">,</span><span class="n">HACA</span><span class="p">}</span> <span class="p">[</span><span class="o">--</span><span class="n">switch</span><span class="o">-</span><span class="n">boxes</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="o">--</span><span class="n">length</span> <span class="n">LENGTH</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in tab format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--output</span></kbd></td>
+<td>Output file in fasta format.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--type</span></kbd></td>
+<td><p class="first">Type of snoRNA</p>
+<p class="last">Possible choices: CD, HACA</p>
+</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--switch-boxes=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>If the CD box is located wrongly it will try to relabel it</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--length=20</span></kbd></td>
+<td>Length of interaction element (seed) to be extracted, defaults to 20</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Shuffle fasta sequences in the file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_shuffle_fasta_sequences</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="p">[</span><span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                                  <span class="p">[</span><span class="o">--</span><span class="n">let</span><span class="o">-</span><span class="n">size</span> <span class="n">LET_SIZE</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input fasta file</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--output=output_shuffled.fa</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Output fasta file , defaults to output_shuffled.fa</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--let-size=2</span></kbd></td>
+<td>Let size to preserve, defaults to 2</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Split text file into files with desired number of lines</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">rg_split_file_into_chunks</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span> <span class="n">INPUT</span> <span class="o">--</span><span class="n">lines</span> <span class="n">LINES</span>
+                                 <span class="p">[</span><span class="o">--</span><span class="n">prefix</span> <span class="n">PREFIX</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span>
+                                 <span class="p">[</span><span class="o">--</span><span class="n">suffix</span> <span class="n">SUFFIX</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Options:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v=False</span>, <span class="option">--verbose=False</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Be loud!</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input</span></kbd></td>
+<td>Input file in txt format. Defaults to sys.stdin.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--lines</span></kbd></td>
+<td>Number of lines in each file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--prefix=file_</span></kbd></td>
+<td>Prefix to the file, defaults to file_</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--dir=./</span></kbd></td>
+<td>Directory to put files, defaults to ./</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--suffix=.part</span></kbd></td>
+<td>Suffix to the file, defaults to .part</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Rafal Gumienny.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
