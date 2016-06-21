@@ -327,3 +327,6 @@ vim .gitignore
 git status
 vim targets.fa 
 cd ..
+cat column_description.txt 
+cat notes.txt 
+cd ..

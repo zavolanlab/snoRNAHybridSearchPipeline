@@ -69,6 +69,7 @@ def main(options):
                                             --contextLen_L 14 \\
                                             --contextLen_U 0 \\
                                             --context 30 \\
+                                            --contrabin {contrabin} \\
                                             -v
                                       """
         #
@@ -91,12 +92,14 @@ def main(options):
                                                'coords': 'input',
                                                'output': 'output',
                                                'genome_dir': settings['general']['genome'],
+                                               'contrabin': settings['general'].get('contrafold_binary', 'contrafold'),
                                                })
         else:
             calculate_contrafold_command = str(calculate_contrafold_command).format(**{'script': os.path.join(pipeline_directory, calculate_contrafold_script),
                                                'coords': f,
                                                'output': os.path.join(output_directory, input_name + ".accessibility"),
                                                'genome_dir': settings['general']['genome'],
+                                               'contrabin': settings['general'].get('contrafold_binary', 'contrafold'),
                                                })
         calculate_contrafold_id = jobber.job(calculate_contrafold_command,
                                {'name': 'CalculateCONTRAFold',

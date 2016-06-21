@@ -18,3 +18,6 @@
 18. Organization	Organisation of the gene eg. intronic
 19. Organism	Species
 20. Note	Additional info about snoRNA
+21. snoRNA name	The official name for snoRNA (if available)
+22. snoRNA family	The family of snoRNA (if available)
+23. snoRNA precise type	Precise type of the snoRNA as opposed to general type

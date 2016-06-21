@@ -62,6 +62,8 @@ sysout = sys.stdout.write
 
 
 def main(options):
+    if not is_executable(options.plexy_bin):
+        raise Exception("Path to PLEXY is invalid (%s)! Please define it with --plexy-bin option." % options.plexy_bin)
     nan = "NaN"
     """Main logic of the script"""
     snorna_paths = options.snoRNA_paths
@@ -117,6 +119,27 @@ def get_modification_position(rel_pos, start, end, strand):
         return end - rel_pos
     else:
         return start + rel_pos
+
+
+def is_executable(program):
+    """
+    Check if the path/binary provided is valid executable
+    """
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return True
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            path = path.strip('"')
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return True
+
+    return False
 
 
 if __name__ == '__main__':

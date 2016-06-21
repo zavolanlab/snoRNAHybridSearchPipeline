@@ -35,6 +35,10 @@ argparser.add_option(
 argparser.add_option('--context', type=int, dest='context', default=50,
                      action='store', help='length of the \
         context of the seed to be checked')
+parser.add_argument("--contrabin",
+                    dest="contrabin",
+                    default="contrafold",
+                    help=" CONTRAfold binary path, defaults to ")
 
 arguments, args = argparser.parse_args()
 verbose = arguments.verbose
@@ -44,12 +48,28 @@ sysout = sys.stdout.write
 
 # Define runContrafold function to run MIRZA and obtaine score
 
+def is_executable(program):
+    """
+    Check if the path/binary provided is valid executable
+    """
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
 
-def runContrafold(mRNAseq, mRNAID, unw_start, unw_end):
-    # TODO add description of the function
-    """"""
-    Contrabin = 'contrafold'
-    #Contrabin = '/import/bc2/home/zavolan/gumiennr/Soft/contrafold/src/contrafold'
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return True
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            path = path.strip('"')
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return True
+
+    return False
+
+
+def runContrafold(mRNAseq, mRNAID, unw_start, unw_end, Contrabin):
     # open all files and write in fasta format
     try:
         mrnainput = open('contrafold_mrna_input.bpseq', 'w')
@@ -120,6 +140,9 @@ def get_sequence(sequence, start, end):
 
 # Read coords file into the table: [geneID, miR name, begining position,
 # end position]
+#
+if not is_executable(arguments.contrabin):
+    raise Exception("Path to CONTRAfold is invalid (%s)! Please define it with --contrabin option." % arguments.contrabin)
 
 coords = defaultdict(list)
 with open(arguments.coords) as infile:
@@ -160,7 +183,7 @@ for chromosome, rows in coords.iteritems():
             if row[4] == "-":
                 sequence = sequence.translate(translation_table)[::-1]
                 if len(sequence) >= upperIndex and  lowerIndex >= 0 and len(sequence) == 2 * arguments.context + coorLen:
-                    result, unwind_out = runContrafold(sequence, row[0], lowerIndex, upperIndex)
+                    result, unwind_out = runContrafold(sequence, row[0], lowerIndex, upperIndex, arguments.contrabin)
 
                     outtext = '%s,%s,%s,%s\t%s\n' % (row[0], row[1], row[2],
                                                      row[3], result)
@@ -172,7 +195,7 @@ for chromosome, rows in coords.iteritems():
             else:
                 print row[0], row[1], row[2], len(sequence)
                 if len(sequence) >= upperIndex and  lowerIndex >= 0 and len(sequence) == 2 * arguments.context + coorLen:
-                    result, unwind_out = runContrafold(sequence, row[0], lowerIndex, upperIndex)
+                    result, unwind_out = runContrafold(sequence, row[0], lowerIndex, upperIndex, arguments.contrabin)
 
                     outtext = '%s,%s,%s,%s\t%s\n' % (row[0], row[1], row[2],
                                                      row[3], result)
