@@ -1,0 +1,20 @@
+1. Chromosome	Chromosome on which gene is located
+2. Start	0-based start coordinate
+3. End	1-based end coordinate
+4. snoRNA ID	ID for snoRNA
+5. Type	Type of snoRNA (C/D or H/ACA)
+6. Strand	Strand on which gene is located
+7. Sequence	Sequence of snoRNA
+8. D-boxes	1-based coordinates snoRNA D-boxes in form of D-box_start..D-box_end or D'-box_start..D'-box_end,D-box_start..D-box_end eg. 60..63 or 30..33,60..63. It must be 4 nucleotides long.
+9. C-boxes	Same as above (not that prime boxes are reversed in positions) with exception of the length constraint
+10. H-box	1-based position of the H box in H/ACA box snoRNAs in form of start..end
+11. ACA-box	1-based position of the ACA box in H/ACA box snoRNA in form of start..end
+12. Alias	Alias/Alternative name for snoRNA
+13. Gene name	Name of the snoRNA gene
+14. Accession	Accession (NCBI, RefSeq etc) for snoRNA
+15. Modification sites	Coma separated list of modified sites in form of ModifiedRNA:NucleotidePosition eg. 28S:U46,18S:G52
+16. Host gene	Host gene name if any
+17. Host ID	Host locus ID
+18. Organization	Organisation of the gene eg. intronic
+19. Organism	Species
+20. Note	Additional info about snoRNA

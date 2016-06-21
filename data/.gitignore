@@ -1,0 +1,10 @@
+!model.bin
+!/human/snoRNAs/Supplementary_Dataset_S1.csv
+!/human/snoRNAs/Supplementary_Dataset_S1_addnonCanonicalFunc.csv
+!/human/snoRNAs/Supplementary_Dataset_S5.gff
+!Columns_description.tab
+!all_without_snord116.tab
+!snoRNA_search-Prepare_data_from_snOPY.ipynb
+!human_snoRNAs_with_Steffi.tab
+!model.bin
+

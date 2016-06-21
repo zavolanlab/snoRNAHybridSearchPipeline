@@ -1,0 +1,42 @@
+########################################
+# Program: needle
+# Rundate: Wed 18 Nov 2015 08:06:44
+# Commandline: needle
+#    -auto
+#    -stdout
+#    -asequence emboss_needle-I20151118-080642-0229-32011317-pg.asequence
+#    -bsequence emboss_needle-I20151118-080642-0229-32011317-pg.bsequence
+#    -datafile EDNAFULL
+#    -gapopen 10.0
+#    -gapextend 0.5
+#    -endopen 10.0
+#    -endextend 0.5
+#    -aformat3 pair
+#    -snucleotide1
+#    -snucleotide2
+# Align_format: pair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: RNA28S_Leipzig
+# 2: RNA28S_snoRNAbase
+# Matrix: EDNAFULL
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 5077
+# Identity:    5017/5077 (98.8%)
+# Similarity:  5017/5077 (98.8%)
+# Gaps:          49/5077 ( 1.0%)
+# Score: 24769.5
+# 
+#
+#=======================================
+                     12--3456789
+RNA28S_Leipzi      1 CG--ACCTCAG     50
+                     |||||||||||
+RNA28S_snoRNA      1 CGCGAC--CAG     50
+                     123456--789

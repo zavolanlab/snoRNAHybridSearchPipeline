@@ -31,15 +31,12 @@ where you want to perform calculation, WD):
     cp Path/To/snoRNAHybridSearch/config_example.ini config.ini
 
 Set all the necessary paths in your config.ini file as indicated in the comments inside the file. The most importand are:
- * **motifs**: "Path/To/miRNAs.fa" - abs path to an input fasta file with mi/siRNA sequences of length 21 or more
- * **seqs**: "Path/To/MIRZA-G/data/UTR_Sequences.fa" - abs path to a fasta file with the UTR sequences from which the coordinate file will be generated (you can use 3'UTR sequences in the
-   MIRZA-G/data directory, for this file there are also alignments for conservation precalculated)
- * **mirza_binary**: "MIRZA" - path to MIRZA binary (or how you invoke it in the bash)
- * **contrafold_binary**: "contrafold" - path to CONTRAfold binary (or how you invoke in the bash)
+ * **unmapped_reads**: "Path/To/unmapped_reads.fa" - an abs path to an input FASTA file with sequences that were unmapped in sequencing experiment
+ * **bed_for_index**: "Path/To/mapped_reads.bed" - abs path to a BED file with the positions of mapped reads in the experiment
+ * **PLEXY_bin**: "Path/To/plexy.pl" - path to PLEXY binary (or how you invoke it in the bash)
 
-Models paths:
- * **model_with_bls**: "Path/To/MIRZA-G/data/glm-with-bls.bin" - abs path to the model with BLS (you can find it in the pipeline/data directory)
- * **model_without_bls**: "Path/To/MIRZA-G/data/glm-without-bls.bin" - same as before
+Model path:
+ * **model**: "Path/To/snoRNAHybridSearch/data/model.bin" - abs path to the model used to calculate probability (you can find it in the pipeline/data directory)
 
 Additionally when you would like to calculate with evolutionary conservation you have to make sure that the variable run_only_MIRZA in CalculateMIRZA task is set to “no” instead of “yes” and that you provide proper paths with aligned UTRs and evolutionary tree:
  * **phylogenetic_tree**: "Path/To/MIRZA-G/data/human_tree.nh" - abspath to provided phylogenetic tree
