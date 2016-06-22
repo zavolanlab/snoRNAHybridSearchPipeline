@@ -232,6 +232,7 @@ cp Path/To/snoRNAHybridSearch/config_example.ini config.ini
 <li><strong>unmapped_reads</strong>: &#8220;Path/To/unmapped_reads.fa&#8221; - an abs path to an input FASTA file with sequences that were unmapped in sequencing experiment</li>
 <li><strong>bed_for_index</strong>: &#8220;Path/To/mapped_reads.bed&#8221; - abs path to a BED file with the positions of mapped reads in the experiment</li>
 <li><strong>PLEXY_bin</strong>: &#8220;Path/To/plexy.pl&#8221; - path to PLEXY binary (or how you invoke it in the bash)</li>
+<li><strong>contrafold_binary</strong>: &#8220;contrafold&#8221; - path to CONTRAfold binary (or how you invoke in the bash)</li>
 </ul>
 </dd>
 <dt>Model path:</dt>
@@ -309,11 +310,17 @@ abut the regions in the genes and transcripts like introns, exons, and UTRS:</p>
 </li>
 </ul>
 </dd>
+<dt>Others:</dt>
+<dd><ul class="first last simple">
+<li><strong>reads_per_file</strong>: number of reads in the split files</li>
+<li><strong>anchor_length</strong>: the lenght of the &#8220;seed&#8221; prepared from snoRNAs which will be searched initially in the unmapped sequences</li>
+<li>If you would like to run it on cluster follow instructions in the configuration file and ask your admin what parameters you need to set
+up before (like DRMAA path, modules necessary, queues names etc.). All these parameters can be set up in config.ini. To run it locally it
+takes ~70 to 90 seconds for one miRNA without conservation calculation and ~170 seconds with calculation (This
+might be substantial amount of time (up to half an hour per miRNA) for worse processors).</li>
+</ul>
+</dd>
 </dl>
-<p>If you would like to run it on cluster follow instructions in the configuration file and ask your admin what parameters you need to set
-up before (like DRMAA path, modules necessary, queues names etc.). All these parameters can be set up in config.ini.</p>
-<p>To run it locally it takes ~70 to 90 seconds for one miRNA without conservation calculation and ~170 seconds with calculation (This
-might be substantial amount of time (up to half an hour per miRNA) for worse processors).</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>

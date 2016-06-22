@@ -340,7 +340,7 @@ def main(options):
 
     #We call the script that will generate the jobs that will analyse the split files. We pass the id of the group
     #and the folder where the script will find the splitted files.
-    analysis_tuple = (os.path.join(pipeline_directory, "run-analysis.py"),
+    analysis_tuple = (os.path.join(pipeline_directory, "run_analysis.py"),
                       output_directory,
                       analyse_files_id,
                       os.path.abspath(options.config),
@@ -463,7 +463,7 @@ def main(options):
 
     #We call the script that will generate the jobs that will analyse the split files. We pass the id of the group
     #and the folder where the script will find the splitted files.
-    feat_tuple = (os.path.join(pipeline_directory, "run-features.py"),
+    feat_tuple = (os.path.join(pipeline_directory, "run_features.py"),
                       for_features_directory,
                       calculate_features_group_id,
                       os.path.abspath(options.config),
