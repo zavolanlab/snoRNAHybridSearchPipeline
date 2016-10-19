@@ -18,9 +18,6 @@ argparser.add_option('--genome-dir', dest='genome_dir',
                      action='store', help='fasta with mRNA sequences')
 argparser.add_option('--out', '-o', default='output.tab', dest='out',
                      action='store', help='output table')
-argparser.add_option('--energies', '-e',
-                     default='/import/bc2/home/zavolan/gumiennr/Data/ContrafoldEnergies/results.txt',
-                     dest='energies', action='store', help='file with energies')
 argparser.add_option('--coords', default='coords.tab', dest='coords',
                      action='store', help='file with target\
         sites positions, miRNA and target gene ID')
@@ -35,7 +32,7 @@ argparser.add_option(
 argparser.add_option('--context', type=int, dest='context', default=50,
                      action='store', help='length of the \
         context of the seed to be checked')
-parser.add_argument("--contrabin",
+argparser.add_option("--contrabin",
                     dest="contrabin",
                     default="contrafold",
                     help=" CONTRAfold binary path, defaults to ")

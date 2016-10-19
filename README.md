@@ -1,5 +1,5 @@
 ===============================
-MIRZA-G
+snoRNAHybridSearch
 ===============================
 
 snoRNAHybridSearch is a pipeline to discover snoRNA-target chimeric reads in CLIP/HTS experiments.
