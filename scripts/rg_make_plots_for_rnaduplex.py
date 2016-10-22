@@ -200,6 +200,8 @@ def is_known(chrom, snor_id, pos, modsites):
 
 
 def plot_hybrid_statistics_with_boxes(snor, snoRNAs, hybrids):
+    colors = ["windows blue", "amber", "green", "tomato", "dusty purple"]
+    c1, c2, c3, c4, c5 = sns.xkcd_palette(colors)
     ax = plot_hybrid_statistics(hybrids, title=snor + ", " + str(snoRNAs[snor].snor_name) + " (" + str(len(hybrids)) + ")")
     ax.get_xaxis().set_visible(False)
     line_dbox = pl.Line2D([snoRNAs[snor].d_box[0] - 0.3 - 1,
