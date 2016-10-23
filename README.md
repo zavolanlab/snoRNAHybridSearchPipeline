@@ -3,5 +3,7 @@ snoRNAHybridSearch
 ===============================
 
 snoRNAHybridSearch is a pipeline to discover snoRNA-target chimeric reads in CLIP/HTS experiments.
+Please refer to the publication for greater details.
 
-* Documentation: https://snornahybridsearch.readthedocs.org.
+* `Documentation <https://snornahybridsearch.readthedocs.org>`_.
+* Additional data required to run the pipeline can be downloaded `here <http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearchData.tar.gz>`_.
