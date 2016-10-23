@@ -164,20 +164,20 @@ def main(options):
                                              0.0)
             sns.despine()
             com_fig.savefig(os.path.join(options.dir,
-                                         "probabilities_complex_model_%s.pdf" % mod_chrom))
+                                         "probabilities_%s.pdf" % mod_chrom))
             com_fig.savefig(os.path.join(options.dir,
-                                         "probabilities_complex_model_%s.png" % mod_chrom),
+                                         "probabilities_%s.png" % mod_chrom),
                             dpi=300)
             com_fig, com_ax = plot_chomosome(mod_chrom,
                                              chromosome_lengths,
                                              complex_model,
                                              get_target_sites(snoRNAs, mod_chrom_alt),
-                                             0.5)
+                                             0.1)
             sns.despine()
             com_fig.savefig(os.path.join(options.dir,
-                                         "probabilities_complex_model_%s_05.pdf" % mod_chrom))
+                                         "probabilities_%s_01.pdf" % mod_chrom))
             com_fig.savefig(os.path.join(options.dir,
-                                         "probabilities_complex_model_%s_05.png" % mod_chrom),
+                                         "probabilities_%s_01.png" % mod_chrom),
                             dpi=300)
         except Exception, e:
             syserr("Cannot plot complex model for %s: %s\n" % (mod_chrom, str(e)))
@@ -209,7 +209,8 @@ def main(options):
                 markersize=6,
                 label='Methylation')
         ax.set_ylim(bottom=int(np.floor(-1*max(profile)/13.0)))
-        ax.set_xlabel("Position")
+        ax.set_xlabel("Position along " + mod_chrom)
+        ax.set_ylabel("Count")
         ax.set_title(mod_chrom)
         pl.legend()
         sns.despine()
@@ -400,6 +401,8 @@ def plot_chomosome(chrom, chrom_lengths, data, mod_sites, thresh=0.7):
         ax.text(x - txt_width, y*1.2, '%d' % int(x), rotation=90, fontsize=6)
     for x, y in zip(xdata_prob, ydata_prob):
         ax.text(x - txt_width, y*1.05, '%d' % int(x), rotation=90, fontsize=6)
+    pl.xlabel("Position along " + chrom)
+    pl.ylabel("Probability")
     return fig, ax
 
 
