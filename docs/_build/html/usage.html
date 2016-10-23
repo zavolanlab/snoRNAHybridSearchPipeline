@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="snoRNAHybridSearch 1.0.0 documentation" href="index.html"/>
-        <link rel="next" title="Pipeline flow" href="scripts.html"/>
+        <link rel="next" title="Results" href="results.html"/>
         <link rel="prev" title="Instalation" href="installation.html"/> 
 
   
@@ -85,11 +85,12 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instalation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#preparing-input-files">Preparing input files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#preparing-config-file">Preparing config file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-config-file-and-input-files">Preparing config file and input files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html#inspection-of-a-run">Inspection of a run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.html">Pipeline flow</a></li>
 </ul>
 
@@ -215,48 +216,55 @@
 </dd>
 </dl>
 </div>
-<div class="section" id="preparing-input-files">
-<h2>Preparing input files<a class="headerlink" href="#preparing-input-files" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="preparing-config-file">
-<h2>Preparing config file<a class="headerlink" href="#preparing-config-file" title="Permalink to this headline">¶</a></h2>
-<p>Copy config_example.ini from MIRZA-G directory to your working directory (directory
+<div class="section" id="preparing-config-file-and-input-files">
+<h2>Preparing config file and input files<a class="headerlink" href="#preparing-config-file-and-input-files" title="Permalink to this headline">¶</a></h2>
+<p>Copy config_example.ini from snoRNAHybridSearchPipeline directory to your working directory (directory
 where you want to perform calculation, WD):</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Your/Working/Direcory
-cp Path/To/snoRNAHybridSearch/config_example.ini config.ini
+cp Path/To/snoRNAHybridSearchPipeline/config_example.ini config.ini
 </pre></div>
 </div>
 <dl class="docutils">
 <dt>Set all the necessary paths in your config.ini file as indicated in the comments inside the file. The most importand are:</dt>
 <dd><ul class="first last simple">
-<li><strong>unmapped_reads</strong>: &#8220;Path/To/unmapped_reads.fa&#8221; - an abs path to an input FASTA file with sequences that were unmapped in sequencing experiment</li>
-<li><strong>bed_for_index</strong>: &#8220;Path/To/mapped_reads.bed&#8221; - abs path to a BED file with the positions of mapped reads in the experiment</li>
-<li><strong>PLEXY_bin</strong>: &#8220;Path/To/plexy.pl&#8221; - path to PLEXY binary (or how you invoke it in the bash)</li>
+<li><strong>unmapped_reads</strong>: &#8220;Absolute/Path/To/unmapped_reads.fa&#8221; - an abs path to an input FASTA file with sequences
+that were unmapped in sequencing experiment - see the example file in additional data.</li>
+<li><strong>bed_for_index</strong>: &#8220;Absolute/Path/To/mapped_reads.bed&#8221; - abs path to a BED file with the positions of
+mapped reads in the experiment - see the example file in additional data.</li>
+<li><strong>PLEXY_bin</strong>: &#8220;Absolute/Path/To/plexy.pl&#8221; - path to PLEXY binary (or how you invoke it in the bash)</li>
 <li><strong>contrafold_binary</strong>: &#8220;contrafold&#8221; - path to CONTRAfold binary (or how you invoke in the bash)</li>
 </ul>
 </dd>
 <dt>Model path:</dt>
 <dd><ul class="first last simple">
-<li><strong>model</strong>: &#8220;Path/To/snoRNAHybridSearch/data/model.bin&#8221; - abs path to the model used to calculate probability (you can find it in the pipeline/data directory)</li>
+<li><strong>model</strong>: &#8220;Path/To/snoRNAHybridSearch/data/model.bin&#8221; - abs path to the model used to calculate
+probability (you can find it in the pipeline directory named model.bin)</li>
 </ul>
 </dd>
 <dt>snoRNA table:</dt>
 <dd><ul class="first last simple">
-<li><strong>snoRNAs</strong>: &#8220;Absolute/Path/To/snoRNAs_table.tab&#8221; - abs path to the table containing all the necessary information abut snoRNAs. This table is provided with
-pipeline and for human it is located in the data/human/snoRNAs/snoRNAs_table.tab. We have also prepared the table for mouse located in the data/mouse/snoRNAs/snoRNAs_table.tab.
-You can also prepare your own snoRNA input - please follow the conventions in the table and pay attention to columns described in the data/Columns_description file.</li>
+<li><strong>snoRNAs</strong>: &#8220;Absolute/Path/To/snoRNAs_table.tab&#8221; - abs path to the table containing all the necessary
+information abut snoRNAs. This table is provided with
+pipeline additional data and for human it is located in the snoRNAHybridSearchData/human/snoRNAs/snoRNAs.tab.
+We have also prepared the table for mouse located in the snoRNAHybridSearchData/mouse/snoRNAs/snoRNAs_table.tab.
+You can also prepare your own snoRNA input - please follow the conventions in the table and pay
+attention to columns described in the README file.</li>
 </ul>
 </dd>
 <dt>Additional &#8220;chromosomes&#8221;:</dt>
 <dd><ul class="first last simple">
 <li>This files has to be also split into separate FASTA sequences and those sequences has
-to be put into directory with genome. By default, genome directory that can be downloaded additionally contains these sequences already prepared.</li>
-<li><strong>rRNAs</strong>: &#8220;Absolute/Path/To/rRNAs.fa&#8221; # rRNA sequences. This is provided with the pipeline in data directory, although own can be used. The location for human is
-data/human/target_RNAs/rRNAs_leipzig_hsa.fa and for mouse data/mouse/rRNAs_mmu.fa.</li>
-<li><strong>tRNAs</strong>: &#8220;Absolute/Path/To/tRNAs.fa&#8221; # tRNA sequences. This is provided with the pipeline in data directory, although own can be used. The location for human is
-data/human/target_RNAs/tRNAs_raw.fa and for mouse data/mouse/tRNAs_mmu.fa</li>
-<li><strong>snRNAs</strong>: &#8220;Absolute/Path/To/snRNAs.fa&#8221; # snRNA sequences. This is provided with the pipeline in data directory, although own can be used. The location for human is
-data/human/target_RNAs/snRNAs_leipzig_hsa.fa and for mouse data/mouse/snRNAs_mmu.fa</li>
+to be put into directory with genome. By default, genome directory that can be downloaded
+additionally contains these sequences already prepared.</li>
+<li><strong>rRNAs</strong>: &#8220;Absolute/Path/To/rRNAs.fa&#8221; # rRNA sequences. This is provided with the pipeline
+in data directory, although own can be used. The location for human is
+snoRNAHybridSearchData/human/TargetRNAs/rRNAs_hsa.fa and for mouse snoRNAHybridSearchData/mouse/rRNAs_mmu.fa.</li>
+<li><strong>tRNAs</strong>: &#8220;Absolute/Path/To/tRNAs.fa&#8221; # tRNA sequences. This is provided with
+the pipeline in data directory, although own can be used. The location for human is
+snoRNAHybridSearchData/human/TargetRNAs/tRNAs_hsa.fa and for mouse snoRNAHybridSearchData/mouse/tRNAs_mmu.fa</li>
+<li><strong>snRNAs</strong>: &#8220;Absolute/Path/To/snRNAs.fa&#8221; # snRNA sequences. This is provided with
+the pipeline in data directory, although own can be used. The location for human is
+snoRNAHybridSearchData/human/TargetRNAs/snRNAs_hsa.fa and for mouse snoRNAHybridSearchData/mouse/TargetRNAs/snRNAs_mmu.fa</li>
 </ul>
 </dd>
 <dt>Annotation files:</dt>
@@ -310,14 +318,16 @@ abut the regions in the genes and transcripts like introns, exons, and UTRS:</p>
 </li>
 </ul>
 </dd>
+</dl>
+<p>Please refere to Annotations/README file for more details on how to generate these files.</p>
+<dl class="docutils">
 <dt>Others:</dt>
 <dd><ul class="first last simple">
 <li><strong>reads_per_file</strong>: number of reads in the split files</li>
 <li><strong>anchor_length</strong>: the lenght of the &#8220;seed&#8221; prepared from snoRNAs which will be searched initially in the unmapped sequences</li>
 <li>If you would like to run it on cluster follow instructions in the configuration file and ask your admin what parameters you need to set
 up before (like DRMAA path, modules necessary, queues names etc.). All these parameters can be set up in config.ini. To run it locally it
-takes ~70 to 90 seconds for one miRNA without conservation calculation and ~170 seconds with calculation (This
-might be substantial amount of time (up to half an hour per miRNA) for worse processors).</li>
+might take substantial amount of time to perform all calculations.</li>
 </ul>
 </dd>
 </dl>
@@ -326,15 +336,47 @@ might be substantial amount of time (up to half an hour per miRNA) for worse pro
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>To test the pipeline go to the tests directory and run:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Path/To/snoRNAHybridSearch/tests
-bash rg_run_test.sh <span class="nb">help</span>
+bash run_test.sh -h
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Usage: rg_run_test.sh clean/run [&#8216;CONTRAfold/binary/path&#8217;]</p>
+<p>Usage: ./run_test.sh -d &lt;string&gt; [-r] [-c] [-p &lt;string&gt;] [-f &lt;string&gt;]</p>
+<p>This script will start the run the calculations for snoRNA chimeras for human.</p>
+<dl class="last docutils">
+<dt>OPTIONS:</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span></kbd></td>
+<td>Show this message.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span></kbd></td>
+<td>Run test.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>Run clean up.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>Absolute path to the data directory that accompanies this repository.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td>Path to PLEXY (how to call plexy.pl script). Defaults to plexy.pl.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>Path to CONTRAfold (how to call contrafold). Defaults to contrafold.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span></kbd></td>
+<td>Executer. Defaults to drmaa. Another option is local.</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
 </div>
-<p>And if you have installed MIRZA and CONTRAfold to default locations (MIRZA and contrafold) run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bash rg_run_test.sh run
+<p>And if you have installed all the dependancies to default locations (PLEXY, CONTRAfold etc.) run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bash run_test.sh -d /Absolute/Path/To/snoRNAHybridSearchData -r
 </pre></div>
 </div>
 </div>
@@ -347,7 +389,7 @@ bash rg_run_test.sh <span class="nb">help</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="scripts.html" class="btn btn-neutral float-right" title="Pipeline flow" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="results.html" class="btn btn-neutral float-right" title="Results" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installation.html" class="btn btn-neutral" title="Instalation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

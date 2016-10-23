@@ -4,6 +4,8 @@ Instalation
 Dependencies
 ============
 
+There is number of packages that the pipeline requires.
+
 CONTRAfold
 ----------
 
@@ -109,10 +111,36 @@ or
     If you would like to run snoRNAHybridSearch pipeline locally without DRMAA change executer
     in config.py file from "drmaa" to "local"
 
+
+BEDTools
+--------
+
+Please refer to `BEDTools website <http://bedtools.readthedocs.io/en/latest/>`_ for detailed
+installation instructions.
+
+ViennaRNA package
+-----------------
+
+Please refer to `ViennaRNA website <http://www.tbi.univie.ac.at/RNA/>`_ for detailed
+installation instructions.
+
+
+SAM Tools
+---------
+
+Please refer to `SAM Tools website <http://samtools.sourceforge.net/>`_ for detailed
+installation instructions.
+
+Bowtie 2
+--------
+
+Please refer to `Bowtie 2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_ for detailed
+installation instructions.
+
 Python
 ------
 
-Install python modules:
+Install required python modules:
  * Jobber (see upper paragraph)
  * drmaa (if you are going to submit it to the cluster)
  * statsmodels
@@ -120,25 +148,42 @@ Install python modules:
  * BioPython
  * numpy
  * scipy
+ * swalign
+ * configobj
+ * HTSeq
+ * MetaProfile
+ * ushuffle (one can use this `repo <https://github.com/guma44/ushuffle.git>`_)
+
+For documentation build and not necessary for run:
+ * sphinx
+ * sphinx-argparse
+ * sphinx_rtd_theme
 
 
 Download
 ========
 
-The pipeline is available as a git repository on GitHub:
+The pipeline code is available as a git repository on GitHub or on our website:
 
 .. code-block:: bash
 
-    git clone https://github.com/guma44/snoRNAHybridSearch.git
+    git clone https://github.com/guma44/snoRNAHybridSearchPipeline.git
 
-Download additional data:
+    OR
+
+    wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearchPipeline.tar.gz
+
+In order to run the example and to run pipeline it is neccessary to provide number
+of additional files including genome, annotations and snoRNA sequences. Preprepared
+files for GRCh37 can be downloaded from our website. If you would like to prepare
+your own data it is recomended to look at these files, too:
 
 .. code-block:: bash
 
-    wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearch_data.tar.gz
+    wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearchData.tar.gz
 
 
-You can also download whole package including alignments from out website:
+You can also download whole package including additional data from our website:
 
 .. code-block:: bash
 

@@ -1,3 +1,5 @@
+.. _pipeline-flow:
+
 Pipeline flow
 *************
 

@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="snoRNAHybridSearch 1.0.0 documentation" href="index.html"/>
-        <link rel="prev" title="Usage" href="usage.html"/> 
+        <link rel="prev" title="Results" href="results.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,6 +83,8 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instalation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html#inspection-of-a-run">Inspection of a run</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Pipeline flow</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cd-box-snornas">CD-box snoRNAs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#split-the-input">1. Split the input</a></li>
@@ -122,7 +124,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#analyse-plexy">9. Analyse PLEXY</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">i. Merge results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">i. Merge results</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ii-merge-raw-results">ii. Merge raw results</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#iii-append-rpkm">iii. Append RPKM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#iv-aggregate-results-by-site">iv. Aggregate results by site</a></li>
@@ -183,7 +185,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pipeline-flow">
-<h1>Pipeline flow<a class="headerlink" href="#pipeline-flow" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Pipeline flow<a class="headerlink" href="#pipeline-flow" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="cd-box-snornas">
 <h2>CD-box snoRNAs<a class="headerlink" href="#cd-box-snornas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="split-the-input">
@@ -206,7 +208,7 @@
 </tr>
 <tr><td>&nbsp;</td><td>Be loud!</td></tr>
 <tr><td class="option-group" colspan="2">
-<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7f1eb6a030c0&gt;</span></kbd></td>
+<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7fe5acee50c0&gt;</span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>Input file in fasta format. Defaults to sys.stdin.</td></tr>
 <tr><td class="option-group" colspan="2">
@@ -604,11 +606,11 @@ column in input file or fasta</p>
 </tr>
 <tr><td>&nbsp;</td><td>Be loud!</td></tr>
 <tr><td class="option-group" colspan="2">
-<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7f1eb6a030c0&gt;</span></kbd></td>
+<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7fe5acee50c0&gt;</span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>Input file in Bed format. Defaults to stdin</td></tr>
 <tr><td class="option-group" colspan="2">
-<kbd><span class="option">--output=&lt;open file '&lt;stdout&gt;', mode 'w' at 0x7f1eb6a03150&gt;</span></kbd></td>
+<kbd><span class="option">--output=&lt;open file '&lt;stdout&gt;', mode 'w' at 0x7fe5acee5150&gt;</span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>Output file in Bed format. Defaults to stdout</td></tr>
 <tr><td class="option-group">
@@ -884,11 +886,11 @@ in terms of real chromosomes not clusters.</p>
 </tr>
 <tr><td>&nbsp;</td><td>Be loud!</td></tr>
 <tr><td class="option-group" colspan="2">
-<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7f1eb6a030c0&gt;</span></kbd></td>
+<kbd><span class="option">--input=&lt;open file '&lt;stdin&gt;', mode 'r' at 0x7fe5acee50c0&gt;</span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>Input file in special bed format. Defaults to sys.stdin.</td></tr>
 <tr><td class="option-group" colspan="2">
-<kbd><span class="option">--output=&lt;open file '&lt;stdout&gt;', mode 'w' at 0x7f1eb6a03150&gt;</span></kbd></td>
+<kbd><span class="option">--output=&lt;open file '&lt;stdout&gt;', mode 'w' at 0x7fe5acee5150&gt;</span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>Output file in special bed format. Defaults to sys.stdout.</td></tr>
 </tbody>
@@ -1125,8 +1127,8 @@ chr17   3627403     3627417     2639898_1-Unique-1:hsa-miR-16:N       28  +</p>
 </div>
 <div class="section" id="analyse-plexy">
 <h3>9. Analyse PLEXY<a class="headerlink" href="#analyse-plexy" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id1">
-<h4>i. Merge results<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4>i. Merge results<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>cat output/*.scorebed &gt; results_with_score.tab
 </pre></div>
 </div>
@@ -1904,7 +1906,7 @@ desired length</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="usage.html" class="btn btn-neutral" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="results.html" class="btn btn-neutral" title="Results" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

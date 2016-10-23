@@ -86,6 +86,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#contrafold">CONTRAfold</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jobber">Jobber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bedtools">BEDTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viennarna-package">ViennaRNA package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sam-tools">SAM Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bowtie-2">Bowtie 2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
 </ul>
 </li>
@@ -93,6 +97,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html#inspection-of-a-run">Inspection of a run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.html">Pipeline flow</a></li>
 </ul>
 
@@ -142,6 +148,7 @@
 <h1>Instalation<a class="headerlink" href="#instalation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>There is number of packages that the pipeline requires.</p>
 <div class="section" id="contrafold">
 <h3>CONTRAfold<a class="headerlink" href="#contrafold" title="Permalink to this headline">¶</a></h3>
 <p>Download and install <a class="reference external" href="http://contra.stanford.edu/contrafold/download.html">CONTRAfold</a>.
@@ -224,10 +231,30 @@ To launch it type:</p>
 in config.py file from &#8220;drmaa&#8221; to &#8220;local&#8221;</p>
 </div>
 </div>
+<div class="section" id="bedtools">
+<h3>BEDTools<a class="headerlink" href="#bedtools" title="Permalink to this headline">¶</a></h3>
+<p>Please refer to <a class="reference external" href="http://bedtools.readthedocs.io/en/latest/">BEDTools website</a> for detailed
+installation instructions.</p>
+</div>
+<div class="section" id="viennarna-package">
+<h3>ViennaRNA package<a class="headerlink" href="#viennarna-package" title="Permalink to this headline">¶</a></h3>
+<p>Please refer to <a class="reference external" href="http://www.tbi.univie.ac.at/RNA/">ViennaRNA website</a> for detailed
+installation instructions.</p>
+</div>
+<div class="section" id="sam-tools">
+<h3>SAM Tools<a class="headerlink" href="#sam-tools" title="Permalink to this headline">¶</a></h3>
+<p>Please refer to <a class="reference external" href="http://samtools.sourceforge.net/">SAM Tools website</a> for detailed
+installation instructions.</p>
+</div>
+<div class="section" id="bowtie-2">
+<h3>Bowtie 2<a class="headerlink" href="#bowtie-2" title="Permalink to this headline">¶</a></h3>
+<p>Please refer to <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie 2 website</a> for detailed
+installation instructions.</p>
+</div>
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
-<dt>Install python modules:</dt>
+<dt>Install required python modules:</dt>
 <dd><ul class="first last simple">
 <li>Jobber (see upper paragraph)</li>
 <li>drmaa (if you are going to submit it to the cluster)</li>
@@ -236,6 +263,18 @@ in config.py file from &#8220;drmaa&#8221; to &#8220;local&#8221;</p>
 <li>BioPython</li>
 <li>numpy</li>
 <li>scipy</li>
+<li>swalign</li>
+<li>configobj</li>
+<li>HTSeq</li>
+<li>MetaProfile</li>
+<li>ushuffle (one can use this <a class="reference external" href="https://github.com/guma44/ushuffle.git">repo</a>)</li>
+</ul>
+</dd>
+<dt>For documentation build and not necessary for run:</dt>
+<dd><ul class="first last simple">
+<li>sphinx</li>
+<li>sphinx-argparse</li>
+<li>sphinx_rtd_theme</li>
 </ul>
 </dd>
 </dl>
@@ -243,15 +282,22 @@ in config.py file from &#8220;drmaa&#8221; to &#8220;local&#8221;</p>
 </div>
 <div class="section" id="download">
 <h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
-<p>The pipeline is available as a git repository on GitHub:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/guma44/snoRNAHybridSearch.git
+<p>The pipeline code is available as a git repository on GitHub or on our website:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/guma44/snoRNAHybridSearchPipeline.git
+
+OR
+
+wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearchPipeline.tar.gz
 </pre></div>
 </div>
-<p>Download additional data:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearch_data.tar.gz
+<p>In order to run the example and to run pipeline it is neccessary to provide number
+of additional files including genome, annotations and snoRNA sequences. Preprepared
+files for GRCh37 can be downloaded from our website. If you would like to prepare
+your own data it is recomended to look at these files, too:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearchData.tar.gz
 </pre></div>
 </div>
-<p>You can also download whole package including alignments from out website:</p>
+<p>You can also download whole package including additional data from our website:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearch.tar.gz
 </pre></div>
 </div>
