@@ -31,6 +31,10 @@ run_parser.add_argument("--filter-multimappers",
                     action="store_true",
                     default=False,
                     help="Filter reads that map to multiple genomic locus with exception of reads that map also to canonical targets")
+run_parser.add_argument("--modules",
+                    dest="modules",
+                    nargs="*",
+                    help="A list of modules to load (if HPC or environment requires)")
 
 clean_parser = subparsers.add_parser("clean", help="Clean after previous run")
 clean_parser.add_argument("-v",
@@ -50,7 +54,6 @@ clean_parser.add_argument("--make-backup",
                           action="store_true",
                           default=False,
                           help="Instead of deleting file with results make its backup")
-
 
 
 # redefine a functions for writing to stdout and stderr to save some writting
@@ -162,17 +165,7 @@ def main(options):
     #Create a group for whole pipeline. The module "Python" will be inherited by all jobs that are in this group,
     # so we don't need to define it for each job that calls a python script
     pipeline_id = jobber.startGroup({'name': "snoRNAHybridSearch-%s" % options.name_suffix,
-                                     'options': [['module', "Python/2.7.5-goolf-1.4.10"],
-                                                 ['module', "GCC/4.7.2"],
-                                                 ['module', "DRMAA/0.7.6-goolf-1.4.10-Python-2.7.5"],
-                                                 ['module', "HTSeq/0.6.1p1-goolf-1.4.10-Python-2.7.5"],
-                                                 ['module', "Bowtie2/2.2.6-goolf-1.4.10"],
-                                                 ['module', "OpenBLAS/0.2.6-gompi-1.4.10-LAPACK-3.4.2"],
-                                                 ['module', "BEDTools/2.25.0-goolf-1.4.10"],
-                                                 ['module', "CONTRAfold/2.02-goolf-1.4.10"],
-                                                 ['module', "ViennaRNA/2.1.8-goolf-1.4.10"],
-                                                 ['module', "SAMtools/1.2-goolf-1.4.10"],
-                                                 ],
+                                     'options': [['module', module] for module in options.modules],
                                      'executer': settings['general'].get('executer', 'drmaa')})
 
     #First step is to split the file
