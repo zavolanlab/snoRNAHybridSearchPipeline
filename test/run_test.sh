@@ -34,11 +34,6 @@ OPTIONS:
 EOF
 }
 
-if [ $# -lt 1 ] ; then
-    usage
-    exit 1
-fi
-
 directory=""
 clean=""
 run=""
@@ -49,7 +44,7 @@ executer="drmaa"
 while getopts "hrcd:p:f:e:" opt
 do
    case "${opt}" in
-      h) usage;;
+      h) usage; exit 1;;
       r) run="run";;
       c) clean="clean";;
       d) directory=$OPTARG;;
@@ -60,7 +55,12 @@ do
 done
 
 if [ "$directory" == "" ] ; then
+    echo "####################### ERROR ###########################"
+    echo
     echo "Please specify path to the data directory you downloaded!"
+    echo
+    echo "#########################################################"
+    echo
     usage
     exit 1
 fi
@@ -84,6 +84,12 @@ then
     sed -i "s~<DefaultExecuter>~${executer}~g" config.ini
     python ../snoRNAHybridSearch.py run --config config.ini --name-suffix test_run
 else
+    echo "####################### ERROR ###########################"
+    echo
     echo "Please specify if you would like to run or to clean data with -r/-c options."
+    echo
+    echo "#########################################################"
+    echo
+    usage
     exit 1
 fi
