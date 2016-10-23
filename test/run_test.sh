@@ -80,7 +80,7 @@ then
     python ../snoRNAHybridSearch.py clean -y -v
     echo
     echo "############################################################"
-    exit 1
+    exit 0
 fi
 
 cwd=$(pwd)

@@ -13,3 +13,4 @@
 !*.html
 !*.md
 !requirements.txt
+!Makefile
