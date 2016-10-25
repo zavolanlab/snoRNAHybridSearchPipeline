@@ -29,7 +29,7 @@ OPTIONS:
    -c                  Run clean up.
    -d                  Absolute path to the data directory that accompanies this repository.
    -p                  Path to PLEXY (how to call plexy.pl script). Defaults to plexy.pl.
-   -c                  Path to CONTRAfold (how to call contrafold). Defaults to contrafold.
+   -f                  Path to CONTRAfold (how to call contrafold). Defaults to contrafold.
    -e                  Executer. Defaults to drmaa. Another option is local.
    -m                  Modules. A list of modules to load (if HPC or environment requires).
 
