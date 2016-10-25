@@ -9,4 +9,12 @@ swalign==0.3.3
 configobj==5.0.6
 HTSeq==0.6.1
 MetaProfile==0.1.0
-ushuffle==1.0
+bx-python==0.7.3
+HTSeq==0.6.1
+Jinja2==2.8
+matplotlib==1.5.3
+pysam==0.9.1.4
+patsy==0.4.1
+seaborn==0.7.1
+pybedtools==0.7.8
+interval==1.0.0
