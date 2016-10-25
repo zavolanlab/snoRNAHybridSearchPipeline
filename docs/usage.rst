@@ -35,6 +35,15 @@ Set all the necessary paths in your config.ini file as indicated in the comments
  * **PLEXY_bin**: "Absolute/Path/To/plexy.pl" - path to PLEXY binary (or how you invoke it in the bash)
  * **contrafold_binary**: "contrafold" - path to CONTRAfold binary (or how you invoke in the bash)
 
+.. note::
+
+    In order to obtain unmapped and mapped reads one have to perform separate step of mapping raw experimental
+    reads to the (possibly same, without additional target RNAs) genome. To this end, one can use any
+    mapping software or pipeline. The most important part is that in the end one ends up with a FASTA file
+    with reads that could not be mapped to the genome and BED file with read positions that were mapped to the
+    genome. Internally, we are using newest version of CLIPz pipeline which is, unfortunately, not yet
+    available for public use.
+
 Model path:
  * **model**: "Path/To/snoRNAHybridSearch/data/model.bin" - abs path to the model used to calculate
    probability (you can find it in the pipeline directory named model.bin)
@@ -118,11 +127,11 @@ Others:
 Example
 =======
 
-To test the pipeline go to the tests directory and run:
+To test the pipeline go to the test directory and run:
 
 .. code-block:: bash
 
-    cd Path/To/snoRNAHybridSearch/tests
+    cd Path/To/snoRNAHybridSearch/test
     bash run_test.sh -h
 
 .. note::
@@ -137,7 +146,7 @@ To test the pipeline go to the tests directory and run:
        -c                  Run clean up.
        -d                  Absolute path to the data directory that accompanies this repository.
        -p                  Path to PLEXY (how to call plexy.pl script). Defaults to plexy.pl.
-       -c                  Path to CONTRAfold (how to call contrafold). Defaults to contrafold.
+       -f                  Path to CONTRAfold (how to call contrafold). Defaults to contrafold.
        -e                  Executer. Defaults to drmaa. Another option is local.
 
 And if you have installed all the dependancies to default locations (PLEXY, CONTRAfold etc.) run:

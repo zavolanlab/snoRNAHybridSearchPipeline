@@ -46,6 +46,17 @@ To fix it:
 
   #include <limits.h>
 
+We have tested our pipeline with version 2.02.
+
+
+PLEXY
+-----
+
+Please refer to `PLEXY website <http://www.bioinf.uni-leipzig.de/Software/PLEXY/>`_ for detailed
+installation instructions. As mentioned on the website be sure to have the latest version
+of RNAPLEX installed.
+
+
 Jobber
 ------
 
@@ -116,45 +127,64 @@ BEDTools
 --------
 
 Please refer to `BEDTools website <http://bedtools.readthedocs.io/en/latest/>`_ for detailed
-installation instructions.
+installation instructions. We have tested our pipeline with version 2.25.0.
 
 ViennaRNA package
 -----------------
 
 Please refer to `ViennaRNA website <http://www.tbi.univie.ac.at/RNA/>`_ for detailed
-installation instructions.
+installation instructions. We have tested our pipeline with version 2.1.8.
 
 
 SAM Tools
 ---------
 
 Please refer to `SAM Tools website <http://samtools.sourceforge.net/>`_ for detailed
-installation instructions.
+installation instructions. We have tested our pipeline with version 1.2.
 
 Bowtie 2
 --------
 
 Please refer to `Bowtie 2 website <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_ for detailed
-installation instructions.
+installation instructions. We have tested our pipeline with version 2.2.6.
 
 Python
 ------
 
+The pipeline works with Python 2.7.
+
 Install required python modules:
  * Jobber (see upper paragraph)
  * drmaa (if you are going to submit it to the cluster)
- * statsmodels
- * pandas
- * BioPython
- * numpy
- * scipy
- * swalign
- * configobj
- * HTSeq
- * MetaProfile
- * ushuffle (one can use this `repo <https://github.com/guma44/ushuffle.git>`_)
+ * statsmodels==0.6.1
+ * pandas==0.18.0
+ * biopython==1.66
+ * numpy==1.10.4
+ * scipy==0.17.0
+ * swalign==0.3.3
+ * configobj==5.0.6
+ * HTSeq==0.6.1
+ * MetaProfile==0.1.0
+ * bx-python==0.7.3
+ * HTSeq==0.6.1
+ * Jinja2==2.8
+ * matplotlib==1.5.3
+ * pysam==0.9.1.4
+ * patsy==0.4.1
+ * seaborn==0.7.1
+ * pybedtools==0.7.8
+ * interval==1.0.0
 
-For documentation build and not necessary for run:
+Almost all python dependencies are in the requirements file so one can run:
+
+.. code-block:: bash
+
+    $ pip install -r requirements.txt
+
+However, ushuffle has to be installed manually (one can use this `repo <https://github.com/guma44/ushuffle.git>`_).
+The versions of the packages are the ones we have tested our pipeline on. One can use newer/older versions.
+
+For documentation build and not necessary for run (and not included in the requirements.txt):
  * sphinx
  * sphinx-argparse
  * sphinx_rtd_theme
