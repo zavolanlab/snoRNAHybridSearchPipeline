@@ -7,3 +7,4 @@ Please refer to the publication for greater details.
 
 * [Documentation](https://snornahybridsearch.readthedocs.org).
 * Additional data required to run the pipeline can be downloaded [here](http://www.clipz.unibas.ch/snoRNAchimeras/snoRNAHybridSearchData.tar.gz).
+* [Interactive website](http://www.clipz.unibas.ch/snoRNAchimeras) with the results of the paper.
